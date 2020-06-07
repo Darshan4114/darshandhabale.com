@@ -1,0 +1,185 @@
+*{
+    box-sizing: border-box;
+}
+.box{
+    height: 60vh;
+    width: 100vw;
+    padding:1.5rem;
+    position: relative;
+    text-align: center;
+    font-weight: normal;
+    top:10rem;
+}
+.box h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    font-size:3rem;
+}
+
+.part{
+    height:5rem;
+    position: relative;
+}
+.mini-part{
+    position: relative;
+}
+.part input, textarea{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    width:100%;
+    height:100%;
+    padding-left: 0.5rem;
+    color: #595f6e;
+    padding-top: 0.5rem;
+    border:none;
+    outline: 0;
+}
+.part label{
+    pointer-events: none;
+    margin-bottom: 0.5rem;
+}
+div.mini-part label{
+    bottom:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    margin-bottom: 0.5rem;
+}
+.mini-part input{
+    border-bottom: 1px solid #000;
+}
+label#message-label{
+    border:none;
+}
+div.part label::after{
+    content: '';
+    position:absolute;
+    bottom:-1px;
+    left: 0;
+    width:100%;
+    height:100%;
+}
+
+div.part input:focus + label::after{
+    border-bottom: 3px solid #5fa8d3;
+    transition: all 0.3s ease;
+}
+div.part input::placeholder{
+    color:white;
+}
+div.part input:focus + .label-name .label-text,
+div.part input:not(:placeholder-shown) + .label-name .label-text,
+div.part textarea:focus + .label-name .label-text,
+div.part textarea:not(:placeholder-shown) + .label-name .label-text{
+    transform: translateY(-2.7rem);
+    padding-bottom: 0.25rem;
+    font-size: 0.95rem;
+    color:#5fa8d3;
+}
+
+div.part textarea:focus + label::after{
+    transition: all 0.3s ease;
+}
+div.part #message-label .label-text{
+    padding-bottom: 0.3rem;
+    transition: all 0.3s ease;
+}
+div#message{
+    margin-top: 5rem;
+}
+
+hr#message_hr{
+    position: relative;
+    border:0.5px solid black;
+    top:-13rem;
+    z-index: 5;
+    height:1px;
+
+}
+div.part textarea:focus ~ hr#message_hr,
+div.part textarea:not(:placeholder-shown) ~ hr#message_hr{
+    height:3px;
+    background-color:#5fa8d3;
+    border:1.5px solid #5fa8d3;
+    transform: translateY(12rem);
+    transition: all 0.4s ease;
+    
+}
+
+div.part textarea::placeholder{
+    color:white;
+}
+
+div.part textarea{
+    padding-top:2rem;
+    z-index: 6;
+    padding-left: 0.5rem;
+    color: #595f6e;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    height: 18rem;
+}
+
+span.label-text{
+    position: absolute;
+    left:0;
+    bottom:0.2rem;
+    transition: all 0.3s ease;
+}
+
+h1.contact-h1{
+    color:#333;
+    text-align: center;
+    font-size: 5rem;
+    font-family: sans-serif;
+    font-weight: normal;
+
+}
+
+.mini-part#email{
+    background-color:blue;
+    z-index: 5;
+}
+
+#submit-btn{
+    width:90%;
+    z-index: 5;
+    color:#444;
+    height: 3rem;
+    padding:0.2rem;
+    font-size: 2rem;
+    position: relative;
+    border:none;
+    border-radius: 0.7rem;
+    margin-top: 1.5rem;
+    outline:none;
+}
+#submit-btn:hover{
+    transition: all 0.32s ease;
+    background-color: rgb(21, 165, 248);
+    color: whitesmoke
+}
+
+#submit-btn:not(:hover){
+    transition: all 0.32s ease;
+}
+
+
+@media only screen and (min-width: 920px){
+    .mini-part{
+        width: 50%;
+        display: inline-block;
+    }
+    .mini-part#name{
+        float: left;
+    }
+    .mini-part#email{
+        float: right;
+    }
+    .part#message{
+        margin-top: 2rem;
+    }
+    .box h1 {
+        font-size:5rem;
+    }
+}

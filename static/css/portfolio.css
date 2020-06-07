@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  min-height: 100%;
+}
+body {
+  position: relative;
+}
+.card:hover {
+  border: 1px solid rgba(131, 131, 131, 0.507);
+  border-bottom: 2px solid rgba(131, 131, 131, 0.507);
+}
+
+body a {
+  color: #666;
+  text-decoration: none;
+}
+
+a :hover {
+  color: #666;
+  text-decoration: none;
+}
+
+h1 {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+.card {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  z-index: 0;
+}
+
+.card-body .card-title h3:hover {
+  text-decoration: none;
+}
+
+h1 {
+  color: #333;
+}
+
+button {
+  display: inline-block;
+}
+button:hover > a {
+  color: white;
+}

@@ -1,0 +1,164 @@
+/* Main HTML and body level */
+
+* {
+    box-sizing: border-box;
+  }
+
+ html{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin:0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#444;
+    overflow-x: hidden;
+}
+
+div.container-fluid{
+    position: absolute;
+    width:100vw;
+    height:100vh;
+}
+
+div.landing{
+    padding:1rem;
+}
+div#github{
+    text-align:center;
+}
+div#github img{
+    width:20%;
+}
+div.box{
+    position: relative;
+    margin:0 auto;
+    margin-bottom: 17rem;
+}
+div#github h2{
+    color:#444;
+}
+div#github img{
+    filter: opacity(77%);
+}
+
+/* ENDS Main HTML and body level ENDS */
+@media only screen and (max-width: 4200px){
+    div.landing h1{
+        font-size:8rem;
+        text-align: center;
+        margin-top:10rem;
+        font-weight: normal;
+    }
+    div#github{
+        margin-top: 10rem;
+        font-size: 3rem;
+    }
+    div.box{
+        bottom:15rem;
+        width:90vw;
+        font-size: 3rem;
+    }
+    div.box button#submit-btn{
+        height:5rem;
+        font-size:3rem;
+    }
+}
+
+@media only screen and (max-width: 3000px){
+    div.landing h1{
+        font-size:5rem;
+        text-align: center;
+        margin-top:10rem;
+        font-weight: normal;
+    }
+    div#github{
+        margin-top: 10rem;
+        font-size: 2rem;
+    }
+    div.box{
+        bottom:15rem;
+        width:90vw;
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    div.landing h1{
+        font-size:5rem;
+        text-align: center;
+        margin-top:10rem;
+        font-weight: normal;
+    }
+    div#github{
+        margin-top: 10rem;
+        font-size: 1.25rem;
+    }
+    div.box{
+        bottom:15rem;
+    }
+}
+
+@media only screen and (max-width: 920px){
+    div.landing h1{
+        font-size:5rem;
+        text-align: center;
+        margin-top:10rem;
+        font-weight: normal;
+    }
+    div#github{
+        margin-top: 10rem;
+        font-size: 1.25rem;
+    }
+    div.box{
+        bottom:15rem;
+    }
+}
+
+@media only screen and (max-width:600px){
+    div.landing{
+        height: 25rem;
+        text-align:left;
+        position: relative;
+        top:5rem;
+    }
+    div#github h2{
+        position: relative;
+        text-decoration: none;
+        top:-3rem;
+        font-family:monospace;
+        font-weight: normal;
+        text-align:center;
+        font-size: 2rem;
+        margin-bottom: 10rem;
+    }
+    h1#landing-heading{
+        font-size:4rem;
+        font-weight: normal;
+        z-index: 1;
+        margin-top:5rem;
+    }
+    div.box{
+        margin-top: 10rem;
+        font-size: 1.5rem;
+    }
+    div#github{
+        position:relative;
+        margin-top:0;
+        height:10rem;
+        color:#000;
+        font-size:7rem;
+    }
+    div#github img{
+        width: 5rem;
+        filter: opacity(77%);
+    }
+    div.box button#submit-btn{
+        height:5rem;
+        font-size:2rem;
+}
+
+
