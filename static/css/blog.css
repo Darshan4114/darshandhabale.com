@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.156rem;
+  color: #666;
+  font-weight: 100;
+}
+.blog-list {
+  display: inline-block;
+  text-align: left;
+  max-width: 50rem;
+  padding: 1.5rem;
+  width: 49rem;
+}
+h1 {
+  /* font-family: Lato; */
+  color: #0a0a23;
+  font-weight: 500;
+  font-size: 45px;
+  margin: 1rem;
+}
+
+.card {
+  min-height: 10rem;
+  width: 15rem;
+  border: 1px solid #666;
+  margin: 0.8rem auto;
+  border-radius: 1rem;
+  padding: 1rem;
+}
