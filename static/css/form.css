@@ -19,12 +19,10 @@
     margin-bottom: 15rem;
 }
 .box h2{
-    font-family: open-sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 45px;
-    line-height: 75px;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
 }
 
 .part{
@@ -77,11 +75,11 @@ div.part label::after{
 }
 
 div.part input:focus + label::after{
-    border-bottom: 3px solid #5fa8d3;
+    border-bottom: 3px solid #38b6ff;
     transition: all 0.3s ease;
 }
 div.part input::placeholder{
-    color:white;
+    color:#f9f9f9;
 }
 div.part input:focus + .label-name .label-text,
 div.part input:not(:placeholder-shown) + .label-name .label-text,
@@ -90,7 +88,7 @@ div.part textarea:not(:placeholder-shown) + .label-name .label-text{
     transform: translateY(-2.7rem);
     padding-bottom: 0.25rem;
     font-size: 0.95rem;
-    color:#5fa8d3;
+    color:#38b6ff;
 }
 
 div.part textarea:focus + label::after{
@@ -115,15 +113,15 @@ hr#message_hr{
 div.part textarea:focus ~ hr#message_hr,
 div.part textarea:not(:placeholder-shown) ~ hr#message_hr{
     height:3px;
-    background-color:#5fa8d3;
-    border:1.5px solid #5fa8d3;
+    background-color:#38b6ff;
+    border:1.5px solid #38b6ff;
     transform: translateY(12rem);
     transition: all 0.4s ease;
     
 }
 
 div.part textarea::placeholder{
-    color:white;
+    color:#f9f9f9;
 }
 
 div.part textarea{
@@ -147,8 +145,8 @@ h1.contact-h1{
     color:#333;
     text-align: center;
     font-size: 5rem;
-    font-family: sans-serif;
-    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 
 }
 
@@ -158,7 +156,7 @@ h1.contact-h1{
 }
 
 #submit-btn{
-    width:90%;
+    width:17rem;
     z-index: 5;
     color:#444;
     height: 3rem;
@@ -173,7 +171,7 @@ h1.contact-h1{
 #submit-btn:hover{
     transition: all 0.32s ease;
     background-color: rgb(21, 165, 248);
-    color: whitesmoke
+    color: #f9f9f9;
 }
 
 #submit-btn:not(:hover){

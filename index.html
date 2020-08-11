@@ -17,11 +17,12 @@
 </head>
 <body>
    <div class="content">
-    <nav>
+    <nav id="navbar">
         <div class="brand">
             <img id="logo"src="static/img/ddevf9.png" alt="" srcset="">
         </div>
-        <ul>
+        <div id="ham" onclick="togglenav()"><button>X</button></div>
+        <ul id="nav" class="folding-nav">
             <a href="https://blog.darshandev.com">
             <li>Blog</li>
             </a>
@@ -34,7 +35,7 @@
         </ul>
     </nav>
     <div class="headings">
-        <h1>Modern Sleek Websites</h1>
+        <h1>ROBUST <span id="heading-beautiful">Beautiful</span> <span id="heading-web-apps">Web Apps</span></h1>
         <h2>FULLSTACK WEB DEVELOPER</h2>
     </div>
     <div class="services">
@@ -115,5 +116,25 @@
         <br><br>
       </div>
    </div>
+   <script>
+     const ham = document.getElementById('ham').firstChild;
+     const navlist = document.getElementById("nav");
+     const nav = document.getElementById("navbar");
+     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+     
+     function togglenav(){
+       if (vw < 833){
+        if (navlist.style.display === "none"){
+          navlist.style.display = "block";
+          navlist.style.flexDirection = "column";
+          nav.style.flexFlow = "column wrap";
+          } else {
+            navlist.style.display = "none"
+            // ham.style.display = "block"
+       }
+       }
+       
+     }   
+   </script>
 </body>
 </html>

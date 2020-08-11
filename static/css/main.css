@@ -1,139 +1,167 @@
-    @font-face{
-        font-family: open-sans;
-        src: url(../font/OpenSans-Regular.ttf)
-    }
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-    @font-face{
-        font-family: roboto;
-        src: url(../font/Roboto-Light.ttf)
-    }
+@font-face{
+    font-family: open-sans;
+    src: url(../font/OpenSans-Regular.ttf)
+}
 
-    *{
-        box-sizing: border-box;
-        margin:0;
-        padding:0;
-    }
-    body{
-        background-color: #f9f9f9;
-        color:#222433;
-        display: flex;
-        justify-content: center;
-        font-family: Arial, Helvetica, sans-serif;
-        
-    }
-    .content{
-       flex:1;
-       max-width:60rem;
-       display: flex;
-       flex-direction: column;
-       width:100vw;
-       padding:1rem;
-    }
+@font-face{
+    font-family: roboto;
+    src: url(../font/Roboto-Light.ttf)
+}
 
-    /* Navbar */
-    nav{
-        flex:0.1;
-        display:flex;
-        margin: 1.5rem;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        font-size: 22px;
-        font-weight: normal;
-        line-height: 26px;
-    }
-    .brand{
-        flex:0.15;
-    }
-    ul{
-        display: flex;
-        flex:0.45;
-        flex-flow: row wrap;
-        justify-content: space-evenly;
-        /* align-items: flex-end; */
-    }
-    li{
-        flex:1;
-        min-width: 5rem;
-        margin:0.5rem;
-        list-style-type: none;
-        width:2rem;
-    }
-    #logo{
-        width:10rem;
-    }
-    /* END Navbar */
+
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: #f9f9f9;
+    color:#222433;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
     
-    /* Headings */
-    .headings{
-        flex:0.2;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    .headings h1{
-        flex:1;
-        text-align: center;
-        margin-top: 3rem;
-        font-family: open-sans;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 55px;
-        line-height: 75px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    .headings h2{
-        text-align: center;
-        font-family: roboto;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 36px;
-        line-height: 42px;
-    }
-    /* END Headings */
+}
+.content{
+    flex:1;
+    max-width:60rem;
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    padding:1rem;
+}
 
-    /* Services */
-    .services{
-        flex:1;
-        /* align-self: center; */
-        align-items: center;
-        /* width: 60rem; */
-        margin:5rem 0;
-        justify-content: space-between;
-        display: flex;
-        flex-flow: row wrap;
-        font-family: roboto;
+/* Navbar */
+nav#navbar{
+    flex:0.1;
+    display:flex;
+    margin: 1.5rem;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 26px;
+}
 
-    }
-    .service{
-        margin-bottom: 3rem;
-        flex:0.5;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        min-width: 239px;
-        margin: 0.5rem;
-        font-weight: 300;
-        font-size: 36px;
-        line-height: 42px;
-        text-align: center;
-    }
-    .bold{
-        font-weight: 500;
-        font-size: 36px;
-        line-height: 42px;
-        color: #38B6FF;
-    }
 
-    a{
-        text-decoration: none;
-        color:#222433;
-    }
-    a:hover{
-        cursor: pointer;
-    }
+
+.brand{
+    flex:0.15;
+}
+#ham{
+    display: none;
+}
+ul#nav{
+    display: flex;
+    flex:0.45;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    /* align-items: flex-end; */
+}
+li{
+    flex:1;
+    min-width: 5rem;
+    margin:0.5rem;
+    list-style-type: none;
+    width:2rem;
+}
+#logo{
+    width:10rem;
+}
+/* END Navbar */
+
+/* Headings */
+.headings{
+    flex:0.2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: left;
+    text-align: left;
+    align-items: left;
+    margin: 3rem 0 0 6rem;
+
+    /* margin-left: 7rem; */
+}
+.headings h1{
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 55px;
+    line-height: 50px;
+    
+}
+.headings h1 span#heading-beautiful{
+    font-family: 'Great Vibes', cursive;
+    font-weight: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.headings h1 span#heading-web-apps{
+    font-family: Markazi Text, serif;
+    font-weight: normal;
+    display: block;
+}
+
+.headings h2{
+    /* text-align: center; */
+    color: #5a5a5a;
+    /* margin-left: 8rem; */
+    /* padding-top: 4rem; */
+    font-family: roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 70px;
+}
+/* END Headings */
+
+/* Services */
+.services{
+    flex:1;
+    /* align-self: center; */
+    align-items: center;
+    /* width: 60rem; */
+    margin:5rem 0;
+    justify-content: space-between;
+    display: flex;
+    flex-flow: row wrap;
+    font-family: roboto;
+
+}
+.service{
+    margin-bottom: 3rem;
+    flex:0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 239px;
+    margin: 0.5rem;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+}
+.bold{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+    color: #38B6FF;
+}
+
+a{
+    text-decoration: none;
+    color:#222433;
+}
+a:hover{
+    cursor: pointer;
+}
     /* END Services */
 
     /* Contact Form */
@@ -172,7 +200,10 @@
 }
 
 @media only screen and (max-width: 832px) {
-    ul{
-        flex-direction: column;
+    ul#nav{
+        display: none;
+    }
+    #ham{
+        display: block;
     }
 }
