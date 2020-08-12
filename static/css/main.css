@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+
 @font-face{
     font-family: open-sans;
     src: url(../font/OpenSans-Regular.ttf)
@@ -12,7 +13,6 @@
     font-family: roboto;
     src: url(../font/Roboto-Light.ttf)
 }
-
 
 
 *{
@@ -39,120 +39,83 @@ body{
 
 /* Navbar */
 nav#navbar{
-    flex:0.1;
-    display:flex;
-    margin: 1.5rem;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    font-size: 22px;
-    font-weight: normal;
-    line-height: 26px;
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 7fr 1 1fr;
+    grid-template-areas: 
+    "logo ham"
+    "headings ul"
+    "web-dev web-dev";
 }
 
 
 
 .brand{
-    flex:0.15;
+    grid-area: logo;
 }
-#ham{
-    display: none;
-}
-ul#nav{
+
+#ham-div{
     display: flex;
-    flex:0.45;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    /* align-items: flex-end; */
+    flex-direction: row-reverse;
 }
+.ham-img{
+    flex:0 1 25px;
+}
+
 li{
-    flex:1;
-    min-width: 5rem;
     margin:0.5rem;
     list-style-type: none;
-    width:2rem;
 }
+
 #logo{
-    width:10rem;
+    width:7rem;
 }
 /* END Navbar */
 
 /* Headings */
-.headings{
-    flex:0.2;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: left;
-    text-align: left;
-    align-items: left;
-    margin: 3rem 0 0 6rem;
-
-    /* margin-left: 7rem; */
+#headings{
+    grid-area: headings;
+    padding: 1rem;
+    margin:  2rem 0 1rem 0;
 }
-.headings h1{
+#headings h1{
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 900;
-    font-size: 55px;
-    line-height: 50px;
+    font-size: 2.5rem;
+    line-height: 2.7rem;
     
 }
-.headings h1 span#heading-beautiful{
+#headings h1 span#heading-beautiful{
     font-family: 'Great Vibes', cursive;
     font-weight: normal;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.headings h1 span#heading-web-apps{
+#headings h1 span#heading-web-apps{
     font-family: Markazi Text, serif;
+    font-size: 1.7rem;
     font-weight: normal;
     display: block;
 }
 
-.headings h2{
-    /* text-align: center; */
-    color: #5a5a5a;
-    /* margin-left: 8rem; */
-    /* padding-top: 4rem; */
-    font-family: roboto;
+h2{
+    text-align: center;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 30px;
-    line-height: 70px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+} 
+.sub-headings{
+    margin: 1.2rem;
+    font-weight: 430;
 }
-/* END Headings */
 
-/* Services */
-.services{
-    flex:1;
-    /* align-self: center; */
-    align-items: center;
-    /* width: 60rem; */
-    margin:5rem 0;
-    justify-content: space-between;
-    display: flex;
-    flex-flow: row wrap;
-    font-family: roboto;
-
-}
-.service{
-    margin-bottom: 3rem;
-    flex:0.5;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-width: 239px;
-    margin: 0.5rem;
-    font-weight: 300;
-    font-size: 36px;
-    line-height: 42px;
-    text-align: center;
-}
-.bold{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 42px;
-    color: #38B6FF;
+#web-dev{
+    grid-area: web-dev;
+    margin: 1.2rem;
+    font-weight: 430;
 }
 
 a{
@@ -162,48 +125,147 @@ a{
 a:hover{
     cursor: pointer;
 }
-    /* END Services */
+/* END Headings */
 
-    /* Contact Form */
-    /* .box form{
-        height: 50vh;
-        flex:1;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 300px);
-        grid-template-rows: 1fr 1fr;
+/* Services */
+#services{
+    flex:1;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr;
+    grid-template-areas: 
+    "service-project . . "
+    ". service-quote ."
+    ". . service-learn"
+    ;
+}
+.service{
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    margin: 0.5rem;
+}
+.service img {
+    max-width: 2.5rem;
+    flex:0 1 2.5rem
+}
+.bold{
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    color: #38B6FF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#service-project h2 {
+    align-items: flex-start;
+}
+#service-project{
+    grid-area: service-project;
+    align-items: flex-start;
+}
+#service-quote {
+    grid-area: service-quote;
+}
+#service-learn h2{
+    text-align: right;
+}
+#service-learn{
+    grid-area: service-learn;
+    align-items: flex-end;
+
+}
+
+/* Skills */
+.skills{
+    display: flex;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-rows: 1fr 1fr; */
+    /* grid-template-areas: 
+    "skills-heading skills-heading skills-heading"
+    "skill-django skill-python skill-react"; */
+    
+}
+
+.skills h2{
+    grid-area: skills-heading;
+}
+/* 
+#skill-django{
+    grid-area: skill-django;
+}
+#skill-python{
+    grid-area: skill-python;
+}
+#skill-react{
+    grid-area: skill-react;
+} */
+.skill{
+    flex: 1 1 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: #333; */
+}
+.skill img{
+    max-width: 7rem;
+}
+
+
+
+
+@media only screen and (min-width: 600px){
+    nav#navbar{
         grid-template-areas: 
-        "name email"
-        "message message";
-
+    "logo ul"
+    "headings headings"
+    "web-dev web-dev"
+    ;
     }
-    #name{
-        grid-area: name;
+    #services{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "service-project service-quote service-learn"
     }
-    #email{
-        grid-area: email;
+    .service h2{
+        text-align: center !important;     
     }
-    #message{
-        grid-area: message;
-    } */
-
-@media only screen and (max-width: 800px) {
-    .services{
-        flex-direction: column;
-    }
-    .service{
-        /* display: inline; */
-        border: 1px solid rgba(0, 0, 0, 0.25);
-        border-radius: 1rem;
-
+    #headings{
+        margin-left: 10rem;
     }
 
 }
 
-@media only screen and (max-width: 832px) {
-    ul#nav{
-        display: none;
-    }
-    #ham{
-        display: block;
-    }
+
+@media only screen and (min-width: 768px) {
+    
+
+}
+
+.open-nav{
+    display: flex ;
+    flex-direction: row ;
+    
+}
+.hidden {
+    display: none !important;
+ }
+#navlist-div{
+    display: flex;
+    grid-area: ul;
+    flex-direction: row-reverse;
+}
+
+/* HAM */
+.ham-on{
+    transform: rotate(90deg);
+    transition-property: transform;
+    transition-duration: 0.7s;
+}
+.ham-off{
+    transform: rotate(0deg);
+    transition-property: transform;
+    transition-duration: 0.7s;
 }
