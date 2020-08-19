@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="This is web developer Darshan Dhabale's blog and Project Portfolio. 
-      I develop blogging sites, ecommerce sites, web scrapers and custom web applications.
-      I work with Django(Python) and React.  
-      In need of any web development needs please contact: darshan@darshandev.com 
+      content="I am Darshan, a web developer, blogger and YouTuber
+      I code amazing web apps and teach others how to do so.
+      My tech stack - Django(Python), React
+      Anything to do with Python,HTML,CSS,JavaScript, I can get it done.
+      Contact: darshan@darshandev.com 
       "
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +20,43 @@
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
     ></script>
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "226882965322841");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none;"
+        src="https://www.facebook.com/tr?id=226882965322841&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+    <link rel="shortcut icon" type="image/png" href="./favicon.png" />
   </head>
   <body>
     <div class="content">
@@ -171,7 +209,7 @@
               ><span class="label-text">Message</span></label
             >
             <hr id="message_hr" />
-            <button id="submit-btn" type="submit">Submit</button>
+            <button id="submit-btn" type="submit">Send Mail</button>
           </div>
         </form>
         <br /><br />
