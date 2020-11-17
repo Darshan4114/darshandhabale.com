@@ -1,302 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="I am Darshan, a web developer, blogger and YouTuber
-      I code amazing web apps and teach others how to do so.
-      My tech stack - Django(Python), React
-      Anything to do with Python,HTML,CSS,JavaScript, I can get it done.
-      Contact: darshan@darshandev.com 
-      "
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DarshanDev</title>
-    <link rel="stylesheet" href="static/css/main.css" />
-    <link rel="stylesheet" href="static/css/form.css" />
-    <script
-      data-ad-client="ca-pub-8830219782379707"
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    ></script>
-    <!-- Facebook Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "226882965322841");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display: none;"
-        src="https://www.facebook.com/tr?id=226882965322841&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/main.css">
+    <title>DarshanDev: Web Development Services</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <img id="logo" src="./static/img/DarshanDevLogoWhitesvg.svg" alt="">
+                <ul id="nav-ul" class=''>
+                    <li><a href="/projects">projects</a></li>
+                    <li><a href="/blog">blog</a></li>
+                    <li><a href="/contact">contact</a></li>
+                </ul>
+                <img id="ham" class='' src="./static/img/ham.svg" alt="">
+            </nav>
+        </header>
+    
+        <section class="hero">
+            
+            <div class="hero-left"><h1><span>Web Development services</span>for<span> Growing Businesses</span></h1></div>
+            <h2>Making the Modern Web</h2>
+            <div class="hero-right"><img src="./static/img/hero.svg" alt=""></div>
+        </section>
 
-    <!-- Personal FB ad acc. code -->
-    <!-- Facebook Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "344214083269700");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display: none;"
-        src="https://www.facebook.com/tr?id=344214083269700&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
+        <section class="services">
+            <h2>select a service</h2>
+            <div class="services-container">
+                <a href="/backend">
+                <div class="backend-service">
+                    <img  alt="" src="./static/img/backend_service.svg" >
+                    <h3>Backend Development</h3>
+                </div>
+                </a>
+                <a href="/frontend">
 
-    <link rel="shortcut icon" type="image/png" href="./favicon.png" />
-  </head>
-  <body>
-    <div class="content">
-      <nav id="navbar">
-        <div class="brand">
-          <a href="https://www.darshandev.com">
-            <img id="logo" src="static/img/ddevf9.png" alt="" srcset="" />
-          </a>
-        </div>
-        <div id="ham-div" onclick="togglenav()">
-          <img class="ham-img" id="ham" src="./static/img/svg/ham.svg" />
-        </div>
-        <div id="navlist-div" class="">
-          <ul id="navlist" class="folding-nav hidden">
-            <a href="https://blog.darshandev.com">
-              <li>Blog</li>
-            </a>
-            <a href="https://www.darshandev.com/portfolio">
-              <li>Portfolio</li>
-            </a>
-            <a href="#contact-form">
-              <li>Contact Me</li>
-            </a>
-          </ul>
-        </div>
-        <div id="headings">
-          <h1>
-            ROBUST <span id="heading-beautiful">Beautiful</span>
-            <span id="heading-web-apps">Web Apps</span>
-          </h1>
-        </div>
-        <div id="web-dev">
-          <h2 class="sub-headings" id="web-dev">FULLSTACK WEB DEVELOPER</h2>
-          <h2 class="sub-headings" id="resume">
-            <a href="static/pdf/dkd_resume.pdf"> Download Resume</a>
-          </h2>
-        </div>
-      </nav>
+                <div class="frontend-service">
+                    <img  alt="" src="./static/img/frontend_service.svg" >
+                    <h3>Frontend Development</h3>
+                </div>
+                </a>
+                <a href="/fullstack">
 
-      <div id="services">
-        <div class="service" id="service-project">
-          <a href="https://github.com/darshan4114">
-            <div>
-              <img src="./static/img/github.png" alt="" />
-              <h2>Check out</h2>
-              <h2>my</h2>
-              <h2 class="bold">PROJECTS</h2>
-            </div>
-          </a>
-        </div>
-        <div class="service" id="service-quote">
-          <a href="#contact-form">
-            <div>
-              <img
-                src="https://img.icons8.com/ios-glyphs/30/000000/quote-right.png"
-              />
-              <h2>Get</h2>
-              <h2 class="bold">PERSONAL</h2>
-              <h2>Quote</h2>
-            </div>
-          </a>
-        </div>
-        <div class="service" id="service-learn">
-          <a href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
-            <div>
-              <img
-                src="https://img.icons8.com/ios/50/000000/youtube-play.png"
-              />
-              <h2 class="bold">LEARN</h2>
-              <h2>Web</h2>
-              <h2>Development</h2>
-            </div>
-          </a>
-        </div>
-      </div>
+                <div class="fullstack-service">
+                    <img  alt="" src="./static/img/fullstack_service.svg" >
+                    <h3>Fullstack Development</h3>
 
-      <h2 class="sub-headings" id="skills-heading">SKILLS</h2>
-      <div class="skills">
-        <div class="skill" id="skill-django">
-          <img src="./static/img/django.webp" alt="" />
-        </div>
-        <div class="skill" id="skill-python">
-          <img src="./static/img/python.png" alt="" />
-        </div>
-        <div class="skill" id="skill-react">
-          <img src="./static/img/react.webp" alt="" />
-        </div>
-        <div class="skill" id="skill-html">
-          <img src="https://img.icons8.com/color/200/000000/html-5.png" />
-        </div>
-        <div class="skill" id="skill-css">
-          <img src="https://img.icons8.com/color/200/000000/css3.png" />
-        </div>
-        <div class="skill" id="skill-javascript">
-          <img src="https://img.icons8.com/color/200/000000/javascript.png" />
-        </div>
-        <div class="skill" id="skill-aws">
-          <img
-            src="https://img.icons8.com/color/200/000000/amazon-web-services.png"
-          />
-        </div>
-        <!-- <div class="skill" id="skill-react">
-          <img src="./static/img/react.webp" alt="" />
-        </div> -->
-      </div>
-
-      <!-- Contact-form -->
-      <div class="box">
-        <a name="contact-form"></a>
-        <h2>Get in Contact</h2>
-        <form netlify action="" name="message-form" method="POST">
-          <div class="part">
-            <div class="part mini-part" id="name">
-              <input
-                placeholder="Name"
-                type="text"
-                name="name"
-                id="name"
-                required
-              />
-              <label class="label-name" for="name">
-                <span class="label-text">Name</span>
-              </label>
+                </div>
+                </a>
             </div>
-            <div class="part mini-part" id="email">
-              <input
-                placeholder="Email"
-                type="email"
-                name="email"
-                id="email"
-                required
-              />
-              <label class="label-name" for="email">
-                <span class="label-text">Email</span>
-              </label>
-            </div>
-          </div>
-          <div class="part" id="message">
-            <textarea
-              name="message_txt"
-              maxlength="10000"
-              placeholder="Your Message"
-              id="id_message_txt"
-              required
-              cols="30"
-              rows="12"
-              wrap="hard"
-            ></textarea>
-            <label class="label-name" id="message-label" for="id_message_txt"
-              ><span class="label-text">Message</span></label
-            >
-            <hr id="message_hr" />
-            <button id="submit-btn" type="submit">Send Mail</button>
-          </div>
-        </form>
-        <br /><br />
-        <br /><br />
-        <br /><br />
-        <br /><br />
-      </div>
+            <p>Not sure what you need? No worries <a href="/help-me-choose"> <em> <u>click here </u></em></a></p>
+        </section>
     </div>
-    <script>
-      const ham = document.getElementById("ham");
-      const navlistDiv = document.querySelector("#navlist-div");
-      const navList = document.querySelector("#navlist");
-      const nav = document.getElementById("navbar");
-      const vw = Math.max(
-        document.documentElement.clientWidth || 0,
-        window.innerWidth || 0
-      );
-      //  const ham = document.getElementById('ham-div').firstChild;
-      var width, height;
-      window.onresize = window.onload = function () {
-        width = this.innerWidth;
-        height = this.innerHeight;
-        if (width > 599) {
-          ham.classList.add("hidden");
-          ham.classList.remove("ham-on");
-          navlist.classList.add("open-nav");
-          navlist.classList.remove("hidden");
-        } else {
-          ham.classList.remove("hidden");
-          navlist.classList.remove("open-nav");
-          navlist.classList.add("hidden");
-        }
-      };
 
-      function togglenav() {
-        // const ham = document.getElementById('ham-div').firstChild;
-        ham.classList.add("ham-off");
-
-        if (navlist.classList.contains("hidden")) {
-          navlist.classList.toggle("hidden");
-          // navlistDiv.classList.toggle('open-nav');
-          ham.classList.replace("ham-off", "ham-on");
-        } else {
-          navlist.classList.toggle("hidden");
-          ham.classList.replace("ham-on", "ham-off");
-          // navlist.classList.toggle('open-nav')
-        }
-      }
-    </script>
-  </body>
+<script src="./static/js/nav.js"></script>
+</body>
 </html>
