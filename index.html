@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/form.css">
     <link rel="stylesheet" href="./static/css/main.css">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <title>DarshanDev: Web Development Services</title>
 </head>
 <body>
@@ -13,8 +15,8 @@
                 <img id="logo" src="./static/img/DarshanDevLogoWhitesvg.svg" alt="">
                 <ul id="nav-ul" class=''>
                     <li><a href="/projects">projects</a></li>
-                    <li><a href="/blog">blog</a></li>
-                    <li><a href="/contact">contact</a></li>
+                    <li><a href="https://blog.darshandev.tech">blog</a></li>
+                    <li><a href="#contact-form">contact</a></li>
                 </ul>
                 <img id="ham" class='' src="./static/img/ham.svg" alt="">
             </nav>
@@ -22,8 +24,12 @@
     
         <section class="hero">
             
-            <div class="hero-left"><h1><span>Web Development services</span>for<span> Growing Businesses</span></h1></div>
-            <h2>Making the Modern Web</h2>
+            <div class="hero-left"><h1><span>Web Development services</span>for <span>Growing Businesses<img id="growth" src="./static/img/growth.svg"/></span> </h1>
+                <h2>I am a Full-stack Web Developer</h2>
+                <h2>I can help you build web apps for your business</h2>
+            </div>
+            <p id="typewriter"></p>
+            <!-- <h2>Architect of the modern Web!</h2> -->
             <div class="hero-right"><img src="./static/img/hero.svg" alt=""></div>
         </section>
 
@@ -54,8 +60,104 @@
             </div>
             <p>Not sure what you need? No worries <a href="/help-me-choose"> <em> <u>click here </u></em></a></p>
         </section>
+
+        <section class="skills">
+          
+      <h2 class="sub-headings" id="skills-heading">SKILLS</h2>
+    
+        <div class="skill" id="skill-django">
+          <img src="./static/img/django.webp" alt="" />
+        </div>
+        <div class="skill" id="skill-python">
+          <img src="./static/img/python.png" alt="" />
+        </div>
+        <div class="skill" id="skill-react">
+          <img src="./static/img/react.webp" alt="" />
+        </div>
+        <div class="skill" id="skill-html">
+          <img src="https://img.icons8.com/color/200/000000/html-5.png" />
+        </div>
+        <div class="skill" id="skill-css">
+          <img src="https://img.icons8.com/color/200/000000/css3.png" />
+        </div>
+        <div class="skill" id="skill-javascript">
+          <img src="https://img.icons8.com/color/200/000000/javascript.png" />
+        </div>
+        <div class="skill" id="skill-aws">
+          <img
+            src="https://img.icons8.com/color/200/000000/amazon-web-services.png"
+          />
+        </div>
+        <!-- <div class="skill" id="skill-react">
+          <img src="./static/img/react.webp" alt="" />
+        </div> -->
+      
+        </section>
+
+        <section class="contact-form">
+            <!-- Contact-form -->
+      <div class="box">
+        <a name="contact-form"></a>
+        <h2>Get in Contact</h2>
+        <form netlify action="" name="message-form" method="POST">
+          <div class="part">
+            <div class="part mini-part" id="name">
+              <input
+                placeholder="Name"
+                type="text"
+                name="name"
+                id="name"
+                required
+              />
+              <label class="label-name" for="name">
+                <span class="label-text">Name</span>
+              </label>
+            </div>
+            <div class="part mini-part" id="email">
+              <input
+                placeholder="Email"
+                type="email"
+                name="email"
+                id="email"
+                required
+              />
+              <label class="label-name" for="email">
+                <span class="label-text">Email</span>
+              </label>
+            </div>
+          </div>
+          <div class="part" id="message">
+            <textarea
+              name="message_txt"
+              maxlength="10000"
+              placeholder="Your Message"
+              id="id_message_txt"
+              required
+              cols="30"
+              rows="12"
+              wrap="hard"
+            ></textarea>
+            <label class="label-name" id="message-label" for="id_message_txt"
+              ><span class="label-text">Message</span></label
+            >
+            <hr id="message_hr" />
+            <button id="submit-btn" type="submit">Send Mail</button>
+          </div>
+        </form>
+        <br /><br />
+        <br /><br />
+        <br /><br />
+        <br /><br />
+      </div>
+        </section>
+
+
     </div>
 
 <script src="./static/js/nav.js"></script>
+<script src="./static/js/typewriter.js"></script>
+<script defer >
+    setTimeout(typeWriter(), 3000);
+</script>
 </body>
 </html>

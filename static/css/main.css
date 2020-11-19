@@ -4,6 +4,7 @@
 :root{
     --primary-color: #222433;
     --secondary-color: #474750;
+    --logo-color: #38b6ff;
     --container-width: 82rem;
 }
 
@@ -16,7 +17,8 @@
 html,body{
     width: 100vw;
     font-family: 'Roboto', sans-serif;
-    color: var(--primary-color)
+    color: var(--primary-color);
+    font-size: 12px;
 }
 
 h1, h2, h3{
@@ -53,7 +55,7 @@ section{
 .container{
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 img{
@@ -106,7 +108,7 @@ a{
 
 .hero{
     display: grid;
-    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 35rem 5rem;
     grid-template-areas: 
     'hero-left'
     'hero-right'
@@ -115,48 +117,81 @@ a{
 
 .hero-left{
     grid-area: hero-left;
-    display: flex;
-    flex-direction: column;
 }
+.hero-left #growth{
+    width: 4rem;
+}
+
 .hero-right{
     grid-area: hero-right;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.hero-left span img{
+    margin:0;
 }
 
 .hero h1{
-    flex: 1;
     order:1;
     font-family: 'Montserrat', sans-serif;
     color: var(--primary-color);
     font-weight: bold;
     font-size: 2.5rem;
     line-height: 2.7rem;
+    margin-bottom: 2.5rem;
 
 }
 .hero h1 span:nth-of-type(1){
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: 1.5rem;
-    line-height: 1.6rem;
+    font-size: 2rem;
+    /* line-height: 1.6rem; */
     display: block;
+    /* margin-bottom: -1.1rem; */
 }
 .hero h1 span:nth-of-type(2){
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
     color: #38b6ff;
+    position: relative;
+    display: inline-block;
+    
+
 }
 
-.hero h2{
-    flex:1;
+.hero h1 span:nth-of-type(2)::after{
+    content: "";
+    position: absolute;
+    animation-name: underline-animation;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    left:0;
+    bottom:-5px;
+    height: 0.35rem;
+    background-color: rgb(2, 179, 46);
+    transition: transform 0.4s;
+}
+
+.hero h2, .hero h3{
     order:2;
     color: var(--secondary-color);
     font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-align: center;
-    display: block;
+    font-weight: 500;
+    margin-left: 3rem;
+}
+
+.hero p{
     grid-area: heading1;
+    text-align: center;
 }
 
 .hero img{
     margin-bottom: 1.75rem;
+    max-width: 40rem;
+    flex: 0 1 40rem;
 }
 
 
@@ -175,7 +210,7 @@ a{
     margin: 0.2rem;
     padding: 1.2rem;
     position:relative;
-    transition: transform .4s;
+    transition: all .4s;
 }
 
 .services-container a div::before{
@@ -183,47 +218,52 @@ a{
     position:absolute;
     content:"";
     width:100%;
-    height:50%;
+    height:20%;
     left:50%;
     margin-left:calc( -50% - 1px );
     top:25%;
-    border-color:rgba(200,200,200,0);
+    border-color:#fff;
     border-style:solid;
     border-radius: 1rem;
-    border-width:0 1px;
+    border-width:0 0.2px;
     /* background-color: red; */
 }
 .services-container a div::after{
     transition: all 0.4s;  
     position:absolute;
     content:"";
-    width:50%;
+    width:20%;
     height:100%;
     left:50%;
     margin-left:-25%;
     top:0;
-    border-color:rgba(200,200,200,0);
+    border-color:#fff;
     border-style:solid;
     border-radius: 1rem;
-    border-width:1px 0;
+    border-width:0.2px 0;
     /* background-color:green; */
 }
 
 .services-container a div:hover::before{
     height:100%;
     top:0%;
-    border-color:rgba(90,90,90,1);
+    border:1.1px solid #38b6ff;
     
 }
 .services-container a div:hover::after{
     width:100%;
     margin-left:-50%;
-    border-color:rgba(90,90,90,1);
+    border:1.1px solid #38b6ff;
 }
 
 
-.services-container a div:hover{
+.services-container a div:hover,.services-container a div:hover h3{
 transform: scale(1.02);
+color: var(--logo-color);
+}
+
+.services-container a div:hover h3{
+    transition: all .5s;
 }
 
 .services-container img{
@@ -234,11 +274,20 @@ transform: scale(1.02);
 }
 
 
-@media only screen and (min-width: 768px){
+/* FORM */
+section.contact-form{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+@media only screen and (min-width: 1000px){
+    html{
+        font-size: 14px;
+    }
     .hero{
         display: grid;
         grid-template-rows: 6fr 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(35rem,1fr) minmax(35rem,1fr);
         grid-template-areas: 
         'hero-left hero-right'
         'heading1 heading1';
@@ -251,9 +300,14 @@ transform: scale(1.02);
         position: relative;
         top: 0px;
     }
-    
+    .hero h1 span:nth-of-type(1){
+        margin-bottom: -.1rem;
+    }
 }
 @media only screen and (min-width: 1200px){
+    html{
+        font-size: 16px;
+    }
     .services-container{
         place-items: center;
         grid-template-columns: 1fr 1fr 1fr;
@@ -270,5 +324,14 @@ transform: scale(1.02);
         height: 18rem;
         max-width: 20rem;
         
+    }
+} 
+
+@keyframes underline-animation{
+    from{
+        width: 0;
+    }
+    to{
+        width:100%;
     }
 }

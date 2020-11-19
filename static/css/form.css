@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@500&display=swap');
+
 @font-face {
   font-family: open-sans;
   src: url(../font/OpenSans-Regular.ttf);
@@ -6,8 +8,8 @@
   box-sizing: border-box;
 }
 .box {
-  flex: 1;
-  align-self: center;
+  flex: 0 1 40rem;
+  align-self: right;
   height: 60vh;
   width: 50rem;
   max-width: 100vw;
@@ -19,9 +21,9 @@
   margin-bottom: 15rem;
 }
 .box h2 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 1.5rem;
   line-height: 42px;
 }
 
