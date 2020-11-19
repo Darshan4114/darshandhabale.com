@@ -2,6 +2,7 @@ var i = 0;
 var speed = 50; /* The speed/duration of the effect in milliseconds */
 var text = "Architect of the modern Web!"
 function typeWriter() {
+  // setTimeout(5000)
   if (i < text.length) {
     document.getElementById("typewriter").innerHTML += text.charAt(i);
     i++;

@@ -24,7 +24,7 @@
     
         <section class="hero">
             
-            <div class="hero-left"><h1><span>Web Development services</span>for <span>Growing Businesses<img id="growth" src="./static/img/growth.svg"/></span> </h1>
+            <div class="hero-left"><h1><span>Web Development Services</span>for <span>Growing Businesses<img id="growth" src="./static/img/growth.svg"/></span> </h1>
                 <h2>I am a Full-stack Web Developer</h2>
                 <h2>I can help you build web apps for your business</h2>
             </div>
@@ -32,74 +32,78 @@
             <!-- <h2>Architect of the modern Web!</h2> -->
             <div class="hero-right"><img src="./static/img/hero.svg" alt=""></div>
         </section>
+        <section class="skills">
+          <h2 class="subheading" id="skills-heading">skills</h2>
+          <div class="skills-container">
+            <div class="skill" id="skill-django">
+              <img src="./static/img/django.webp" alt="" />
+            </div>
+            <div class="skill" id="skill-python">
+              <img src="./static/img/python.png" alt="" />
+            </div>
+            <div class="skill" id="skill-react">
+              <img src="./static/img/react.webp" alt="" />
+            </div>
+            <div class="skill" id="skill-html">
+              <img src="https://img.icons8.com/color/200/000000/html-5.png" />
+            </div>
+            <div class="skill" id="skill-css">
+              <img src="https://img.icons8.com/color/200/000000/css3.png" />
+            </div>
+            <div class="skill" id="skill-javascript">
+              <img src="https://img.icons8.com/color/200/000000/javascript.png" />
+            </div>
+            <div class="skill" id="skill-aws">
+              <img
+                src="https://img.icons8.com/color/200/000000/amazon-web-services.png"
+              />
+            </div>
+          </div>      
+        </section>
 
         <section class="services">
-            <h2>select a service</h2>
+            <h2 class="subheading">select a service
+            </h2>
             <div class="services-container">
-                <a href="/backend">
-                <div class="backend-service">
+                <a href="#contact-form"  id="backend-service" data-dev="BE">
+                <div>
                     <img  alt="" src="./static/img/backend_service.svg" >
                     <h3>Backend Development</h3>
                 </div>
                 </a>
-                <a href="/frontend">
 
-                <div class="frontend-service">
+                <a href="#contact-form" id="frontend-service" data-dev="FE">
+                <div>
                     <img  alt="" src="./static/img/frontend_service.svg" >
                     <h3>Frontend Development</h3>
                 </div>
                 </a>
-                <a href="/fullstack">
 
-                <div class="fullstack-service">
+                <a href="#contact-form" id="fullstack-service" data-dev="FS">
+                <div>
                     <img  alt="" src="./static/img/fullstack_service.svg" >
                     <h3>Fullstack Development</h3>
-
                 </div>
                 </a>
             </div>
             <p>Not sure what you need? No worries <a href="/help-me-choose"> <em> <u>click here </u></em></a></p>
         </section>
 
-        <section class="skills">
-          
-      <h2 class="sub-headings" id="skills-heading">SKILLS</h2>
-    
-        <div class="skill" id="skill-django">
-          <img src="./static/img/django.webp" alt="" />
-        </div>
-        <div class="skill" id="skill-python">
-          <img src="./static/img/python.png" alt="" />
-        </div>
-        <div class="skill" id="skill-react">
-          <img src="./static/img/react.webp" alt="" />
-        </div>
-        <div class="skill" id="skill-html">
-          <img src="https://img.icons8.com/color/200/000000/html-5.png" />
-        </div>
-        <div class="skill" id="skill-css">
-          <img src="https://img.icons8.com/color/200/000000/css3.png" />
-        </div>
-        <div class="skill" id="skill-javascript">
-          <img src="https://img.icons8.com/color/200/000000/javascript.png" />
-        </div>
-        <div class="skill" id="skill-aws">
-          <img
-            src="https://img.icons8.com/color/200/000000/amazon-web-services.png"
-          />
-        </div>
-        <!-- <div class="skill" id="skill-react">
-          <img src="./static/img/react.webp" alt="" />
-        </div> -->
-      
-        </section>
-
+        
         <section class="contact-form">
             <!-- Contact-form -->
       <div class="box">
         <a name="contact-form"></a>
-        <h2>Get in Contact</h2>
-        <form netlify action="" name="message-form" method="POST">
+        
+        <form netlify action="" name="message-form" method="GET" id="contact-form">
+          <h2 class="subheading">get in contact for  &nbsp;&nbsp; <div class="custom-select">
+            <select class="subheading" name="development" id="development">
+              <option value="FE">Frontend</option>
+              <option value="BE">Backend</option>
+              <option value="FS">Fullstack</option>
+              <option value="SE">Something Else</option>
+            </select> 
+          </div> </h2>
           <div class="part">
             <div class="part mini-part" id="name">
               <input
@@ -156,6 +160,9 @@
 
 <script src="./static/js/nav.js"></script>
 <script src="./static/js/typewriter.js"></script>
+<script defer src="./static/js/auto_select_form_element.js" ></script>
+<script defer src="./static/js/custom_select_element.js" ></script>
+
 <script defer >
     setTimeout(typeWriter(), 3000);
 </script>

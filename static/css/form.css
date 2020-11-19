@@ -20,12 +20,12 @@
   top: 10rem;
   margin-bottom: 15rem;
 }
-.box h2 {
+/* .box h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 42px;
-}
+} */
 
 .part {
   height: 5rem;
@@ -168,6 +168,7 @@ h1.contact-h1 {
   border-radius: 0.7rem;
   margin-top: 1.5rem;
   outline: none;
+  transition: all 0.32s ease;
 }
 #submit-btn:hover {
   transition: all 0.32s ease;
@@ -176,9 +177,74 @@ h1.contact-h1 {
   color: #f9f9f9;
 }
 
-#submit-btn:not(:hover) {
-  transition: all 0.32s ease;
+.custom-select {
+  width: 150px;
+  position: absolute;
+  right:0.1vw;
+  font-family: Arial;
 }
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: #38b6ff;
+  position: absolute;
+  left: 0;
+  bottom:0;
+  border-radius: 0.5rem;
+  width: 11.5rem;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 4px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #38b6ff;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 0.5rem;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
 
 @media only screen and (min-width: 920px) {
   .mini-part {
