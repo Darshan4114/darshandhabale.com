@@ -91,21 +91,29 @@
 
         
         <section class="contact-form">
-            <!-- Contact-form -->
-      <div class="box">
-        <a name="contact-form"></a>
-        
-        <form netlify action="" name="message-form" method="GET" id="contact-form">
-          <h2 class="subheading">get in contact for  &nbsp;&nbsp; <div class="custom-select">
+          <div class="headings">
+            <h2 class="subheading">Want to get in contact?</h2>
+            <h3 >Message me. Or let me get back to you :)
+          </div>
+          
+            <!-- <div class="custom-select">
             <select class="subheading" name="development" id="development">
               <option value="FE">Frontend</option>
               <option value="BE">Backend</option>
               <option value="FS">Fullstack</option>
               <option value="SE">Something Else</option>
             </select> 
-          </div> </h2>
-          <div class="part">
-            <div class="part mini-part" id="name">
+          </div> -->
+        </h3>
+        <a name="contact-form"></a>
+            <!-- Contact-form -->
+      <div class="box1">
+        
+        
+        
+        <form netlify action="" name="contact-form" method="POST" id="contact-form">
+          
+            <div class="part" id="name">
               <input
                 placeholder="Name"
                 type="text"
@@ -117,7 +125,7 @@
                 <span class="label-text">Name</span>
               </label>
             </div>
-            <div class="part mini-part" id="email">
+            <div class="part" id="email">
               <input
                 placeholder="Email"
                 type="email"
@@ -129,7 +137,7 @@
                 <span class="label-text">Email</span>
               </label>
             </div>
-          </div>
+          
           <div class="part" id="message">
             <textarea
               name="message_txt"
@@ -145,13 +153,22 @@
               ><span class="label-text">Message</span></label
             >
             <hr id="message_hr" />
-            <button id="submit-btn" type="submit">Send Mail</button>
+            <button id="submit-btn" type="submit">Send Message</button>
           </div>
         </form>
-        <br /><br />
-        <br /><br />
-        <br /><br />
-        <br /><br />
+      </div>
+      <div class="box2">
+        <form netlify action="" name="get-back-form" class="contact-back-form" id="contact-back-form">
+          <div class="part">
+              <input type="text" id="email_phone" placeholder="Email_Phone" name="email_phone" required>
+              <label class="label-name" for="email_phone">
+                <span class="label-text">Email or Phone</span>
+              </label>           
+          </div>
+          <div class="part no-border">
+            <button id="submit-btn2" type="submit">Get back to me</button>
+          </div>
+        </form>
       </div>
         </section>
 
@@ -160,8 +177,8 @@
 
 <script src="./static/js/nav.js"></script>
 <script src="./static/js/typewriter.js"></script>
-<script defer src="./static/js/auto_select_form_element.js" ></script>
-<script defer src="./static/js/custom_select_element.js" ></script>
+<!-- <script defer src="./static/js/auto_select_form_element.js" ></script> -->
+<!-- <script defer src="./static/js/custom_select_element.js" ></script> -->
 
 <script defer >
     setTimeout(typeWriter(), 3000);

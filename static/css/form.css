@@ -7,28 +7,64 @@
 * {
   box-sizing: border-box;
 }
-.box {
-  flex: 0 1 40rem;
-  align-self: right;
-  height: 60vh;
-  width: 50rem;
-  max-width: 100vw;
+.box1, .box2 {
+  text-align: center;
+  max-width: 60rem;
   padding: 1.5rem;
   position: relative;
-  text-align: center;
-  font-weight: normal;
-  top: 10rem;
-  margin-bottom: 15rem;
 }
-/* .box h2 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 42px;
-} */
+.box1 div form{
+  border-bottom: 1px solid #222;
+}
+.box1 form{
+  display: grid;
+  grid-template-rows: 1fr 1fr minmax(18rem, 3fr) 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  'name'
+  'email'
+  'message'
+  'send';
+  border-bottom: 1.75px dashed var(--logo-color);
+}
+.no-border{
+  border:none !important;
+}
+
+#name{
+  grid-area:name;
+}
+#email{
+  grid-area:email;
+}
+#message{
+  grid-area:message;
+}
+#submit-btn{
+  grid-area:send;
+}
+
+.box2{
+  padding: 1.5rem;
+  position: relative;
+}
+.box2 form{
+   display: grid;
+  grid-template-rows:1fr 1fr;
+}
+.box2 form .part{
+  text-align: center;
+}
+.box1 form h2 {
+  /* display: flex; */
+}
+.box1 form h2 div.custom-select{
+  flex: 0 1 7rem;
+}
 
 .part {
   height: 5rem;
+  border-bottom: 2px solid #222;
   position: relative;
 }
 .mini-part {
@@ -42,10 +78,11 @@ textarea {
   height: 100%;
   padding-left: 0.5rem;
   color: #595f6e;
-  background-color: #f9f9f9;
+  background-color: #fff;
   padding-top: 0.5rem;
   border: none;
   outline: 0;
+  resize: none;
 }
 .part label {
   pointer-events: none;
@@ -65,7 +102,7 @@ label#message-label {
   border: none;
 }
 div.part label::before {
-  background-color: #f9f9f9;
+  background-color: #fff;
 }
 div.part label::after {
   content: "";
@@ -81,7 +118,7 @@ div.part input:focus + label::after {
   transition: all 0.3s ease;
 }
 div.part input::placeholder {
-  color: #f9f9f9;
+  color: #fff;
 }
 div.part input:focus + .label-name .label-text,
 div.part input:not(:placeholder-shown) + .label-name .label-text,
@@ -101,7 +138,7 @@ div.part #message-label .label-text {
   transition: all 0.3s ease;
 }
 div#message {
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 }
 
 hr#message_hr {
@@ -121,7 +158,7 @@ div.part textarea:not(:placeholder-shown) ~ hr#message_hr {
 }
 
 div.part textarea::placeholder {
-  color: #f9f9f9;
+  color: #fff;
 }
 
 div.part textarea {
@@ -154,7 +191,7 @@ h1.contact-h1 {
   z-index: 5;
 }
 
-#submit-btn {
+#submit-btn, #submit-btn2 {
   width: 17rem;
   z-index: 5;
   color: #38b6ff;
@@ -170,7 +207,7 @@ h1.contact-h1 {
   outline: none;
   transition: all 0.32s ease;
 }
-#submit-btn:hover {
+#submit-btn:hover , #submit-btn2:hover {
   transition: all 0.32s ease;
   background-color: #38b6ff;
   border: 3px solid #4dbeff;
@@ -209,7 +246,7 @@ h1.contact-h1 {
   border-color: #fff transparent transparent transparent;
 }
 
-/* Point the arrow upwards when the select box is open (active): */
+/* Point the arrow upwards when the select box1 is open (active): */
 .select-selected.select-arrow-active:after {
   border-color: transparent transparent #fff transparent;
   top: 7px;
@@ -235,7 +272,7 @@ h1.contact-h1 {
   border-radius: 0.5rem;
 }
 
-/* Hide the items when the select box is closed: */
+/* Hide the items when the select box1 is closed: */
 .select-hide {
   display: none;
 }
@@ -246,21 +283,19 @@ h1.contact-h1 {
 
 
 
-@media only screen and (min-width: 920px) {
-  .mini-part {
-    width: 50%;
-    display: inline-block;
+@media only screen and (min-width: 1000px) {
+  .box1 form{
+    grid-template-rows: 1fr minmax(3fr,10rem) 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'name email'
+    'message message'
+    'send send';
+    padding: 2.5rem;
+    border-right: 1.5px dashed var(--logo-color);
+    border-bottom:0;
   }
-  .mini-part#name {
-    float: left;
-  }
-  .mini-part#email {
-    float: right;
-  }
-  .part#message {
-    margin-top: 2rem;
-  }
-  .box h1 {
+  .box1 h1 {
     font-size: 5rem;
   }
 }
