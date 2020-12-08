@@ -1,64 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@500&display=swap');
-
+@font-face {
+  font-family: montserrat-medium;
+  src: url("../font/montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: roboto;
+  src: url("../font/roboto-Medium.ttf") format("truetype");
+}
 @font-face {
   font-family: open-sans;
-  src: url(../font/OpenSans-Regular.ttf);
+  src: url(../font/OpenSans-Regular.ttf) format("truetype");
 }
 * {
   box-sizing: border-box;
 }
-.box1, .box2 {
+.box1,
+.box2 {
   text-align: center;
   max-width: 60rem;
   padding: 1.5rem;
   position: relative;
 }
-.box1 div form{
+.box1 div form {
   border-bottom: 1px solid #222;
 }
-.box1 form{
+.box1 form {
   display: grid;
   grid-template-rows: 1fr 1fr minmax(18rem, 3fr) 1fr;
   grid-template-columns: 1fr;
   grid-template-areas:
-  'name'
-  'email'
-  'message'
-  'send';
+    "name"
+    "email"
+    "message"
+    "send";
   border-bottom: 1.75px dashed var(--logo-color);
 }
-.no-border{
-  border:none !important;
+.no-border {
+  border: none !important;
 }
 
-#name{
-  grid-area:name;
+#name {
+  grid-area: name;
 }
-#email{
-  grid-area:email;
+#email {
+  grid-area: email;
 }
-#message{
-  grid-area:message;
+#message {
+  grid-area: message;
 }
-#submit-btn{
-  grid-area:send;
+#submit-btn {
+  grid-area: send;
 }
 
-.box2{
+.box2 {
   padding: 1.5rem;
   position: relative;
 }
-.box2 form{
-   display: grid;
-  grid-template-rows:1fr 1fr;
+.box2 form {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
-.box2 form .part{
+.box2 form .part {
   text-align: center;
 }
 .box1 form h2 {
   /* display: flex; */
 }
-.box1 form h2 div.custom-select{
+.box1 form h2 div.custom-select {
   flex: 0 1 7rem;
 }
 
@@ -182,7 +189,7 @@ h1.contact-h1 {
   color: #333;
   text-align: center;
   font-size: 5rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "roboto", sans-serif;
   font-weight: 400;
 }
 
@@ -191,7 +198,8 @@ h1.contact-h1 {
   z-index: 5;
 }
 
-#submit-btn, #submit-btn2 {
+#submit-btn,
+#submit-btn2 {
   width: 17rem;
   z-index: 5;
   color: #38b6ff;
@@ -207,7 +215,8 @@ h1.contact-h1 {
   outline: none;
   transition: all 0.32s ease;
 }
-#submit-btn:hover , #submit-btn2:hover {
+#submit-btn:hover,
+#submit-btn2:hover {
   transition: all 0.32s ease;
   background-color: #38b6ff;
   border: 3px solid #4dbeff;
@@ -217,7 +226,7 @@ h1.contact-h1 {
 .custom-select {
   width: 150px;
   position: absolute;
-  right:0.1vw;
+  right: 0.1vw;
   font-family: Arial;
 }
 
@@ -229,7 +238,7 @@ h1.contact-h1 {
   background-color: #38b6ff;
   position: absolute;
   left: 0;
-  bottom:0;
+  bottom: 0;
   border-radius: 0.5rem;
   width: 11.5rem;
 }
@@ -253,7 +262,8 @@ h1.contact-h1 {
 }
 
 /* style the items (options), including the selected item: */
-.select-items div,.select-selected {
+.select-items div,
+.select-selected {
   color: #ffffff;
   padding: 8px 16px;
   border: 1px solid transparent;
@@ -277,23 +287,22 @@ h1.contact-h1 {
   display: none;
 }
 
-.select-items div:hover, .same-as-selected {
+.select-items div:hover,
+.same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-
-
 @media only screen and (min-width: 1000px) {
-  .box1 form{
-    grid-template-rows: 1fr minmax(3fr,10rem) 1fr;
+  .box1 form {
+    grid-template-rows: 1fr minmax(3fr, 10rem) 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-    'name email'
-    'message message'
-    'send send';
+    grid-template-areas:
+      "name email"
+      "message message"
+      "send send";
     padding: 2.5rem;
     border-right: 1.5px dashed var(--logo-color);
-    border-bottom:0;
+    border-bottom: 0;
   }
   .box1 h1 {
     font-size: 5rem;
