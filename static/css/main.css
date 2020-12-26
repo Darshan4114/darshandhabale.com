@@ -12,6 +12,10 @@
   font-family: roboto;
   src: url("../font/roboto-Medium.ttf") format("truetype");
 }
+@font-face {
+  font-family: roboto-light;
+  src: url("../font/Roboto-Light.ttf") format("truetype");
+}
 
 :root {
   --primary-color: #222433;
@@ -135,6 +139,11 @@ a {
 
 .hero-left {
   grid-area: hero-left;
+  text-align: center;
+}
+#question {
+  margin-top: 3rem;
+  /* text-align: left; */
 }
 .hero-left #growth {
   width: 4rem;
@@ -148,6 +157,18 @@ a {
 
 .hero-left span img {
   margin: 0;
+}
+
+.hero-left a {
+  border: 2px solid var(--success-green);
+  background-color: var(--success-green);
+  color: white;
+  margin: 0.5em;
+  border-radius: 0.25em;
+  margin-left: 3rem;
+  padding: 0.5em;
+  font-size: 1.1rem;
+  display: inline-block;
 }
 
 .hero h1 {
@@ -194,8 +215,7 @@ a {
 .hero h3 {
   order: 2;
   color: var(--secondary-color);
-  font-family: "roboto", sans-serif;
-  font-weight: 500;
+  font-family: "roboto-light", sans-serif;
   margin-left: 3rem;
 }
 
