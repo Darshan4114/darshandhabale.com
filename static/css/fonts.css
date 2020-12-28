@@ -1,0 +1,16 @@
+@font-face {
+  font-family: libre-caslon;
+  src: url("../font/LibreCaslonText-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: montserrat-medium;
+  src: url("../font/montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: roboto;
+  src: url("../font/roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: roboto-light;
+  src: url("../font/Roboto-Light.ttf") format("truetype");
+}

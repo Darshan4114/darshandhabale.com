@@ -1,0 +1,107 @@
+/* services */
+.services {
+  text-align: center;
+  margin-bottom: 7rem;
+}
+.services-container {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  grid-template-rows: minmax(27rem, 1fr) minmax(27rem, 1fr) minmax(27rem, 1fr);
+  gap: 0 2rem;
+  margin-bottom: 2rem;
+}
+.services-container a {
+  display: flex;
+}
+.services-container a div {
+  flex: 0 1 35rem;
+  width: 100%;
+  padding-bottom: 30rem;
+  margin: 0.2rem;
+  padding: 1.2rem;
+  position: relative;
+  transition: all 0.4s;
+  max-width: 100%;
+}
+
+.services-container a div::before {
+  transition: all 0.4s;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 20%;
+  left: 50%;
+  margin-left: calc(-50% - 1px);
+  top: 25%;
+  border-color: #ddd;
+  border-style: solid;
+  /* border-radius: 1rem; */
+  border-width: 0 0.2px;
+  /* background-color: red; */
+}
+.services-container a div::after {
+  transition: all 0.4s;
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 100%;
+  left: 50%;
+  margin-left: -25%;
+  top: 0;
+  border-color: #ddd;
+  border-style: solid;
+  /* border-radius: 1rem; */
+  border-width: 0.2px 0;
+  /* background-color:green; */
+}
+
+.services-container a div:hover::before {
+  height: 100%;
+  top: 0%;
+  border: 1.1px solid #38b6ff;
+  border-radius: 1rem;
+}
+.services-container a div:hover::after {
+  width: 100%;
+  margin-left: -50%;
+  border: 1.1px solid #38b6ff;
+  border-radius: 1rem;
+}
+
+.services-container a div:hover,
+.services-container a div:hover h3 {
+  transform: scale(1.05);
+  color: var(--logo-color);
+}
+
+.services-container a div:hover h3 {
+  transition: all 0.5s;
+}
+
+.services-container a div img {
+  flex: 1 1 minmax(20rem, 100%);
+  /* height: 19rem; */
+  width: minmax(20rem, 100%);
+  margin: 0 auto;
+  max-width: 20rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .services-container {
+    /* place-items: center; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .services-container div {
+    margin: 2rem;
+    margin-top: 0;
+    padding: 1rem;
+    max-width: 22rem;
+  }
+  .services-container img {
+    /* flex: 1 1 20rem; */
+    height: 18rem;
+    max-width: 20rem;
+  }
+}

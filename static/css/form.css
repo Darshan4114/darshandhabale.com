@@ -308,3 +308,55 @@ h1.contact-h1 {
     font-size: 5rem;
   }
 }
+
+/* FORM */
+section.contact-form {
+  display: grid;
+  text-align: center;
+  /* place-items: center; */
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr minmax(3fr, 15rem) 1fr;
+  grid-template-areas:
+    "contact-heading"
+    "box1"
+    "box2";
+}
+section.contact-form form {
+  margin: 0 auto;
+}
+.box1 {
+  grid-area: box1;
+  padding-bottom: 2rem;
+}
+.box2 {
+  grid-area: box2;
+}
+
+section.contact-form .headings {
+  grid-area: contact-heading;
+}
+
+#submit-btn {
+  grid-area: submit1;
+}
+#submit-btn2 {
+  grid-area: submit2;
+}
+
+select#development {
+  outline: none;
+  border: none;
+  color: var(--logo-color);
+}
+
+@media only screen and (min-width: 1000px) {
+  section.contact-form {
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr minmax(3fr, 15rem) 1fr;
+    grid-template-areas:
+      "contact-heading contact-heading"
+      "box1 box2";
+  }
+}

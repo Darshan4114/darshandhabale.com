@@ -1,0 +1,69 @@
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 2em;
+}
+
+nav ul {
+  list-style: none;
+  position: relative;
+  top: 0px;
+}
+
+nav {
+  display: flex;
+  margin-bottom: 2.7rem;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+}
+nav ul::after {
+  clip-path: circle(50% at 100% 0);
+  background-color: #222433;
+}
+nav ul li {
+  margin: 0 1rem;
+  font-family: "montserrat-medium", sans-serif;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+#logo {
+  flex: 0 1 7rem;
+  width: 7rem;
+}
+
+#ham {
+  flex: 0 1 2.5rem;
+  width: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.visible {
+  display: block;
+}
+.invisible {
+  display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  .visible {
+    display: flex;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  nav ul {
+    list-style: none;
+    position: relative;
+    top: 0px;
+  }
+}

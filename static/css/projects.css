@@ -1,0 +1,111 @@
+/* Projects */
+.projects-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.projects-container > .card {
+  margin: 2rem;
+  padding: 1rem;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.projects .card .txt {
+  font-size: 1rem;
+  width: 100%;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  bottom: 0;
+  left: 0;
+  transition: var(--project-card-transition);
+  grid-template-rows: 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "project-title project-title"
+    "see-code open-project";
+}
+
+.projects .card::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.692);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 0.5rem;
+  transition: var(--project-card-transition);
+  height: 100%;
+}
+
+.projects-container > .card:hover .txt {
+  margin-bottom: -5rem;
+  height: 7rem;
+  display: grid;
+  grid-template-rows: 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "project-title project-title"
+    "see-code open-project";
+}
+
+.projects-container > .card:hover::before {
+  background-color: transparent;
+  height: 15%;
+  transition-delay: 0.1s;
+}
+.projects-container > .card:hover .txt a {
+  visibility: visible;
+  opacity: 1;
+}
+.projects .card .txt h3 {
+  grid-area: project-title;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.072);
+  padding: 0.35em;
+  border-radius: 0.3rem;
+  font-weight: 300;
+}
+.projects-container > .card:hover .txt h3 {
+  color: #333;
+  background-color: transparent;
+  font-weight: 400;
+}
+.projects .card .txt a {
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--project-card-transition);
+  transition-delay: 0.2s;
+}
+
+.projects .txt h4 {
+  padding: 0.2em;
+  border-radius: 0.5em;
+  margin: 0.2em;
+  font-weight: 300;
+}
+.see-code {
+  grid-area: see-code;
+  display: flex;
+  align-items: center;
+  border: 2px solid #333;
+}
+.open-project {
+  grid-area: open-project;
+  color: white;
+  background-color: var(--success-green);
+  border: 2px solid var(--success-green);
+}
+
+.projects .card .img img {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  section.projects .projects-container > .card {
+    flex: 0 1 27%;
+  }
+}

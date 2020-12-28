@@ -1,0 +1,17 @@
+footer {
+  color: #fff;
+  padding: 1em;
+  font-size: 1.1rem;
+  background-color: #38b6ff;
+}
+footer p {
+  margin: 1em;
+}
+
+#copyright {
+  text-align: center;
+  /* margin: 0 auto; */
+  font-size: 1rem;
+  font-family: montserrat-medium, sans-serif;
+  /* widthrem; */
+}

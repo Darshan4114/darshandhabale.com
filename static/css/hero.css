@@ -1,0 +1,133 @@
+/* HERO */
+
+.hero {
+  display: grid;
+  grid-template-rows: 1fr 35rem 5rem;
+  grid-template-areas:
+    "hero-left"
+    "hero-right"
+    "heading1";
+}
+
+.hero-left {
+  grid-area: hero-left;
+  text-align: center;
+}
+#question {
+  margin-top: 3rem;
+  /* text-align: left; */
+}
+.hero-left #growth {
+  width: 4rem;
+}
+
+.hero-right {
+  grid-area: hero-right;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.hero-left span img {
+  margin: 0;
+}
+
+.hero-left a {
+  border: 2px solid var(--success-green);
+  background-color: var(--success-green);
+  color: white;
+  margin: 0.5em;
+  border-radius: 0.25em;
+  margin-left: 3rem;
+  padding: 0.5em;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+.hero h1 {
+  order: 1;
+  font-family: "montserrat-medium", sans-serif;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 2.7rem;
+  margin-bottom: 2.5rem;
+}
+.hero h1 span:nth-of-type(1) {
+  font-family: "libre-caslon", serif;
+  font-weight: 500;
+  font-size: 2rem;
+  /* line-height: 1.6rem; */
+  display: block;
+  /* margin-bottom: -1.1rem; */
+}
+.hero h1 span:nth-of-type(2) {
+  font-size: 2.5rem;
+  font-family: "roboto", sans-serif;
+  color: #38b6ff;
+  position: relative;
+  display: inline-block;
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+}
+
+.hero h1 span:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  animation-name: underline-animation;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+  left: 0;
+  bottom: -5px;
+  height: 0.35rem;
+  background-color: rgb(2, 179, 46);
+  transition: transform 0.4s;
+}
+
+.hero h2,
+.hero h3 {
+  order: 2;
+  color: var(--secondary-color);
+  font-family: "roboto-light", sans-serif;
+  margin-left: 3rem;
+}
+
+.hero p {
+  grid-area: heading1;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.hero img {
+  margin-bottom: 1.75rem;
+  max-width: 40rem;
+  flex: 0 1 40rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .hero {
+    display: grid;
+    grid-template-rows: 6fr 1fr;
+    grid-template-columns: minmax(35rem, 1fr) minmax(35rem, 1fr);
+    grid-template-areas:
+      "hero-left hero-right"
+      "heading1 heading1";
+  }
+
+  .hero h1 span:nth-of-type(1) {
+    margin-bottom: -0.1em;
+  }
+}
+
+/* Animations */
+@keyframes underline-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

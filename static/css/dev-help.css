@@ -3,19 +3,19 @@
   --secondary-color: #474750;
   --logo-color: #38b6ff;
   --success-green: rgb(43, 209, 37);
-  --container-width: 82rem;
+  --container-width: 80vw;
   --project-card-transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 * {
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
   box-sizing: border-box;
 }
 html,
 body {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 body {
