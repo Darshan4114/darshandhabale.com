@@ -15,12 +15,15 @@ nav {
   margin-bottom: 2.7rem;
   justify-content: space-between;
 }
+nav a {
+  display: inline-block;
+}
 
 nav ul {
   list-style: none;
-  position: absolute;
+  /* position: absolute;
   top: 5rem;
-  right: 5rem;
+  right: 5rem; */
 }
 nav ul::after {
   clip-path: circle(50% at 100% 0);
@@ -32,6 +35,10 @@ nav ul li {
   color: var(--primary-color);
   font-weight: bold;
   font-size: 1.15rem;
+}
+
+#home-link {
+  flex: 0 1 7rem;
 }
 
 #logo {
@@ -55,15 +62,26 @@ a {
   display: none;
 }
 
+.btn-inverse {
+  background-color: #444;
+  color: white;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+}
+
 @media only screen and (min-width: 1000px) {
   .visible {
     display: flex;
   }
-}
-@media only screen and (min-width: 1000px) {
   nav ul {
     list-style: none;
     position: relative;
     top: 0px;
+  }
+  /* a {
+    margin: auto auto;
+  } */
+  li {
+    padding: auto 0;
   }
 }

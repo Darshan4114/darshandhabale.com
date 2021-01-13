@@ -3,7 +3,7 @@
   --secondary-color: #474750;
   --logo-color: #38b6ff;
   --success-green: rgb(43, 209, 37);
-  --container-width: 82rem;
+  --container-width: 52rem;
   --project-card-transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -15,7 +15,8 @@
 
 html,
 body {
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   font-family: "roboto", sans-serif;
   color: var(--primary-color);
   scroll-behavior: smooth;
@@ -43,8 +44,9 @@ section {
 
 .container {
   max-width: var(--container-width);
+  max-width: 90vw;
   margin: 0 auto;
-  padding: 2em;
+  /* padding: 2em; */
 }
 header {
   max-width: 100%;
