@@ -18,6 +18,7 @@
 }
 .skill img {
   max-width: 9rem;
+  max-height: 12rem;
 }
 #skills-heading {
   text-align: center;
