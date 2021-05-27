@@ -37,6 +37,9 @@ h3 {
   font-size: 1.7rem;
   font-weight: 500;
 }
+.txt h3 {
+  font-size: 0.8rem;
+}
 
 section {
   margin-bottom: 4.7rem;
