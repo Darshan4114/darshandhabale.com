@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@500&family=Roboto:wght@300;400;900&family=Montserrat:wght@700&family=Poppins:wght@300;700;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  font-size: 1.62rem;
+  font-family: "Roboto", sans-serif;
+  color: #222;
+}
+.container {
+  position: relative;
+  padding-bottom: 10rem;
+}
+header {
+  position: absolute;
+  margin-bottom: 3em;
+  top: 0;
+}
+main {
+  min-height: 100vh;
+}
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.5rem;
+  margin: 0.5em;
+  top: 0.5em;
+  left: 0.5em;
+}
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  position: relative;
+}
+.that,
+.convert {
+  display: block;
+}
+.that {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  position: absolute;
+}
+.convert {
+  height: 100vh;
+  width: 100vw;
+  font-size: 5rem;
+  font-weight: 900;
+  z-index: -1;
+  margin-top: -10rem;
+  /* position: absolute; */
+  /* background: url(../img/heading.svg); */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main-bullets {
+  list-style-image: url("../img/li.svg");
+  margin-left: 2rem;
+  margin-top: -10rem;
+}
+.designs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.img-heading {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  margin-left: 0.25em;
+}
+.img-heading img {
+  margin: 30% 0.25em 0 0;
+}
+span {
+  margin-top: 50%;
+}
+footer {
+  position: absolute;
+  font-size: 1rem;
+  padding: 1em;
+  color: #444;
+  font-weight: normal;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background: linear-gradient(180deg, #f2bb2f 0%, #f28d2f 100%);
+}
+footer a {
+  text-decoration: none;
+  color: #444;
+}
