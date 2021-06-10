@@ -4,12 +4,15 @@
   margin-bottom: 7rem;
 }
 .services-container {
-  display: grid;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2.7em;
+  /* display: grid;
   place-items: center;
   text-align: center;
   grid-template-rows: minmax(27rem, 1fr) minmax(27rem, 1fr) minmax(27rem, 1fr);
   gap: 0 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; */
 }
 .services-container a {
   display: flex;
@@ -34,11 +37,7 @@
   left: 50%;
   margin-left: calc(-50% - 1px);
   top: 25%;
-  border-color: #ddd;
-  border-style: solid;
-  /* border-radius: 1rem; */
-  border-width: 0 0.2px;
-  /* background-color: red; */
+  border: 1.1px solid transparent;
 }
 .services-container a div::after {
   transition: all 0.4s;
@@ -49,23 +48,21 @@
   left: 50%;
   margin-left: -25%;
   top: 0;
-  border-color: #ddd;
-  border-style: solid;
-  /* border-radius: 1rem; */
-  border-width: 0.2px 0;
-  /* background-color:green; */
+  border: 1.1px solid transparent;
 }
 
 .services-container a div:hover::before {
   height: 100%;
   top: 0%;
-  border: 1.1px solid #38b6ff;
+  border-right: 1.1px solid #38b6ff;
+  border-left: 1.1px solid #38b6ff;
   border-radius: 1rem;
 }
 .services-container a div:hover::after {
   width: 100%;
   margin-left: -50%;
-  border: 1.1px solid #38b6ff;
+  border-top: 1.1px solid #38b6ff;
+  border-bottom: 1.1px solid #38b6ff;
   border-radius: 1rem;
 }
 

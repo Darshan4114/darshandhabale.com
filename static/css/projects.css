@@ -10,29 +10,36 @@
   padding: 1rem;
   margin-bottom: 5rem;
   position: relative;
+  text-align: center;
 }
 
-.projects .card .txt {
-  font-size: 1rem;
+.projects .card .card-buttons a {
+  flex: 1 1 50%;
+  height: 100%;
+}
+.projects .card .card-buttons {
+  font-size: 1.75rem;
   width: 100%;
   position: absolute;
-  display: grid;
-  place-items: center;
-  padding: 1.5rem;
-  bottom: 0;
+  /* display: grid; */
+  /* place-items: center; */
+  text-align: center;
+  display: flex;
+  /* padding: 1.5rem; */
+  bottom: -3rem;
   left: 0;
   transition: var(--project-card-transition);
-  grid-template-rows: 1fr 1.5fr;
+  /* grid-template-rows: 1fr 1.5fr;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "project-title project-title"
-    "see-code open-project";
+    "see-code open-project"; */
 }
 
 .projects .card::before {
   content: "";
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.692);
+  background-color: rgba(0, 0, 0, 0.295);
   width: 100%;
   bottom: 0;
   left: 0;
@@ -41,60 +48,51 @@
   height: 100%;
 }
 
-.projects-container > .card:hover .txt {
-  margin-bottom: -5rem;
-  height: 7rem;
-  display: grid;
-  grid-template-rows: 1fr 1.5fr;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "project-title project-title"
-    "see-code open-project";
-}
-
 .projects-container > .card:hover::before {
   background-color: transparent;
   height: 15%;
-  transition-delay: 0.1s;
+  /* transition-delay: 0.1s; */
 }
-.projects-container > .card:hover .txt a {
+.projects-container > .card:hover .card-buttons {
+  display: flex;
   visibility: visible;
   opacity: 1;
 }
-.projects .card .txt h3 {
-  grid-area: project-title;
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.072);
+
+.projects .card .card-title h3 {
+  color: rgb(36, 36, 36);
+  background-color: rgba(255, 255, 255, 0.072);
   padding: 0.35em;
   border-radius: 0.3rem;
   font-weight: 300;
 }
-.projects-container > .card:hover .txt h3 {
+.projects-container > .card:hover .card-title h3 {
   color: #333;
   background-color: transparent;
   font-weight: 400;
 }
-.projects .card .txt a {
+.projects .card .card-buttons {
   visibility: hidden;
   opacity: 0;
   transition: var(--project-card-transition);
-  transition-delay: 0.2s;
+  /* transition-delay: 0.2s; */
+  text-align: center;
 }
 
-.projects .txt h4 {
+.projects .card-buttons button {
+  height: 100%;
   padding: 0.2em;
-  border-radius: 0.5em;
   margin: 0.2em;
-  font-weight: 300;
+  font-weight: bold;
+  height: 2.3rem;
+  width: 100%;
+
+  cursor: pointer;
 }
 .see-code {
-  grid-area: see-code;
-  display: flex;
-  align-items: center;
-  border: 2px solid #333;
+  border: 1 px solid #333;
 }
 .open-project {
-  grid-area: open-project;
   color: white;
   background-color: var(--success-green);
   border: 2px solid var(--success-green);
