@@ -16,7 +16,6 @@ body {
 .container {
   position: relative;
   padding-bottom: 17rem;
-  max-width: 90vw !important;
   margin: 0 auto;
   overflow-x: hidden !important;
 }
@@ -65,7 +64,7 @@ h1 {
   font-size: 5rem;
   font-weight: 900;
   z-index: -1;
-  margin-top: -1em;
+  margin-top: -0.5em;
   /* position: absolute; */
   right: 0;
   top: 0;
@@ -94,9 +93,7 @@ li {
   align-items: center;
   flex-direction: column;
 }
-.design {
-  max-width: 20vw;
-}
+
 .img-heading {
   font-size: 1rem;
   font-weight: 300;
@@ -156,7 +153,7 @@ footer a {
     flex-direction: row;
   }
   .hero-line {
-    flex: 1 1 60%;
+    flex: 1 1 40%;
   }
   .main-bullets {
     margin-bottom: 1em;
@@ -177,6 +174,7 @@ footer a {
     align-items: center;
     flex: 1 1 40%;
     align-items: flex-start;
+    justify-content: flex-end;
   }
   .hero {
     flex-direction: row;
@@ -190,22 +188,20 @@ footer a {
     position: relative;
     display: block;
   }
-}
-
-@media only screen and (min-width: 800px) {
-  .designs {
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  .designs div {
+  .design {
+    max-width: 20vw;
     margin: 0 0.5em;
     width: 30%;
     flex: 1;
+  }
+  .designs {
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 25px;
+    font-size: 18px;
   }
 }
