@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@500&family=Roboto:wght@300;400;900&family=Montserrat:wght@700&family=Poppins:wght@200;300;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@500&family=Roboto:wght@300;400;900&family=Montserrat:wght@700&family=Poppins:wght@200;300;500;700;900&display=swap");
+:root {
+  --primary-color: #222433;
+  --secondary-color: #474750;
+  --logo-color: #f38f30;
+  --success-green: rgb(84 213 79);
+  --container-width: 52rem;
+  --project-card-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,7 +23,7 @@ body {
 }
 .container {
   position: relative;
-  padding-bottom: 17rem;
+  padding-bottom: 5rem;
   margin: 0 auto;
   overflow-x: hidden !important;
 }
@@ -23,6 +31,9 @@ header {
   position: absolute;
   margin-bottom: 3em;
   top: 0;
+}
+section {
+  margin-bottom: 3em;
 }
 .hero {
   height: 100vh;
@@ -106,9 +117,28 @@ li {
 .design > img {
   width: 100%;
 }
-span {
+/* span {
   margin-top: 50%;
+} */
+.contact-form {
+  height: 52rem;
+  background: url("../img/form-bg.svg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 5rem;
 }
+.contact-form h2 {
+  font-size: 1.37rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: white;
+  margin-top: 2em;
+}
+.contact-form h2 > span {
+  display: block;
+}
+
 footer {
   position: absolute;
   padding: 1em;
@@ -119,7 +149,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(180deg, #f2bb2f 0%, #f28d2f 100%);
+  background: #f2bb2f;
 }
 .contact {
   display: flex;
@@ -147,11 +177,27 @@ footer a {
   text-decoration: none;
   color: #444;
 }
-
+@media only screen and (min-width: 470px) {
+  .contact-form h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.7em;
+  }
+  .contact-form {
+    height: 54rem;
+  }
+}
 @media only screen and (min-width: 700px) {
   .contact-logos {
     flex-direction: row;
   }
+  .contact-form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+  }
+  .contact-form {
+    height: 56rem;
+  }
+
   .hero-line {
     flex: 1 1 40%;
   }

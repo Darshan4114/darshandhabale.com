@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DarshanDev</title>
-    <link rel="stylesheet" href="./static/css/mobile.css" />
     <script id="mcjs">
       !(function (c, h, i, m, p) {
         (m = c.createElement(h)),
@@ -34,6 +33,8 @@
       /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
+    <link rel="stylesheet" href="./static/css/form.css" />
+    <link rel="stylesheet" href="./static/css/mobile.css" />
   </head>
   <body>
     <div class="container">
@@ -43,6 +44,7 @@
       <main>
         <section class="hero">
           <!-- <img class="hero-line" src="./static/img/heading.svg" alt="Convert" /> -->
+          <!-- <div class="hero-line"> -->
           <svg class="hero-line" viewBox="0 0 361 457" fill="none">
             <g class="svg-in">
               <path
@@ -101,6 +103,7 @@
               </defs>
             </g>
           </svg>
+          <!-- </div> -->
 
           <div class="rhs">
             <div class="desktop-hero-design">
@@ -148,81 +151,63 @@
           </div>
         </section>
         <section class="contact-form">
-          <div id="mc_embed_signup">
-            <form
-              action="https://tech.us6.list-manage.com/subscribe/post?u=5e6cd7f2ee1d64deddff78d8f&amp;id=2551ba7a4a"
-              method="post"
-              id="mc-embedded-subscribe-form"
-              name="mc-embedded-subscribe-form"
-              class="validate"
-              target="_blank"
-              novalidate
+          <h2>
+            Want me to make one for you?
+            <span
+              >Reach out to me <span class="pointer-down">&#128071; </span
+              ><span class="pointer-right">&#128073; </span></span
             >
-              <div id="mc_embed_signup_scroll">
-                <h2>I want to build a website!</h2>
-                <div class="indicates-required">
-                  <span class="asterisk">*</span> indicates required
-                </div>
-                <div class="mc-field-group">
-                  <label for="mce-EMAIL"
-                    >Email Address <span class="asterisk">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    value=""
-                    name="EMAIL"
-                    class="required email"
-                    id="mce-EMAIL"
-                  />
-                </div>
-                <div class="mc-field-group">
-                  <label for="mce-MMERGE1">Message </label>
-                  <input
-                    type="text"
-                    value=""
-                    name="MMERGE1"
-                    class=""
-                    id="mce-MMERGE1"
-                  />
-                </div>
-                <div id="mce-responses" class="clear">
-                  <div
-                    class="response"
-                    id="mce-error-response"
-                    style="display: none"
-                  ></div>
-                  <div
-                    class="response"
-                    id="mce-success-response"
-                    style="display: none"
-                  ></div>
-                </div>
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div
-                  style="position: absolute; left: -5000px"
-                  aria-hidden="true"
-                >
-                  <input
-                    type="text"
-                    name="b_5e6cd7f2ee1d64deddff78d8f_2551ba7a4a"
-                    tabindex="-1"
-                    value=""
-                  />
-                </div>
-                <div class="clear">
-                  <input
-                    type="submit"
-                    value="Subscribe"
-                    name="subscribe"
-                    id="mc-embedded-subscribe"
-                    class="button"
-                  />
-                </div>
-              </div>
-            </form>
-          </div>
+          </h2>
+          <form
+            netlify
+            action=""
+            name="contact-form"
+            method="POST"
+            id="contact-form"
+          >
+            <div class="part mini-part" id="name">
+              <input
+                placeholder="Name"
+                type="text"
+                name="name"
+                id="name"
+                required
+              />
+              <label class="label-name" for="name">
+                <span class="label-text">Name: </span>
+              </label>
+            </div>
+            <div class="part mini-part" id="email">
+              <input
+                placeholder="Email"
+                type="email"
+                name="email"
+                id="email"
+                required
+              />
+              <label class="label-name" for="email">
+                <span class="label-text">Email: </span>
+              </label>
+            </div>
 
-          <!--End mc_embed_signup-->
+            <div class="part" id="message">
+              <textarea
+                name="message_txt"
+                maxlength="10000"
+                placeholder="Your Message"
+                id="id_message_txt"
+                required
+                cols="30"
+                rows="12"
+                wrap="hard"
+              ></textarea>
+              <label class="label-name" id="message-label" for="id_message_txt"
+                ><span class="label-text">Message: </span></label
+              >
+              <hr id="message_hr" />
+              <button id="submit-btn" type="submit">Send</button>
+            </div>
+          </form>
         </section>
       </main>
       <footer>

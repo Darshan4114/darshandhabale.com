@@ -13,60 +13,37 @@
 * {
   box-sizing: border-box;
 }
-.box1,
-.box2 {
-  text-align: center;
-  max-width: 60rem;
-  padding: 1.5rem;
-  position: relative;
-}
-.box1 div form {
-  border-bottom: 1px solid #222;
-}
-.box1 form {
+
+form {
   display: grid;
   grid-template-rows: 1fr 1fr minmax(18rem, 3fr) 1fr;
+  background: white;
+  padding: 0.5em;
+  border-radius: 0.4em;
   grid-template-columns: 1fr;
   grid-template-areas:
     "name"
     "email"
     "message"
     "send";
-  border-bottom: 1.75px dashed var(--logo-color);
+  font-size: 1.37rem;
+  /* border-bottom: 1.75px dashed var(--logo-color); */
 }
 .no-border {
   border: none !important;
 }
 
-#name {
+.name {
   grid-area: name;
 }
-#email {
+.email {
   grid-area: email;
 }
-#message {
+.message {
   grid-area: message;
 }
-#submit-btn {
+.submit-btn {
   grid-area: send;
-}
-
-.box2 {
-  padding: 1.5rem;
-  position: relative;
-}
-.box2 form {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-.box2 form .part {
-  text-align: center;
-}
-.box1 form h2 {
-  /* display: flex; */
-}
-.box1 form h2 div.custom-select {
-  flex: 0 1 7rem;
 }
 
 .part {
@@ -77,15 +54,18 @@
 .mini-part {
   position: relative;
 }
+input {
+  background: transparent;
+}
 .part input,
 textarea {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   width: 100%;
   height: 100%;
   padding-left: 0.5rem;
   color: #595f6e;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding-top: 0.5rem;
   border: none;
   outline: 0;
@@ -103,13 +83,13 @@ div.mini-part label {
   margin-bottom: 0.5rem;
 }
 .mini-part input {
-  border-bottom: 2px solid #222;
+  /* border-bottom: 1px solid #222; */
 }
 label#message-label {
   border: none;
 }
 div.part label::before {
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 div.part label::after {
   content: "";
@@ -121,11 +101,11 @@ div.part label::after {
 }
 
 div.part input:focus + label::after {
-  border-bottom: 3px solid #38b6ff;
+  border-bottom: 3px solid var(--logo-color);
   transition: all 0.3s ease;
 }
 div.part input::placeholder {
-  color: #fff;
+  color: transparent;
 }
 div.part input:focus + .label-name .label-text,
 div.part input:not(:placeholder-shown) + .label-name .label-text,
@@ -134,7 +114,7 @@ div.part textarea:not(:placeholder-shown) + .label-name .label-text {
   transform: translateY(-2.7rem);
   padding-bottom: 0.25rem;
   font-size: 0.95rem;
-  color: #38b6ff;
+  color: var(--logo-color);
 }
 
 div.part textarea:focus + label::after {
@@ -158,14 +138,14 @@ hr#message_hr {
 div.part textarea:focus ~ hr#message_hr,
 div.part textarea:not(:placeholder-shown) ~ hr#message_hr {
   height: 3px;
-  background-color: #38b6ff;
-  border: 1.5px solid #38b6ff;
+  background-color: var(--logo-color);
+  border: 1.5px solid var(--logo-color);
   transform: translateY(12rem);
   transition: all 0.4s ease;
 }
 
 div.part textarea::placeholder {
-  color: #fff;
+  color: transparent;
 }
 
 div.part textarea {
@@ -173,7 +153,7 @@ div.part textarea {
   z-index: 6;
   padding-left: 0.5rem;
   color: #595f6e;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: sans-serif;
   height: 18rem;
 }
@@ -202,15 +182,17 @@ h1.contact-h1 {
 #submit-btn2 {
   width: 17rem;
   z-index: 5;
-  color: #38b6ff;
-  background-color: #f9f9f9;
-  border: 1px solid #333;
+  color: #222;
+  background-color: #f2bb2f;
+  border: none;
   height: 3rem;
   padding: 0.2rem;
-  font-size: 2rem;
+  font-size: 1.37rem;
   position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   /* border: none; */
-  border-radius: 0.7rem;
+  border-radius: 2px;
   margin-top: 1.5rem;
   outline: none;
   transition: all 0.32s ease;
@@ -218,8 +200,8 @@ h1.contact-h1 {
 #submit-btn:hover,
 #submit-btn2:hover {
   transition: all 0.32s ease;
-  background-color: #38b6ff;
-  border: 3px solid #4dbeff;
+  background-color: var(--logo-color);
+  border: 3px solid var(--logo-color);
   color: #f9f9f9;
 }
 
@@ -235,7 +217,7 @@ h1.contact-h1 {
 }
 
 .select-selected {
-  background-color: #38b6ff;
+  background-color: var(--logo-color);
   position: absolute;
   left: 0;
   bottom: 0;
@@ -274,7 +256,7 @@ h1.contact-h1 {
 /* Style items (options): */
 .select-items {
   position: absolute;
-  background-color: #38b6ff;
+  background-color: var(--logo-color);
   top: 100%;
   left: 0;
   right: 0;
@@ -301,7 +283,7 @@ h1.contact-h1 {
       "message message"
       "send send";
     padding: 2.5rem;
-    border-right: 1.5px dashed var(--logo-color);
+    /* border-right: 1.5px dashed var(--logo-color); */
     border-bottom: 0;
   }
   .box1 h1 {
@@ -316,12 +298,11 @@ section.contact-form {
   /* place-items: center; */
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr;
+  /* grid-template-columns: 1fr; */
   grid-template-rows: 1fr minmax(3fr, 15rem) 1fr;
   grid-template-areas:
     "contact-heading"
-    "box1"
-    "box2";
+    "form";
 }
 section.contact-form form {
   margin: 0 auto;
@@ -334,8 +315,11 @@ section.contact-form form {
   grid-area: box2;
 }
 
-section.contact-form .headings {
+section.contact-form h2 {
   grid-area: contact-heading;
+}
+form {
+  grid-area: form;
 }
 
 #submit-btn {
@@ -350,13 +334,23 @@ select#development {
   border: none;
   color: var(--logo-color);
 }
+.pointer-right {
+  display: none;
+}
 
 @media only screen and (min-width: 1000px) {
   section.contact-form {
     grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: 1fr minmax(3fr, 15rem) 1fr;
-    grid-template-areas:
-      "contact-heading contact-heading"
-      "box1 box2";
+    grid-template-areas: "contact-heading form";
+  }
+  .contact-form {
+    height: 47rem;
+    padding: 1rem 0;
+  }
+  .pointer-right {
+    display: inline-block;
+  }
+  .pointer-down {
+    display: none;
   }
 }
