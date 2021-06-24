@@ -176,6 +176,7 @@ footer a {
   text-decoration: none;
   color: #444;
 }
+
 @media only screen and (min-width: 470px) {
   .contact-form h2 {
     font-size: 1.7rem;
@@ -250,3 +251,18 @@ footer a {
     font-size: 18px;
   }
 }
+
+::-webkit-scrollbar{
+  width:0.65rem;
+}
+::-webkit-scrollbar-thumb{
+  background:#555;
+  border-radius: 0.25em;
+}
+::-webkit-scrollbar-track{
+  background:#eee;
+}
+::-webkit-scrollbar-thumb:hover{
+  background:#444;
+}
+
