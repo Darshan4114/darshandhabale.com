@@ -46,11 +46,20 @@
       >
         <!-- <h3>Get in contact</h3> -->
         <label for="name">Name</label>
-        <input type="text" name"name" id="name"/>
+        <input type="text" name="name" id="name" />
         <label for="email">Email</label>
-        <input type="text" name"email" id="email"/>
-        <label for="message">Message</label>
-        <input type="textarea" name"message" id="message"/>
+        <input type="text" name="email" id="email" />
+        <label for="id_message_txt">Message</label>
+        <!-- <input type="textarea" name"message" id="message"/> -->
+        <textarea
+          name="message_txt"
+          maxlength="10000"
+          id="id_message_txt"
+          required
+          cols="30"
+          rows="7"
+          wrap="hard"
+        ></textarea>
         <input type="submit" value="Send" />
       </form>
 
