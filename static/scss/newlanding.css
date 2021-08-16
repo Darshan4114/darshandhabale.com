@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  padding: 1em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  list-style: none;
+  margin-bottom: 2em;
+}
+
+nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav a {
+  margin: 0 0.5em;
+  text-decoration: none;
+  color: #111;
+  border-bottom: 2px solid #fff;
+}
+
+nav a.active {
+  border-bottom: 2px solid #3b68df;
+}
+
+.projects {
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.projects > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-bottom: 2em;
+}
+
+.projects img {
+  height: 30rem;
+  max-width: 45%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.btngrp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  margin: 0.5em;
+}
+
+.btngrp a {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0.5em;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.25em;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btngrp .code {
+  border: 2px solid #444;
+  color: #333;
+}
+
+.btngrp .demo {
+  background: #09a509;
+  color: white;
+}
+
+.container {
+  padding: 1em;
+  max-width: 70rem;
+  margin: 0 auto 3em;
+  font-family: "Oswald", sans-serif;
+  color: #111;
+}
+
+.description {
+  margin-left: 1em;
+  padding: 1em;
+  position: relative;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.description h2 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0.5em;
+}
+
+.description p {
+  margin-bottom: 0.5em;
+}
+
+.logo img {
+  width: 7rem;
+}
+
+.projects {
+  margin-bottom: 2em;
+}
+
+.tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tags .tag {
+  padding: 0.25em 0.5em;
+  margin: 0 0.5em;
+  border-radius: 0.2em;
+  font-weight: bold;
+}
+
+.tags .django-tag {
+  background: #092e20;
+  color: white;
+}
+
+.tags .react-tag {
+  background: #00d8ff;
+  color: #323330;
+}
+
+.tags .html-tag {
+  background: #e34f26;
+  color: white;
+}
+
+.tags .css-tag {
+  background: #2965f1;
+  color: white;
+}
+
+.tags .js-tag {
+  background: #f0db4f;
+  color: #323330;
+}
+
+@media only screen and (max-width: 1024px) {
+  .projects > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .description {
+    height: 17rem;
+  }
+  .projects > div > img {
+    max-width: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: left;
+       object-position: left;
+  }
+  .vdo img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .vdo .description {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+/*# sourceMappingURL=newlanding.css.map */

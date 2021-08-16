@@ -4,89 +4,118 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Darshan Dhabale</title>
+    <title>Projects by Darshan Dhabale</title>
     <meta
       name="description"
-      content="This is a page about Darshan Dhabale. Darshan is a full-stack web developer based in India. Darshan designs web applications and has not specialized in the backend or frontend. He is pretty good with learning new things fast, has coded with Python, Django, Java, JavaScript, HTML-CSS. And also likes to design the web."
+      content="Projects made by Darshan. Hotel management system - This is a hotel management system, a CRM for hotels.
+      It also has integrated ecommerce features like payment gateways and O-Auth logins. Video Meet App - This is a Twilio API based video meet solution.
+      It has all the meet features that you can ask for. 
+      About Darshan:
+      Darshan designs full-stack web applications. 
+      He is pretty good with learning new things fast, has coded with Python, Django, Java, JavaScript, HTML-CSS. 
+      And also likes to design the web."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Montserrat&family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./static/scss/about.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="./static/scss/newlanding.css" />
   </head>
   <body>
     <div class="container">
-      <div class="profile">
-        <div class="pic">
-          <img src="./static/img/darshan.jpg" alt="" />
+      <nav>
+        <div class="logo">
+          <img src="./static/img/DarshanDevLogoWhitesvg.svg" alt="" />
         </div>
-        <h1>Darshan Dhabale</h1>
-        <h2>Web Developer 'n Designer</h2>
-      </div>
-      <a class="card projects" href="">
-        <h3>Projects</h3>
-      </a>
-      <a
-        class="card services"
-        target="_blank"
-        href="/landing-page-service.html"
-      >
-        <h3>Services</h3>
-      </a>
+        <ul>
+          <li><a class="active" href="#">Projects</a></li>
+          <li>
+            <a target="_blank" href="https://blog.darshandev.tech/">Blog</a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw"
+              >YouTube</a
+            >
+          </li>
+          <li>
+            <a href="./contact.html">Contact Dev</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="projects">
+        <div class="project hms">
+          <img src="./static/img/feat_projs/hmsDash.png" alt="" />
+          <div class="description">
+            <h2>Hotel Management System</h2>
+            <p>
+              This is a Hotel Mgmt. App that lets the users book rooms and
+              includes an Admin panel for the managers.
+            </p>
+            <br />
+            <strong><p>Technologies used:</p></strong>
 
-      <form
-        netlify
-        action=""
-        name="about-contact-form"
-        method="POST"
-        class="form"
-      >
-        <!-- <h3>Get in contact</h3> -->
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" />
-        <label for="id_message_txt">Message</label>
-        <!-- <input type="textarea" name"message" id="message"/> -->
-        <textarea
-          name="message_txt"
-          maxlength="10000"
-          id="id_message_txt"
-          required
-          cols="30"
-          rows="7"
-          wrap="hard"
-        ></textarea>
-        <input type="submit" value="Send" />
-      </form>
+            <div class="tags">
+              <p class="tag django-tag">Django</p>
+              <p class="tag react-tag">React</p>
+              <p class="tag html-tag">HTML</p>
+              <p class="tag css-tag">CSS</p>
+              <p class="tag js-tag">JS</p>
+            </div>
+            <div class="btngrp">
+              <a
+                href="https://github.com/Darshan4114/Django_HMS"
+                target="_blank"
+                class="code"
+                >Code</a
+              >
+              <a
+                href="https://hms.darshandev.tech/"
+                target="_blank"
+                class="demo"
+                >Demo</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="project vdo">
+          <div class="description">
+            <h2>Video Meet App</h2>
+            <p>
+              This app uses twilio API and allows 2 users to join with a common
+              video room.
+            </p>
+            <br />
+            <strong><p>Technologies used:</p></strong>
 
-      <a class="card blog" target="_blank" href="https://blog.darshandev.tech/">
-        <h3>Blog</h3>
-      </a>
-      <a
-        class="card youtube"
-        target="_blank"
-        href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw"
-      >
-        <h3>Youtube</h3>
-      </a>
-      <div class="link">
-        <a href="https://www.linkedin.com/in/darshandhabale/" target="_blank">
-          <img src="https://img.icons8.com/color/48/000000/linkedin.png"
-        /></a>
-        <a href="https://dribbble.com/darshandev" target="_blank"
-          ><img src="https://img.icons8.com/office/48/000000/dribbble.png"
-        /></a>
-        <a href="https://github.com/Darshan4114" target="_blank"
-          ><img
-            src="https://img.icons8.com/material-outlined/48/000000/github.png"
-        /></a>
-        <a href="mailto:darshan@darshandev.tech" target="_blank">
-          <img src="https://img.icons8.com/fluent/48/000000/mail.png" />
-        </a>
+            <div class="tags">
+              <p class="tag django-tag">Django</p>
+              <p class="tag react-tag">React</p>
+              <p class="tag html-tag">HTML</p>
+              <p class="tag css-tag">CSS</p>
+              <p class="tag js-tag">JS</p>
+            </div>
+            <div class="btngrp">
+              <a
+                href="https://github.com/Darshan4114/twilio-video"
+                target="_blank"
+                class="code"
+                >Code</a
+              >
+              <a
+                href="https://video-call.darshandev.tech/"
+                target="_blank"
+                class="demo"
+                >Demo</a
+              >
+            </div>
+          </div>
+          <img src="./static/img/feat_projs/videoMeetApp.png" alt="" />
+        </div>
       </div>
     </div>
   </body>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get in contact with Darshan Dhabale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./static/scss/contact.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="./static/img/DarshanDevLogoWhitesvg.svg" alt="" />
+        </div>
+        <ul>
+          <li><a href="/">Projects</a></li>
+          <li>
+            <a target="_blank" href="https://blog.darshandev.tech/">Blog</a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw"
+              >YouTube</a
+            >
+          </li>
+          <li>
+            <a class="active" href="#">Contact Dev</a>
+          </li>
+        </ul>
+      </nav>
+      <h1>Get in contact with Darshan Dhabale</h1>
+      <div class="content">
+        <div class="profile">
+          <div class="pic">
+            <img src="./static/img/darshan.jpg" alt="" />
+          </div>
+          <h2>Darshan Dhabale</h2>
+          <h2>Web Developer 'n Designer</h2>
+        </div>
+        <form
+          netlify
+          action=""
+          name="about-contact-form"
+          method="POST"
+          class="form"
+        >
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" />
+          <label for="id_message_txt">Message</label>
+          <textarea
+            name="message_txt"
+            maxlength="10000"
+            id="id_message_txt"
+            required
+            cols="30"
+            rows="3"
+            wrap="hard"
+          ></textarea>
+          <input type="submit" value="Send" />
+          <div class="links">
+            <a
+              href="https://www.linkedin.com/in/darshandhabale/"
+              target="_blank"
+            >
+              <img src="https://img.icons8.com/color/48/000000/linkedin.png"
+            /></a>
+            <a href="https://dribbble.com/darshandev" target="_blank"
+              ><img src="https://img.icons8.com/office/48/000000/dribbble.png"
+            /></a>
+            <a href="https://github.com/Darshan4114" target="_blank"
+              ><img
+                src="https://img.icons8.com/material-outlined/48/000000/github.png"
+            /></a>
+            <a href="mailto:darshan@darshandev.tech" target="_blank">
+              <img src="https://img.icons8.com/fluent/48/000000/mail.png" />
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

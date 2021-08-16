@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+}
+nav {
+  padding: 1em;
+  justify-content: space-between;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  list-style: none;
+  margin-bottom: 2em;
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  a {
+    margin: 0 0.5em;
+    text-decoration: none;
+    color: #111;
+    border-bottom: 2px solid #fff;
+  }
+  a.active {
+    border-bottom: 2px solid #3b68df;
+  }
+}
+
+.projects {
+  margin-bottom: 2em;
+  position: relative;
+  > div {
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 2em;
+  }
+
+  img {
+    // width: 50%;
+    height: 30rem;
+    max-width: 45%;
+    object-fit: cover;
+    object-position: left;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.btngrp {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  margin: 0.5em;
+  a {
+    flex: 1;
+    margin: 0.5em;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.25em;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .code {
+    border: 2px solid #444;
+    color: #333;
+  }
+  .demo {
+    background: rgb(9, 165, 9);
+    color: white;
+  }
+}
+
+.container {
+  padding: 1em;
+  max-width: 70rem;
+  margin: 0 auto 3em;
+
+  font-family: "Oswald", sans-serif;
+  color: #111;
+}
+
+.description {
+  margin-left: 1em;
+  padding: 1em;
+  position: relative;
+  h2 {
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 0.5em;
+  }
+  font-family: sans-serif;
+  font-weight: 400;
+  p {
+    margin-bottom: 0.5em;
+  }
+}
+.logo img {
+  width: 7rem;
+}
+.projects {
+  margin-bottom: 2em;
+}
+
+.tags {
+  display: flex;
+  // margin-bottom: 1em;
+  .tag {
+    padding: 0.25em 0.5em;
+    margin: 0 0.5em;
+    border-radius: 0.2em;
+    font-weight: bold;
+  }
+  .django-tag {
+    background: #092e20;
+    color: white;
+  }
+  .react-tag {
+    background: #00d8ff;
+    color: #323330;
+  }
+  .html-tag {
+    background: #e34f26;
+    color: white;
+  }
+  .css-tag {
+    background: #2965f1;
+    color: white;
+  }
+  .js-tag {
+    background: #f0db4f;
+    color: #323330;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .projects > div {
+    flex-direction: column;
+  }
+  .description {
+    height: 17rem;
+  }
+  .projects > div > img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+  .vdo {
+    img {
+      order: 1;
+    }
+    .description {
+      order: 2;
+    }
+  }
+}
