@@ -1,19 +1,34 @@
 {
-  "name": "interactions",
-  "private": true,
+  "name": "nextjs-mdx-blog-starter",
+  "description": "Starter for creating a Next.js powered blog with content authored in MDX.",
+  "version": "0.2.4",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format-watch": "npm run format && onchange \"**/*.{js,jsx,json,md}\" -- prettier --write {{changed}}",
+    "deploy": "git push origin main && vercel --prod"
   },
   "dependencies": {
-    "next": "12.0.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@emotion/react": "^11.1.4",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/runtime": "^1.6.22",
+    "@next/mdx": "^11.1.0",
+    "disqus-react": "^1.0.10",
+    "gray-matter": "^4.0.2",
+    "next": "^11.1.2",
+    "prism-react-renderer": "^1.1.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-ga": "^3.3.0",
+    "theme-ui": "^0.10.0"
   },
   "devDependencies": {
-    "eslint": "7",
-    "eslint-config-next": "12.0.4"
-  }
+    "onchange": "^7.1.0",
+    "prettier": "^2.2.1"
+  },
+  "repository": "https://github.com/johnpolacek/nextjs-mdx-blog-starter",
+  "license": "MIT"
 }
