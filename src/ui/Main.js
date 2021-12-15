@@ -10,9 +10,9 @@ const Main = (props) => {
         px: [3, 4],
         pb: 4,
         alignItems: "center",
-        borderBottom: "solid 1px",
-        borderTop: "solid 1px",
-        borderColor: "lite",
+        // borderBottom: "solid 1px",
+        // borderTop: "solid 1px",
+        // borderColor: "lite",
       }}
       {...props}
     />

@@ -53,10 +53,10 @@ const Layout = (props) => {
           flexDirection: "column",
         }}
       >
-        {typeof theme.colors.modes === "object" && <ThemeToggle />}
+        {/* {typeof theme.colors.modes === "object" && <ThemeToggle />} */}
         <Header />
         <Main>{props.children}</Main>
-        <Footer />
+        {/* <Footer /> */}
       </Box>
 
       <Style />

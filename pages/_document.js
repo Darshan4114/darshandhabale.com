@@ -1,17 +1,17 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document"
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     // Returns an object like: { html, head, errorHtml, chunks, styles }
-    return renderPage();
+    return renderPage()
   }
 
   render() {
     return (
       <Html>
         <Head>
-          <link rel="manifest" href="/manifest.json" />{" "}
-          <link rel="apple-touch-icon" href="/img/logo.png"></link>
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
           <meta name="theme-color" content="#fff" />
         </Head>
         <body>
@@ -19,6 +19,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
