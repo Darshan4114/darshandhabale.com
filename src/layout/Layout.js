@@ -5,8 +5,9 @@ import PropTypes from "prop-types"
 import Head from "./Head"
 import Style from "./Style"
 import ThemeToggle from "../ui/ThemeToggle"
-import Header from "../ui/Header"
+import Header from "comp/Header"
 import Main from "../ui/Main"
+import Nav from "../ui/Nav"
 import Footer from "../ui/Footer"
 
 // inject inline styles on the body before the page is rendered to avoid the flash of light if we are in dark mode
@@ -51,11 +52,13 @@ const Layout = (props) => {
           display: "flex",
           minHeight: "100vh",
           flexDirection: "column",
+          overflowX: "hidden",
         }}
       >
         {/* {typeof theme.colors.modes === "object" && <ThemeToggle />} */}
         <Header />
         <Main>{props.children}</Main>
+        <Nav />
         {/* <Footer /> */}
       </Box>
 

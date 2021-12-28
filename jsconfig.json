@@ -6,7 +6,7 @@
       "comp/*": ["components/*"],
       "util/*": ["utils/*"],
       "form/*": ["components/forms/*"],
-      "styl/*": ["components/styled/*"]
+      "styl/*": ["styles/css/*"]
     }
   }
 }

@@ -1,0 +1,104 @@
+.container {
+  font-family: "Montserrat", sans-serif;
+  color: #222;
+  max-width: 50rem;
+  // padding: 1em;
+  margin: 0 auto;
+  overflow-x: hidden;
+
+  .img {
+    height: 15rem;
+    width: calc(100vw - 1em);
+    max-height: 100vh;
+    // max-width: 50vw;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+
+  .landing {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    position: relative;
+    background: url("/img/portfolio/air3x3/hero.jpg");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    margin-top: -3.6em;
+
+    h1 {
+      // margin: 5em 2em 0;
+      position: absolute;
+      bottom: 0em;
+      left: 0.5em;
+      width: 20rem;
+      span {
+        display: block;
+
+        text-transform: none;
+        color: #dd700c;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  h2 {
+    text-transform: uppercase;
+    color: #444;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  h3 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .features {
+    .feature {
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // justify-content: space-evenly;
+      margin-bottom: 1em;
+    }
+  }
+  @media screen and (min-width: 750px) {
+    .landing {
+      h1 {
+        bottom: 3em;
+        font-size: 3.5rem;
+        span {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      margin: 0 0 3em;
+      h3 {
+        width: 30rem;
+      }
+      .img {
+        height: 20rem;
+      }
+    }
+    .feature:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .landing {
+      display: flex;
+      // flex-direction: row;
+    }
+  }
+}
+.footer {
+  background: #f38f30;
+  font-size: 0.7rem;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}

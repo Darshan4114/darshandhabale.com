@@ -1,0 +1,107 @@
+.container {
+  font-family: "Montserrat", sans-serif;
+  color: #222;
+  max-width: 50rem;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.container .img {
+  height: 15rem;
+  width: calc(100vw - 1em);
+  max-height: 100vh;
+  position: relative;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.container .landing {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  position: relative;
+  background: url("/img/portfolio/air3x3/hero.jpg");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+  margin-top: -3.6em;
+}
+
+.container .landing h1 {
+  position: absolute;
+  bottom: 0em;
+  left: 0.5em;
+  width: 20rem;
+}
+
+.container .landing h1 span {
+  display: block;
+  text-transform: none;
+  color: #dd700c;
+  font-size: 1.2rem;
+}
+
+.container h2 {
+  text-transform: uppercase;
+  color: #444;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.container h3 {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.container .features .feature {
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 750px) {
+  .container .landing h1 {
+    bottom: 3em;
+    font-size: 3.5rem;
+  }
+  .container .landing h1 span {
+    font-size: 1.6rem;
+  }
+  .container .feature {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1.5rem;
+    margin: 0 0 3em;
+  }
+  .container .feature h3 {
+    width: 30rem;
+  }
+  .container .feature .img {
+    height: 20rem;
+  }
+  .container .feature:nth-child(odd) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container .landing {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.footer {
+  background: #f38f30;
+  font-size: 0.7rem;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+/*# sourceMappingURL=air3x3.module.css.map */

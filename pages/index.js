@@ -1,19 +1,23 @@
 import config from "../blog.config"
-import Wrapper from "../src/layout/Wrapper"
+import Head from "next/head"
+import Header from "comp/Header"
+import styl from "styles/css/index.module.css"
 import Posts from "../src/views/Posts"
 import { getAllPosts } from "../src/api"
 
-const PostsPage = ({ posts, prevPosts, nextPosts }) => (
-  <Wrapper
-    url={config.url}
-    title={config.title}
-    description={config.description}
-    imageUrl={config.shareImage}
-    imageAlt={config.shareImageAlt}
-  >
-    <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
-  </Wrapper>
-)
+const PostsPage = ({ posts, prevPosts, nextPosts }) => {
+  return (
+    <>
+      <div className={styl.container}>
+        <Head>
+          <title>DarshanDev: Blog and Portfolio</title>
+        </Head>
+        <Header />
+        <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
+      </div>
+    </>
+  )
+}
 
 export async function getStaticProps() {
   const posts = getAllPosts([

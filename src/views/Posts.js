@@ -4,12 +4,13 @@ import Image from "next/image"
 import Container from "../ui/Container"
 import DraftBadge from "../ui/DraftBadge"
 import Link from "next/link"
+import styl from "styl/Posts.module.css"
 
 const Posts = ({ posts, prevPosts, nextPosts }) => {
   const isLocal = process.env.NODE_ENV === "development"
 
   return (
-    <Container>
+    <Container className={styl.container}>
       {posts &&
         posts
           .filter((post) => {
@@ -20,7 +21,7 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
               <Heading sx={{ pb: 2, position: "relative" }}>
                 {post.draft && <DraftBadge />}
                 <Link href={"/" + post.slug} passHref>
-                  <a>{post.title}</a>
+                  <a className={styl.postTitle}>{post.title}</a>
                 </Link>
               </Heading>
               {post.coverImage && (
@@ -40,7 +41,7 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
                   />
                 </Box>
               )}
-              <Box sx={{ pb: 3 }}>
+              <Box sx={{ pb: 3 }} className={styl.postExcerpt}>
                 <MDX>{post.excerpt}</MDX>
               </Box>
               <Link href={"/" + post.slug} passHref>

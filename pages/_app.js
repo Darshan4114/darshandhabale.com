@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react"
 import Head from "next/head"
+import Nav from "../src/ui/Nav"
+import styl from "styles/css/app.module.css"
+
 import { useRouter } from "next/router"
 import "../styles/globals.css"
 // import nProgress from "nprogress"
@@ -16,6 +19,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     setTabValue(router.asPath)
   }, [router.asPath])
+
   // useEffect(async () => {
   //   router.events.on("routeChangeStart", () => nProgress.start())
   //   router.events.on("routeChangeComplete", () => nProgress.done())
@@ -35,12 +39,17 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=Rye&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Serif&display=swap"
           rel="stylesheet"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
         />
       </Head>
 
-      <div style={{ position: "relative" }}>
+      <div className={styl.navAndComponentContainer}>
+        <Nav tabValue={tabValue} setTabValue={redirectAndSetTabValue} />
         <Component {...pageProps} tabValue={tabValue} />
       </div>
     </>

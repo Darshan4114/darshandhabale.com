@@ -1,0 +1,141 @@
+.styledNav {
+  z-index: 9;
+  overflow: hidden;
+  color: #232323;
+  background: #fff;
+  font-weight: bold;
+  padding: 0 0 2em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  clip-path: inset(0px -15px 0px -15px);
+  position: fixed;
+  top: 0;
+  right: -20rem;
+  width: 12rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  ul {
+    padding: 0%;
+    width: 100%;
+  }
+
+  li {
+    height: 2.5rem;
+    cursor: pointer;
+    width: 100%;
+    padding: 0.5em 1em;
+    background: #fff;
+    transition: background 0.2s ease-in-out;
+    &:hover {
+      background: #efefef;
+    }
+    &.selected {
+      background: #efefef;
+    }
+  }
+  &.close {
+    animation: closeAnimation 0.35s ease-out;
+    animation-fill-mode: forwards;
+  }
+  &.open {
+    animation: openAnimation 0.35s ease-in;
+    animation-fill-mode: forwards;
+    ul {
+      opacity: 1;
+    }
+  }
+
+  @keyframes openAnimation {
+    0% {
+      /* clip-path: ellipse(11% 11% at 100% 100%); */
+      right: -20rem;
+    }
+    100% {
+      /* clip-path: ellipse(42% 58% at 91% 69%); */
+      right: 0;
+    }
+  }
+  @keyframes closeAnimation {
+    100% {
+      /* clip-path: ellipse(0% 0% at 100% 100%); */
+      right: -20rem;
+    }
+    0% {
+      /* clip-path: ellipse(42% 58% at 91% 69%); */
+      right: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+    li {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      p {
+        margin-left: 0.5em;
+      }
+    }
+  }
+  .children {
+    display: flex;
+    width: 12rem;
+    justify-content: flex-start;
+    height: 1.5rem;
+    margin-bottom: 3.5rem;
+    a {
+      margin-right: 0.25em;
+    }
+  }
+  // @media screen and (min-width: 750px) {
+  //   /* clip-path: inset(0px -15px 0px 0px); */
+  //   box-shadow: unset;
+  //   border-right: 1px solid #efefef;
+  //   height: calc(100vh - 11rem);
+  //   margin: 5em 0;
+  //   padding: 1em 0 0;
+  //   left: 0;
+  //   right: unset;
+  // }
+}
+
+.styledTabs {
+  z-index: 20;
+  padding-bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  .openNavBtn {
+    border: none;
+    background: none;
+    margin-left: 2em;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: grid;
+    place-items: center;
+  }
+}
+.ham {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  z-index: 30;
+  background: none;
+  border: none;
+  transform: rotate(135deg);
+  @media screen and (min-width: 750px) {
+    display: none;
+  }
+}
+.tabGrp {
+  color: #777;
+  font-weight: normal;
+  font-size: 0.85rem;
+  width: 7rem;
+  margin: 0 auto;
+  text-align: center;
+}

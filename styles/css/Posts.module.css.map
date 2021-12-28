@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,UAAU;EACR,WAAW,EAAE,aAAa;EAC1B,GAAG,EAAE,6BAA6B;EAClC,GAAG,EAAE,6BAA6B;;;AAEpC,UAAU;EACR,WAAW,EAAE,gBAAgB;EAC7B,GAAG,EAAE,kCAAkC;;;AAGzC,AAAA,UAAU,CAAC;EACT,WAAW,EAAE,mBAAmB;EAChC,SAAS,EAAE,MAAM;CAClB;;AACD,AAAA,UAAU,CAAC;EACT,WAAW,EAAE,4BAA4B;CAC1C",
+    "sources": [
+        "../scss/Posts.module.scss"
+    ],
+    "names": [],
+    "file": "Posts.module.css"
+}
