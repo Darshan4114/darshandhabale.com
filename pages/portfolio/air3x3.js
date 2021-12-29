@@ -2,7 +2,23 @@ import Head from "next/head"
 import Image from "next/image"
 import Header from "comp/Header"
 import styl from "styles/css/air3x3.module.css"
+import { useState, useEffect } from "react"
+
 export default function Air3x3() {
+  const [isDesktop, setIsDesktop] = useState(false)
+  useEffect(() => {
+    function checkIfDesktop() {
+      if (window.innerWidth < 750) {
+        setIsDesktop(false)
+      } else {
+        setIsDesktop(true)
+      }
+    }
+    checkIfDesktop()
+    window.addEventListener("resize", () => {
+      checkIfDesktop()
+    })
+  }, [])
   return (
     <>
       <div className={styl.container}>
@@ -29,7 +45,9 @@ export default function Air3x3() {
             <h3>Custom booking system</h3>
             <div className={styl.img}>
               <Image
-                src="/img/portfolio/air3x3/custom_booking.jpg"
+                src={`/img/portfolio/air3x3/tour_book${
+                  isDesktop ? "_desktop" : ""
+                }.svg`}
                 layout="fill"
                 objectFit="contain"
               />

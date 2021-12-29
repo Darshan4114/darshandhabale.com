@@ -1,18 +1,21 @@
 .container {
   font-family: "Montserrat", sans-serif;
   color: #222;
-  max-width: 50rem;
+  width: 50rem;
+  max-width: calc(100vw - 2em);
   margin: 0 auto;
   overflow-x: hidden;
 }
 
 .container .img {
-  height: 15rem;
-  width: calc(100vw - 1em);
+  height: 85vh;
+  width: calc(100vw - 3em);
   max-height: 100vh;
+  max-width: calc(100vw - 2em);
   position: relative;
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 0.25em;
 }
 
 .container .landing {
@@ -55,6 +58,7 @@
 
 .container .features .feature {
   margin-bottom: 1em;
+  padding: 0.55em;
 }
 
 @media screen and (min-width: 750px) {
@@ -74,12 +78,19 @@
             align-items: center;
     font-size: 1.5rem;
     margin: 0 0 3em;
+    height: 20rem;
+    width: 50rem;
+    max-width: calc(100vw - 1em);
   }
   .container .feature h3 {
-    width: 30rem;
+    -webkit-box-flex: 0.9;
+        -ms-flex: 0.9 1;
+            flex: 0.9 1;
+    margin: 0 1em;
   }
   .container .feature .img {
-    height: 20rem;
+    height: 90%;
+    width: 30rem;
   }
   .container .feature:nth-child(odd) {
     -webkit-box-orient: horizontal;
