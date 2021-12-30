@@ -58,6 +58,8 @@ const BlogPost = ({ post }) => {
             </Box>
           )}
           <MDX components={components}>{post.content}</MDX>
+          <div id="graphcomment"></div>
+
           {typeof config.disqus === "string" && config.disqus !== "" && (
             <Box
               sx={{
