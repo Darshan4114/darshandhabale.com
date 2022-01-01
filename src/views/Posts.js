@@ -33,12 +33,21 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
                     borderColor: "rgba(0,0,0,.1)",
                   }}
                 >
-                  <Image
-                    height={post.coverImageHeight}
-                    width={post.coverImageWidth}
-                    src={post.coverImage}
-                    alt={post.coverImageAlt || ""}
-                  />
+                  <div
+                    style={{
+                      height: post.coverImageHeight,
+                      width: post.coverImageWidth,
+                      position: "relative",
+                      maxWidth: "calc(100vw - 2em)",
+                    }}
+                  >
+                    <Image
+                      src={post.coverImage}
+                      layout="fill"
+                      objectFit="cover"
+                      alt={post.coverImageAlt || ""}
+                    />
+                  </div>
                 </Box>
               )}
               <Box sx={{ pb: 3 }} className={styl.postExcerpt}>

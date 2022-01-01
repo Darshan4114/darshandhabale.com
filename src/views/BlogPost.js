@@ -7,6 +7,7 @@ import Image from "next/image"
 import Container from "../ui/Container"
 import CodeBlock from "../ui/CodeBlock"
 import DraftBadge from "../ui/DraftBadge"
+import styl from "styl/Post.module.css"
 
 const BlogPost = ({ post }) => {
   const isLocal = process.env.NODE_ENV === "development"
@@ -18,15 +19,15 @@ const BlogPost = ({ post }) => {
   }
 
   return (
-    <Container>
+    <Container className={styl.container}>
       {!isLocal && post.draft ? (
         <Text sx={{ fontSize: 2, color: "#666" }}>
           This post has not yet been published. Please try again later.
         </Text>
       ) : (
         <>
-          <Box sx={{ pb: [3, 4] }}>
-            <Heading as="h1" sx={{ fontSize: [5, 6], position: "relative" }}>
+          <Box sx={{ pb: [3, 4] }} className={styl.postTitle}>
+            <Heading as="h1" sx={{ fontSize: [5, 7], position: "relative" }}>
               {post.draft && (
                 <Box sx={{ top: "10px", right: 1, position: "relative" }}>
                   <DraftBadge />
@@ -35,9 +36,8 @@ const BlogPost = ({ post }) => {
               {post.title}
             </Heading>
             {config.showDate && (
-              <Text sx={{ fontStyle: "italic" }}>
-                Originally published on{" "}
-                {new Date(post.date).toLocaleDateString()}
+              <Text sx={{ fontStyle: "italic", fontSize: [2], color: "#777" }}>
+                Published on {new Date(post.date).toDateString()}
               </Text>
             )}
           </Box>
@@ -49,12 +49,21 @@ const BlogPost = ({ post }) => {
                 borderColor: "rgba(0,0,0,.1)",
               }}
             >
-              <Image
-                height={post.coverImageHeight}
-                width={post.coverImageWidth}
-                src={post.coverImage}
-                alt={post.coverImageAlt || ""}
-              />
+              <div
+                style={{
+                  height: post.coverImageHeight,
+                  width: post.coverImageWidth,
+                  maxWidth: "84vw",
+                  position: "relative",
+                }}
+              >
+                <Image
+                  src={post.coverImage}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={post.coverImageAlt || ""}
+                />
+              </div>
             </Box>
           )}
           <MDX components={components}>{post.content}</MDX>
