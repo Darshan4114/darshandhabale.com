@@ -17,6 +17,7 @@
     "@mui/material": "^5.2.5",
     "@next/mdx": "^11.1.0",
     "disqus-react": "^1.0.10",
+    "fs": "^0.0.1-security",
     "gray-matter": "^4.0.2",
     "next": "^11.1.2",
     "prism-react-renderer": "^1.1.1",
