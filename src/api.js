@@ -2,10 +2,13 @@ import fs from "fs"
 import { join } from "path"
 import matter from "gray-matter"
 
-const postsDirectory = join(process.cwd(), "src/mdx/posts")
+const postsDirectory =
+  process.env.NODE_ENV === "development"
+    ? join(process.cwd(), "src/mdx/posts")
+    : "./"
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
+  return fs.readdirSync(postsDirectory).filter((slug) => slug.endsWith(".mdx"))
 }
 
 export function getPostBySlug(slug, fields = []) {

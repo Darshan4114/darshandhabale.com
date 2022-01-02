@@ -11,7 +11,12 @@ export const getServerSideProps = ({ res }) => {
   const excludeList = ["_app.js", "_document.js", "_error.js", "sitemap.xml.js"]
 
   const staticPages = fs
-    .readdirSync("./.next/server/pages")
+    .readdirSync(
+      {
+        development: "pages",
+        production: "./",
+      }[process.env.NODE_ENV]
+    )
     .filter((staticPage) => {
       const slug = staticPage.slice(0, staticPage.length - 3)
       return (
