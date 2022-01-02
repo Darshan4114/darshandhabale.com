@@ -1,7 +1,11 @@
-.postTitle {
-  font-family: "Ovo", serif;
-  font-size: 1.5rem;
-}
 .container {
   font-family: "Helvetica Neue", sans-serif;
+
+  .postTitle,
+  h1,
+  h2,
+  h3 {
+    font-family: "Ovo", serif;
+    font-size: 1.5rem;
+  }
 }

@@ -43,7 +43,7 @@ const Layout = (props) => {
 
   return (
     <>
-      <Head {...props} />
+      {/* <Head {...props} /> */}
       {codeToRunOnClient && (
         <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />
       )}
