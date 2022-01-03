@@ -8,6 +8,8 @@ const postsDirectory =
     : "./"
 
 export function getPostSlugs() {
+  console.log("process.env.NODE_ENV = ", process.env.NODE_ENV)
+  console.log("postsDirectory  = ", postsDirectory)
   return fs.readdirSync(postsDirectory).filter((slug) => slug.endsWith(".mdx"))
 }
 
