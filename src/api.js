@@ -5,7 +5,7 @@ import matter from "gray-matter"
 const postsDirectory =
   process.env.NODE_ENV === "development"
     ? join(process.cwd(), "src/mdx/posts")
-    : "./.next/server/pages"
+    : "./"
 
 export function getPostSlugs() {
   console.log("process.env.NODE_ENV = ", process.env.NODE_ENV)
