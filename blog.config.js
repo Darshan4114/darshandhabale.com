@@ -5,7 +5,7 @@ module.exports = {
   description:
     "A developer blog with guides on JS and React by Darshan Dhabale",
   author: "Darshan Dhabale",
-  analytics: "", // put your google analytics code here to add tracking
+  analytics: "G-YRSWJK38X4", // put your google analytics code here to add tracking
   shareImage: "https://nextjs-mdx-blog-starter.vercel.app/img/screenshot.png",
   shareImageAlt: "DarshanDev Blog Screenshot",
   postsPerPage: 8,
