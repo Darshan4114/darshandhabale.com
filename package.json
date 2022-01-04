@@ -4,6 +4,7 @@
   "version": "0.2.4",
   "scripts": {
     "dev": "next",
+    "prebuild":"node ./src/buildTools/buildSitemap.mjs",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
