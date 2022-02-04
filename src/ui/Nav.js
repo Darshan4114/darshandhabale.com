@@ -97,6 +97,20 @@ export default function Nav({ tabValue, setTabValue }) {
 
       <div className={`${styl.styledNav} ${navState ? styl.open : styl.close}`}>
         <ul>
+          <p className={styl.tabGrp}>Mini Games</p>
+          <Link href="/mini-games/snake">
+            <a>
+              <li>
+                <Image
+                  src="/img/snake.png"
+                  height="28"
+                  width="28"
+                  alt="Snake"
+                />
+                <p> Snake</p>
+              </li>
+            </a>
+          </Link>
           <p className={styl.tabGrp}>Portfolio</p>
           <Link href="/portfolio/air3x3">
             <a>
