@@ -2,7 +2,7 @@ import config from "../blog.config"
 import Link from "next/link"
 import { MDXProvider } from "@mdx-js/react"
 import { Box, Heading } from "theme-ui"
-import Nav from "../src/ui/Nav"
+// import Nav from "../src/ui/Nav"
 import Logo from "comp/Logo"
 // import Blurb from "../mdx/blurb.mdx"
 import styl from "styl/Header.module.css"
@@ -34,9 +34,14 @@ const Header = (props) => {
                 <a>Portfolio</a>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
                 <a target="_blank">Youtube</a>
+              </Link>
+            </li> */}
+            <li>
+              <Link href="/mini-games">
+                <a>Mini Games</a>
               </Link>
             </li>
           </ul>
