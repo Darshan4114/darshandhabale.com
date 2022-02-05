@@ -12,7 +12,7 @@ export default function Games() {
       <Header />
       <div
         style={{
-          height: "100vh",
+          height: "30rem",
           width: "100vw",
           fontSize: "7rem",
           fontWeight: "bold",

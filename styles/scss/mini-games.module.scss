@@ -9,6 +9,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: hue 10s infinite linear;
+  margin: 0;
   &:hover {
     animation: hue 1s infinite linear;
   }

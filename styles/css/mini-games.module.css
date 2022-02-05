@@ -10,6 +10,7 @@
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 10s infinite linear;
           animation: hue 10s infinite linear;
+  margin: 0;
 }
 
 .gameName:hover {

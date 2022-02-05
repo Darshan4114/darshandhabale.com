@@ -1,4 +1,10 @@
-import { useState, useEffect, useRef } from "react"
+import {
+  useState,
+  useEffect,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+} from "react"
 import Head from "next/head"
 import styl from "styles/css/snake.module.css"
 import miniStyl from "styles/css/mini-games.module.css"
@@ -9,6 +15,7 @@ export default function Snake() {
   const move = useRef("up")
   const fruit = useRef(null)
   const grid = useRef(null)
+  const scoreBoard = useRef(null)
   const head = useRef({ x: 0, y: 1 })
   const snakeArr = useRef([
     { x: 1, y: 1 },
@@ -16,13 +23,13 @@ export default function Snake() {
     { x: 3, y: 1 },
   ])
 
+  const moves = ["up", "down", "left", "right"]
+
+  let headClass = styl.cell + " " + styl.head
+  let bodyClass = styl.cell + " " + styl.body
+
   useEffect(async () => {
     const root = document.querySelector(`.${styl.root}`)
-
-    const moves = ["up", "down", "left", "right"]
-
-    let headClass = styl.cell + " " + styl.head
-    let bodyClass = styl.cell + " " + styl.body
 
     const g = await buildGrid(5, root)
     grid.current = g
@@ -58,45 +65,34 @@ export default function Snake() {
         default:
           break
       }
-      if (!(await isFruit(head.current))) snakeArr.current.shift()
+      const isFr = await isFruit(head.current)
+      if (!isFr) snakeArr.current.shift()
+      checkCut()
+      if (isFr) {
+        scoreBoard.current.addScore()
+      }
+
       snakeArr.current.forEach((segment) => {
         grid.current.grid[segment.x][segment.y].className = bodyClass
       })
-    }, 500)
+    }, 400)
 
     document.addEventListener("keydown", function (evt) {
       switch (evt.keyCode) {
         case 38:
-          move.current = "up"
+          if (move.current !== "down") move.current = "up"
           break
         case 40:
-          move.current = "down"
+          if (move.current !== "up") move.current = "down"
           break
         case 37:
-          move.current = "left"
+          if (move.current !== "right") move.current = "left"
           break
         case 39:
-          move.current = "right"
+          if (move.current !== "left") move.current = "right"
           break
       }
     })
-
-    function setHeadposition({ x, y }) {
-      console.log("headset, ", x, y)
-      head.current = { x, y }
-      grid.current.grid[x][y].className = headClass
-    }
-    async function isFruit({ x, y }) {
-      console.log("current fruit", fruit.current, x, y)
-      if (fruit.current.x === x && fruit.current.y === y) {
-        console.log("is fruit")
-        await spawnFruit()
-        return true
-      }
-      console.log("isnot fruit")
-
-      return false
-    }
 
     await spawnFruit()
   }, [])
@@ -105,6 +101,22 @@ export default function Snake() {
     const element = document.createElement(type)
     element.className = className
     return element
+  }
+
+  function setHeadposition({ x, y }) {
+    console.log("headset, ", x, y)
+    head.current = { x, y }
+    grid.current.grid[x][y].className = headClass
+  }
+  async function isFruit({ x, y }) {
+    console.log("current fruit", fruit.current, x, y)
+    if (fruit.current.x === x && fruit.current.y === y) {
+      await spawnFruit()
+      return true
+    }
+    console.log("isnot fruit")
+
+    return false
   }
 
   const buildGrid = (size, root) => {
@@ -130,10 +142,16 @@ export default function Snake() {
 
   function handleMove(direction) {
     console.log("handling move, ", direction)
-    move.current = direction
+    if (
+      (move.current === "up" && direction !== "down") ||
+      (move.current === "left" && direction !== "right") ||
+      (move.current === "down" && direction !== "up") ||
+      (move.current === "right" && direction !== "left")
+    )
+      move.current = direction
   }
 
-  async function spawnFruit() {
+  function spawnFruit() {
     return new Promise((resolve) => {
       let allCells = []
       grid.current.grid.forEach((col) => {
@@ -183,6 +201,20 @@ export default function Snake() {
     })
   }
 
+  function checkCut() {
+    const isCut = snakeArr.current.filter((segment) => {
+      console.log("seg - ", segment)
+      return segment.x === head.current.x && segment.y === head.current.y
+    })
+    console.log("iscut = ", isCut, head.current)
+    if (isCut.length) {
+      const cutIdx = snakeArr.current.indexOf(isCut[0])
+      console.log("cutIdx = ", cutIdx)
+
+      snakeArr.current = snakeArr.current.slice(cutIdx)
+    }
+  }
+
   function reset(headPosition) {
     grid.current.grid.forEach((col) => {
       col.forEach((cell) => {
@@ -197,12 +229,13 @@ export default function Snake() {
   }
 
   return (
-    <>
+    <div className={styl.container}>
       <Head>
         <title>Snake</title>
       </Head>
       <Header />
       <h1 className={miniStyl.gameName}>Snake</h1>
+      <Score ref={scoreBoard} />
       <div class={styl.root}></div>
       <div className={styl.controls}>
         <div className=""></div>
@@ -213,6 +246,16 @@ export default function Snake() {
         <button onClick={() => handleMove("down")}>&#x2193;</button>
         <button onClick={() => handleMove("right")}>&#x2192;</button>
       </div>
-    </>
+    </div>
   )
 }
+
+const Score = forwardRef((props, ref) => {
+  const [score, setScore] = useState(100)
+  useImperativeHandle(ref, () => ({
+    addScore: () => {
+      setScore(score + 100)
+    },
+  }))
+  return <h2>{score}</h2>
+})
