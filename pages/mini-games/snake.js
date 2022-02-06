@@ -234,7 +234,9 @@ export default function Snake() {
         <title>Snake</title>
       </Head>
       <Header />
-      <h1 className={miniStyl.gameName}>Snake</h1>
+      <h1 className={miniStyl.gameName} style={{ fontSize: "5rem" }}>
+        Snake
+      </h1>
       <Score ref={scoreBoard} />
       <div class={styl.root}></div>
       <div className={styl.controls}>
@@ -257,5 +259,5 @@ const Score = forwardRef((props, ref) => {
       setScore(score + 100)
     },
   }))
-  return <h2>{score}</h2>
+  return <h2 className={styl.score}>{score}</h2>
 })

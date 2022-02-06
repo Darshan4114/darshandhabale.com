@@ -1,6 +1,7 @@
 .container {
   max-height: 100vh;
   text-align: center;
+  overflow: hidden;
 }
 
 .root {
@@ -40,4 +41,8 @@
     height: 3rem;
     margin: 0.25em;
   }
+}
+
+.score {
+  margin: 0;
 }
