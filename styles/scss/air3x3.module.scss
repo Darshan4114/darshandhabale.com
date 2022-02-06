@@ -1,10 +1,9 @@
 .container {
   font-family: "Montserrat", sans-serif;
   color: #222;
-  width: 50rem;
-  max-width: calc(100vw - 2em);
-  // padding: 1em;
-  margin: 0 auto;
+  width: 100vw;
+  padding: 0 0 3em;
+  position: relative;
   overflow-x: hidden;
 
   .img {
@@ -19,6 +18,9 @@
   }
 
   .landing {
+    width: 50rem;
+    max-width: calc(100vw - 2em);
+    margin: 0 auto;
     font-size: 1.5rem;
     text-transform: uppercase;
     position: relative;
@@ -56,6 +58,10 @@
   }
 
   .features {
+    width: 50rem;
+    max-width: calc(100vw - 2em);
+    margin: 0 auto;
+
     .feature {
       // display: flex;
       // flex-direction: column;

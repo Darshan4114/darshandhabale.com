@@ -15,6 +15,7 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
         </Head>
         <Header />
         <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
+
         <Footer />
       </div>
     </>

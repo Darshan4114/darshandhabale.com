@@ -96,8 +96,8 @@ export default function Air3x3() {
             </div>
           </section>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   )
 }
