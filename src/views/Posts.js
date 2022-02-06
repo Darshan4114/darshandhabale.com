@@ -1,7 +1,6 @@
 import MDX from "@mdx-js/runtime"
 import { Flex, Box, Heading, Text } from "theme-ui"
 import Image from "next/image"
-import Container from "../ui/Container"
 import DraftBadge from "../ui/DraftBadge"
 import Link from "next/link"
 import styl from "styl/Posts.module.css"
@@ -10,52 +9,39 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
   const isLocal = process.env.NODE_ENV === "development"
 
   return (
-    <Container className={styl.container}>
+    <div className={styl.container}>
       {posts &&
         posts
           .filter((post) => {
             return isLocal || !post.draft
           })
           .map((post) => (
-            <Box sx={{ pb: 5 }} key={post.slug}>
-              <Heading sx={{ pb: 2, position: "relative" }}>
-                {post.draft && <DraftBadge />}
-                <Link href={"/" + post.slug} passHref>
-                  <a className={styl.postTitle}>{post.title}</a>
-                </Link>
-              </Heading>
+            <Box className={styl.postContainer} sx={{ pb: 5 }} key={post.slug}>
               {post.coverImage && (
-                <Box
-                  sx={{
-                    mt: 2,
-                    mb: 3,
-                    border: "1px solid",
-                    borderColor: "rgba(0,0,0,.1)",
-                  }}
-                >
-                  <div
-                    style={{
-                      height: post.coverImageHeight,
-                      width: post.coverImageWidth,
-                      position: "relative",
-                      maxWidth: "calc(100vw - 2em)",
-                    }}
-                  >
-                    <Image
-                      src={post.coverImage}
-                      layout="fill"
-                      objectFit="cover"
-                      alt={post.coverImageAlt || ""}
-                    />
-                  </div>
-                </Box>
+                <div className={styl.coverImgContainer}>
+                  <Image
+                    src={post.coverImage}
+                    layout="fill"
+                    objectFit="cover"
+                    alt={post.coverImageAlt || ""}
+                  />
+                </div>
               )}
-              <Box sx={{ pb: 3 }} className={styl.postExcerpt}>
-                <MDX>{post.excerpt}</MDX>
-              </Box>
-              <Link href={"/" + post.slug} passHref>
-                <a>Read more...</a>
-              </Link>
+              <div className={styl.text}>
+                <h2>
+                  {/* {post.draft && <DraftBadge />} */}
+                  <Link href={"/" + post.slug} passHref>
+                    <a className={styl.postTitle}>{post.title}</a>
+                  </Link>
+                </h2>
+
+                {/* <div className={styl.excerpt}>
+                  <MDX>{post.excerpt}</MDX>
+                </div>
+                <Link href={"/" + post.slug} passHref>
+                  <a>Read more...</a>
+                </Link> */}
+              </div>
             </Box>
           ))}
       <Flex sx={{ fontStyle: "italic" }}>
@@ -74,7 +60,7 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
           )}
         </Box>
       </Flex>
-    </Container>
+    </div>
   )
 }
 

@@ -11,8 +11,47 @@
 .postTitle {
   font-family: "PT Serif", serif;
   // font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 2rem;
+  // font-size: rem;
 }
 .container {
   font-family: "Helvetica Neue", sans-serif;
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(3, 17rem);
+  width: 55rem;
+  max-width: calc(100vw - 2rem);
+  margin: 0 auto;
+  padding: 0 0 2em;
+}
+
+.postContainer {
+  width: 17rem;
+  height: 18rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 0.5em;
+  margin: 1em auto;
+  // padding: 0.5em;
+  h2 {
+    font-size: 1.2rem;
+  }
+  .text {
+    padding: 0.7em;
+  }
+  .excerpt {
+    height: 5rem;
+    white-space: nowrap;
+    width: 15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.coverImgContainer {
+  position: relative;
+  height: 10rem;
+  width: 100%;
+  max-width: calc(100vw - 2rem);
+  border-radius: 0.5em 0.5em 0 0;
+  overflow: hidden;
 }

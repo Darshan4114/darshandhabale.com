@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Image from "next/image"
 import Header from "comp/Header"
+import Footer from "comp/Footer"
 import styl from "styles/css/air3x3.module.css"
 import { useState, useEffect } from "react"
 
@@ -96,9 +97,7 @@ export default function Air3x3() {
           </section>
         </div>
       </div>
-      <footer className={styl.footer}>
-        <p>DarshanDev &copy; {new Date().getFullYear()}</p>
-      </footer>
+      <Footer />
     </>
   )
 }

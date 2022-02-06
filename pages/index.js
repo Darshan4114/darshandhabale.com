@@ -1,6 +1,7 @@
 import config from "../blog.config"
 import Head from "next/head"
 import Header from "comp/Header"
+import Footer from "comp/Footer"
 import styl from "styles/css/index.module.css"
 import Posts from "../src/views/Posts"
 import { getAllPosts } from "../src/api"
@@ -14,6 +15,7 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
         </Head>
         <Header />
         <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
+        <Footer />
       </div>
     </>
   )
