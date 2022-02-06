@@ -16,33 +16,39 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
             return isLocal || !post.draft
           })
           .map((post) => (
-            <Box className={styl.postContainer} sx={{ pb: 5 }} key={post.slug}>
-              {post.coverImage && (
-                <div className={styl.coverImgContainer}>
-                  <Image
-                    src={post.coverImage}
-                    layout="fill"
-                    objectFit="cover"
-                    alt={post.coverImageAlt || ""}
-                  />
-                </div>
-              )}
-              <div className={styl.text}>
-                <h2>
-                  {/* {post.draft && <DraftBadge />} */}
-                  <Link href={"/" + post.slug} passHref>
-                    <a className={styl.postTitle}>{post.title}</a>
-                  </Link>
-                </h2>
+            <Link href={"/" + post.slug} passHref>
+              <a className={styl.postTitle}>
+                <Box
+                  className={styl.postContainer}
+                  sx={{ pb: 5 }}
+                  key={post.slug}
+                >
+                  {post.coverImage && (
+                    <div className={styl.coverImgContainer}>
+                      <Image
+                        src={post.coverImage}
+                        layout="fill"
+                        objectFit="cover"
+                        alt={post.coverImageAlt || ""}
+                      />
+                    </div>
+                  )}
+                  <div className={styl.text}>
+                    <h2>
+                      {/* {post.draft && <DraftBadge />} */}
+                      {post.title}
+                    </h2>
 
-                {/* <div className={styl.excerpt}>
+                    {/* <div className={styl.excerpt}>
                   <MDX>{post.excerpt}</MDX>
                 </div>
                 <Link href={"/" + post.slug} passHref>
                   <a>Read more...</a>
                 </Link> */}
-              </div>
-            </Box>
+                  </div>
+                </Box>
+              </a>
+            </Link>
           ))}
       <Flex sx={{ fontStyle: "italic" }}>
         <Box sx={{ width: "50%", py: 3, textAlign: "left" }}>
