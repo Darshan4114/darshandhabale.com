@@ -1,0 +1,49 @@
+.container {
+  background: #152c48;
+  color: white;
+  font-family: "Fira Code", monospace;
+  min-height: 100vh;
+  // height: 100%;
+  padding: 1em;
+  width: 100vw;
+  position: relative;
+  .hero {
+    max-width: calc(100vw - 2em);
+    z-index: 1;
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .asteroid {
+    position: absolute;
+    height: 170px;
+    width: 245px;
+    top: -13rem;
+    right: -13rem;
+    z-index: 0;
+    &.moveAsteroid {
+      animation: 2.5s ease-in 0s 1 moveAsteroid;
+    }
+  }
+  button {
+    cursor: pointer;
+  }
+  .neoDataContainer {
+    word-wrap: break-word;
+    width: 60rem;
+    max-width: calc(100vw - 3em);
+  }
+}
+
+@keyframes moveAsteroid {
+  0% {
+    top: -13rem;
+    right: -13rem;
+  }
+  100% {
+    top: 55vh;
+    right: 110%;
+  }
+}

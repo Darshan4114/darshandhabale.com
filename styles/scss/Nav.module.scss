@@ -20,12 +20,12 @@
   }
 
   li {
-    height: 2.5rem;
+    // height: 2.5rem;
     cursor: pointer;
     width: 100%;
     padding: 0.5em 1em;
     background: #fff;
-    transition: background 0.2s ease-in-out;
+    transition: background 0.1s ease-out;
     &:hover {
       background: #efefef;
     }
@@ -73,6 +73,7 @@
       align-items: center;
       cursor: pointer;
       p {
+        margin: 0;
         margin-left: 0.5em;
       }
     }
@@ -124,18 +125,25 @@
   right: 1em;
   bottom: 1em;
   z-index: 30;
-  background: none;
+  background: #fff;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
   border: none;
+  cursor: pointer;
   transform: rotate(135deg);
   @media screen and (min-width: 750px) {
     display: none;
   }
 }
 .tabGrp {
-  color: #777;
-  font-weight: normal;
-  font-size: 0.85rem;
-  width: 7rem;
-  margin: 0 auto;
-  text-align: center;
+  margin: 1em auto;
+  > p {
+    color: #777;
+    font-weight: normal;
+    font-size: 0.85rem;
+    width: 7rem;
+    margin: 0 auto;
+    text-align: center;
+  }
 }

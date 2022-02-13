@@ -44,6 +44,11 @@ const Header = (props) => {
                 <a>Mini Games</a>
               </Link>
             </li>
+            <li>
+              <Link href="/just-fun/when-the-earth-blows-up">
+                <a>When the earth blows up</a>
+              </Link>
+            </li>
           </ul>
         )}
       </div>

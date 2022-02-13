@@ -97,34 +97,70 @@ export default function Nav({ tabValue, setTabValue }) {
 
       <div className={`${styl.styledNav} ${navState ? styl.open : styl.close}`}>
         <ul>
-          <p className={styl.tabGrp}>Mini Games</p>
-          <Link href="/mini-games/snake">
-            <a>
-              <li>
-                <Image
-                  src="/img/snake.png"
-                  height="28"
-                  width="28"
-                  alt="Snake"
-                />
-                <p> Snake</p>
-              </li>
-            </a>
-          </Link>
-          <p className={styl.tabGrp}>Portfolio</p>
-          <Link href="/portfolio/air3x3">
-            <a>
-              <li>
-                <Image
-                  src="/img/basketball-ball.png"
-                  height="28"
-                  width="28"
-                  alt="Air3x3: The basketball tournament application"
-                />
-                <p> Air3x3</p>
-              </li>
-            </a>
-          </Link>
+          <div className={styl.tabGrp}>
+            <p>Just Fun</p>
+            <Link href="/just-fun/when-the-earth-blows-up">
+              <a>
+                <li onClick={toggleNav}>
+                  <Image
+                    src="/img/just-fun/asteroid-strike.png"
+                    height="58"
+                    width="58"
+                    alt="When the earth blows up"
+                  />
+                  <p>When the earth blows up</p>
+                </li>
+              </a>
+            </Link>
+          </div>
+          <div className={styl.tabGrp}>
+            <p>Mini Games</p>
+            <Link href="/mini-games/snake">
+              <a>
+                <li onClick={toggleNav}>
+                  <Image
+                    src="/img/snake.png"
+                    height="28"
+                    width="28"
+                    alt="Snake"
+                  />
+                  <p> Snake</p>
+                </li>
+              </a>
+            </Link>
+          </div>
+          <div className={styl.tabGrp}>
+            <p>Portfolio</p>
+            <Link href="/portfolio/air3x3">
+              <a>
+                <li onClick={toggleNav}>
+                  <Image
+                    src="/img/basketball-ball.png"
+                    height="28"
+                    width="28"
+                    alt="Air3x3: The basketball tournament application"
+                  />
+                  <p> Air3x3</p>
+                </li>
+              </a>
+            </Link>
+          </div>
+          <div className={styl.tabGrp}>
+            <p>Main</p>
+            <Link href="/">
+              <a>
+                <li onClick={toggleNav}>
+                  <Image
+                    src="/img/imagination.png"
+                    height="28"
+                    width="28"
+                    alt="Articles"
+                  />
+                  <p> Articles</p>
+                </li>
+              </a>
+            </Link>
+          </div>
         </ul>
       </div>
       {/* <button className="closeNavBtn" onClick={closeNav}>
