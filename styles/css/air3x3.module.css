@@ -1,5 +1,4 @@
 .container {
-  font-family: "Montserrat", sans-serif;
   color: #222;
   width: 100vw;
   padding: 0 0 3em;
@@ -8,7 +7,7 @@
 }
 
 .container .img {
-  height: 85vh;
+  height: 28rem;
   width: calc(100vw - 3em);
   max-height: 100vh;
   max-width: calc(100vw - 2em);
@@ -18,10 +17,13 @@
   border-radius: 0.25em;
 }
 
-.container .landing {
-  width: 50rem;
+.container > div {
+  width: 60rem;
   max-width: calc(100vw - 2em);
   margin: 0 auto;
+}
+
+.container .landing {
   font-size: 1.5rem;
   text-transform: uppercase;
   position: relative;
@@ -31,6 +33,7 @@
   background-size: contain;
   height: 100vh;
   margin-top: -3.6em;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container .landing h1 {
@@ -114,6 +117,68 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  width: calc(100% - 3em);
+  height: calc(100% - 3em);
+  min-width: 15rem;
+}
+
+.firebaseVsAws {
+  width: 22rem;
+  height: 22rem;
+}
+
+.techStack > div {
+  min-height: 15rem;
+  margin: 3em 0;
+  border-bottom: 1px solid #dedede;
+}
+
+.text {
+  margin-bottom: 1em;
+}
+
+.col2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  gap: 1em;
+  min-height: 60rem;
+  place-items: center;
+}
+
+.col2 .imgContainer {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  min-height: 10rem;
+}
+
+.col2 .text {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+@media screen and (min-width: 780px) {
+  .col2 {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .col2 .imgContainer {
+    -webkit-box-ordinal-group: unset;
+        -ms-flex-order: unset;
+            order: unset;
+  }
+  .col2 .text {
+    -webkit-box-ordinal-group: unset;
+        -ms-flex-order: unset;
+            order: unset;
   }
 }
 /*# sourceMappingURL=air3x3.module.css.map */

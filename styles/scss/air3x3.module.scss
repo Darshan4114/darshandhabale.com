@@ -1,5 +1,4 @@
 .container {
-  font-family: "Montserrat", sans-serif;
   color: #222;
   width: 100vw;
   padding: 0 0 3em;
@@ -7,7 +6,7 @@
   overflow-x: hidden;
 
   .img {
-    height: 85vh;
+    height: 28rem;
     width: calc(100vw - 3em);
     max-height: 100vh;
     max-width: calc(100vw - 2em);
@@ -16,11 +15,13 @@
       rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     border-radius: 0.25em;
   }
-
-  .landing {
-    width: 50rem;
+  > div {
+    width: 60rem;
     max-width: calc(100vw - 2em);
     margin: 0 auto;
+  }
+
+  .landing {
     font-size: 1.5rem;
     text-transform: uppercase;
     position: relative;
@@ -30,6 +31,7 @@
     background-size: contain;
     height: 100vh;
     margin-top: -3.6em;
+    font-family: "Montserrat", sans-serif;
 
     h1 {
       // margin: 5em 2em 0;
@@ -108,6 +110,49 @@
     .landing {
       display: flex;
       // flex-direction: row;
+    }
+  }
+}
+.imgContainer {
+  position: relative;
+  width: calc(100% - 3em);
+  height: calc(100% - 3em);
+  min-width: 15rem;
+}
+.firebaseVsAws {
+  width: 22rem;
+  height: 22rem;
+}
+.techStack {
+  > div {
+    min-height: 15rem;
+    margin: 3em 0;
+    border-bottom: 1px solid #dedede;
+  }
+}
+.text {
+  margin-bottom: 1em;
+}
+.col2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1em;
+  min-height: 60rem;
+  place-items: center;
+  .imgContainer {
+    order: 1;
+    min-height: 10rem;
+  }
+  .text {
+    order: 2;
+  }
+  @media screen and (min-width: 780px) {
+    grid-template-columns: repeat(2, 1fr);
+    .imgContainer {
+      order: unset;
+    }
+    .text {
+      order: unset;
     }
   }
 }
