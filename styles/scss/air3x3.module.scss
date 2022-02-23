@@ -6,6 +6,7 @@
   overflow-x: hidden;
 
   .img {
+    z-index: 20;
     height: 28rem;
     width: calc(100vw - 3em);
     max-height: 100vh;

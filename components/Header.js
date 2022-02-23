@@ -25,7 +25,11 @@ const Header = (props) => {
   }, [])
   return (
     <MDXProvider>
-      <div className={styl.container}>
+      <div
+        className={`${styl.container} ${
+          props?.paddingClass === "pr15" && styl.pr15
+        } `}
+      >
         <Logo />
         {showNavUl && (
           <ul className={styl.navUl}>
@@ -42,6 +46,11 @@ const Header = (props) => {
             <li>
               <Link href="/mini-games">
                 <a>Mini Games</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a>About Darshan</a>
               </Link>
             </li>
             <li>

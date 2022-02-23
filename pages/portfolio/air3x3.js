@@ -26,7 +26,7 @@ export default function Air3x3() {
         <Head>
           <title>DarshanDev Project: Air3x3</title>
         </Head>
-        <Header />
+        <Header paddingClass="pr15" />
         <div className={styl.landing}>
           <h1>
             Air 3x3
@@ -71,7 +71,7 @@ export default function Air3x3() {
               <Image
                 src="/img/portfolio/air3x3/nextjs.svg"
                 layout="fill"
-                objectFit="conatin"
+                objectFit="contain"
               />
             </div>
             <div className={styl.text}>

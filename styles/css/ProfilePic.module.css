@@ -1,0 +1,28 @@
+.imgContainer {
+  padding: 1em;
+  text-align: center;
+  font-weight: bold;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 13rem;
+  width: 13rem;
+}
+
+.imgContainer.square {
+  border-radius: 0.25em;
+}
+
+.imgContainer.circle {
+  border-radius: 50%;
+}
+
+.imgContainer.small {
+  height: 5rem;
+  width: 5rem;
+}
+/*# sourceMappingURL=ProfilePic.module.css.map */

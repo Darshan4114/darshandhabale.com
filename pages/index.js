@@ -12,6 +12,10 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
       <div className={styl.container}>
         <Head>
           <title>DarshanDev: Blog and Portfolio</title>
+          <meta
+            name="description"
+            content="Blog and code snippets to learn JavaScript, Next.js and Firebase, and other coding stuff. By Darshan D. Darshan D. is a programmer by profession who likes to show his projects online."
+          />
         </Head>
         <Header />
         <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />

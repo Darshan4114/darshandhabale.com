@@ -7,13 +7,17 @@
   justify-content: space-between;
   align-items: center;
   a {
-    z-index: 50;
+    z-index: 19;
+  }
+  &.pr15 {
+    padding-right: 15rem;
   }
 }
 .navUl {
+  z-index: 1;
   list-style: none;
   display: flex;
-  max-width: 30rem;
+  max-width: 40rem;
   li {
     margin: 0 0.5em;
     cursor: pointer;
