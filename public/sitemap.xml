@@ -2,6 +2,63 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       
             <url>
+              <loc>https://darshandev.tech/about</loc>
+              <lastmod>2022-02-24T10:13:07.905Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+            <url>
+              <loc>https://darshandev.tech/game-dev/boxy</loc>
+              <lastmod>2022-02-24T10:13:07.906Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+            <url>
+              <loc>https://darshandev.tech/</loc>
+              <lastmod>2022-02-24T10:13:07.906Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+            <url>
+              <loc>https://darshandev.tech/just-fun/when-the-earth-blows-up</loc>
+              <lastmod>2022-02-24T10:13:07.906Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+            <url>
+              <loc>https://darshandev.tech/mini-games/</loc>
+              <lastmod>2022-02-24T10:13:07.906Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+            <url>
+              <loc>https://darshandev.tech/mini-games/snake</loc>
+              <lastmod>2022-02-24T10:13:07.906Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+            <url>
+              <loc>https://darshandev.tech/portfolio/air3x3</loc>
+              <lastmod>2022-02-24T10:13:07.906Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+      
+            <url>
+              <loc>https://darshandev.tech/make-sitemap-xml-for-markdown-blog-SEO</loc>
+              <lastmod>2021-01-05T12:45:28.154Z</lastmod>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+            <url>
               <loc>https://darshandev.tech/optimizing-next-js-app-with-dynamic-imports</loc>
               <lastmod>2021-12-30T06:50:28.154Z</lastmod>
               <changefreq>monthly</changefreq>
@@ -22,5 +79,13 @@
               <priority>1.0</priority>
             </url>
           
+            <url>
+              <loc>https://darshandev.tech/when-software-development-gets-boring</loc>
+              <lastmod>2022-02-18T05:30:28.123Z</lastmod>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+        
       </urlset>
         
