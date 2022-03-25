@@ -173,6 +173,19 @@ export default function Nav({ tabValue, setTabValue }) {
                 </li>
               </a>
             </Link>
+            <Link href="/portfolio/babydojo">
+              <a>
+                <li onClick={toggleNav}>
+                  <Image
+                    src="/img/portfolio/babydojo/baby.png"
+                    height="28"
+                    width="28"
+                    alt="Babydojo: Parenting application"
+                  />
+                  <p> Babydojo</p>
+                </li>
+              </a>
+            </Link>
           </div>
         </ul>
       </div>

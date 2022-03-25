@@ -1,5 +1,6 @@
 import config from "../blog.config"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { MDXProvider } from "@mdx-js/react"
 import { Box, Heading } from "theme-ui"
 // import Nav from "../src/ui/Nav"
@@ -10,6 +11,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 const Header = (props) => {
   const [showNavUl, setShowNavUl] = useState(false)
+  const router = useRouter()
   useEffect(() => {
     function resetNavUl() {
       if (window.innerWidth < 750) {
@@ -33,31 +35,44 @@ const Header = (props) => {
         <Logo />
         {showNavUl && (
           <ul className={styl.navUl}>
-            <li>
-              <Link href="/portfolio/air3x3">
-                <a>Portfolio</a>
-              </Link>
-            </li>
+            {router.asPath !== "/" && (
+              <li>
+                <Link href="/">
+                  <a>Blog</a>
+                </Link>
+              </li>
+            )}
+            {router.asPath !== "/portfolio" && (
+              <li>
+                <Link href="/portfolio">
+                  <a>Portfolio</a>
+                </Link>
+              </li>
+            )}
             {/* <li>
               <Link href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
                 <a target="_blank">Youtube</a>
               </Link>
             </li> */}
-            <li>
-              <Link href="/mini-games">
-                <a>Mini Games</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>About Darshan</a>
-              </Link>
-            </li>
-            <li>
+            {router.asPath !== "/mini-games" && (
+              <li>
+                <Link href="/mini-games">
+                  <a>Mini Games</a>
+                </Link>
+              </li>
+            )}
+            {router.asPath !== "/about" && (
+              <li>
+                <Link href="/about">
+                  <a>About Darshan</a>
+                </Link>
+              </li>
+            )}
+            {/* <li>
               <Link href="/just-fun/when-the-earth-blows-up">
                 <a>When the earth blows up</a>
               </Link>
-            </li>
+            </li> */}
           </ul>
         )}
       </div>

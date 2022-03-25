@@ -1,0 +1,206 @@
+.container {
+  color: #222;
+  width: 100vw;
+  padding: 0 0 3em;
+  position: relative;
+  overflow-x: hidden;
+  background: rgb(252, 244, 245);
+
+  .firstSection {
+    max-width: 60rem;
+
+    h1,
+    p {
+      text-align: center;
+    }
+    margin: 0 auto;
+  }
+  > section {
+    max-width: calc(100vw - 2em);
+    width: 60rem;
+
+    margin: 0 auto;
+    padding: 2em 0 0;
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+  h1 {
+    color: #3f4d67;
+  }
+
+  .internalNavList {
+    list-style: none;
+    font-size: 1.5rem;
+    li {
+      padding: 0.5em;
+    }
+  }
+
+  .heroContainer {
+    margin: 2em auto 0;
+    position: relative;
+    height: 7rem;
+    width: 7rem;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    color: #444;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  h3 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .features {
+    width: 50rem;
+    max-width: calc(100vw - 2em);
+    margin: 0 auto;
+    li {
+      margin: 0 0 1em;
+    }
+    .feature {
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // justify-content: space-evenly;
+      margin-bottom: 3em;
+      padding: 0.55em;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .landing {
+      h1 {
+        bottom: 3em;
+        font-size: 3.5rem;
+        span {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      margin: 0 0 3em;
+      // height: 20rem;
+      width: 50rem;
+      max-width: calc(100vw - 1em);
+      h3 {
+        // width: 30rem;
+        flex: 0.9 1;
+        height: calc(100vh - 2em);
+        margin: 0 1em;
+      }
+      .img {
+        // height: 90%;
+        // width: 30rem;
+        // flex: 1;
+      }
+    }
+    .feature:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .landing {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      .heroContainer {
+        height: 20rem;
+        width: 20rem;
+      }
+      // flex-direction: row;
+    }
+  }
+}
+.feature {
+  place-items: center;
+  h3 {
+    font-size: 4rem;
+    margin-top: 7rem;
+  }
+  .img {
+    position: relative;
+    width: 19.7rem;
+    overflow: hidden;
+    height: calc(100vh - 2em);
+    border: 4px solid#777;
+    border-radius: 1em;
+    margin: 0 auto;
+  }
+}
+.imgContainer {
+  position: relative;
+  width: 25rem;
+  height: calc(100% - 3em);
+  min-width: 15rem;
+}
+.firebaseVsAws {
+  width: 22rem;
+  height: 22rem;
+}
+.techStack {
+  > div {
+    min-height: 15rem;
+    margin: 3em 0;
+    border-bottom: 1px solid #dedede;
+  }
+}
+.text {
+  margin-bottom: 1em;
+}
+.firstSection {
+  @media screen and (min-width: 780px) {
+    .firstCol {
+      text-align: center;
+    }
+    .heroContainer {
+      height: 17rem;
+      width: 17rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    > p {
+      font-size: 1.2rem;
+    }
+    .internalNavList {
+      li {
+        font-size: 1.5rem;
+        padding: 1.4em 0;
+      }
+    }
+  }
+}
+.tac {
+  text-align: center;
+}
+
+.col2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1em;
+  // min-height: 60rem;
+  // place-items: center;
+  .imgContainer {
+    order: 1;
+    min-height: 10rem;
+  }
+  .text {
+    order: 2;
+  }
+  @media screen and (min-width: 780px) {
+    grid-template-columns: repeat(2, 1fr);
+    .imgContainer {
+      order: unset;
+    }
+    .text {
+      order: unset;
+    }
+  }
+}
