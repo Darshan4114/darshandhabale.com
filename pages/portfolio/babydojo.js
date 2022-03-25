@@ -208,42 +208,42 @@ export default function Babydojo() {
           <h2>Screenshots</h2>
           <section className={styl.feature}>
             <h3>Dashboard</h3>
-            <div className={styl.img}>
+            <div className={styl.screenshot}>
               <Image
                 src="/img/portfolio/babydojo/result1.png"
-                layout="fill"
-                objectFit="contain"
+                width="320.2"
+                height="660"
               />
             </div>
           </section>
 
           <section className={styl.feature}>
             <h3>Child profile</h3>
-            <div className={styl.img}>
+            <div className={styl.screenshot}>
               <Image
                 src="/img/portfolio/babydojo/child_profile.png"
-                layout="fill"
-                objectFit="contain"
+                width="320.2"
+                height="660"
               />
             </div>
           </section>
           <section className={styl.feature}>
             <h3>Navigation</h3>
-            <div className={styl.img}>
+            <div className={styl.screenshot}>
               <Image
                 src="/img/portfolio/babydojo/nav.png"
-                layout="fill"
-                objectFit="contain"
+                width="320.2"
+                height="660"
               />
             </div>
           </section>
           <section className={styl.feature}>
             <h3>Social module</h3>
-            <div className={styl.img}>
+            <div className={styl.screenshot}>
               <Image
                 src="/img/portfolio/babydojo/social.png"
-                layout="fill"
-                objectFit="contain"
+                width="320.2"
+                height="660"
               />
             </div>
           </section>

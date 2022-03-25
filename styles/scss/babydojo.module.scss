@@ -18,11 +18,12 @@
   > section {
     max-width: calc(100vw - 2em);
     width: 60rem;
-
     margin: 0 auto;
     padding: 2em 0 0;
-    li {
+    li,
+    p {
       margin-bottom: 0.5em;
+      max-width: calc(100vw - 5em);
     }
   }
   h1 {
@@ -57,7 +58,7 @@
 
   .features {
     width: 50rem;
-    max-width: calc(100vw - 2em);
+    max-width: calc(100vw - 5em);
     margin: 0 auto;
     li {
       margin: 0 0 1em;
@@ -67,6 +68,10 @@
       // flex-direction: column;
       // align-items: center;
       // justify-content: space-evenly;
+      p,
+      li {
+        max-width: calc(100vw - 5em);
+      }
       margin-bottom: 3em;
       padding: 0.55em;
     }
@@ -133,6 +138,12 @@
     border-radius: 1em;
     margin: 0 auto;
   }
+  .screenshot {
+    border: 4px solid#777;
+    border-radius: 1em;
+    margin: 0 auto;
+    overflow: hidden;
+  }
 }
 .imgContainer {
   position: relative;
@@ -185,6 +196,7 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1em;
+  max-width: calc(100vw - 1em);
   // min-height: 60rem;
   // place-items: center;
   .imgContainer {

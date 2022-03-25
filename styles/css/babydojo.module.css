@@ -24,8 +24,10 @@
   padding: 2em 0 0;
 }
 
-.container > section li {
+.container > section li,
+.container > section p {
   margin-bottom: 0.5em;
+  max-width: calc(100vw - 5em);
 }
 
 .container h1 {
@@ -62,7 +64,7 @@
 
 .container .features {
   width: 50rem;
-  max-width: calc(100vw - 2em);
+  max-width: calc(100vw - 5em);
   margin: 0 auto;
 }
 
@@ -73,6 +75,11 @@
 .container .features .feature {
   margin-bottom: 3em;
   padding: 0.55em;
+}
+
+.container .features .feature p,
+.container .features .feature li {
+  max-width: calc(100vw - 5em);
 }
 
 @media screen and (min-width: 750px) {
@@ -142,6 +149,13 @@
   margin: 0 auto;
 }
 
+.feature .screenshot {
+  border: 4px solid #777;
+  border-radius: 1em;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 .imgContainer {
   position: relative;
   width: 25rem;
@@ -194,6 +208,7 @@
   -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr);
   gap: 1em;
+  max-width: calc(100vw - 1em);
 }
 
 .col2 .imgContainer {
