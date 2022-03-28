@@ -68,6 +68,11 @@ const Header = (props) => {
                 </Link>
               </li>
             )}
+            <li>
+              <Link href="/Darshan Resume v1.4.pdf">
+                <a>Download resume</a>
+              </Link>
+            </li>
             {/* <li>
               <Link href="/just-fun/when-the-earth-blows-up">
                 <a>When the earth blows up</a>
