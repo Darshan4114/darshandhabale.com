@@ -43,6 +43,92 @@ export default function Portfolio() {
             </div>
           </a>
         </Link>
+        <Link href="/portfolio/exam-manager">
+          <a className={styl.postTitle}>
+            <div className={styl.postContainer}>
+              <div className={styl.coverImgContainer}>
+                <Image
+                  src="/img/portfolio/babydojo/babylarge.png"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Exam manager"
+                />
+              </div>
+              <div className={styl.text}>
+                <h2>Exam manager</h2>
+              </div>
+            </div>
+          </a>
+        </Link>
+        <Link href="/portfolio/exam-manager">
+          <a className={styl.postTitle}>
+            <div className={styl.postContainer}>
+              <div className={styl.coverImgContainer}>
+                <Image
+                  src="/img/portfolio/babydojo/babylarge.png"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Exam manager"
+                />
+              </div>
+              <div className={styl.text}>
+                <h2>Exam manager</h2>
+              </div>
+            </div>
+          </a>
+        </Link>
+        <Link href="/portfolio/exam-manager">
+          <a className={styl.postTitle}>
+            <div className={styl.postContainer}>
+              <div className={styl.coverImgContainer}>
+                <Image
+                  src="/img/portfolio/babydojo/babylarge.png"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Exam manager"
+                />
+              </div>
+              <div className={styl.text}>
+                <h2>Exam manager</h2>
+              </div>
+            </div>
+          </a>
+        </Link>
+        <Link href="/portfolio/exam-manager">
+          <a className={styl.postTitle}>
+            <div className={styl.postContainer}>
+              <div className={styl.coverImgContainer}>
+                <Image
+                  src="/img/portfolio/babydojo/babylarge.png"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Exam manager"
+                />
+              </div>
+              <div className={styl.text}>
+                <h2>Exam manager</h2>
+              </div>
+              team@coreblue.co.uk
+            </div>
+          </a>
+        </Link>
+        <Link href="/portfolio/exam-manager">
+          <a className={styl.postTitle}>
+            <div className={styl.postContainer}>
+              <div className={styl.coverImgContainer}>
+                <Image
+                  src="/img/portfolio/babydojo/babylarge.png"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Exam manager"
+                />
+              </div>
+              <div className={styl.text}>
+                <h2>Exam manager</h2>
+              </div>
+            </div>
+          </a>
+        </Link>
       </div>
     </>
   )

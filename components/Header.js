@@ -69,7 +69,7 @@ const Header = (props) => {
               </li>
             )}
             <li>
-              <Link href="/Darshan Resume v1.4.pdf">
+              <Link href="/resume.pdf">
                 <a>Download resume</a>
               </Link>
             </li>
