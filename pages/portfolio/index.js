@@ -43,7 +43,7 @@ export default function Portfolio() {
             </div>
           </a>
         </Link>
-        <Link href="/portfolio/exam-manager">
+        {/* <Link href="/portfolio/exam-manager">
           <a className={styl.postTitle}>
             <div className={styl.postContainer}>
               <div className={styl.coverImgContainer}>
@@ -108,7 +108,6 @@ export default function Portfolio() {
               <div className={styl.text}>
                 <h2>Exam manager</h2>
               </div>
-              team@coreblue.co.uk
             </div>
           </a>
         </Link>
@@ -128,7 +127,7 @@ export default function Portfolio() {
               </div>
             </div>
           </a>
-        </Link>
+        </Link> */}
       </div>
     </>
   )
