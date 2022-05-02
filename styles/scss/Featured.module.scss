@@ -10,11 +10,22 @@
     color:white;
     overflow:hidden;
 
-    h1{font-size: 2.2em; color:#61dafb}
-    h2{ font-family: 'Montserrat', sans-serif; font-weight: 300; margin-top: -0.7em; }
+    h1{
+      font-size: 2.2em;
+      color:#61dafb;
+    }
+    h2{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      margin-top: -0.7em;
+    }
 
-    .text{padding:1.5rem}
-.imgContainer{overflow: hidden;}
+    .text{
+      padding:1.5rem;
+    }
+    .imgContainer{
+      overflow: hidden;
+    }
     .image{
       position:relative;
       height:22rem;
@@ -37,7 +48,9 @@
         width: 36.5rem;
       }
     @media screen and (min-width: 1100px) {
-      h1{font-size: 2.9em;}
+      h1{
+        font-size: 2.9em;
+      }
       width: 55rem;
     }
 }
