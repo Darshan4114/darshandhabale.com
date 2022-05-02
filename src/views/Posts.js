@@ -18,7 +18,7 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
           .map((post) => (
             <Link href={"/" + post.slug} passHref>
               <a className={styl.postTitle}>
-                <Box
+                <div
                   className={styl.postContainer}
                   sx={{ pb: 5 }}
                   key={post.slug}
@@ -46,7 +46,7 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
                   <a>Read more...</a>
                 </Link> */}
                   </div>
-                </Box>
+                </div>
               </a>
             </Link>
           ))}
