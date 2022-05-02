@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@700&family=Ovo&family=PT+Serif&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@700;300&family=Ovo&family=PT+Serif&display=swap"
           rel="stylesheet"
         />
         <meta
