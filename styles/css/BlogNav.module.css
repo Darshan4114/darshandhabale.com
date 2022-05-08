@@ -1,0 +1,12 @@
+.navContainer {
+  border-right: 1px solid #777;
+}
+
+.reactLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/*# sourceMappingURL=BlogNav.module.css.map */

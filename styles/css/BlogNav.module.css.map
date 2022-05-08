@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAA;EACT,YAAY,EAAE,cAAc;CAC/B;;AACD,AAAA,UAAU,CAAA;EACN,OAAO,EAAC,IAAI;EACZ,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,IAAI;CACpB",
+    "sources": [
+        "../scss/BlogNav.module.scss"
+    ],
+    "names": [],
+    "file": "BlogNav.module.css"
+}
