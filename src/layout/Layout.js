@@ -6,6 +6,7 @@ import Head from "./Head"
 import Style from "./Style"
 import ThemeToggle from "../ui/ThemeToggle"
 import Header from "comp/Header"
+import MailchimpForm from "comp/MailchimpForm"
 import Main from "../ui/Main"
 import Nav from "../ui/Nav"
 import Footer from "../ui/Footer"
@@ -58,6 +59,7 @@ const Layout = (props) => {
         {/* {typeof theme.colors.modes === "object" && <ThemeToggle />} */}
         <Header />
         <Main>{props.children}</Main>
+        {/* <MailchimpForm /> */}
         <Nav />
         {/* <Footer /> */}
       </Box>
