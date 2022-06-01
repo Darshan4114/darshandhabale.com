@@ -4,7 +4,7 @@ import Header from "comp/Header"
 import Footer from "comp/Footer"
 import Featured from "comp/Featured"
 import styl from "styles/css/index.module.css"
-import Posts from "../src/views/Posts"
+import ReactPosts from "../src/views/ReactPosts"
 import { getAllPosts } from "../src/api"
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => {
@@ -20,7 +20,7 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
         </Head>
         <Header />
         <Featured />
-        <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
+        <ReactPosts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
 
         <Footer />
       </div>

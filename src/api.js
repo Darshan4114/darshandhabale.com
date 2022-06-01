@@ -49,3 +49,14 @@ export function getAllPosts(fields = []) {
     .sort((post1, post2) => (post1.date > post2.date ? "-1" : "1"))
   return posts
 }
+export function getReactPosts(fields = []) {
+  const slugs = getPostSlugs()
+  const posts = slugs
+    .map((slug) => {
+      return getPostBySlug(slug, fields)
+    })
+    .filter((post) => post?.tags?.includes("react"))
+    // sort posts by date in descending order
+    .sort((post1, post2) => (post1.date > post2.date ? "-1" : "1"))
+  return posts
+}
