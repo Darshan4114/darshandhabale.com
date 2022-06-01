@@ -68,7 +68,7 @@ function MyApp({ Component, pageProps }) {
           preceding CSS link to the HEAD of your HTML file. */
         </style>
         <script id="mcjs">
-          !function(c,h,i,m,p)
+          {`!function(c,h,i,m,p)
           {
             ((m = c.createElement(h)),
             (p = c.getElementsByTagName(h)[0]),
@@ -77,6 +77,7 @@ function MyApp({ Component, pageProps }) {
             p.parentNode.insertBefore(m, p))
           }
           (document,"script","https://chimpstatic.com/mcjs-connected/js/users/83d32f24735b5dda5dad59075/337312b53033e158d020ebbd1.js");
+        `}
         </script>
       </Head>
 
