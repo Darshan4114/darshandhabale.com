@@ -11,4 +11,7 @@ module.exports = withMDX({
     return config
   },
   swcMinify: true,
+  images: {
+    domains: ["images.unsplash.com"],
+  },
 })
