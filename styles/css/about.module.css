@@ -4,6 +4,11 @@
   margin: 0 auto 3em;
 }
 
+.container p.intro {
+  font-family: "PT Serif", sans-serif;
+  font-size: 1.2rem;
+}
+
 .container h1 {
   text-align: center;
 }
@@ -23,6 +28,62 @@
 .container a {
   text-decoration: underline;
   font-weight: bold;
+}
+
+.box {
+  border: 3px solid #000000;
+  padding: 1em;
+  margin: 1em 0.5em;
+  position: relative;
+  font-family: "PT Serif", sans-serif;
+}
+
+.box h4 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.box p {
+  margin: 0;
+}
+
+.box::before {
+  z-index: -1;
+  border: 3px solid #bbbbff;
+  content: "";
+  position: absolute;
+  left: -6px;
+  bottom: -6px;
+  height: 100%;
+  width: 100%;
+}
+
+.pfp {
+  margin: 1em 0 3rem;
+}
+
+.stack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 20rem;
+  margin-left: -1em;
+}
+
+.stack p {
+  padding: 0.25em 0.5em;
+  margin: 0.25em 0.5em;
+  background: #efefef;
+  font-weight: bold;
+  border-radius: 1rem;
+}
+
+.testimonials {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
 }
 
 @media screen and (min-width: 800px) {

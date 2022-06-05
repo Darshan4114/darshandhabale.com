@@ -2,7 +2,10 @@
   width: 60rem;
   max-width: calc(100vw - 2em);
   margin: 0 auto 3em;
-
+  p.intro {
+    font-family: "PT Serif", sans-serif;
+    font-size: 1.2rem;
+  }
   h1 {
     text-align: center;
   }
@@ -19,6 +22,52 @@
     text-decoration: underline;
     font-weight: bold;
   }
+}
+.box {
+  border: 3px solid #000000;
+  padding: 1em;
+  margin: 1em 0.5em;
+  position: relative;
+  font-family: "PT Serif", sans-serif;
+
+  h4 {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+  }
+  p {
+    margin: 0;
+  }
+  &::before {
+    z-index: -1;
+    border: 3px solid rgb(187, 187, 255);
+    content: "";
+    position: absolute;
+    left: -6px;
+    bottom: -6px;
+    height: 100%;
+    width: 100%;
+  }
+}
+.pfp {
+  margin: 1em 0 3rem;
+}
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  width: 20rem;
+  margin-left: -1em;
+  p {
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0.5em;
+    background: #efefef;
+    font-weight: bold;
+    border-radius: 1rem;
+  }
+}
+.testimonials {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
 }
 @media screen and (min-width: 800px) {
   .col2 {

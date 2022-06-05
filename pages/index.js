@@ -1,4 +1,5 @@
 import config from "../blog.config"
+import { useEffect, useRef } from "react"
 import Head from "next/head"
 import Header from "comp/Header"
 import Footer from "comp/Footer"
@@ -8,9 +9,20 @@ import ReactPosts from "../src/views/ReactPosts"
 import { getAllPosts } from "../src/api"
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => {
+  const player = useRef(null);
+  useEffect(()=>{
+    // useAnimationFrame(()=>{
+    //         player.current.style.top += 1;
+
+    // })
+
+  },[])
   return (
     <>
       <div className={styl.container}>
+        {/* <div className={styl.player} ref={player}></div>
+        <div className={styl.ground}></div> */}
+
         <Head>
           <title>DarshanDev: Blog and Portfolio</title>
           <meta
