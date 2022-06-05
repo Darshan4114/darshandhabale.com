@@ -6,10 +6,14 @@ const AboutPage = () => {
   return (
     <>
       <Head>
-        <title>DarshanDev: Blog and Portfolio</title>
+        <title>
+          React developer | React/JavaScript developer with 3 years of
+          experience | MERN stack | React.js, Node.js, Next.js, Django, Python
+        </title>
         <meta
           name="description"
-          content="Blog and code snippets to learn JavaScript, Next.js and Firebase, and other coding stuff. By Darshan D. Darshan D. is a programmer by profession who likes to show his projects online."
+          content="React developer with 3 years of
+          experience in MERN stack. Tech stack - React.js, Node.js, Next.js, Django, Python and Firebase. Darshan Dhabale - https://linkedin.com/in/dhabale | Email: darshan@darshandev.tech"
         />
       </Head>
       <Header />
