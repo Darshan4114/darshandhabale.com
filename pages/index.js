@@ -9,14 +9,12 @@ import ReactPosts from "../src/views/ReactPosts"
 import { getAllPosts } from "../src/api"
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => {
-  const player = useRef(null);
-  useEffect(()=>{
+  const player = useRef(null)
+  useEffect(() => {
     // useAnimationFrame(()=>{
     //         player.current.style.top += 1;
-
     // })
-
-  },[])
+  }, [])
   return (
     <>
       <div className={styl.container}>
@@ -24,10 +22,13 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
         <div className={styl.ground}></div> */}
 
         <Head>
-          <title>DarshanDev: Blog and Portfolio</title>
+          <title>
+            Best React blog for beginners | Learn React, Javascript, Node.js,
+            Next.js | Master React in 10 blogs
+          </title>
           <meta
             name="description"
-            content="Blog and code snippets to learn JavaScript, Next.js and Firebase, and other coding stuff. By Darshan D. Darshan D. is a programmer by profession who likes to show his projects online."
+            content="Best blog and code snippets to learn JavaScript, Next.js, Node.js and Firebase. -By Darshan Dhabale. A full-stack developer with 3 years of experience in MERN stack. Upskill as a developer with React.js"
           />
         </Head>
         <Header />
