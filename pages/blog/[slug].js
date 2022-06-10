@@ -1,7 +1,7 @@
-import Wrapper from "../src/layout/Wrapper"
-import BlogPost from "../src/views/BlogPost"
-import config from "../blog.config.js"
-import { getPostBySlug, getAllPosts } from "../src/api"
+import Wrapper from "../../src/layout/Wrapper"
+import BlogPost from "../../src/views/BlogPost"
+import config from "../../blog.config.js"
+import { getPostBySlug, getAllPosts } from "../../src/api"
 import { useEffect } from "react"
 
 const PostPage = ({ post }) => {
@@ -11,7 +11,7 @@ const PostPage = ({ post }) => {
 
       behaviour: {
         // HIGHLY RECOMMENDED
-        //  uid: "...", // uniq identifer for the comments thread on your page (ex: your page id)
+        uid: post.slug, // uniq identifer for the comments thread on your page (ex: your page id)
       },
 
       // configure your variables here

@@ -16,6 +16,8 @@ const BlogPost = ({ post }) => {
     Box: (props) => <Box {...props} />,
     pre: (props) => <div {...props} />,
     code: CodeBlock,
+    script: (props) => <script {...props}>{props.children}</script>,
+    Image,
   }
 
   return (
@@ -45,52 +47,36 @@ const BlogPost = ({ post }) => {
             <Box
               sx={{
                 mb: 3,
-                border: "1px solid",
-                borderColor: "rgba(0,0,0,.1)",
+                // border: "1px solid",
+                // borderColor: "rgba(0,0,0,.1)",
+                // position:"relative"
               }}
             >
-              <div
+              {/* <div
                 style={{
                   height: post.coverImageHeight,
                   width: post.coverImageWidth,
                   maxWidth: "84vw",
                   position: "relative",
                 }}
-              >
-                <Image
-                  src={post.coverImage}
-                  layout="fill"
-                  objectFit="cover"
-                  alt={post.coverImageAlt || ""}
-                />
-              </div>
+              > */}
+              <img
+                src={post.coverImage}
+                layout="fill"
+                objectFit="contain"
+                style={{
+                  margin: "0 auto",
+                  width: "700px",
+                  maxWidth: "calc(100vw - 2em)",
+                  // minWidth: "500px",
+                }}
+                alt={post.coverImageAlt || ""}
+              />
+              {/* </div> */}
             </Box>
           )}
           <MDX components={components}>{post.content}</MDX>
           <div id="graphcomment"></div>
-
-          {typeof config.disqus === "string" && config.disqus !== "" && (
-            <Box
-              sx={{
-                p: 4,
-                mt: 5,
-                borderTop: "2px solid",
-                borderColor: "rgba(0,0,0,.1)",
-                bg: "#eee",
-                borderRadius: "8px",
-              }}
-            >
-              <DiscussionEmbed
-                shortname={config.disqus}
-                config={{
-                  url: config.url + post.slug,
-                  identifier: post.slug,
-                  title: post.title,
-                  language: "en",
-                }}
-              />
-            </Box>
-          )}
         </>
       )}
     </Container>

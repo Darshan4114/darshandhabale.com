@@ -1,6 +1,6 @@
 import styl from "styl/ReactBlog.module.css"
 import { getReactPosts } from "../../src/api"
-import Posts from "../../src/views/Posts"
+import ReactPosts from "../../src/views/ReactPosts"
 import Header from "comp/Header"
 import config from "../../blog.config"
 
@@ -11,7 +11,7 @@ export default function ReactBlog({ posts, prevPosts, nextPosts }) {
     <>
       <Header />
       <div className={styl.reactBlogList}>
-        <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
+        <ReactPosts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
       </div>
     </>
   )

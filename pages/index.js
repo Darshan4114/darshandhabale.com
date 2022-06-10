@@ -5,7 +5,7 @@ import Header from "comp/Header"
 import Footer from "comp/Footer"
 import Featured from "comp/Featured"
 import styl from "styles/css/index.module.css"
-import ReactPosts from "../src/views/ReactPosts"
+import Posts from "../src/views/Posts"
 import { getAllPosts } from "../src/api"
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => {
@@ -33,7 +33,7 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
         </Head>
         <Header />
         <Featured />
-        <ReactPosts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
+        <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
 
         <Footer />
       </div>
@@ -53,6 +53,7 @@ export async function getStaticProps() {
     "coverImageWidth",
     "excerpt",
     "draft",
+    "tags",
   ])
 
   const startIndex = 0

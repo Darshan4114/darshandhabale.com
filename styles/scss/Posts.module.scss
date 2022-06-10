@@ -16,7 +16,7 @@
 .container {
   font-family: "Helvetica Neue", sans-serif;
   display: grid;
-  gap: 2em;
+  gap: 1em;
   // grid-template-columns: repeat(1, 17rem);
   max-width: calc(100vw - 2rem);
   margin: 0 auto;
@@ -26,7 +26,7 @@
     width: 35rem;
   }
   @media screen and (min-width: 1100px) {
-    grid-template-columns: repeat(3, 17rem);
+    grid-template-columns: repeat(3, 17.65rem);
     width: 55rem;
   }
 }
@@ -35,9 +35,9 @@
   max-width: calc(100vw - 3rem);
 
   // height: 18rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  border-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 1em;
   margin: 0.25em auto;
   // padding: 0.5em;
   h2 {
@@ -53,6 +53,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .tag {
+    background: #efefef;
+    border-radius: 1em;
+    padding: 0.1em 0.5em;
+    margin: 0.2em;
+    font-weight: bold;
+    display: inline-block;
+  }
 }
 
 .coverImgContainer {
@@ -60,6 +68,6 @@
   height: 10rem;
   width: 100%;
   max-width: calc(100vw - 2rem);
-  border-radius: 0.5em 0.5em 0 0;
+  border-radius: 1em 1em 0 0;
   overflow: hidden;
 }

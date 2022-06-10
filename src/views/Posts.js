@@ -4,52 +4,51 @@ import Image from "next/image"
 import DraftBadge from "../ui/DraftBadge"
 import Link from "next/link"
 import styl from "styl/Posts.module.css"
+import { useState } from "react"
 
 const Posts = ({ posts, prevPosts, nextPosts }) => {
+  const [col1, setCol1] = useState([])
+  const [col2, setCol2] = useState([])
+  const [col3, setCol3] = useState([])
   const isLocal = process.env.NODE_ENV === "development"
 
   return (
     <div className={styl.container}>
-      {posts &&
-        posts
-          .filter((post) => {
-            return isLocal || !post.draft
-          })
-          .map((post) => (
-            <Link href={"/react-blog/" + post.slug} passHref>
-              <a className={styl.postTitle}>
-                <div
-                  className={styl.postContainer}
-                  sx={{ pb: 5 }}
-                  key={post.slug}
-                >
-                  {post.coverImage && (
-                    <div className={styl.coverImgContainer}>
-                      <Image
-                        src={post.coverImage}
-                        layout="fill"
-                        objectFit="cover"
-                        alt={post.coverImageAlt || ""}
-                      />
-                    </div>
-                  )}
-                  <div className={styl.text}>
-                    <h2>
-                      {/* {post.draft && <DraftBadge />} */}
-                      {post.title}
-                    </h2>
+      <div>
+        {posts &&
+          posts
+            .slice(0, Math.floor(posts.length / 3) + 1)
+            .filter((post) => {
+              return isLocal || !post.draft
+            })
+            .map((post) => <Post post={post} />)}
+      </div>
 
-                    {/* <div className={styl.excerpt}>
-                  <MDX>{post.excerpt}</MDX>
-                </div>
-                <Link href={"/" + post.slug} passHref>
-                  <a>Read more...</a>
-                </Link> */}
-                  </div>
-                </div>
-              </a>
-            </Link>
-          ))}
+      <div>
+        {posts &&
+          posts
+            .slice(
+              posts.length - 2 * Math.floor(posts.length / 3),
+              posts.length - 1 * Math.floor(posts.length / 3)
+            )
+            .filter((post) => {
+              return isLocal || !post.draft
+            })
+            .map((post) => <Post post={post} />)}
+      </div>
+      <div>
+        {posts &&
+          posts
+            .slice(
+              posts.length - 1 * Math.floor(posts.length / 3),
+              posts.length
+            )
+            .filter((post) => {
+              return isLocal || !post.draft
+            })
+            .map((post) => <Post post={post} />)}
+      </div>
+
       <Flex sx={{ fontStyle: "italic" }}>
         <Box sx={{ width: "50%", py: 3, textAlign: "left" }}>
           {prevPosts !== null && (
@@ -67,6 +66,42 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
         </Box>
       </Flex>
     </div>
+  )
+}
+
+function Post({ post }) {
+  return (
+    <Link
+      href={
+        post?.tags?.includes("react") ? "/react-blog/" : "/blog/" + post.slug
+      }
+      passHref
+      key={post.slug}
+    >
+      <a className={styl.postTitle}>
+        <div
+          className={styl.postContainer}
+          key={post.slug}
+          style={{ marginBottom: "1em" }}
+        >
+          {post.coverImage && (
+            <div className={styl.coverImgContainer}>
+              <Image
+                src={post.coverImage}
+                layout="fill"
+                objectFit="cover"
+                alt={post.coverImageAlt || ""}
+              />
+            </div>
+          )}
+          <div className={styl.text}>
+            <h2>{post.title}</h2>
+            {post?.tags?.length > 0 &&
+              post.tags.map((tag) => <p className={styl.tag}>{tag}</p>)}
+          </div>
+        </div>
+      </a>
+    </Link>
   )
 }
 
