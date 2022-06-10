@@ -20,7 +20,7 @@
 }
 
 .featured h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
   margin-top: -0.7em;
 }
@@ -39,6 +39,8 @@
   width: 24.7rem;
   margin: 2rem 2rem 0;
   top: 3rem;
+  -webkit-animation: like 30s 3s infinite linear;
+          animation: like 30s 3s infinite linear;
 }
 
 .featured button {
@@ -63,6 +65,35 @@
   }
   .featured h1 {
     font-size: 2.9em;
+  }
+}
+
+@-webkit-keyframes like {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes like {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .image {
+    -webkit-animation: like 200s 3s infinite linear;
+            animation: like 200s 3s infinite linear;
   }
 }
 /*# sourceMappingURL=Featured.module.css.map */

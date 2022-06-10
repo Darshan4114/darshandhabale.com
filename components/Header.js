@@ -64,7 +64,7 @@ const Header = (props) => {
             {router.asPath !== "/about" && (
               <li>
                 <Link href="/about">
-                  <a>About Darshan</a>
+                  <a>About Author</a>
                 </Link>
               </li>
             )}

@@ -10,7 +10,7 @@
 }
 
 .postTitle {
-  font-family: "PT Serif", serif;
+  font-family: "Fira Code", monospace;
 }
 
 .container {
@@ -41,8 +41,10 @@
 
 .postContainer {
   max-width: calc(100vw - 3rem);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  color: #fff;
+  background: #13132e;
+  -webkit-box-shadow: rgba(49, 54, 59, 0.4) 0px 0px 0px 2px, rgba(51, 54, 57, 0.65) 0px 4px 6px -1px, rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
+          box-shadow: rgba(49, 54, 59, 0.4) 0px 0px 0px 2px, rgba(51, 54, 57, 0.65) 0px 4px 6px -1px, rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
   border-radius: 1em;
   margin: 0.25em auto;
 }
@@ -64,11 +66,13 @@
 }
 
 .postContainer .tag {
-  background: #efefef;
+  -webkit-box-shadow: rgba(49, 54, 59, 0.4) 0px 0px 0px 2px, rgba(51, 54, 57, 0.65) 0px 4px 6px -1px, rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
+          box-shadow: rgba(49, 54, 59, 0.4) 0px 0px 0px 2px, rgba(51, 54, 57, 0.65) 0px 4px 6px -1px, rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
   border-radius: 1em;
   padding: 0.1em 0.5em;
   margin: 0.2em;
   font-weight: bold;
+  color: #00b700;
   display: inline-block;
 }
 
