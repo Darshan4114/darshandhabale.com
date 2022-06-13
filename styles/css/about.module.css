@@ -60,20 +60,21 @@
 }
 
 .pfp {
+  grid-area: pfp;
   margin: 1em 0 3rem;
 }
 
 .stack {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  grid-area: stack;
   width: 20rem;
-  margin-left: -1em;
 }
 
-.stack p {
+.stack .stackelements p {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0.25em 0.5em;
   margin: 0.25em 0.5em;
   background: #efefef;
@@ -82,16 +83,18 @@
 }
 
 .testimonials {
+  grid-area: testimonials;
   font-family: "Montserrat", sans-serif;
   font-style: italic;
 }
 
 @media screen and (min-width: 800px) {
-  .col2 {
+  .container {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "pfp intro" "stack projects" "testimonials footer";
     gap: 1em;
   }
 }

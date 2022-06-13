@@ -50,14 +50,16 @@
   }
 }
 .pfp {
+  grid-area: pfp;
   margin: 1em 0 3rem;
 }
 .stack {
-  display: flex;
-  flex-wrap: wrap;
+  grid-area: stack;
   width: 20rem;
-  margin-left: -1em;
-  p {
+  // margin-left: -1em;
+  .stackelements p {
+    display: inline-flex;
+    flex-wrap: wrap;
     padding: 0.25em 0.5em;
     margin: 0.25em 0.5em;
     background: #efefef;
@@ -66,13 +68,18 @@
   }
 }
 .testimonials {
+  grid-area: testimonials;
   font-family: "Montserrat", sans-serif;
   font-style: italic;
 }
 @media screen and (min-width: 800px) {
-  .col2 {
+  .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "pfp intro"
+      "stack projects"
+      "testimonials footer";
     gap: 1em;
   }
 }
