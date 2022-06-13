@@ -1,6 +1,6 @@
 {
   "name": "nextjs-mdx-blog-starter",
-  "description": "Starter for creating a Next.js powered blog with content authored in MDX.",
+  "description": "A blog to learn JavaScript, React.js, Node.js, Next.js and much more. By- Darshan Dhabale",
   "version": "0.2.4",
   "scripts": {
     "dev": "next",
@@ -34,7 +34,5 @@
   "devDependencies": {
     "onchange": "^7.1.0",
     "prettier": "^2.2.1"
-  },
-  "repository": "https://github.com/johnpolacek/nextjs-mdx-blog-starter",
-  "license": "MIT"
+  }
 }

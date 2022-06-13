@@ -73,7 +73,7 @@ function Post({ post }) {
   return (
     <Link
       href={
-        post?.tags?.includes("react") ? "/react-blog/" : "/blog/" + post.slug
+        post?.tags?.includes("react") ? "/react-blog/"+ post.slug : "/blog/" + post.slug
       }
       passHref
       key={post.slug}
