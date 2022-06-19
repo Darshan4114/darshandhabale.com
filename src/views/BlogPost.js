@@ -29,7 +29,11 @@ const BlogPost = ({ post }) => {
       ) : (
         <>
           <Box sx={{ pb: [3, 4] }} className={styl.postTitle}>
-            <Heading as="h1" sx={{ fontSize: [5, 7], position: "relative" }}>
+            <Heading
+              as="h1"
+              sx={{ fontSize: [5, 7], position: "relative" }}
+              className={styl.heading}
+            >
               {post.draft && (
                 <Box sx={{ top: "10px", right: 1, position: "relative" }}>
                   <DraftBadge />
@@ -38,9 +42,20 @@ const BlogPost = ({ post }) => {
               {post.title}
             </Heading>
             {config.showDate && (
-              <Text sx={{ fontStyle: "italic", fontSize: [2], color: "#777" }}>
-                Published on {new Date(post.date).toDateString()}
-              </Text>
+              <>
+                <Text
+                  sx={{ fontStyle: "italic", fontSize: [2], color: "#777" }}
+                >
+                  {new Date(post.date).toDateString()}
+                </Text>
+                <p>
+                  <Text
+                    sx={{ fontStyle: "italic", fontSize: [1], color: "#777" }}
+                  >
+                    - D. K. Dhabale
+                  </Text>
+                </p>
+              </>
             )}
           </Box>
           {post.coverImage && (

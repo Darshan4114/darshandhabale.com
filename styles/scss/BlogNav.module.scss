@@ -1,8 +1,16 @@
-.navContainer{
-    border-right: 1px solid #777;
+.navContainer {
+  border-right: 1px solid #777;
+  width: 20rem;
+  .navTab {
+    cursor: pointer;
+    padding: 0.5em;
+    &:hover {
+      background: #4575d5;
+    }
+  }
 }
-.reactLogo{
-    display:flex;
-    font-size: 1.5rem;
-    font-weight: bold;
+.reactLogo {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
 }

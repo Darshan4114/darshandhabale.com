@@ -15,6 +15,8 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
     //         player.current.style.top += 1;
     // })
   }, [])
+  console.log("p", posts)
+
   return (
     <>
       <div className={styl.container}>
@@ -55,7 +57,7 @@ export async function getStaticProps() {
     "draft",
     "tags",
   ])
-
+  console.log("fp = ", posts.length)
   const startIndex = 0
   const endIndex = config.postsPerPage
   const prevPosts = null

@@ -1,0 +1,9 @@
+.container {
+  display: -ms-grid;
+  display: grid;
+  max-width: 60rem;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 1em;
+}
+/*# sourceMappingURL=Layout.module.css.map */

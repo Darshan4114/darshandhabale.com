@@ -6,7 +6,9 @@ import Head from "./Head"
 import Style from "./Style"
 import ThemeToggle from "../ui/ThemeToggle"
 import Header from "comp/Header"
+import AuthorSummary from "comp/AuthorSummary"
 import MailchimpForm from "comp/MailchimpForm"
+import styl from "styl/Layout.module.css"
 import Main from "../ui/Main"
 import Nav from "../ui/Nav"
 import Footer from "../ui/Footer"
@@ -54,11 +56,16 @@ const Layout = (props) => {
           minHeight: "100vh",
           flexDirection: "column",
           overflowX: "hidden",
+          background: "#325499",
         }}
       >
         {/* {typeof theme.colors.modes === "object" && <ThemeToggle />} */}
         <Header />
-        <Main>{props.children}</Main>
+        <div className={styl.container}>
+          {/* <AuthorSummary /> */}
+          <Main>{props.children}</Main>
+        </div>
+
         {/* <MailchimpForm /> */}
         <Nav />
         {/* <Footer /> */}

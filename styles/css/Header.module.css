@@ -36,4 +36,8 @@
   margin: 0 0.5em;
   cursor: pointer;
 }
+
+.navUl a {
+  color: white;
+}
 /*# sourceMappingURL=Header.module.css.map */

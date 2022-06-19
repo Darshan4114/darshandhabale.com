@@ -47,16 +47,19 @@ export function getAllPosts(fields = []) {
     })
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? "-1" : "1"))
+  console.log("ap ", posts.length)
   return posts
 }
-export function getReactPosts(fields = []) {
+export function getReactPosts(fields = [], reverse = true) {
   const slugs = getPostSlugs()
-  const posts = slugs
+  let posts = slugs
     .map((slug) => {
       return getPostBySlug(slug, fields)
     })
     .filter((post) => post?.tags?.includes("react"))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? "-1" : "1"))
+  // sort posts by date in descending order
+
+  if (reverse)
+    posts = posts.sort((post1, post2) => (post1.date > post2.date ? "-1" : "1"))
   return posts
 }

@@ -6,7 +6,14 @@
 .container h1,
 .container h2,
 .container h3 {
-  font-family: "Ovo", serif;
-  font-size: 1.5rem;
+  font-family: "Fira Code", monospace;
+  color: #0a3883;
+}
+
+.container .heading {
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: #307fff;
+  font-family: sans-serif;
 }
 /*# sourceMappingURL=Post.module.css.map */

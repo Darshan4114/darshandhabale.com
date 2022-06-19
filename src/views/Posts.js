@@ -11,7 +11,6 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
   const [col2, setCol2] = useState([])
   const [col3, setCol3] = useState([])
   const isLocal = process.env.NODE_ENV === "development"
-
   return (
     <div className={styl.container}>
       <div>
@@ -73,7 +72,9 @@ function Post({ post }) {
   return (
     <Link
       href={
-        post?.tags?.includes("react") ? "/react-blog/"+ post.slug : "/blog/" + post.slug
+        post?.tags?.includes("react")
+          ? "/react-blog/" + post.slug
+          : "/blog/" + post.slug
       }
       passHref
       key={post.slug}

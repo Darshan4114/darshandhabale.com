@@ -1,5 +1,15 @@
 .navContainer {
   border-right: 1px solid #777;
+  width: 20rem;
+}
+
+.navContainer .navTab {
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+.navContainer .navTab:hover {
+  background: #4575d5;
 }
 
 .reactLogo {
