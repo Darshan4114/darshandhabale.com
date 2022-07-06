@@ -10,7 +10,8 @@
   overflow: hidden;
   height: 25rem;
   width: 25rem;
-  border: 4px solid #333;
+  max-width: calc(100vw - 2em);
+  // border: 4px solid #333;
 
   &.square {
     border-radius: 2.25em;
