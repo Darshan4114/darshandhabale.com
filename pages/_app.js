@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react"
 import Head from "next/head"
 import Nav from "../src/ui/Nav"
 import styl from "styles/css/app.module.css"
-
+import { ToastContainer, Slide } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import { useRouter } from "next/router"
 import "../styles/globals.css"
 // import nProgress from "nprogress"
@@ -34,7 +35,7 @@ function MyApp({ Component, pageProps }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
           integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
           crossOrigin="anonymous"
-          referrerpolicy="no-referrer"
+          referrerpolicy="no-referrer" 
         /> */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
@@ -84,6 +85,18 @@ function MyApp({ Component, pageProps }) {
       <div className={styl.navAndComponentContainer}>
         <Nav tabValue={tabValue} setTabValue={redirectAndSetTabValue} />
         <Component {...pageProps} tabValue={tabValue} />
+        <ToastContainer
+          position="bottom-center"
+          autoClose={1000}
+          hideProgressBar
+          transition={Slide}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </>
   )

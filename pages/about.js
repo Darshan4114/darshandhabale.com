@@ -1,9 +1,20 @@
 import Head from "next/head"
+import Image from "next/image"
 import Header from "comp/Header"
 import ScrollIcon from "comp/ScrollIcon"
 import ProfilePic from "comp/ProfilePic"
+import ButtonIcon from "comp/ButtonIcon"
 import styl from "styl/about.module.css"
+import { toast } from "react-toastify"
+import { toastOptions } from "comp/constants"
+
 const AboutPage = () => {
+  function copyEmail() {
+    const copy = async (text) => await navigator.clipboard.writeText(text)
+    copy("darshan@darshandev.tech").then(() => {
+      toast.success("Email copied!")
+    })
+  }
   return (
     <>
       <Head>
@@ -161,13 +172,30 @@ const AboutPage = () => {
         {/* </div> */}
 
         <footer>
-          <p>
-            Think you have an exciting project for me? drop me a mail at{" "}
+          <p className={styl.emailLine}>
+            Think you have an exciting project for me? drop me a mail at &nbsp;
             <a href="mailto:darshan@darshandev.tech">darshan@darshandev.tech</a>
+            <span className={styl.copyBtn}>
+              <ButtonIcon onClick={copyEmail}>
+                <Image src="/img/copy.png" height="48" width="48" />
+              </ButtonIcon>
+            </span>
           </p>
-          <p>
+          <p className={styl.emailLine}>
             Just want a developer friend? I’m very open to that offer. Here is
-            my <a href="https://www.instagram.com/code_darshan/">instagram</a>.
+            my &nbsp;
+            <a target="_blank" href="https://www.instagram.com/code_darshan/">
+              instagram
+            </a>
+            &nbsp;
+            <a target="_blank" href="https://www.instagram.com/code_darshan/">
+              <Image
+                style={{ marginLeft: "1em", marginTop: "0.5em" }}
+                src="/img/link.png"
+                height="16"
+                width="16"
+              />
+            </a>
           </p>
         </footer>
       </div>

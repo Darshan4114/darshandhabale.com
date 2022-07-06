@@ -141,6 +141,13 @@
     font-style: italic;
   }
 }
+.emailLine {
+  display: inline-flex;
+  align-items: center;
+}
+.copyBtn {
+  margin-left: 0.5em;
+}
 @media screen and (min-width: 800px) {
   .container {
     // display: grid;
