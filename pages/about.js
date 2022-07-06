@@ -173,15 +173,20 @@ const AboutPage = () => {
 
         <footer>
           <p className={styl.emailLine}>
-            Think you have an exciting project for me? drop me a mail at &nbsp;
-            <a href="mailto:darshan@darshandev.tech">darshan@darshandev.tech</a>
+            <span>
+              Think you have an exciting project for me? drop me a mail at
+              &nbsp;
+              <a href="mailto:darshan@darshandev.tech">
+                darshan@darshandev.tech
+              </a>
+            </span>
             <span className={styl.copyBtn}>
               <ButtonIcon onClick={copyEmail}>
                 <Image src="/img/copy.png" height="48" width="48" />
               </ButtonIcon>
             </span>
           </p>
-          <p className={styl.emailLine}>
+          <p>
             Just want a developer friend? I’m very open to that offer. Here is
             my &nbsp;
             <a target="_blank" href="https://www.instagram.com/code_darshan/">
