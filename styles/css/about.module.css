@@ -2,11 +2,32 @@
   width: 60rem;
   max-width: calc(100vw - 2em);
   margin: 0 auto 3em;
+  color: #333;
 }
 
-.container p.intro {
-  font-family: "PT Serif", sans-serif;
+.container .intro {
+  font-family: sans-serif;
   font-size: 1.2rem;
+  margin: 1em;
+}
+
+.container .name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-top: -0.7em;
+}
+
+.container .name span {
+  font-size: 3rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fa0aff), to(#0e0aff));
+  background: linear-gradient(180deg, #fa0aff 0%, #0e0aff 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.container .desg {
+  margin-top: -1.5em;
+  margin-bottom: 2em;
 }
 
 .container h1 {
@@ -28,6 +49,43 @@
 .container a {
   text-decoration: underline;
   font-weight: bold;
+}
+
+.container section {
+  position: relative;
+  margin-bottom: 3em;
+}
+
+.fullpage {
+  min-height: 100vh;
+}
+
+.cols {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.hero .cols {
+  padding-bottom: 5rem;
+}
+
+.desg {
+  font-family: monospace;
+}
+
+.highlight {
+  background: #d291f7ad;
+  position: relative;
+}
+
+.scroll {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  bottom: 2rem;
+  text-align: center;
 }
 
 .box {
@@ -60,13 +118,12 @@
 }
 
 .pfp {
-  grid-area: pfp;
-  margin: 1em 0 3rem;
+  width: 25rem;
+  margin: 1em auto;
 }
 
 .stack {
   grid-area: stack;
-  width: 20rem;
 }
 
 .stack .stackelements p {
@@ -85,17 +142,18 @@
 .testimonials {
   grid-area: testimonials;
   font-family: "Montserrat", sans-serif;
+}
+
+.testimonials p {
   font-style: italic;
 }
 
 @media screen and (min-width: 800px) {
-  .container {
+  .container section .cols {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "pfp intro" "stack projects" "testimonials footer";
-    gap: 1em;
   }
 }
 /*# sourceMappingURL=about.module.css.map */

@@ -8,12 +8,12 @@
   position: relative;
   border-radius: 50%;
   overflow: hidden;
-  height: 13rem;
-  width: 13rem;
+  height: 25rem;
+  width: 25rem;
   border: 4px solid #333;
 
   &.square {
-    border-radius: 0.25em;
+    border-radius: 2.25em;
   }
   &.circle {
     border-radius: 50%;

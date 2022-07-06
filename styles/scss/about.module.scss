@@ -2,10 +2,30 @@
   width: 60rem;
   max-width: calc(100vw - 2em);
   margin: 0 auto 3em;
-  p.intro {
-    font-family: "PT Serif", sans-serif;
+  color: #333;
+  .intro {
+    font-family: sans-serif;
     font-size: 1.2rem;
+    margin: 1em;
   }
+  .name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: -0.7em;
+
+    span {
+      font-size: 3rem;
+      background: linear-gradient(180deg, #fa0aff 0%, #0e0aff 100%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+  }
+
+  .desg {
+    margin-top: -1.5em;
+    margin-bottom: 2em;
+  }
+
   h1 {
     text-align: center;
   }
@@ -22,7 +42,53 @@
     text-decoration: underline;
     font-weight: bold;
   }
+  section {
+    position: relative;
+    margin-bottom: 3em;
+  }
 }
+
+.fullpage {
+  min-height: 100vh;
+}
+.cols {
+  align-items: center;
+  position: relative;
+}
+.hero .cols {
+  padding-bottom: 5rem;
+}
+
+.desg {
+  font-family: monospace;
+}
+
+.highlight {
+  background: #d291f7ad;
+  // color: #fff;
+  position: relative;
+}
+
+.scroll {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  bottom: 2rem;
+  text-align: center;
+}
+// .highlight:before {
+//   content: "";
+//   background-color: #ff6db7;
+//   width: 100%;
+//   height: 1em;
+//   position: absolute;
+//   z-index: -1;
+//   filter: url(#marker-shape);
+//   left: -0.25em;
+//   top: 0.1em;
+//   padding: 0 0.25em;
+// }
+
 .box {
   border: 3px solid #000000;
   padding: 1em;
@@ -50,12 +116,13 @@
   }
 }
 .pfp {
-  grid-area: pfp;
-  margin: 1em 0 3rem;
+  // grid-area: pfp;
+  width: 25rem;
+  margin: 1em auto;
 }
 .stack {
   grid-area: stack;
-  width: 20rem;
+  // width: 20rem;
   // margin-left: -1em;
   .stackelements p {
     display: inline-flex;
@@ -70,16 +137,24 @@
 .testimonials {
   grid-area: testimonials;
   font-family: "Montserrat", sans-serif;
-  font-style: italic;
+  p {
+    font-style: italic;
+  }
 }
 @media screen and (min-width: 800px) {
   .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "pfp intro"
-      "stack projects"
-      "testimonials footer";
-    gap: 1em;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-template-areas:
+    //   "pfp intro"
+    //   "stack projects"
+    //   "testimonials footer";
+    // gap: 1em;
+    section {
+      .cols {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 }

@@ -7,7 +7,11 @@ export default function ProfilePic({
   shape = "circle",
 }) {
   return (
-    <div className={`${styl.imgContainer} ${size} ${shape}`}>
+    <div
+      className={`${styl.imgContainer} ${size === "large" && styl.large} ${
+        shape === "square" && styl.square
+      }`}
+    >
       {imgSrc && (
         <Image src={imgSrc} layout="fill" objectFit="cover" alt="profile pic" />
       )}

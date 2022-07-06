@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Header from "comp/Header"
+import ScrollIcon from "comp/ScrollIcon"
 import ProfilePic from "comp/ProfilePic"
 import styl from "styl/about.module.css"
 const AboutPage = () => {
@@ -15,19 +16,65 @@ const AboutPage = () => {
           content="React developer with 3 years of
           experience in MERN stack. Tech stack - React.js, Node.js, Next.js, Django, Python and Firebase. Darshan Dhabale - https://linkedin.com/in/dhabale | Email: darshan@darshandev.tech"
         />
+        <svg
+          xmlns="//www.w3.org/2000/svg"
+          version="1.1"
+          class="svg-filters"
+          style={{ display: "none" }}
+        >
+          <defs>
+            <filter id="marker-shape">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0 0.15"
+                numOctaves="1"
+                result="warp"
+              />
+              <feDisplacementMap
+                xChannelSelector="R"
+                yChannelSelector="G"
+                scale="30"
+                in="SourceGraphic"
+                in2="warp"
+              />
+            </filter>
+          </defs>
+        </svg>
       </Head>
-      <Header /> <h1>About the author</h1>
-      <div className={styl.container}>
-        <div className={styl.pfp}>
-          <ProfilePic
-            imgSrc="/img/darshan_c.png"
-            objectFit="cover"
-            layout="fill"
-          />
-        </div>
+      {/* <Header /> */}
 
-        <p className={styl.intro}>
-          Darshan Dhabale is a full-stack developer with 3 years of experience
+      {/* <h1>About the author</h1> */}
+      <div className={styl.container}>
+        <section className={`${styl.hero} ${styl.fullpage}`}>
+          <div className={`${styl.cols} ${styl.fullpage}`}>
+            <div className={styl.pfp}>
+              <ProfilePic imgSrc="/img/darshan_text.jpeg" shape="square" />
+            </div>
+
+            <div className={styl.intro}>
+              <p>I am</p>
+              <p className={styl.name}>
+                <span>D</span>arshan
+              </p>
+              <p className={styl.desg}>Full stack developer</p>
+              <p>
+                I work with business owners to develop{" "}
+                <span className={styl.highlight}>
+                  custom web based solutions or mobile applications.
+                </span>
+              </p>
+              <p>
+                Business I have worked with -{" "}
+                <span className={styl.highlight}>
+                  hotels, colleges, cab companies and ecommerce startups.
+                </span>
+              </p>
+              <p>
+                Building valuable software that saves my clients time and money
+                is what gets me going as a developer.
+              </p>
+              {/* <p> Below are my tech-stack, projects and testimonials.</p> */}
+              {/* Darshan Dhabale is a full-stack developer with 3 years of experience
           developing web-applications with the MERN stack.
           <br />
           He has taken multiple projects from idea to MVP and led development on
@@ -35,10 +82,16 @@ const AboutPage = () => {
           <br />
           He has a passion for teaching and experience mentoring junior
           developers.
-          <br />
-        </p>
-        <div className={styl.stack}>
-          <h3>Tech stack</h3>
+          <br /> */}
+            </div>
+          </div>
+          <div className={styl.scroll}>
+            <ScrollIcon color="#3f4d67" />
+          </div>
+        </section>
+
+        <section className={styl.stack}>
+          <h2>Tech stack</h2>
           <p>Including but not limited to</p>
           <div className={styl.stackelements}>
             <p>React.js</p>
@@ -53,9 +106,9 @@ const AboutPage = () => {
             <p>MongoDB</p>
             <p>Salesforce</p>
           </div>
-        </div>
-        <div className={styl.projects}>
-          <h3>Projects</h3>
+        </section>
+        <section className={styl.projects}>
+          <h2>Projects</h2>
           <div className={styl.box}>
             <h4>Kabbie: The concierge CRM</h4>
             <p>
@@ -86,10 +139,10 @@ const AboutPage = () => {
             </p>
             <a href="/portfolio/babydojo">Know more...</a>
           </div>
-        </div>
+        </section>
 
-        <div className={styl.testimonials}>
-          <h3>Testimonials</h3>
+        <section className={styl.testimonials}>
+          <h2>Testimonials</h2>
           <p>
             “Darshan is a very skilled and professional full stack developer. I
             am very impressed with his ability to listen to my requirements and
@@ -103,7 +156,7 @@ const AboutPage = () => {
             project. The communication was smooth and work were delivered as
             required.” - LooYee
           </p>
-        </div>
+        </section>
 
         {/* </div> */}
 
