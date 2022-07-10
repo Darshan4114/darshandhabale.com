@@ -30,9 +30,9 @@ const Header = (props) => {
       <div
         className={`${styl.container} ${
           props?.paddingClass === "pr15" && styl.pr15
-        } `}
+        } ${props.darkmode && styl.darkmode}`}
       >
-        <Logo />
+        <Logo darkmode={props.darkmode} />
         {showNavUl && (
           <ul className={styl.navUl}>
             {router.asPath !== "/" && (
@@ -65,6 +65,13 @@ const Header = (props) => {
               <li>
                 <Link href="/about">
                   <a>About Author</a>
+                </Link>
+              </li>
+            )}
+            {router.asPath !== "/consult" && (
+              <li>
+                <Link href="/consult">
+                  <a>Consult</a>
                 </Link>
               </li>
             )}

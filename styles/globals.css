@@ -21,3 +21,6 @@ blockquote {
   background: #efefef;
   padding: 0.5em;
 }
+.fp-watermark {
+  display: none;
+}

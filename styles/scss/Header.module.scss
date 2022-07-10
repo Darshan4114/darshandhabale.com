@@ -12,7 +12,10 @@
   &.pr15 {
     padding-right: 15rem;
   }
-  color: white;
+
+  &.darkmode a {
+    color: white;
+  }
 }
 .navUl {
   z-index: 1;
@@ -22,8 +25,5 @@
   li {
     margin: 0 0.5em;
     cursor: pointer;
-  }
-  a {
-    color: white;
   }
 }

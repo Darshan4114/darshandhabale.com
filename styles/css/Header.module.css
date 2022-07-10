@@ -12,7 +12,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
 }
 
 .container a {
@@ -21,6 +20,10 @@
 
 .container.pr15 {
   padding-right: 15rem;
+}
+
+.container.darkmode a {
+  color: white;
 }
 
 .navUl {
@@ -35,9 +38,5 @@
 .navUl li {
   margin: 0 0.5em;
   cursor: pointer;
-}
-
-.navUl a {
-  color: white;
 }
 /*# sourceMappingURL=Header.module.css.map */

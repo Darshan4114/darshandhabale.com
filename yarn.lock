@@ -197,6 +197,14 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 
+"@babel/polyfill@^7.2.5":
+  version "7.12.1"
+  resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.12.1.tgz#1f2d6371d1261bbd961f3c5d5909150e12d0bd96"
+  integrity sha512-X0pi0V6gxLi6lFZpGmeNa4zxtwEmCs42isWLNjZZDE0Y8yVfgu0T2OAHlzBbdYlqbW/YXVvoBHpATEM+goCj8g==
+  dependencies:
+    core-js "^2.6.5"
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.13.10", "@babel/runtime@^7.7.2":
   version "7.16.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.3.tgz#b86f0db02a04187a3c17caa77de69840165d42d5"
@@ -365,6 +373,14 @@
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
+
+"@fullpage/react-fullpage@^0.1.26":
+  version "0.1.26"
+  resolved "https://registry.yarnpkg.com/@fullpage/react-fullpage/-/react-fullpage-0.1.26.tgz#8772a748d1d544181c1f9349630fc9ec48b50fc7"
+  integrity sha512-gUdUusnQzyk9gej4PuY4iSJHvG1yckK1cu8mW0dTj3Y1Z6dH+AUDVllfxZS48pmDLbiLQq++0bW6D0VPkqutfQ==
+  dependencies:
+    "@babel/polyfill" "^7.2.5"
+    fullpage.js "^4.0.9"
 
 "@mdx-js/loader@^1.6.22":
   version "1.6.22"
@@ -1124,6 +1140,11 @@ convert-source-map@^1.5.0, convert-source-map@^1.7.0:
   dependencies:
     safe-buffer "~5.1.1"
 
+core-js@^2.6.5:
+  version "2.6.12"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
+  integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
+
 cosmiconfig@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-6.0.0.tgz#da4fee853c52f6b1e6935f41c1a2fc50bd4a9982"
@@ -1288,6 +1309,11 @@ fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+
+fullpage.js@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/fullpage.js/-/fullpage.js-4.0.9.tgz#1ef0418626dc253171aa6b942bf84fc3f6460720"
+  integrity sha512-/P9P8WqK5B1ZKGqT9PQmDdQY2xTg2lt3ersb+/X1kA47NlBakNyS/W4Zw9otW1loG2Or2OAh15VKaJVPsdMNVw==
 
 function-bind@^1.1.1:
   version "1.1.1"

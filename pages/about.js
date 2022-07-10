@@ -52,7 +52,7 @@ const AboutPage = () => {
           </defs>
         </svg>
       </Head>
-      {/* <Header /> */}
+      <Header />
 
       {/* <h1>About the author</h1> */}
       <div className={styl.container}>

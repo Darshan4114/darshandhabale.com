@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-export default function Logo() {
+export default function Logo(props) {
   const [logoSize, setLogoSize] = useState("small")
   useEffect(() => {
     function refreshLogo() {
@@ -30,8 +30,13 @@ export default function Logo() {
           {logoSize === "small" ? (
             <Image src="/img/logo.svg" height="30" width="30" />
           ) : (
-            // <Image src="/img/full_logo.svg" height="42" width="100" />
-            <Image src="/img/logo_dark.svg" height="42" width="100" />
+            <>
+              {props.darkmode ? (
+                <Image src="/img/logo_dark.svg" height="42" width="100" />
+              ) : (
+                <Image src="/img/full_logo.svg" height="42" width="100" />
+              )}
+            </>
           )}
         </div>
       </a>
