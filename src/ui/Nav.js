@@ -97,36 +97,7 @@ export default function Nav({ tabValue, setTabValue }) {
 
       <div className={`${styl.styledNav} ${navState ? styl.open : styl.close}`}>
         <ul>
-          <div className={styl.tabGrp}>
-            <p>Main</p>
-            <Link href="/">
-              <a>
-                <li onClick={toggleNav}>
-                  <Image
-                    src="/img/imagination.png"
-                    height="28"
-                    width="28"
-                    alt="Articles"
-                  />
-                  <p> Articles</p>
-                </li>
-              </a>
-            </Link>
-            <Link href="/about">
-              <a>
-                <li onClick={toggleNav}>
-                  <Image
-                    src="/img/author1.jpg"
-                    height="28"
-                    width="28"
-                    alt="About Darshan"
-                  />
-                  <p> About Darshan</p>
-                </li>
-              </a>
-            </Link>
-          </div>
-          <div className={styl.tabGrp}>
+          {/* <div className={styl.tabGrp}>
             <p>Just Fun</p>
             <Link href="/just-fun/when-the-earth-blows-up">
               <a>
@@ -141,7 +112,7 @@ export default function Nav({ tabValue, setTabValue }) {
                 </li>
               </a>
             </Link>
-          </div>
+          </div> */}
           <div className={styl.tabGrp}>
             <p>Mini Games</p>
             <Link href="/mini-games/snake">
@@ -183,6 +154,48 @@ export default function Nav({ tabValue, setTabValue }) {
                     alt="Babydojo: Parenting application"
                   />
                   <p> Babydojo</p>
+                </li>
+              </a>
+            </Link>
+          </div>
+          <div className={styl.tabGrp}>
+            <p>Main</p>
+            <Link href="/consult">
+              <a>
+                <li onClick={toggleNav}>
+                  <Image
+                    src="/img/consult.png"
+                    height="28"
+                    width="28"
+                    alt="Consult"
+                  />
+                  <p> Consult</p>
+                </li>
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <li onClick={toggleNav}>
+                  <Image
+                    src="/img/imagination.png"
+                    height="28"
+                    width="28"
+                    alt="Articles"
+                  />
+                  <p> Articles</p>
+                </li>
+              </a>
+            </Link>
+            <Link href="/about">
+              <a>
+                <li onClick={toggleNav}>
+                  <Image
+                    src="/img/author1.jpg"
+                    height="28"
+                    width="28"
+                    alt="About Darshan"
+                  />
+                  <p> About Darshan</p>
                 </li>
               </a>
             </Link>

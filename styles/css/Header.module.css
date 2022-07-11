@@ -1,6 +1,5 @@
 .container {
-  width: 50rem;
-  max-width: 100vw;
+  max-width: 50rem;
   margin: 0 auto;
   padding: 1em;
   display: -webkit-box;

@@ -177,8 +177,7 @@ const ConsultPage = () => {
                     <p>
                       This is a CRM used by a hotel in Los Angeles. The hotel
                       organizes basketball tournaments and provides tour
-                      packages to players. This CRM is built around this
-                      business model.
+                      packages to players.
                     </p>
                     <a href="/portfolio/air3x3">Know more...</a>
                   </div>
