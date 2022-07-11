@@ -5,7 +5,7 @@ import Header from "comp/Header"
 import ScrollIcon from "comp/ScrollIcon"
 import ProfilePic from "comp/ProfilePic"
 import ButtonIcon from "comp/ButtonIcon"
-import PageScroll from "util/PageScroll"
+// import PageScroll from "util/PageScroll"
 import styl from "styl/consult.module.css"
 import ReactFullpage from "@fullpage/react-fullpage"
 
