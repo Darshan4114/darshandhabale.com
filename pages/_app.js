@@ -57,6 +57,19 @@ function MyApp({ Component, pageProps }) {
           {dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'G-YRSWJK38X4');`}
         </script>
+        {/* <!-- Global site tag (gtag.js) - Google Ads: 348077670 --> */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-348077670"
+        ></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-348077670');`}
+        </script>
+
         {/* <!-- Begin Mailchimp Signup Form --> */}
         <link
           href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css"

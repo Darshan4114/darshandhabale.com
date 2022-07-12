@@ -31,6 +31,18 @@ const ConsultPage = () => {
       toast.success("Email copied!")
     })
   }
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof url != "undefined") {
+        window.location = url
+      }
+    }
+    gtag("event", "conversion", {
+      send_to: "AW-348077670/YB3ZCIiiiM0DEOb8_KUB",
+      event_callback: callback,
+    })
+    return false
+  }
   return (
     <>
       <Head>
@@ -88,7 +100,10 @@ const ConsultPage = () => {
                   </p>
                   <Link href="https://calendly.com/dhabale/project-intro-meet">
                     <a target="_blank">
-                      <button className={`${styl.cta} ${styl.center}`}>
+                      <button
+                        className={`${styl.cta} ${styl.center}`}
+                        onClick={gtag_report_conversion}
+                      >
                         Book a consult
                       </button>
                     </a>
@@ -204,7 +219,12 @@ const ConsultPage = () => {
                   <p className={styl.bigtxt}>Book a spot on my calendar</p>
                   <Link href="https://calendly.com/dhabale/project-intro-meet">
                     <a target="_blank">
-                      <button className={styl.cta}>Book a consult</button>
+                      <button
+                        className={styl.cta}
+                        onClick={gtag_report_conversion}
+                      >
+                        Book a consult
+                      </button>
                     </a>
                   </Link>
                   <p className={styl.emailLine}>
