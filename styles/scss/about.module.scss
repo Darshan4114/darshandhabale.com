@@ -149,6 +149,25 @@
 .copyBtn {
   margin-left: 0.5em;
 }
+.artGroupContainer {
+  height: 25rem;
+  width: 25rem;
+}
+#artGroup1Ball {
+  animation: bounce ease-in 0.5s infinite alternate;
+  animation-fill-mode: both;
+  fill: #404040;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
 @media screen and (min-width: 800px) {
   .container {
     // display: grid;

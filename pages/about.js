@@ -5,8 +5,8 @@ import ScrollIcon from "comp/ScrollIcon"
 import ProfilePic from "comp/ProfilePic"
 import ButtonIcon from "comp/ButtonIcon"
 import styl from "styl/about.module.css"
-import { toast } from "react-toastify"
-import { toastOptions } from "comp/constants"
+import {toast} from "react-toastify"
+import {toastOptions} from "comp/constants"
 
 const AboutPage = () => {
   function copyEmail() {
@@ -31,7 +31,7 @@ const AboutPage = () => {
           xmlns="//www.w3.org/2000/svg"
           version="1.1"
           class="svg-filters"
-          style={{ display: "none" }}
+          style={{display: "none"}}
         >
           <defs>
             <filter id="marker-shape">
@@ -59,7 +59,44 @@ const AboutPage = () => {
         <section className={`${styl.hero} ${styl.fullpage}`}>
           <div className={`${styl.cols} ${styl.fullpage}`}>
             <div className={styl.pfp}>
-              <ProfilePic imgSrc="/img/darshan_text.jpeg" shape="square" />
+              {/* <ProfilePic imgSrc="/img/darshan_text.jpeg" shape="square" /> */}
+              <div className={styl.artGroupContainer}>
+                <svg
+                  width="320"
+                  height="320"
+                  viewBox="0 0 667 652"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M660 145.5V570L287 644L7 492.5V63L344 8L660 145.5Z"
+                    fill="url(#paint0_linear_1312_9)"
+                  />
+                  <path
+                    d="M96 145.5V427.5M96 145.5L344 97M96 145.5L7 63M96 427.5L7 492.5M96 427.5L287 525.5M96 427.5L344 392.5M540.5 481.5V205.5M540.5 481.5L660 570M540.5 481.5L344 392.5M540.5 481.5L287 525.5M540.5 205.5L344 97M540.5 205.5L660 145.5M344 97V8M344 97V392.5M660 145.5V570M660 145.5L344 8M660 570L287 644M287 644L7 492.5M287 644V525.5M7 492.5V63M7 63L344 8"
+                    stroke="white"
+                    stroke-width="14"
+                  />
+
+                  <image id={styl.artGroup1Ball}
+                    x="230"
+                    y="300"
+                    width={200} height={200} href="/img/ball.png" clip-path="url(#myCircle)" />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_1312_9"
+                      x1="339.5"
+                      y1="8"
+                      x2="339.5"
+                      y2="620.5"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#D196FF" />
+                      <stop offset="1" stop-color="#FFA0FB" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
             </div>
 
             <div className={styl.intro}>
@@ -100,6 +137,45 @@ const AboutPage = () => {
             <ScrollIcon color="#3f4d67" />
           </div>
         </section>
+        {/* <section>
+          <div className={styl.artGroupContainer}>
+            <svg
+              width="320"
+              height="320"
+              viewBox="0 0 667 652"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M660 145.5V570L287 644L7 492.5V63L344 8L660 145.5Z"
+                fill="url(#paint0_linear_1312_9)"
+              />
+              <path
+                d="M96 145.5V427.5M96 145.5L344 97M96 145.5L7 63M96 427.5L7 492.5M96 427.5L287 525.5M96 427.5L344 392.5M540.5 481.5V205.5M540.5 481.5L660 570M540.5 481.5L344 392.5M540.5 481.5L287 525.5M540.5 205.5L344 97M540.5 205.5L660 145.5M344 97V8M344 97V392.5M660 145.5V570M660 145.5L344 8M660 570L287 644M287 644L7 492.5M287 644V525.5M7 492.5V63M7 63L344 8"
+                stroke="white"
+                stroke-width="14"
+              />
+             
+              <image id={styl.artGroup1Ball}
+                x="230"
+                y="300"
+                width={200} height={200} href="/img/ball.png" clip-path="url(#myCircle)" />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1312_9"
+                  x1="339.5"
+                  y1="8"
+                  x2="339.5"
+                  y2="620.5"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#D196FF" />
+                  <stop offset="1" stop-color="#FFA0FB" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </section> */}
 
         <section className={styl.stack}>
           <h2>Tech stack</h2>
@@ -195,7 +271,7 @@ const AboutPage = () => {
             &nbsp;
             <a target="_blank" href="https://www.instagram.com/code_darshan/">
               <Image
-                style={{ marginLeft: "1em", marginTop: "0.5em" }}
+                style={{marginLeft: "1em", marginTop: "0.5em"}}
                 src="/img/link.png"
                 height="16"
                 width="16"

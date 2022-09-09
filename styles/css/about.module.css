@@ -162,6 +162,41 @@
   margin-left: 0.5em;
 }
 
+.artGroupContainer {
+  height: 25rem;
+  width: 25rem;
+}
+
+#artGroup1Ball {
+  -webkit-animation: bounce ease-in 0.5s infinite alternate;
+          animation: bounce ease-in 0.5s infinite alternate;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  fill: #404040;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-10rem);
+            transform: translateY(-10rem);
+  }
+  100% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-10rem);
+            transform: translateY(-10rem);
+  }
+  100% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+}
+
 @media screen and (min-width: 800px) {
   .container section .cols {
     display: -ms-grid;
