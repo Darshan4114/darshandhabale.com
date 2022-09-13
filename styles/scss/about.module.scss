@@ -8,18 +8,6 @@
     font-size: 1.2rem;
     margin: 1em;
   }
-  .name {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-top: -0.7em;
-
-    span {
-      font-size: 3rem;
-      background: linear-gradient(180deg, #fa0aff 0%, #0e0aff 100%);
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-    }
-  }
 
   .desg {
     margin-top: -1.5em;
@@ -59,9 +47,45 @@
 .hero .cols {
   padding-bottom: 5rem;
 }
+.hero .cols {
+  position: relative;
+
+  .name {
+    font-weight: 800;
+    margin-top: -0.7em;
+
+    font-size: 4rem;
+
+    span {
+      font-size: 4rem;
+      background: linear-gradient(180deg, #fa0aff 0%, #0e0aff 100%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+  }
+  .desgGrp {
+    font-size: 1.25rem;
+    margin-left: 1.5em;
+    color: #444;
+  }
+  .heroArt {
+    max-width: calc(100vw - 3rem);
+    max-height: calc(100vw);
+    margin: -4rem 0 2rem;
+    // position: absolute;
+    // left: 45%;
+  }
+}
+.ringArt {
+  transform-origin: 50% 55%;
+  animation: spin 30s linear infinite;
+}
 
 .desg {
-  font-family: monospace;
+  font-family: "Fira Code", monospace;
+}
+.blueLink {
+  color: #008ef4;
 }
 
 .highlight {
@@ -167,6 +191,14 @@
     transform: translateY(0rem);
   }
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 @media screen and (min-width: 800px) {
   .container {
@@ -181,6 +213,18 @@
       .cols {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .hero {
+      .cols {
+        display: grid;
+        grid-template-columns: 60% 40%;
+      }
+      .txt {
+        order: 1;
+      }
+      .heroArt {
+        order: 2;
       }
     }
   }

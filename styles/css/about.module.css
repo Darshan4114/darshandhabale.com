@@ -11,20 +11,6 @@
   margin: 1em;
 }
 
-.container .name {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-top: -0.7em;
-}
-
-.container .name span {
-  font-size: 3rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fa0aff), to(#0e0aff));
-  background: linear-gradient(180deg, #fa0aff 0%, #0e0aff 100%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-
 .container .desg {
   margin-top: -1.5em;
   margin-bottom: 2em;
@@ -72,8 +58,49 @@
   padding-bottom: 5rem;
 }
 
+.hero .cols {
+  position: relative;
+}
+
+.hero .cols .name {
+  font-weight: 800;
+  margin-top: -0.7em;
+  font-size: 4rem;
+}
+
+.hero .cols .name span {
+  font-size: 4rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fa0aff), to(#0e0aff));
+  background: linear-gradient(180deg, #fa0aff 0%, #0e0aff 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.hero .cols .desgGrp {
+  font-size: 1.25rem;
+  margin-left: 1.5em;
+  color: #444;
+}
+
+.hero .cols .heroArt {
+  max-width: calc(100vw - 3rem);
+  max-height: calc(100vw);
+  margin: -4rem 0 2rem;
+}
+
+.ringArt {
+  -webkit-transform-origin: 50% 55%;
+          transform-origin: 50% 55%;
+  -webkit-animation: spin 30s linear infinite;
+          animation: spin 30s linear infinite;
+}
+
 .desg {
-  font-family: monospace;
+  font-family: "Fira Code", monospace;
+}
+
+.blueLink {
+  color: #008ef4;
 }
 
 .highlight {
@@ -197,12 +224,50 @@
   }
 }
 
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 @media screen and (min-width: 800px) {
   .container section .cols {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+  .container .hero .cols {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 60% 40%;
+        grid-template-columns: 60% 40%;
+  }
+  .container .hero .txt {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .container .hero .heroArt {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 /*# sourceMappingURL=about.module.css.map */
