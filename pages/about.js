@@ -1,4 +1,5 @@
 import Head from "next/head"
+import {useState, useEffect} from "react"
 import Image from "next/image"
 import Header from "comp/Header"
 import ScrollIcon from "comp/ScrollIcon"
@@ -9,12 +10,15 @@ import {toast} from "react-toastify"
 import {toastOptions} from "comp/constants"
 
 const AboutPage = () => {
+  const [loaded, setLoaded] = useState(false)
   function copyEmail() {
     const copy = async (text) => await navigator.clipboard.writeText(text)
     copy("darshan@darshandev.tech").then(() => {
       toast.success("Email copied!")
     })
   }
+  useEffect(() => setLoaded(true), [])
+
   return (
     <>
       <Head>
@@ -65,7 +69,7 @@ const AboutPage = () => {
               <circle cx="652.716" cy="629.675" r="235" transform="rotate(-16.7534 652.716 629.675)" fill="#84FFA6" fill-opacity="0.4" stroke="#84FFA6" stroke-width="14" />
             </svg>
 
-            <div className={styl.txt}>
+            <div className={`${styl.txt} ${loaded ? styl.loaded : ''}`}>
               <h1 className={styl.name}>
                 <span>D</span>arshan Dhabale
               </h1>

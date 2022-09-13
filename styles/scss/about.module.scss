@@ -47,9 +47,16 @@
 .hero .cols {
   padding-bottom: 5rem;
 }
-.hero .cols {
+.hero {
   position: relative;
-
+  .txt {
+    opacity: 0;
+  }
+  .loaded {
+    animation: 0.35s ease-out 0s 1 slideInFromLeft;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
   .name {
     font-weight: 800;
     margin-top: -0.7em;
@@ -197,6 +204,16 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
