@@ -165,9 +165,9 @@ const AboutPage = () => {
           <br /> */}
             </div>
           </div>
-          <div className={styl.scroll}>
+          {/* <div className={styl.scroll}>
             <ScrollIcon color="#3f4d67" />
-          </div>
+          </div> */}
         </section>
         {/* <section>
           <div className={styl.artGroupContainer}>
