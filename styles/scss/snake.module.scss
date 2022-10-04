@@ -1,7 +1,16 @@
+
 .container {
-  max-height: 100vh;
+  height: 100vh;
   text-align: center;
   overflow: hidden;
+  background: url('/img/snakebg.png');
+  background-size: cover;
+}
+
+.internalContainer{
+  position:relative;
+  max-width: 60rem;
+  margin:0 auto;
 }
 
 .root {

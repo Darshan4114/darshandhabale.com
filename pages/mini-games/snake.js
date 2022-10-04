@@ -11,16 +11,15 @@ import miniStyl from "styles/css/mini-games.module.css"
 import Header from "comp/Header"
 
 export default function Snake() {
-  console.log("rerendering snake")
   const move = useRef("up")
   const fruit = useRef(null)
   const grid = useRef(null)
   const scoreBoard = useRef(null)
-  const head = useRef({ x: 0, y: 1 })
+  const head = useRef({x: 0, y: 1})
   const snakeArr = useRef([
-    { x: 1, y: 1 },
-    { x: 2, y: 1 },
-    { x: 3, y: 1 },
+    {x: 1, y: 1},
+    {x: 2, y: 1},
+    {x: 3, y: 1},
   ])
 
   const moves = ["up", "down", "left", "right"]
@@ -33,34 +32,32 @@ export default function Snake() {
 
     const g = await buildGrid(5, root)
     grid.current = g
-    console.log(grid)
     setHeadposition(head.current)
 
     setInterval(async () => {
       reset(head.current)
-      console.log("mv,", snakeArr.current)
       snakeArr.current.push(head.current)
 
       switch (move.current) {
         case "up":
           if (head.current.y === grid.current.max - 1)
-            setHeadposition({ x: head.current.x, y: 0 })
-          else setHeadposition({ x: head.current.x, y: head.current.y + 1 })
+            setHeadposition({x: head.current.x, y: 0})
+          else setHeadposition({x: head.current.x, y: head.current.y + 1})
           break
         case "down":
           if (head.current.y === 0)
-            setHeadposition({ x: head.current.x, y: grid.current.max - 1 })
-          else setHeadposition({ x: head.current.x, y: head.current.y - 1 })
+            setHeadposition({x: head.current.x, y: grid.current.max - 1})
+          else setHeadposition({x: head.current.x, y: head.current.y - 1})
           break
         case "left":
           if (head.current.x === 0)
-            setHeadposition({ x: grid.current.max - 1, y: head.current.y })
-          else setHeadposition({ x: head.current.x - 1, y: head.current.y })
+            setHeadposition({x: grid.current.max - 1, y: head.current.y})
+          else setHeadposition({x: head.current.x - 1, y: head.current.y})
           break
         case "right":
           if (head.current.x === grid.current.max - 1)
-            setHeadposition({ x: 0, y: head.current.y })
-          else setHeadposition({ x: head.current.x + 1, y: head.current.y })
+            setHeadposition({x: 0, y: head.current.y})
+          else setHeadposition({x: head.current.x + 1, y: head.current.y})
           break
         default:
           break
@@ -77,7 +74,7 @@ export default function Snake() {
       })
     }, 400)
 
-    document.addEventListener("keydown", function (evt) {
+    document.addEventListener("keydown", function(evt) {
       switch (evt.keyCode) {
         case 38:
           if (move.current !== "down") move.current = "up"
@@ -103,19 +100,15 @@ export default function Snake() {
     return element
   }
 
-  function setHeadposition({ x, y }) {
-    console.log("headset, ", x, y)
-    head.current = { x, y }
+  function setHeadposition({x, y}) {
+    head.current = {x, y}
     grid.current.grid[x][y].className = headClass
   }
-  async function isFruit({ x, y }) {
-    console.log("current fruit", fruit.current, x, y)
+  async function isFruit({x, y}) {
     if (fruit.current.x === x && fruit.current.y === y) {
       await spawnFruit()
       return true
     }
-    console.log("isnot fruit")
-
     return false
   }
 
@@ -141,7 +134,6 @@ export default function Snake() {
   }
 
   function handleMove(direction) {
-    console.log("handling move, ", direction)
     if (
       (move.current === "up" && direction !== "down") ||
       (move.current === "left" && direction !== "right") ||
@@ -159,7 +151,6 @@ export default function Snake() {
           allCells.push(cell)
         })
       })
-      console.log("allCells = ", allCells)
 
       let availableCells = allCells.filter((cell) => {
         const isAvailable =
@@ -171,26 +162,15 @@ export default function Snake() {
                 parseInt(cell.dataset.y) === head.current.y)
             )
           }).length === 0
-        console.log(
-          "Calc available - ",
-          snakeArr.current,
-          {
-            x: parseInt(cell.dataset.x),
-            y: parseInt(cell.dataset.y),
-          },
-          isAvailable,
-          head.current
-        )
+
         if (isAvailable) {
           return cell
         }
       })
       const idx = Math.floor(Math.random() * availableCells.length)
-      console.log("availableCells = ", availableCells.length, idx)
 
       const fruitCell = availableCells[idx]
 
-      console.log("fruitcell = ", fruitCell, fruitCell.dataset)
       fruit.current = {
         x: parseInt(fruitCell.dataset.x),
         y: parseInt(fruitCell.dataset.y),
@@ -203,14 +183,10 @@ export default function Snake() {
 
   function checkCut() {
     const isCut = snakeArr.current.filter((segment) => {
-      console.log("seg - ", segment)
       return segment.x === head.current.x && segment.y === head.current.y
     })
-    console.log("iscut = ", isCut, head.current)
     if (isCut.length) {
       const cutIdx = snakeArr.current.indexOf(isCut[0])
-      console.log("cutIdx = ", cutIdx)
-
       snakeArr.current = snakeArr.current.slice(cutIdx)
     }
   }
@@ -230,23 +206,25 @@ export default function Snake() {
 
   return (
     <div className={styl.container}>
-      <Head>
-        <title>Snake</title>
-      </Head>
-      <Header />
-      <h1 className={miniStyl.gameName} style={{ fontSize: "5rem" }}>
-        Snake
-      </h1>
-      <Score ref={scoreBoard} />
-      <div class={styl.root}></div>
-      <div className={styl.controls}>
-        <div className=""></div>
+      <div className={styl.internalContainer}>
+        <Head>
+          <title>Snake</title>
+        </Head>
+        <Header />
+        <h1 className={miniStyl.gameName} >
+          Snake
+        </h1>
+        <Score ref={scoreBoard} />
+        <div class={styl.root}></div>
+        <div className={styl.controls}>
+          <div className=""></div>
 
-        <button onClick={() => handleMove("up")}>&#x2191;</button>
-        <div className=""></div>
-        <button onClick={() => handleMove("left")}>&#x2190;</button>
-        <button onClick={() => handleMove("down")}>&#x2193;</button>
-        <button onClick={() => handleMove("right")}>&#x2192;</button>
+          <button onClick={() => handleMove("up")}>&#x2191;</button>
+          <div className=""></div>
+          <button onClick={() => handleMove("left")}>&#x2190;</button>
+          <button onClick={() => handleMove("down")}>&#x2193;</button>
+          <button onClick={() => handleMove("right")}>&#x2192;</button>
+        </div>
       </div>
     </div>
   )
