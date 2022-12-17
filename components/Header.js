@@ -45,22 +45,22 @@ const Header = (props) => {
             {router.asPath !== "/portfolio" && (
               <li>
                 <Link href="/portfolio">
-                  <a>Portfolio</a>
+                  <a>Darshan's Work</a>
                 </Link>
               </li>
             )}
-            {/* <li>
+            <li>
               <Link href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
                 <a target="_blank">Youtube</a>
               </Link>
-            </li> */}
-            {router.asPath !== "/mini-games" && (
+            </li>
+            {/* {router.asPath !== "/mini-games" && (
               <li>
                 <Link href="/mini-games">
                   <a>Mini Games</a>
                 </Link>
               </li>
-            )}
+            )} */}
             {router.asPath !== "/about" && (
               <li>
                 <Link href="/about">

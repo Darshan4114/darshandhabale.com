@@ -7,17 +7,14 @@
   width: 100vw;
   position: relative;
 }
-
 .container .hero {
   max-width: calc(100vw - 2em);
   z-index: 1;
 }
-
 .container .hero h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
 }
-
 .container .asteroid {
   position: absolute;
   height: 170px;
@@ -26,16 +23,13 @@
   right: -13rem;
   z-index: 0;
 }
-
 .container .asteroid.moveAsteroid {
   -webkit-animation: 2.5s ease-in 0s 1 moveAsteroid;
           animation: 2.5s ease-in 0s 1 moveAsteroid;
 }
-
 .container button {
   cursor: pointer;
 }
-
 .container .neoDataContainer {
   word-wrap: break-word;
   width: 60rem;
@@ -62,5 +56,4 @@
     top: 55vh;
     right: 110%;
   }
-}
-/*# sourceMappingURL=when-the-earth-blows-up.module.css.map */
+}/*# sourceMappingURL=when-the-earth-blows-up.module.css.map */

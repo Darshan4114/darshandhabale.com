@@ -1,19 +1,16 @@
 .container {
   font-family: "Helvetica Neue", sans-serif;
 }
-
 .container .postTitle,
 .container h1,
 .container h2,
 .container h3 {
   font-family: "Fira Code", monospace;
-  color: #0a3883;
+  color: #393353;
 }
-
 .container .heading {
   text-transform: uppercase;
   font-size: 4rem;
-  color: #307fff;
+  color: #393353;
   font-family: sans-serif;
-}
-/*# sourceMappingURL=Post.module.css.map */
+}/*# sourceMappingURL=Post.module.css.map */

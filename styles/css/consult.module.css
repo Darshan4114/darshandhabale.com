@@ -5,33 +5,26 @@
   color: #333;
   scroll-behavior: smooth;
 }
-
 .container .intro {
   font-size: 1.2rem;
   margin: 1em;
 }
-
 .container h1 {
   text-align: center;
 }
-
 .container ul {
   margin-bottom: 1em;
 }
-
 .container li {
   margin-bottom: 0.25em;
 }
-
 .container .text {
   width: 25rem;
 }
-
 .container a {
   text-decoration: underline;
   font-weight: bold;
 }
-
 .container section {
   position: relative;
   max-width: calc(100vw - 2em);
@@ -65,7 +58,6 @@
   text-align: center;
   padding-bottom: 5rem;
 }
-
 .hero a {
   text-decoration: none;
 }
@@ -81,11 +73,9 @@
   transition: background-color 1s ease-in-out;
   cursor: pointer;
 }
-
 .cta.center {
   margin: 0.5em auto;
 }
-
 .cta::after {
   content: "";
   display: block;
@@ -100,7 +90,6 @@
   -webkit-transition: background 1s ease-in-out;
   transition: background 1s ease-in-out;
 }
-
 .cta::before {
   content: "as";
   display: block;
@@ -118,7 +107,6 @@
   -webkit-transition: rotate 1s ease-in-out;
   transition: rotate 1s ease-in-out;
 }
-
 .gradient {
   background: -webkit-gradient(linear, left top, left bottom, from(#fa0aff), to(#0e0aff));
   background: linear-gradient(180deg, #fa0aff 0%, #0e0aff 100%);
@@ -132,7 +120,7 @@
 }
 
 .highlight {
-  background: #d291f7ad;
+  background: rgba(210, 145, 247, 0.6784313725);
   position: relative;
 }
 
@@ -151,20 +139,17 @@
   position: relative;
   font-family: "PT Serif", sans-serif;
 }
-
 .box h4 {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
-
 .box p {
   margin: 0;
 }
-
 .box::before {
   z-index: -1;
-  border: 3px solid #bbbbff;
+  border: 3px solid rgb(187, 187, 255);
   content: "";
   position: absolute;
   left: -6px;
@@ -181,7 +166,6 @@
 .stack {
   grid-area: stack;
 }
-
 .stack .stackelements p {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -199,7 +183,6 @@
   grid-area: testimonials;
   font-family: "Montserrat", sans-serif;
 }
-
 .testimonials .testimonial {
   border: 1px solid #777;
   border-radius: 0.25em;
@@ -249,7 +232,6 @@
     font-size: 2.2rem;
   }
 }
-
 @media screen and (min-width: 500px) {
   .title {
     font-size: 3.2rem;
@@ -262,7 +244,6 @@
     font-size: 2.5rem;
   }
 }
-
 @media screen and (min-width: 800px) {
   .title {
     font-weight: 800;
@@ -276,10 +257,7 @@
     font-size: 2.5rem;
   }
   .container section .cols {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-/*# sourceMappingURL=consult.module.css.map */
+}/*# sourceMappingURL=consult.module.css.map */

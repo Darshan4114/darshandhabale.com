@@ -1,7 +1,7 @@
 .container {
-  max-width: 50rem;
+  max-width: 56rem;
   margin: 0 auto;
-  padding: 1em;
+  padding: 1em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,15 +12,12 @@
       -ms-flex-align: center;
           align-items: center;
 }
-
 .container a {
   z-index: 19;
 }
-
 .container.pr15 {
   padding-right: 15rem;
 }
-
 .container.darkmode a {
   color: white;
 }
@@ -33,9 +30,8 @@
   display: flex;
   max-width: 40rem;
 }
-
 .navUl li {
+  color: white !important;
   margin: 0 0.5em;
   cursor: pointer;
-}
-/*# sourceMappingURL=Header.module.css.map */
+}/*# sourceMappingURL=Header.module.css.map */

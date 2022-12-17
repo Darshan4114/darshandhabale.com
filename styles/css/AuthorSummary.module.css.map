@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,MAAM,EAAE,iBAAiB;EACzB,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,GAAG;EACZ,MAAM,EAAE,GAAG;EACX,MAAM,EAAE,KAAK;EACb,QAAQ,EAAE,MAAM;EAEhB,GAAG,EAAE,GAAG;EACR,UAAU,EAAE,MAAM;CACnB",
-    "sources": [
-        "../scss/AuthorSummary.module.scss"
-    ],
-    "names": [],
-    "file": "AuthorSummary.module.css"
-}
+{"version":3,"sources":["../scss/AuthorSummary.module.scss","AuthorSummary.module.css"],"names":[],"mappings":"AAAA;EACE,yBAAA;EACA,kBAAA;EACA,YAAA;EACA,WAAA;EACA,aAAA;EACA,gBAAA;EAEA,QAAA;EACA,kBAAA;ACAF","file":"AuthorSummary.module.css"}

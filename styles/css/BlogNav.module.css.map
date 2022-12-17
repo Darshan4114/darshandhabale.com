@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,YAAY,EAAE,cAAc;EAC5B,KAAK,EAAE,KAAK;CAQb;;AAVD,AAGE,aAHW,CAGX,OAAO,CAAC;EACN,MAAM,EAAE,OAAO;EACf,OAAO,EAAE,KAAK;CAIf;;AATH,AAMI,aANS,CAGX,OAAO,AAGJ,MAAM,CAAC;EACN,UAAU,EAAE,OAAO;CACpB;;AAGL,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,IAAI;CAClB",
-    "sources": [
-        "../scss/BlogNav.module.scss"
-    ],
-    "names": [],
-    "file": "BlogNav.module.css"
-}
+{"version":3,"sources":["../scss/BlogNav.module.scss","BlogNav.module.css"],"names":[],"mappings":"AAAA;EACE,4BAAA;EACA,YAAA;ACCF;ADAE;EACE,eAAA;EACA,cAAA;ACEJ;ADDI;EACE,mBAAA;ACGN;;ADCA;EACE,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,iBAAA;EACA,iBAAA;ACEF","file":"BlogNav.module.css"}

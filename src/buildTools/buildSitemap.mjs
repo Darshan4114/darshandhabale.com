@@ -34,7 +34,7 @@ const readDirRecursive = async (filePath) => {
         return url
       }
     })
-    .filter((url) => !EXCLUDE_LIST.includes(url) && !url.includes("["))
+    .filter((url) => !EXCLUDE_LIST.includes(url) && !url?.includes("["))
 
   //Processing /posts dir
   const data = fs.readdirSync("./src/mdx/posts")

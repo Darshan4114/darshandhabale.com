@@ -1,0 +1,57 @@
+.loading {
+	width: 80px;
+	height: 30px;
+	position: relative;
+}
+@keyframes loading {
+	0%,100% {top: -10px;}
+	25% {top: 10px;}
+	50% {top: -10px;}
+	75% {top: 10px;}
+}
+.loading .x {
+	position: absolute;
+	animation: loading 1.5s ease-in-out infinite;
+	width: 1px;
+	height: 1px;
+}
+.loading .x:nth-child(1) {
+	left: 0px;
+	background-color: rgb(32,0,0);
+	animation-delay: 0s;
+}
+.loading .x:nth-child(2) {
+	left: 10px;
+	background-color: rgb(64,0,0);
+	animation-delay: .1s;
+}
+.loading .x:nth-child(3) {
+	left: 20px;
+	background-color: rgb(96,0,0);
+	animation-delay: .2s;
+}
+.loading .x:nth-child(4) {
+	left: 30px;
+	background-color: rgb(128,0,0);
+	animation-delay: .3s;
+}
+.loading .x:nth-child(5) {
+	left: 40px;
+	background-color: rgb(160,0,0);
+	animation-delay: .4s;
+}
+.loading .x:nth-child(6) {
+	left: 50px;
+	background-color: rgb(192,0,0);
+	animation-delay: .5s;
+}
+.loading .x:nth-child(7) {
+	left: 60px;
+	background-color: rgb(224,0,0);
+	animation-delay: .6s;
+}
+.loading .x:nth-child(8) {
+	left: 70px;
+	background-color: rgb(255,0,0);
+	animation-delay: .7s;
+}

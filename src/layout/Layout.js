@@ -56,10 +56,10 @@ const Layout = (props) => {
           minHeight: "100vh",
           flexDirection: "column",
           overflowX: "hidden",
-          background: "#325499",
+          background: "#393353",
         }}
       >
-        {/* {typeof theme.colors.modes === "object" && <ThemeToggle />} */}
+        {typeof theme.colors.modes === "object" && <ThemeToggle />}
         <Header />
         <div className={styl.container}>
           {/* <AuthorSummary /> */}

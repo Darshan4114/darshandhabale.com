@@ -20,8 +20,7 @@
     cy: 4;
     opacity: 0;
   }
-  45%,
-  55% {
+  45%, 55% {
     opacity: 1;
     cy: 9;
   }
@@ -36,8 +35,7 @@
     cy: 4;
     opacity: 0;
   }
-  45%,
-  55% {
+  45%, 55% {
     opacity: 1;
     cy: 9;
   }
@@ -45,5 +43,4 @@
     cy: 14;
     opacity: 0;
   }
-}
-/*# sourceMappingURL=ScrollIcon.module.css.map */
+}/*# sourceMappingURL=ScrollIcon.module.css.map */

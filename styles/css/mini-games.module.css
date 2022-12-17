@@ -1,12 +1,11 @@
 .gameName {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-weight: 700;
   letter-spacing: 2px;
   text-align: center;
   color: #3f3f3f;
   margin: 0;
 }
-
 .gameName:hover {
   -webkit-animation: hue 1s infinite linear;
           animation: hue 1s infinite linear;
@@ -21,7 +20,6 @@
     top: 20rem;
   }
 }
-
 @-webkit-keyframes hue {
   from {
     -webkit-filter: hue-rotate(0deg);
@@ -32,7 +30,6 @@
             filter: hue-rotate(-360deg);
   }
 }
-
 @keyframes hue {
   from {
     -webkit-filter: hue-rotate(0deg);
@@ -42,5 +39,4 @@
     -webkit-filter: hue-rotate(-360deg);
             filter: hue-rotate(-360deg);
   }
-}
-/*# sourceMappingURL=mini-games.module.css.map */
+}/*# sourceMappingURL=mini-games.module.css.map */

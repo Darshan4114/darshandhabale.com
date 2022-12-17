@@ -17,7 +17,7 @@
 .container {
   font-family: "Helvetica Neue", sans-serif;
   display: grid;
-  gap: 1em;
+  gap: 1.5em;
   // grid-template-columns: repeat(1, 17rem);
   max-width: calc(100vw - 2rem);
   margin: 0 auto;
@@ -28,22 +28,22 @@
   }
   @media screen and (min-width: 1100px) {
     grid-template-columns: repeat(3, 17.65rem);
-    width: 55rem;
+    width: 56rem;
   }
 }
 
 .postContainer {
   max-width: calc(100vw - 3rem);
   color: #fff;
-  background: #194297;
+  background: #1f243c;
   // height: 18rem;
   // box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   // border: 2px solid white;
-  box-shadow: rgba(49, 54, 59, 0.4) 0px 0px 0px 2px,
-    rgba(51, 54, 57, 0.65) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
+  // box-shadow: rgba(49, 54, 59, 0.4) 0px 0px 0px 2px,
+  //   rgba(51, 54, 57, 0.65) 0px 4px 6px -1px,
+  //   rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
   border-radius: 1em;
-  margin: 0.25em auto;
+  margin: 1.5em auto;
   // padding: 0.5em;
   h2 {
     font-size: 1.2rem;
@@ -62,9 +62,9 @@
     // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     //   rgba(255, 255, 255, 0.3) 0px 18px 36px -18px inset;
     // border: 2px solid white;
-    box-shadow: rgba(49, 54, 59, 0.4) 0px 0px 0px 2px,
-      rgba(51, 54, 57, 0.65) 0px 4px 6px -1px,
-      rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
+    // box-shadow: rgba(49, 54, 59, 0.4) 0px 0px 0px 2px,
+    //   rgba(51, 54, 57, 0.65) 0px 4px 6px -1px,
+    //   rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
     border-radius: 1em;
     padding: 0.1em 0.5em;
     margin: 0.2em;

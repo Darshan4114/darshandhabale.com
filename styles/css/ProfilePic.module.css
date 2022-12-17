@@ -2,7 +2,6 @@
   padding: 1em;
   text-align: center;
   font-weight: bold;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -13,17 +12,13 @@
   width: 25rem;
   max-width: calc(100vw - 2em);
 }
-
 .imgContainer.square {
   border-radius: 2.25em;
 }
-
 .imgContainer.circle {
   border-radius: 50%;
 }
-
 .imgContainer.small {
   height: 5rem;
   width: 5rem;
-}
-/*# sourceMappingURL=ProfilePic.module.css.map */
+}/*# sourceMappingURL=ProfilePic.module.css.map */

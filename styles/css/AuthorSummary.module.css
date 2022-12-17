@@ -4,9 +4,7 @@
   padding: 1em;
   margin: 1em;
   height: 25rem;
-  position: -webkit-sticky;
   position: sticky;
   top: 1em;
   text-align: center;
-}
-/*# sourceMappingURL=AuthorSummary.module.css.map */
+}/*# sourceMappingURL=AuthorSummary.module.css.map */

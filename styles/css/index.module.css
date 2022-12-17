@@ -4,7 +4,7 @@
   position: relative;
   padding: 0 0 3em;
   min-height: 100vh;
-  background: #325499;
+  background: #393353;
 }
 
 .player {
@@ -18,8 +18,7 @@
 .ground {
   height: 25px;
   width: 300px;
-  background: #2f2e30;
+  background: rgb(47, 46, 48);
   position: absolute;
   top: 75px;
-}
-/*# sourceMappingURL=index.module.css.map */
+}/*# sourceMappingURL=index.module.css.map */

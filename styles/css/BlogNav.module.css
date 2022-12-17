@@ -2,14 +2,12 @@
   border-right: 1px solid #777;
   width: 20rem;
 }
-
 .navContainer .navTab {
   cursor: pointer;
   padding: 0.5em;
 }
-
 .navContainer .navTab:hover {
-  background: #4575d5;
+  background: #393353;
 }
 
 .reactLogo {
@@ -18,5 +16,4 @@
   display: flex;
   font-size: 1.5rem;
   font-weight: bold;
-}
-/*# sourceMappingURL=BlogNav.module.css.map */
+}/*# sourceMappingURL=BlogNav.module.css.map */

@@ -5,7 +5,6 @@
   position: relative;
   overflow-x: hidden;
 }
-
 .container .img {
   height: 28rem;
   width: calc(100vw - 3em);
@@ -16,13 +15,11 @@
           box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 0.25em;
 }
-
 .container > div {
   width: 60rem;
   max-width: calc(100vw - 2em);
   margin: 0 auto;
 }
-
 .container .landing {
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -35,44 +32,37 @@
   margin-top: -3.6em;
   font-family: "Montserrat", sans-serif;
 }
-
 .container .landing h1 {
   position: absolute;
   bottom: 0em;
   left: 0.5em;
   width: 20rem;
 }
-
 .container .landing h1 span {
   display: block;
   text-transform: none;
   color: #dd700c;
   font-size: 1.2rem;
 }
-
 .container h2 {
   text-transform: uppercase;
   color: #444;
   font-size: 1.5rem;
   text-align: center;
 }
-
 .container h3 {
   font-size: 1.25rem;
   text-align: center;
 }
-
 .container .features {
   width: 50rem;
   max-width: calc(100vw - 2em);
   margin: 0 auto;
 }
-
 .container .features .feature {
   margin-bottom: 1em;
   padding: 0.55em;
 }
-
 @media screen and (min-width: 750px) {
   .container .landing h1 {
     bottom: 3em;
@@ -111,7 +101,6 @@
             flex-direction: row-reverse;
   }
 }
-
 @media screen and (min-width: 800px) {
   .container .landing {
     display: -webkit-box;
@@ -143,32 +132,26 @@
 }
 
 .col2 {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[1];
-      grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1em;
   min-height: 60rem;
   place-items: center;
 }
-
 .col2 .imgContainer {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   min-height: 10rem;
 }
-
 .col2 .text {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
 }
-
 @media screen and (min-width: 780px) {
   .col2 {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .col2 .imgContainer {
     -webkit-box-ordinal-group: unset;
@@ -180,5 +163,4 @@
         -ms-flex-order: unset;
             order: unset;
   }
-}
-/*# sourceMappingURL=air3x3.module.css.map */
+}/*# sourceMappingURL=air3x3.module.css.map */

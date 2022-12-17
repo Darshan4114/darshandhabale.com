@@ -8,7 +8,7 @@ import config from "../../blog.config"
 export default function ReactBlog({ posts, prevPosts, nextPosts }) {
   return (
     <div className={styl.container}>
-      <Header />
+      <Header darkmode/>
       <main>
         <BlogNav posts={posts} />
         <div className={styl.reactBlogList}>

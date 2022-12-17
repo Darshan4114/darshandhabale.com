@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CAKb;;AARD,AAIE,UAJQ,CAIR,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,SAAS;CACjC",
-    "sources": [
-        "../scss/ReactBlog.module.scss"
-    ],
-    "names": [],
-    "file": "ReactBlog.module.css"
-}
+{"version":3,"sources":["../scss/ReactBlog.module.scss","ReactBlog.module.css"],"names":[],"mappings":"AAAA;EACE,mBAAA;EACA,WAAA;EACA,YAAA;ACCF;ADAE;EACE,aAAA;EACA,gCAAA;ACEJ","file":"ReactBlog.module.css"}

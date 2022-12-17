@@ -22,8 +22,7 @@
           flex-direction: column-reverse;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   width: 250px;
   height: 270px;
   margin: 0 auto;
@@ -36,28 +35,24 @@
 }
 
 .head {
-  background: #af0ce0;
+  background: rgb(175, 12, 224);
 }
 
 .body {
-  background: #280cc9;
+  background: rgb(40, 12, 201);
 }
 
 .fruit {
-  background: #df250c;
+  background: rgb(223, 37, 12);
 }
 
 .controls {
   width: 11rem;
   margin: 1em auto;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
-
 .controls button {
   width: 3rem;
   height: 3rem;
@@ -66,5 +61,4 @@
 
 .score {
   margin: 0;
-}
-/*# sourceMappingURL=snake.module.css.map */
+}/*# sourceMappingURL=snake.module.css.map */
