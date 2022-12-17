@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Link from "next/link"
-import styl from "styles/css/mini-games.module.css"
+import styl from "styl/mini-games.module.scss"
 import Header from "comp/Header"
 
 export default function Games() {

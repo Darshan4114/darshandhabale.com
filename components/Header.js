@@ -1,16 +1,15 @@
-import config from "../blog.config"
 import Link from "next/link"
-import { useRouter } from "next/router"
-import { MDXProvider } from "@mdx-js/react"
-import { Box, Heading } from "theme-ui"
-// import Nav from "../src/ui/Nav"
+import {useRouter} from "next/router"
+import {MDXProvider} from "@mdx-js/react"
 import Logo from "comp/Logo"
-// import Blurb from "../mdx/blurb.mdx"
-import styl from "styl/Header.module.css"
-import { useState, useEffect } from "react"
-import Image from "next/image"
+import styl from "styl/Header.module.scss"
+import {useState, useEffect, useContext} from "react"
+import ThemeToggler from 'comp/ThemeToggler'
+import {ThemeContext} from "comp/ThemeContext"
+
 const Header = (props) => {
   const [showNavUl, setShowNavUl] = useState(false)
+  const {theme, toggleTheme} = useContext(ThemeContext);
   const router = useRouter()
   useEffect(() => {
     function resetNavUl() {
@@ -28,11 +27,10 @@ const Header = (props) => {
   return (
     <MDXProvider>
       <div
-        className={`${styl.container} ${
-          props?.paddingClass === "pr15" && styl.pr15
-        } ${props.darkmode && styl.darkmode}`}
+        className={`${styl.container} ${props?.paddingClass === "pr15" && styl.pr15
+          } ${theme === 'dark' && styl.darkmode}`}
       >
-        <Logo darkmode={props.darkmode} />
+        <Logo darkmode={theme === 'dark'} />
         {showNavUl && (
           <ul className={styl.navUl}>
             {router.asPath !== "/" && (
@@ -75,6 +73,7 @@ const Header = (props) => {
                 </Link>
               </li>
             )}
+            <ThemeToggler onClick={toggleTheme} />
             {/* <li>
               <Link href="/resume.pdf">
                 <a>Download resume</a>

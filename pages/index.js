@@ -1,21 +1,20 @@
 import config from "../blog.config"
-import { useEffect, useRef } from "react"
+import {useEffect, useRef} from "react"
 import Head from "next/head"
 import Header from "comp/Header"
 import Footer from "comp/Footer"
 import Featured from "comp/Featured"
-import styl from "styles/css/index.module.css"
+import styl from "styl/index.module.scss"
 import Posts from "../src/views/Posts"
-import { getAllPosts } from "../src/api"
+import {getAllPosts} from "../src/api"
 
-const PostsPage = ({ posts, prevPosts, nextPosts }) => {
+const PostsPage = ({posts, prevPosts, nextPosts}) => {
   const player = useRef(null)
   useEffect(() => {
     // useAnimationFrame(()=>{
     //         player.current.style.top += 1;
     // })
   }, [])
-  console.log("p", posts)
 
   return (
     <>
@@ -57,14 +56,13 @@ export async function getStaticProps() {
     "draft",
     "tags",
   ])
-  console.log("fp = ", posts.length)
   const startIndex = 0
   const endIndex = config.postsPerPage
   const prevPosts = null
   const nextPosts = endIndex >= posts.length ? null : 2
 
   return {
-    props: { posts: posts.slice(startIndex, endIndex), prevPosts, nextPosts },
+    props: {posts: posts.slice(startIndex, endIndex), prevPosts, nextPosts},
   }
 }
 

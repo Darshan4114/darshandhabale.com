@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styl from "styl/BlogNav.module.css"
+import styl from "styl/BlogNav.module.scss"
 
 export function getStaticProps() {}
 export default function BlogNav(props) {

@@ -1,13 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
-import styl from "styl/Posts.module.css"
+import styl from "styl/Posts.module.scss"
 import Air3x3 from "./air3x3"
 import Header from "comp/Header"
 
 export default function Portfolio() {
   return (
     <>
-      <Header />
+      <Header darkmode/>
       <div className={styl.container}>
         <Link href="/portfolio/air3x3">
           <a className={styl.postTitle}>

@@ -1,4 +1,4 @@
-import styl from 'styl/wave.module.css'
+import styl from 'styl/wave.module.scss'
 export default function Wave() {
 	return (
 		<div className={styl.loading}>

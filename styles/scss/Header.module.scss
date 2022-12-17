@@ -1,14 +1,16 @@
 .container {
-  max-width: 56rem;
-  // max-width: 100vw;
+  width: 51rem;
+  max-width: 100vw;
   margin: 0 auto;
   padding: 1em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   a {
     z-index: 19;
   }
+
   &.pr15 {
     padding-right: 15rem;
   }
@@ -17,13 +19,15 @@
     color: white;
   }
 }
+
 .navUl {
   z-index: 1;
   list-style: none;
   display: flex;
   max-width: 40rem;
+  align-items: center;
+
   li {
-    color: white !important;
     margin: 0 0.5em;
     cursor: pointer;
   }

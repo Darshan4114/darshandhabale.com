@@ -1,4 +1,4 @@
-import styl from "styl/ReactBlog.module.css"
+import styl from "styl/ReactBlog.module.scss"
 import { getReactPosts } from "../../src/api"
 import ReactPosts from "../../src/views/ReactPosts"
 import Header from "comp/Header"
@@ -8,7 +8,7 @@ import config from "../../blog.config"
 export default function ReactBlog({ posts, prevPosts, nextPosts }) {
   return (
     <div className={styl.container}>
-      <Header darkmode/>
+      <Header darkmode />
       <main>
         <BlogNav posts={posts} />
         <div className={styl.reactBlogList}>

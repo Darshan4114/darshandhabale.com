@@ -3,7 +3,7 @@ import { Flex, Box, Heading, Text } from "theme-ui"
 import Image from "next/image"
 import DraftBadge from "../ui/DraftBadge"
 import Link from "next/link"
-import styl from "styl/Posts.module.css"
+import styl from "styl/Posts.module.scss"
 
 const Posts = ({ posts, prevPosts, nextPosts }) => {
   const isLocal = process.env.NODE_ENV === "development"

@@ -6,8 +6,8 @@ import {
   useImperativeHandle,
 } from "react"
 import Head from "next/head"
-import styl from "styles/css/snake.module.css"
-import miniStyl from "styles/css/mini-games.module.css"
+import styl from "styl/snake.module.scss"
+import miniStyl from "styl/mini-games.module.scss"
 import Header from "comp/Header"
 
 export default function Snake() {

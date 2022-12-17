@@ -7,7 +7,7 @@ import Image from "next/image"
 import Container from "../ui/Container"
 import CodeBlock from "../ui/CodeBlock"
 import DraftBadge from "../ui/DraftBadge"
-import styl from "styl/Post.module.css"
+import styl from "styl/Post.module.scss"
 
 const BlogPost = ({ post }) => {
   const isLocal = process.env.NODE_ENV === "development"

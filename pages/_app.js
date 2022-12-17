@@ -1,16 +1,27 @@
-import React, { useState, useEffect } from "react"
+import React, {useState, useEffect, useContext} from "react"
 import Head from "next/head"
 import Nav from "../src/ui/Nav"
-import styl from "styles/css/app.module.css"
-import { ToastContainer, Slide } from "react-toastify"
+import styl from "styl/app.module.scss"
+import {ToastContainer, Slide} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import { useRouter } from "next/router"
+import {useRouter} from "next/router"
 import "../styles/globals.css"
+import {ThemeContext} from "comp/ThemeContext"
+
 // import nProgress from "nprogress"
 
-function MyApp({ Component, pageProps }) {
+function MyApp({Component, pageProps}) {
   const router = useRouter()
   const [tabValue, setTabValue] = useState(router.asPath || "/")
+  const [theme, setTheme] = useState('dark');
+
+  function toggleTheme() {
+    if (theme === 'dark')
+      setTheme('light')
+    else {
+      setTheme('dark')
+    }
+  }
 
   function redirectAndSetTabValue(href) {
     setTabValue(href)
@@ -93,24 +104,27 @@ function MyApp({ Component, pageProps }) {
           (document,"script","https://chimpstatic.com/mcjs-connected/js/users/83d32f24735b5dda5dad59075/337312b53033e158d020ebbd1.js");
         `}
         </script>
+        {/* <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js' />
+        <script src='/scripts/themeToggler.js' /> */}
       </Head>
-
-      <div className={styl.navAndComponentContainer}>
-        <Nav tabValue={tabValue} setTabValue={redirectAndSetTabValue} />
-        <Component {...pageProps} tabValue={tabValue} />
-        <ToastContainer
-          position="bottom-center"
-          autoClose={1000}
-          hideProgressBar
-          transition={Slide}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
-      </div>
+      <ThemeContext.Provider value={{theme, toggleTheme}}>
+        <div className={`${styl.navAndComponentContainer} ${styl[theme]}`}>
+          <Nav tabValue={tabValue} setTabValue={redirectAndSetTabValue} />
+          <Component {...pageProps} tabValue={tabValue} />
+          <ToastContainer
+            position="bottom-center"
+            autoClose={1000}
+            hideProgressBar
+            transition={Slide}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+        </div>
+      </ThemeContext.Provider>
     </>
   )
 }

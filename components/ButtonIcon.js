@@ -1,5 +1,5 @@
 import Ripple from "./Ripple";
-import styl from "styl/ButtonIcon.module.css";
+import styl from "styl/ButtonIcon.module.scss";
 
 export default function ButtonIcon(props) {
   return (

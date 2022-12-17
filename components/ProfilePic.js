@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styl from "styl/ProfilePic.module.css"
+import styl from "styl/ProfilePic.module.scss"
 
 export default function ProfilePic({
   imgSrc,

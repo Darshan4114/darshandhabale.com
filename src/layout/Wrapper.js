@@ -1,4 +1,4 @@
-import { ThemeProvider } from "theme-ui"
+import {ThemeProvider} from "theme-ui"
 import Layout from "./Layout"
 import Theme from "./Theme"
 import config from "../../blog.config"
@@ -15,9 +15,9 @@ const Wrapper = (props) => {
   // }
 
   return (
-    <ThemeProvider theme={Theme}>
-      <Layout {...props} />
-    </ThemeProvider>
+    // <ThemeProvider theme={Theme}>
+    <Layout {...props} />
+    // {/* </ThemeProvider> */}
   )
 }
 

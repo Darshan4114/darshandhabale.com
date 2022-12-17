@@ -1,4 +1,4 @@
-import styl from "styles/css/Ripple.module.css";
+import styl from "styl/Ripple.module.scss";
 export default function Ripple(props) {
   function createRipple(event) {
     const button = event.currentTarget;

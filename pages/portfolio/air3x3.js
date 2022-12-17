@@ -2,7 +2,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Header from "comp/Header"
 import Footer from "comp/Footer"
-import styl from "styles/css/air3x3.module.css"
+import styl from "styl/air3x3.module.scss"
 import { useState, useEffect } from "react"
 
 export default function Air3x3() {

@@ -1,6 +1,6 @@
-import { useEffect } from "react"
+import {useEffect} from "react"
 import theme from "./Theme"
-import { Box } from "theme-ui"
+import {Box} from "theme-ui"
 import PropTypes from "prop-types"
 import Head from "./Head"
 import Style from "./Style"
@@ -8,7 +8,7 @@ import ThemeToggle from "../ui/ThemeToggle"
 import Header from "comp/Header"
 import AuthorSummary from "comp/AuthorSummary"
 import MailchimpForm from "comp/MailchimpForm"
-import styl from "styl/Layout.module.css"
+import styl from "styl/Layout.module.scss"
 import Main from "../ui/Main"
 import Nav from "../ui/Nav"
 import Footer from "../ui/Footer"
@@ -48,7 +48,7 @@ const Layout = (props) => {
     <>
       <Head {...props} />
       {codeToRunOnClient && (
-        <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />
+        <script dangerouslySetInnerHTML={{__html: codeToRunOnClient}} />
       )}
       <Box
         sx={{
@@ -56,10 +56,9 @@ const Layout = (props) => {
           minHeight: "100vh",
           flexDirection: "column",
           overflowX: "hidden",
-          background: "#393353",
         }}
       >
-        {typeof theme.colors.modes === "object" && <ThemeToggle />}
+        {/* {typeof theme.colors.modes === "object" && <ThemeToggle />} */}
         <Header />
         <div className={styl.container}>
           {/* <AuthorSummary /> */}

@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react"
+import {useState, useEffect} from "react"
 
 export default function Notes() {
   const [noteList, setNoteList] = useState([])
 
   useEffect(() => {
-    console.log("process.env.API_URL", process.env.API_URL)
     fetch(process.env.API_URL).then((res) => {
       setNoteList(res)
     })

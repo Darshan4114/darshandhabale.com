@@ -1,9 +1,0 @@
-.container {
-  background: #393353;
-  color: #fff;
-  height: 100%;
-}
-.container main {
-  display: grid;
-  grid-template-columns: 20rem 1fr;
-}/*# sourceMappingURL=ReactBlog.module.css.map */

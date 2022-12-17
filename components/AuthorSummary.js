@@ -1,4 +1,4 @@
-import styl from "styl/AuthorSummary.module.css"
+import styl from "styl/AuthorSummary.module.scss"
 import ProfilePic from "comp/ProfilePic"
 
 export default function AuthorSummary() {

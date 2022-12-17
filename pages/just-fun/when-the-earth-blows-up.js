@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import styl from "styl/when-the-earth-blows-up.module.css"
+import styl from "styl/when-the-earth-blows-up.module.scss"
 
 export default function whenTheEarthBlowsUp() {
   const [asteroidClass, setAsteroidClass] = useState(styl.asteroid)

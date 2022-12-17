@@ -3,7 +3,7 @@ import { Flex, Box, Heading, Text } from "theme-ui"
 import Image from "next/image"
 import DraftBadge from "../ui/DraftBadge"
 import Link from "next/link"
-import styl from "styl/Posts.module.css"
+import styl from "styl/Posts.module.scss"
 import { useState } from "react"
 
 const Posts = ({ posts, prevPosts, nextPosts }) => {

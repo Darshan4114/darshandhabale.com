@@ -3,4 +3,8 @@
   scroll-behavior: smooth;
   overflow-x: hidden;
   height: 100vh;
+
+  &.dark {
+    background: #393353;
+  }
 }

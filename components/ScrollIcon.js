@@ -1,4 +1,4 @@
-import styl from "styl/ScrollIcon.module.css"
+import styl from "styl/ScrollIcon.module.scss"
 
 export default function ScrollIcon(props) {
   return (

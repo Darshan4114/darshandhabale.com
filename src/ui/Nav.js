@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 
 // import styled, { css } from "styled-components"
-import styl from "styles/css/Nav.module.css"
+import styl from "styl/Nav.module.scss"
 import Tabs from "@mui/material/Tabs"
 import Tab from "@mui/material/Tab"
 

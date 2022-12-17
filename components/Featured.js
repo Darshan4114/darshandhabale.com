@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import styl from "styl/Featured.module.css"
+import styl from "styl/Featured.module.scss"
 export default function Featured() {
   return (
     <div className={styl.featured}>

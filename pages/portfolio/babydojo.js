@@ -3,7 +3,7 @@ import Image from "next/image"
 import Header from "comp/Header"
 import Footer from "comp/Footer"
 import ScrollIcon from "comp/ScrollIcon"
-import styl from "styles/css/babydojo.module.css"
+import styl from "styl/babydojo.module.scss"
 import { useState, useEffect } from "react"
 
 export default function Babydojo() {

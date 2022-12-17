@@ -207,9 +207,6 @@ const Style = (props) => (
       text-align: inherit;
       padding-left: 4px;
     }
-    a {
-      color: ${theme.colors.primary};
-    }
   `}</style>
 )
 

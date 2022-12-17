@@ -6,7 +6,7 @@ import ScrollIcon from "comp/ScrollIcon"
 import ProfilePic from "comp/ProfilePic"
 import ButtonIcon from "comp/ButtonIcon"
 // import PageScroll from "util/PageScroll"
-import styl from "styl/consult.module.css"
+import styl from "styl/consult.module.scss"
 import ReactFullpage from "@fullpage/react-fullpage"
 
 import { useEffect } from "react"
