@@ -9,7 +9,7 @@ import {ThemeContext} from "comp/ThemeContext"
 
 const Header = (props) => {
   const [showNavUl, setShowNavUl] = useState(false)
-  const {theme, toggleTheme} = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const router = useRouter()
   useEffect(() => {
     function resetNavUl() {
@@ -43,13 +43,13 @@ const Header = (props) => {
             {router.asPath !== "/portfolio" && (
               <li>
                 <Link href="/portfolio">
-                  <a>Darshan's Work</a>
+                  <a>work</a>
                 </Link>
               </li>
             )}
             <li>
               <Link href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
-                <a target="_blank">Youtube</a>
+                <a target="_blank">youtube</a>
               </Link>
             </li>
             {/* {router.asPath !== "/mini-games" && (
@@ -62,18 +62,18 @@ const Header = (props) => {
             {router.asPath !== "/about" && (
               <li>
                 <Link href="/about">
-                  <a>About Author</a>
+                  <a>about</a>
                 </Link>
               </li>
             )}
             {router.asPath !== "/consult" && (
               <li>
                 <Link href="/consult">
-                  <a>Consult</a>
+                  <a>consult</a>
                 </Link>
               </li>
             )}
-            <ThemeToggler onClick={toggleTheme} />
+            <ThemeToggler />
             {/* <li>
               <Link href="/resume.pdf">
                 <a>Download resume</a>

@@ -1,12 +1,160 @@
-import Head from 'next/head';
+import {useEffect, useContext, useState} from 'react';
+import gsap from 'gsap';
+import {ThemeContext} from "comp/ThemeContext"
 
-export default function ThemeToggler({onClick}) {
-	return (<>
-		<Head>
-			<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js' />
-			<script src='/scripts/themeToggler.js' />
-		</Head>
-		<div style={{position: 'relative', height: '2rem', width: '4rem', margin: '0 0 0 1rem'}} onClick={onClick}>
+
+export default function ThemeToggler() {
+	const {toggleTheme} = useContext(ThemeContext);
+
+	const [tl, setTl] = useState(null);
+
+	useEffect(() => {
+		const select = (s) => document.querySelector(s);
+		const selectAll = (s) => document.querySelectorAll(s);
+		const hit = select('.hit');
+		const allStars = selectAll('.starGroup *');
+		const allClouds = selectAll('.cloud');
+		const allCloudPuffs = selectAll('.cloud circle');
+
+		gsap.set('svg', {
+			visibility: 'visible'
+		})
+		gsap.set(allStars, {
+			transformOrigin: '50% 50%'
+		})
+
+		gsap.defaults({ease: 'elastic.out(0.58, 0.8)'})
+
+		const tl = gsap.timeline({paused: true});
+		setTl(tl);
+		tl
+			.to(['.sun', '.moonMask', '.moon'], {
+				duration: 0.5,
+				attr: gsap.utils.wrap([{cx: '-=140', cy: '-=20'}, {cx: '-=140', cy: '-=20'}, {cx: '-=90', cy: '-=0'}]),
+				stagger: 0,
+				ease: 'power4.in'
+			})
+			.to(['.moon', '.sun'], {
+				duration: 0.25,
+				alpha: gsap.utils.wrap([1, 0]),
+				stagger: 0,
+				position: '-=1',
+				ease: 'power4.in'
+			})
+			.to('body', {
+				// backgroundColor: '#2C3E7B',
+				duration: 1,
+				position: '-=1',
+			})
+			.to('.outline', {
+				stroke: '#6172AD',
+				fill: '#45568D',
+				duration: 1,
+				position: '-=1'
+			})
+			.from(allStars, {
+				x: gsap.utils.wrap([-20, 30, 40, -30, 60, -40, 80, 90, 100, 110, 120]),
+				alpha: 0,
+				duration: 0.9,
+				stagger: 0.005,
+				position: '-=1'
+			})
+
+			.to(allClouds, {
+				x: gsap.utils.wrap([40, 20]),
+				alpha: 0,
+				duration: 1,
+				stagger: 0,
+				position: '-=1'
+			})
+
+			.addPause()
+
+
+			.to(['.sun', '.moonMask', '.moon'], {
+				attr: gsap.utils.wrap([{cx: '+=140', cy: '+=20'}, {cx: '+=140', cy: '+=20'}, {cx: '+=90', cy: '+=0'}]),
+				duration: 0.5,
+				stagger: 0,
+				ease: 'power4.in'
+			})
+			.to(['.moon', '.sun'], {
+				alpha: gsap.utils.wrap([0, 1]),
+				duration: 0.25,
+				stagger: 0,
+				position: '-=1',
+				ease: 'power4.in'
+			})
+			.to('body', {
+				// backgroundColor: '#26D6FE',
+				ease: 'none',
+				duration: 1,
+				position: '-=1',
+			})
+			.to('.outline', {
+				stroke: '#FCFDFE',
+				fill: '#85E8FE',
+				duration: 1,
+				position: '-=1'
+			})
+			.to(allStars, {
+				alpha: 0,
+				duration: 1,
+				stagger: 0,
+				position: '-=1'
+			})
+			.fromTo(allClouds, {
+				y: gsap.utils.wrap([120, 160]),
+				x: 0,
+				duration: 0.6,
+				stagger: 0.06,
+				position: '-=1'
+			},
+				{
+					y: 0,
+					x: 0,
+					duration: 0.6,
+					stagger: 0.06,
+					position: '-=1',
+					alpha: 1,
+					immediateRender: false
+				})
+
+
+			.from(['.plane', '.contrail'], {
+				x: -400,
+				ease: 'none',
+				duration: 0.7,
+				position: '-=1'
+			})
+			.to('.contrail', {
+				alpha: 0,
+				duration: 0.5,
+				ease: 'sine.out'
+			})
+
+
+		function clickToggle() {
+			if (tl.time() > 0 && tl.time() < tl.duration()) {
+				tl.play()
+			} else {
+				tl.play(0)
+			}
+
+			console.log('pr = ', tl.progress(), tl.progress().toFixed(2))
+		}
+
+		tl.timeScale(1);
+		hit.onclick = clickToggle;
+	}, [])
+
+	function handleToggle() {
+		if (tl.progress() === 0 || tl.progress().toFixed(2) === '0.46') {
+			toggleTheme();
+		}
+	}
+
+	return (
+		<div style={{position: 'relative', height: '2rem', width: '4rem', margin: '0 0 0 1rem'}} onClick={handleToggle}>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="200 200 400 200" style={{height: '100%'}}>
 				<title>Day And Night Toggle</title>
 				<description>A user interface toggle with two options - a sun with a cloud that animates to a crescent moon with stars</description>
@@ -77,6 +225,5 @@ export default function ThemeToggler({onClick}) {
 				<rect style={{cursor: 'pointer'}} class="hit" x="220" y="210" width="360" height="180" rx="90" ry="90" fill="transparent" stroke="none" stroke-width="0" />
 			</svg>
 		</div>
-	</>
 	)
 }

@@ -16,9 +16,13 @@ function MyApp({Component, pageProps}) {
   const [theme, setTheme] = useState('dark');
 
   function toggleTheme() {
-    if (theme === 'dark')
+    console.log('toggler called', theme)
+    if (theme === 'dark') {
+      console.log('c1', theme);
       setTheme('light')
+    }
     else {
+      console.log('c2', theme);
       setTheme('dark')
     }
   }
@@ -104,8 +108,6 @@ function MyApp({Component, pageProps}) {
           (document,"script","https://chimpstatic.com/mcjs-connected/js/users/83d32f24735b5dda5dad59075/337312b53033e158d020ebbd1.js");
         `}
         </script>
-        {/* <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js' />
-        <script src='/scripts/themeToggler.js' /> */}
       </Head>
       <ThemeContext.Provider value={{theme, toggleTheme}}>
         <div className={`${styl.navAndComponentContainer} ${styl[theme]}`}>
