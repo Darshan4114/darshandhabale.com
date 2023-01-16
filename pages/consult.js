@@ -9,9 +9,9 @@ import ButtonIcon from "comp/ButtonIcon"
 import styl from "styl/consult.module.scss"
 import ReactFullpage from "@fullpage/react-fullpage"
 
-import { useEffect } from "react"
-import { toast } from "react-toastify"
-import { toastOptions } from "comp/constants"
+import {useEffect} from "react"
+import {toast} from "react-toastify"
+import {toastOptions} from "comp/constants"
 
 const ConsultPage = () => {
   useEffect(() => {
@@ -32,7 +32,7 @@ const ConsultPage = () => {
     })
   }
   function gtag_report_conversion(url) {
-    var callback = function () {
+    var callback = function() {
       if (typeof url != "undefined") {
         window.location = url
       }
@@ -60,7 +60,7 @@ const ConsultPage = () => {
           xmlns="//www.w3.org/2000/svg"
           version="1.1"
           class="svg-filters"
-          style={{ display: "none" }}
+          style={{display: "none"}}
         >
           <defs>
             <filter id="marker-shape">
@@ -88,7 +88,7 @@ const ConsultPage = () => {
             console.log("render prop change") || (
               <ReactFullpage.Wrapper>
                 <section className={`${styl.hero} ${styl.fullpage} section`}>
-                  <Header />
+                  <Header theme='light' />
                   <h1 className={styl.title}>
                     <span className={styl.gradient}>Senior </span>full stack
                     <br /> developer

@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext } from "react"
+import React, {useEffect, useState, useContext} from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { useRouter } from "next/router"
+import {useRouter} from "next/router"
 
 // import styled, { css } from "styled-components"
 import styl from "styl/Nav.module.scss"
@@ -19,7 +19,7 @@ import Tab from "@mui/material/Tab"
 // const db = getFirestore(app);
 // const storage = getStorage(app);
 
-export default function Nav({ tabValue, setTabValue }) {
+export default function Nav({tabValue, setTabValue}) {
   const router = useRouter()
   const [navState, setNavState] = useState(null)
   const [showHam, setShowHam] = useState(true)
@@ -170,6 +170,19 @@ export default function Nav({ tabValue, setTabValue }) {
                     alt="Consult"
                   />
                   <p> Consult</p>
+                </li>
+              </a>
+            </Link>
+            <Link href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
+              <a target="_blank">
+                <li onClick={toggleNav}>
+                  <Image
+                    src="/img/youtube.gif"
+                    height="28"
+                    width="28"
+                    alt="Youtube"
+                  />
+                  <p> Youtube</p>
                 </li>
               </a>
             </Link>
