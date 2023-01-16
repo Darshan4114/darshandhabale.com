@@ -9,7 +9,7 @@ import {ThemeContext} from "comp/ThemeContext"
 
 const Header = (props) => {
   const [showNavUl, setShowNavUl] = useState(false)
-  const {theme} = useContext(ThemeContext);
+  const {theme, toggleTheme} = useContext(ThemeContext);
   const router = useRouter()
   useEffect(() => {
     function resetNavUl() {
@@ -19,6 +19,7 @@ const Header = (props) => {
         setShowNavUl(true)
       }
     }
+    if (props.theme !== theme) {toggleTheme()};
     resetNavUl()
     window.addEventListener("resize", () => {
       resetNavUl()

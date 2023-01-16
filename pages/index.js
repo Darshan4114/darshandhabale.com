@@ -32,7 +32,7 @@ const PostsPage = ({posts, prevPosts, nextPosts}) => {
             content="Best blog and code snippets to learn JavaScript, Next.js, Node.js and Firebase. -By Darshan Dhabale. A full-stack developer with 3 years of experience in MERN stack. Upskill as a developer with React.js"
           />
         </Head>
-        <Header darkmode={true} />
+        <Header theme='dark' />
         <Featured />
         <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
 

@@ -1,14 +1,10 @@
 import Head from "next/head"
-import {useState, useEffect} from "react"
+import {useState, useEffect, useContext} from "react"
 import Image from "next/image"
 import Header from "comp/Header"
-import ScrollIcon from "comp/ScrollIcon"
-import ProfilePic from "comp/ProfilePic"
 import ButtonIcon from "comp/ButtonIcon"
 import styl from "styl/about.module.scss"
 import {toast} from "react-toastify"
-import {toastOptions} from "comp/constants"
-import Wave from "comp/Wave"
 
 const AboutPage = () => {
   const [loaded, setLoaded] = useState(false)
@@ -18,7 +14,10 @@ const AboutPage = () => {
       toast.success("Email copied!")
     })
   }
-  useEffect(() => setLoaded(true), [])
+  useEffect(() => {
+
+    setLoaded(true)
+  }, [])
 
   return (
     <>
@@ -57,14 +56,14 @@ const AboutPage = () => {
           </defs>
         </svg>
       </Head>
-      <Header />
+      <Header theme={'light'} />
 
       {/* <h1>About the author</h1> */}
       <div className={styl.container}>
         <section className={styl.hero}>
           <div className={`${styl.cols} ${styl.fullpage}`}>
             {/* <Wave/> */}
-             {/* <Image src='/img/smoke.jpeg' width='200' height='200'/> */}
+            {/* <Image src='/img/smoke.jpeg' width='200' height='200'/> */}
             <svg className={`${styl.heroArt} ${styl.ringArt}`} width="600" height="600" viewBox="0 0 955 932" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="302.04" cy="613.053" r="235" transform="rotate(-16.7534 302.04 613.053)" fill="#84D3FF" fill-opacity="0.4" stroke="#84D3FF" stroke-width="14" />
               <circle cx="494.653" cy="302.344" r="235" transform="rotate(-16.7534 494.653 302.344)" fill="#FFBDBD" fill-opacity="0.4" stroke="#FFBDBD" stroke-width="14" />
