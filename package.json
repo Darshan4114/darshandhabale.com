@@ -34,7 +34,7 @@
     "react-ga": "^3.3.0",
     "react-toastify": "^9.0.5",
     "sass": "^1.57.0",
-    "theme-ui": "^0.10.0"
+    "theme-ui": "^0.15.4"
   },
   "devDependencies": {
     "onchange": "^7.1.0",
