@@ -68,41 +68,45 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
   )
 }
 
-function Post({ post }) {
+function Post ({ post }) {
   return (
-    <Link
-      href={
-        post?.tags?.includes("react")
-          ? "/react-blog/" + post.slug
-          : "/blog/" + post.slug
-      }
-      passHref
+    <div
+      className={styl.postContainer}
       key={post.slug}
+      style={{ marginBottom: "1em" }}
     >
-      <a className={styl.postTitle}>
-        <div
-          className={styl.postContainer}
+      <div className={styl.card}>
+
+        <Link
+          href={
+            post?.tags?.includes("react")
+              ? "/react-blog/" + post.slug
+              : "/blog/" + post.slug
+          }
+          passHref
           key={post.slug}
-          style={{ marginBottom: "1em" }}
         >
-          {post.coverImage && (
-            <div className={styl.coverImgContainer}>
-              <Image
-                src={post.coverImage}
-                layout="fill"
-                objectFit="cover"
-                alt={post.coverImageAlt || ""}
-              />
+          <a className={styl.postTitle}>
+            {post.coverImage && (
+              <div className={styl.coverImgContainer}>
+                <Image
+                  src={post.coverImage}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={post.coverImageAlt || ""}
+                />
+              </div>
+            )}
+            <div className={styl.text}>
+              <h2>{post.title}</h2>
+              {post?.tags?.length > 0 &&
+                post.tags.map((tag) => <p className={styl.tag}>{tag}</p>)}
             </div>
-          )}
-          <div className={styl.text}>
-            <h2>{post.title}</h2>
-            {post?.tags?.length > 0 &&
-              post.tags.map((tag) => <p className={styl.tag}>{tag}</p>)}
-          </div>
-        </div>
-      </a>
-    </Link>
+          </a>
+        </Link>
+      </div>
+      <div className={styl.shadow}></div>
+    </div>
   )
 }
 

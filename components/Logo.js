@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-export default function Logo(props) {
+
+export default function Logo (props) {
   const [logoSize, setLogoSize] = useState("small")
   useEffect(() => {
-    function refreshLogo() {
+    function refreshLogo () {
       if (window.innerWidth < 450) {
         setLogoSize("small")
       } else {

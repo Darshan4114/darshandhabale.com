@@ -19,8 +19,7 @@
 .container {
   font-family: "Helvetica Neue", sans-serif;
   display: grid;
-  gap: 1.5em;
-  // grid-template-columns: repeat(1, 17rem);
+  gap: 2em;
   max-width: calc(100vw - 2rem);
   min-height: 100vh;
   margin: 0 auto;
@@ -38,17 +37,18 @@
 }
 
 .postContainer {
-  max-width: calc(100vw - 3rem);
-  color: #fff;
-  background: #1f243c;
+  width: 100%;
+  position: relative;
   // height: 18rem;
-  // box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
-  // border: 2px solid white;
-  // box-shadow: rgba(49, 54, 59, 0.4) 0px 0px 0px 2px,
-  //   rgba(51, 54, 57, 0.65) 0px 4px 6px -1px,
-  //   rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
-  border-radius: 1em;
-  margin: 1.5em auto;
+  transition: transform 0.1s linear;
+
+  .card {
+    // height: 18rem;
+    background: #fff;
+    border: 1px solid #2e2e2e;
+  }
+
+  margin: 2em auto;
 
   // padding: 0.5em;
   h2 {
@@ -67,6 +67,30 @@
     text-overflow: ellipsis;
   }
 
+  .shadow {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: rgb(8, 8, 8);
+    transition: top 0.3s,
+      left 0.3s;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      z-index: -2;
+      transform: rotate(30deg);
+    }
+  }
+
   .tag {
     // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     //   rgba(255, 255, 255, 0.3) 0px 18px 36px -18px inset;
@@ -81,6 +105,25 @@
     color: rgb(0, 183, 0);
     display: inline-block;
   }
+
+  &:hover {
+    transform: translate(-5px, -5px);
+
+    .shadow::before {
+      background-image: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00, #33cc33, #0099cc, #9933cc, #ff00ff);
+      animation: rotateBackground 2s linear infinite;
+    }
+  }
+}
+
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .coverImgContainer {
@@ -88,6 +131,6 @@
   height: 10rem;
   width: 100%;
   max-width: calc(100vw - 2rem);
-  border-radius: 1em 1em 0 0;
+  // border-radius: 1em 1em 0 0;
   overflow: hidden;
 }

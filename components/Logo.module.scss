@@ -1,0 +1,13 @@
+.name {
+  font-weight: 800;
+  margin-top: -0.7em;
+
+  // font-size: 4rem;
+
+  span {
+    // font-size: 4rem;
+    background: linear-gradient(180deg, #fa0aff 0%, #0e0aff 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+}
