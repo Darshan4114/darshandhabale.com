@@ -8,6 +8,7 @@ import { toast } from "react-toastify"
 import { ThemeContext } from "comp/ThemeContext"
 import { Aldrich, Inter } from 'next/font/google'
 import { MdContentCopy } from 'react-icons/md'
+import Link from "next/link"
 
 const inter = Inter({ subsets: ['latin'] })
 const heroFont = Aldrich({ weight: '400', subsets: ['latin'] })
@@ -47,6 +48,7 @@ const Home = () => {
               <Image src='/img/smiley.png' layout='fill' />
             </div>
             <div className={styl.shadow}></div>
+            <p className={styl.instruction}>Hover / Touch</p>
           </div>
 
           <div className={`${styl.text} ${heroFont.className}`}>
@@ -54,7 +56,38 @@ const Home = () => {
               <span>D</span>arshan Dhabale
             </h1>
             <div className={styl.desgGrp}>
-              <p className={styl.desg}>Software Dev</p>
+              <p className={styl.desg}>Developer</p>
+            </div>
+
+            <div className={styl.quicknav}>
+              <Link href='/portfolio'>
+                <p>Portfolio</p>
+              </Link>
+              <Link href='/blog'>
+                <p>Blog</p>
+              </Link>
+              <Link href='#testimonials'>
+                <p>Testimonials</p>
+              </Link>
+            </div>
+
+            <div className={styl.heroSocials}>
+              <a target="_blank" href="https://www.linkedin.com/in/dhabale/" className={styl.heroSocial}>
+                /in/dhabale
+                <Image
+                  src="/img/linkedin.png"
+                  height="30"
+                  width="30"
+                />
+              </a>
+              <a target="_blank" href="https://www.instagram.com/code_darshan/" className={styl.heroSocial}>
+                @code_darshan
+                <Image
+                  src="/img/instagram_color.png"
+                  height="35"
+                  width="35"
+                />
+              </a>
             </div>
           </div>
         </section>
@@ -205,6 +238,7 @@ const Home = () => {
         </section >
 
         <section className={styl.testimonials}>
+          <a name='testimonials'></a>
           <h2>Testimonials</h2>
           <ul>
             <li>

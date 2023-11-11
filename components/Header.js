@@ -34,21 +34,21 @@ const Header = (props) => {
         <Logo darkmode={theme === 'dark'} />
         {showNavUl && (
           <ul className={styl.navUl}>
-            {router.asPath !== "/" && (
+            {router.pathname !== "/" && (
               <li>
                 <Link href="/">
                   about
                 </Link>
               </li>
             )}
-            {router.asPath !== "/portfolio" && (
+            {router.pathname !== "/portfolio" && (
               <li>
                 <Link href="/portfolio">
                   portfolio
                 </Link>
               </li>
             )}
-            {router.asPath !== "/blog" && (
+            {router.pathname !== "/blog" && (
               <li>
                 <Link href="/blog">
                   blog

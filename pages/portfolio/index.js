@@ -74,9 +74,9 @@ export default function Portfolio () {
   ];
 
   return (
-    <>
+    <div className={styl.container}>
       <Header darkmode />
-      <div className={styl.container}>
+      <div className={styl.projects}>
         {projects.length > 0 && projects.map((project) => (
           <div className={styl.postContainer} key={project.id}>
             <div className={styl.card}>
@@ -98,6 +98,6 @@ export default function Portfolio () {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }

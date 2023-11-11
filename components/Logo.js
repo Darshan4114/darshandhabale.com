@@ -31,11 +31,11 @@ export default function Logo (props) {
           <Image src="/img/logo.svg" height="30" width="30" />
         ) : (
           <>
-            {props.darkmode ? (
+            {/* {props.darkmode ? (
               <Image src="/img/logo_dark.svg" height="42" width="100" />
-            ) : (
-              <Image src="/img/full_logo.svg" height="42" width="100" />
-            )}
+            ) : ( */}
+            <Image src="/img/full_logo.svg" height="42" width="100" />
+            {/* )} */}
           </>
         )}
       </div>

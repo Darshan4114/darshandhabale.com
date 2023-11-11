@@ -16,10 +16,19 @@
 }
 
 .container {
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0 0 3em;
+  min-height: 100vh;
+  background: #ffb2ef;
+}
+
+
+.projects {
   font-family: "Helvetica Neue", sans-serif;
   display: grid;
   gap: 2em;
-  // grid-template-columns: repeat(1, 17rem);
   max-width: calc(100vw - 2rem);
   margin: 0 auto;
   padding: 0 0 2em;

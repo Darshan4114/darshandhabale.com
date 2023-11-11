@@ -114,8 +114,37 @@
     }
   }
 
-  .desg {
+  .desgGrp {
+    margin-bottom: 2rem;
+  }
+
+  .quicknav {
     margin-bottom: 1rem;
+
+    p {
+      border: 2px solid black;
+      background: #ff0;
+      padding: 0.25rem;
+      margin: 0.5rem;
+      display: inline;
+    }
+  }
+
+  .heroSocials {
+    bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    justify-items: end;
+    margin: 0 auto 1rem;
+    padding: 0 1rem;
+  }
+
+  .heroSocial {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
   }
 }
 
@@ -143,8 +172,11 @@
       margin-left: 0.25rem;
       font-size: 1.5rem;
     }
-  }
 
+    .heroSocials {
+      gap: 2rem;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -188,6 +220,16 @@
     height: 100%;
     overflow: hidden;
     transition: filter 0.5s ease;
+  }
+
+  .instruction {
+    border: 2px solid black;
+    background: #d291f7ad;
+    padding: 0.25rem;
+    margin: 0.5rem auto;
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
   }
 
   .smiley {
@@ -235,6 +277,10 @@
 
     .smiley {
       opacity: 0;
+    }
+
+    .instruction {
+      visibility: hidden;
     }
   }
 }
