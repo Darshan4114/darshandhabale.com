@@ -3,7 +3,7 @@ import Link from "next/link"
 import styl from "styl/mini-games.module.scss"
 import Header from "comp/Header"
 
-export default function Games() {
+export default function Games () {
   return (
     <>
       <Head>
@@ -22,8 +22,8 @@ export default function Games() {
           maxWidth: "calc(100vw - 2rem)",
         }}
       >
-        <Link href="/mini-games/snake">
-          <a className={styl.gameName}>Snake</a>
+        <Link href="/mini-games/snake" className={styl.gameName}>
+          Snake
         </Link>
       </div>
     </>

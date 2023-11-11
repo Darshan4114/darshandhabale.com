@@ -2,7 +2,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { MDXProvider } from "@mdx-js/react"
 import Logo from "comp/Logo"
-import styl from "styl/Header.module.scss"
+import styl from "./Header.module.scss"
 import { useState, useEffect, useContext } from "react"
 import ThemeToggler from 'comp/ThemeToggler'
 import { ThemeContext } from "comp/ThemeContext"
@@ -37,30 +37,30 @@ const Header = (props) => {
             {router.asPath !== "/" && (
               <li>
                 <Link href="/">
-                  <a>about</a>
+                  about
                 </Link>
               </li>
             )}
             {router.asPath !== "/portfolio" && (
               <li>
                 <Link href="/portfolio">
-                  <a>portfolio</a>
+                  portfolio
                 </Link>
               </li>
             )}
             {router.asPath !== "/blog" && (
               <li>
                 <Link href="/blog">
-                  <a>blog</a>
+                  blog
                 </Link>
               </li>
             )}
             <li>
-              <Link href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
-                <a target="_blank">youtube</a>
+              <Link target="_blank" href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
+                youtube
               </Link>
             </li>
-            <ThemeToggler />
+            {/* <ThemeToggler /> */}
           </ul>
         )}
       </div>

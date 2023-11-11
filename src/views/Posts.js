@@ -51,15 +51,15 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
       <Flex sx={{ fontStyle: "italic" }}>
         <Box sx={{ width: "50%", py: 3, textAlign: "left" }}>
           {prevPosts !== null && (
-            <Link href={"/blog/" + prevPosts} passHref>
-              <a>« see newer posts</a>
+            <Link href={"/blog/" + prevPosts}>
+              « see newer posts
             </Link>
           )}
         </Box>
         <Box sx={{ width: "50%", py: 3, pr: 3, textAlign: "right" }}>
           {nextPosts !== null && (
             <Link href={"/blog/" + nextPosts} passHref>
-              <a>see older posts »</a>
+              see older posts »
             </Link>
           )}
         </Box>
@@ -76,33 +76,30 @@ function Post ({ post }) {
       style={{ marginBottom: "1em" }}
     >
       <div className={styl.card}>
-
         <Link
           href={
             post?.tags?.includes("react")
               ? "/react-blog/" + post.slug
               : "/blog/" + post.slug
           }
-          passHref
+          className={styl.postTitle}
           key={post.slug}
         >
-          <a className={styl.postTitle}>
-            {post.coverImage && (
-              <div className={styl.coverImgContainer}>
-                <Image
-                  src={post.coverImage}
-                  layout="fill"
-                  objectFit="cover"
-                  alt={post.coverImageAlt || ""}
-                />
-              </div>
-            )}
-            <div className={styl.text}>
-              <h2>{post.title}</h2>
-              {post?.tags?.length > 0 &&
-                post.tags.map((tag) => <p className={styl.tag}>{tag}</p>)}
+          {post.coverImage && (
+            <div className={styl.coverImgContainer}>
+              <Image
+                src={post.coverImage}
+                layout="fill"
+                objectFit="cover"
+                alt={post.coverImageAlt || ""}
+              />
             </div>
-          </a>
+          )}
+          <div className={styl.text}>
+            <h2>{post.title}</h2>
+            {post?.tags?.length > 0 &&
+              post.tags.map((tag) => <p className={styl.tag}>{tag}</p>)}
+          </div>
         </Link>
       </div>
       <div className={styl.shadow}></div>

@@ -1,7 +1,7 @@
-import React, {useEffect, useState, useContext} from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import {useRouter} from "next/router"
+import { useRouter } from "next/router"
 
 // import styled, { css } from "styled-components"
 import styl from "styl/Nav.module.scss"
@@ -19,7 +19,7 @@ import Tab from "@mui/material/Tab"
 // const db = getFirestore(app);
 // const storage = getStorage(app);
 
-export default function Nav({tabValue, setTabValue}) {
+export default function Nav ({ tabValue, setTabValue }) {
   const router = useRouter()
   const [navState, setNavState] = useState(null)
   const [showHam, setShowHam] = useState(true)
@@ -39,11 +39,11 @@ export default function Nav({tabValue, setTabValue}) {
   //     })
   // }
 
-  function toggleNav() {
+  function toggleNav () {
     setNavState(!navState)
   }
   useEffect(() => {
-    function resetHam() {
+    function resetHam () {
       if (window.innerWidth < 750) {
         setShowHam(true)
       } else {
@@ -116,101 +116,87 @@ export default function Nav({tabValue, setTabValue}) {
           <div className={styl.tabGrp}>
             <p>Mini Games</p>
             <Link href="/mini-games/snake">
-              <a>
-                <li onClick={toggleNav}>
-                  <Image
-                    src="/img/snake.png"
-                    height="28"
-                    width="28"
-                    alt="Snake"
-                  />
-                  <p> Snake</p>
-                </li>
-              </a>
+              <li onClick={toggleNav}>
+                <Image
+                  src="/img/snake.png"
+                  height="28"
+                  width="28"
+                  alt="Snake"
+                />
+                <p> Snake</p>
+              </li>
             </Link>
           </div>
           <div className={styl.tabGrp}>
             <p>Portfolio</p>
             <Link href="/portfolio/air3x3">
-              <a>
-                <li onClick={toggleNav}>
-                  <Image
-                    src="/img/basketball-ball.png"
-                    height="28"
-                    width="28"
-                    alt="Air3x3: The basketball tournament application"
-                  />
-                  <p> Air3x3</p>
-                </li>
-              </a>
+              <li onClick={toggleNav}>
+                <Image
+                  src="/img/basketball-ball.png"
+                  height="28"
+                  width="28"
+                  alt="Air3x3: The basketball tournament application"
+                />
+                <p> Air3x3</p>
+              </li>
             </Link>
             <Link href="/portfolio/babydojo">
-              <a>
-                <li onClick={toggleNav}>
-                  <Image
-                    src="/img/portfolio/babydojo/baby.png"
-                    height="28"
-                    width="28"
-                    alt="Babydojo: Parenting application"
-                  />
-                  <p> Babydojo</p>
-                </li>
-              </a>
+              <li onClick={toggleNav}>
+                <Image
+                  src="/img/portfolio/babydojo/baby.png"
+                  height="28"
+                  width="28"
+                  alt="Babydojo: Parenting application"
+                />
+                <p> Babydojo</p>
+              </li>
             </Link>
           </div>
           <div className={styl.tabGrp}>
             <p>Main</p>
             <Link href="/consult">
-              <a>
-                <li onClick={toggleNav}>
-                  <Image
-                    src="/img/consult.png"
-                    height="28"
-                    width="28"
-                    alt="Consult"
-                  />
-                  <p> Consult</p>
-                </li>
-              </a>
+              <li onClick={toggleNav}>
+                <Image
+                  src="/img/consult.png"
+                  height="28"
+                  width="28"
+                  alt="Consult"
+                />
+                <p> Consult</p>
+              </li>
             </Link>
-            <Link href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
-              <a target="_blank">
-                <li onClick={toggleNav}>
-                  <Image
-                    src="/img/youtube.gif"
-                    height="28"
-                    width="28"
-                    alt="Youtube"
-                  />
-                  <p> Youtube</p>
-                </li>
-              </a>
+            <Link href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw" target="_blank">
+              <li onClick={toggleNav}>
+                <Image
+                  src="/img/youtube.gif"
+                  height="28"
+                  width="28"
+                  alt="Youtube"
+                />
+                <p> Youtube</p>
+              </li>
             </Link>
             <Link href="/">
-              <a>
-                <li onClick={toggleNav}>
-                  <Image
-                    src="/img/imagination.png"
-                    height="28"
-                    width="28"
-                    alt="Articles"
-                  />
-                  <p> Articles</p>
-                </li>
-              </a>
+              <li onClick={toggleNav}>
+                <Image
+                  src="/img/imagination.png"
+                  height="28"
+                  width="28"
+                  alt="Articles"
+                />
+                <p> Articles</p>
+              </li>
             </Link>
             <Link href="/about">
-              <a>
-                <li onClick={toggleNav}>
-                  <Image
-                    src="/img/author1.jpg"
-                    height="28"
-                    width="28"
-                    alt="About Darshan"
-                  />
-                  <p> About Darshan</p>
-                </li>
-              </a>
+              <li onClick={toggleNav}>
+                <Image
+                  src="/img/author1.jpg"
+                  height="28"
+                  width="28"
+                  alt="About Darshan"
+                />
+                <p> About Darshan</p>
+              </li>
             </Link>
           </div>
         </ul>

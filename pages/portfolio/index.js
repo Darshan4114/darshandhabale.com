@@ -80,20 +80,18 @@ export default function Portfolio () {
         {projects.length > 0 && projects.map((project) => (
           <div className={styl.postContainer} key={project.id}>
             <div className={styl.card}>
-              <Link href={project.slug}>
-                <a className={styl.postTitle}>
-                  <div className={styl.coverImgContainer}>
-                    <Image
-                      src={project.image}
-                      layout="fill"
-                      objectFit="cover"
-                      alt={project.title}
-                    />
-                  </div>
-                  <div className={styl.text}>
-                    <h2>{project.title}</h2>
-                  </div>
-                </a>
+              <Link href={project.slug} className={styl.postTitle}>
+                <div className={styl.coverImgContainer}>
+                  <Image
+                    src={project.image}
+                    layout="fill"
+                    objectFit="cover"
+                    alt={project.title}
+                  />
+                </div>
+                <div className={styl.text}>
+                  <h2>{project.title}</h2>
+                </div>
               </Link>
             </div>
             <div className={styl.shadow}></div>

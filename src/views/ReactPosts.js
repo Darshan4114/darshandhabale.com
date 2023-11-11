@@ -16,52 +16,50 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
             return isLocal || !post.draft
           })
           .map((post) => (
-            <Link href={"/react-blog/" + post.slug} passHref>
-              <a className={styl.postTitle}>
-                <div
-                  className={styl.postContainer}
-                  sx={{ pb: 5 }}
-                  key={post.slug}
-                >
-                  {post.coverImage && (
-                    <div className={styl.coverImgContainer}>
-                      <Image
-                        src={post.coverImage}
-                        layout="fill"
-                        objectFit="cover"
-                        alt={post.coverImageAlt || ""}
-                      />
-                    </div>
-                  )}
-                  <div className={styl.text}>
-                    <h2>
-                      {/* {post.draft && <DraftBadge />} */}
-                      {post.title}
-                    </h2>
+            <Link href={"/react-blog/" + post.slug} className={styl.postTitle}>
+              <div
+                className={styl.postContainer}
+                sx={{ pb: 5 }}
+                key={post.slug}
+              >
+                {post.coverImage && (
+                  <div className={styl.coverImgContainer}>
+                    <Image
+                      src={post.coverImage}
+                      layout="fill"
+                      objectFit="cover"
+                      alt={post.coverImageAlt || ""}
+                    />
+                  </div>
+                )}
+                <div className={styl.text}>
+                  <h2>
+                    {/* {post.draft && <DraftBadge />} */}
+                    {post.title}
+                  </h2>
 
-                    {/* <div className={styl.excerpt}>
+                  {/* <div className={styl.excerpt}>
                   <MDX>{post.excerpt}</MDX>
                 </div>
                 <Link href={"/" + post.slug} passHref>
                   <a>Read more...</a>
                 </Link> */}
-                  </div>
                 </div>
-              </a>
+              </div>
             </Link>
           ))}
       <Flex sx={{ fontStyle: "italic" }}>
         <Box sx={{ width: "50%", py: 3, textAlign: "left" }}>
           {prevPosts !== null && (
             <Link href={"/blog/" + prevPosts} passHref>
-              <a>« see newer posts</a>
+              « see newer posts
             </Link>
           )}
         </Box>
         <Box sx={{ width: "50%", py: 3, pr: 3, textAlign: "right" }}>
           {nextPosts !== null && (
             <Link href={"/blog/" + nextPosts} passHref>
-              <a>see older posts »</a>
+              see older posts »
             </Link>
           )}
         </Box>

@@ -1,21 +1,21 @@
-import React, {useState, useEffect, useContext} from "react"
+import React, { useState, useEffect, useContext } from "react"
 import Head from "next/head"
 import Nav from "../src/ui/Nav"
 import styl from "styl/app.module.scss"
-import {ToastContainer, Slide} from "react-toastify"
+import { ToastContainer, Slide } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import {useRouter} from "next/router"
+import { useRouter } from "next/router"
 import "../styles/globals.css"
-import {ThemeContext} from "comp/ThemeContext"
+import { ThemeContext } from "comp/ThemeContext"
 
 // import nProgress from "nprogress"
 
-function MyApp({Component, pageProps}) {
+function MyApp ({ Component, pageProps }) {
   const router = useRouter()
   const [tabValue, setTabValue] = useState(router.asPath || "/")
   const [theme, setTheme] = useState('dark');
 
-  function toggleTheme() {
+  function toggleTheme () {
     console.log('toggler called', theme)
     if (theme === 'dark') {
       console.log('c1', theme);
@@ -27,7 +27,7 @@ function MyApp({Component, pageProps}) {
     }
   }
 
-  function redirectAndSetTabValue(href) {
+  function redirectAndSetTabValue (href) {
     setTabValue(href)
     router.push(href)
   }
@@ -109,8 +109,8 @@ function MyApp({Component, pageProps}) {
         `}
         </script>
       </Head>
-      <ThemeContext.Provider value={{theme, toggleTheme}}>
-        <div className={`${styl.navAndComponentContainer} ${styl[theme]}`}>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <div className={`${styl.navAndComponentContainer} `}>
           <Nav tabValue={tabValue} setTabValue={redirectAndSetTabValue} />
           <Component {...pageProps} tabValue={tabValue} />
           <ToastContainer

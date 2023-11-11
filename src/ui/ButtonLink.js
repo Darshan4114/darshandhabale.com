@@ -40,8 +40,8 @@ const ButtonLink = (props) => {
       {props.children}
     </A>
   ) : (
-    <Link href={props.href} passHref>
-      <A styles={styles}>{props.children}</A>
+    <Link href={props.href} passHref styles={styles}>
+      {props.children}
     </Link>
   )
 }

@@ -35,10 +35,6 @@ p {
   cursor: url(/img/cursor-text.png), text;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 blockquote {
   background: #efefef;
   padding: 0.5em;

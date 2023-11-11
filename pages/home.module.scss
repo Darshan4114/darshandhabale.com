@@ -1,13 +1,15 @@
 .container {
-  width: 60rem;
-  max-width: calc(100vw - 2em);
-  margin: 0 auto 3em;
-  color: #333;
+  color: #000;
+
+  p {
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: medium;
+  }
 
   .intro {
     font-family: sans-serif;
     font-size: 1.2rem;
-    // margin: 1em;
     width: 100%;
   }
 
@@ -19,15 +21,9 @@
     margin-bottom: 0.25em;
   }
 
-  a {
-    // text-decoration: underline;
-    // font-weight: bold;
-  }
-
   section {
     position: relative;
-    margin-bottom: 3em;
-    max-width: calc(100vw - 2em);
+    // max-width: calc(100vw - 2em);
   }
 }
 
@@ -38,6 +34,20 @@
       .cols {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      h2 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    section {
+      h2 {
+        margin-bottom: 2rem;
       }
     }
   }
@@ -58,7 +68,7 @@
     section {
       >h2 {
         font-size: 2rem;
-        margin-bottom: 1.5rem;
+        // margin-bottom: 1.5rem;
       }
     }
   }
@@ -69,7 +79,7 @@
     section {
       >h2 {
         font-size: 3rem;
-        margin-bottom: 2rem;
+        // margin-bottom: 2rem;
       }
     }
   }
@@ -79,7 +89,6 @@
 .hero {
   position: relative;
   align-items: center;
-  // padding-bottom: 7rem;
 
   .text {
     text-align: center;
@@ -122,6 +131,7 @@
 
     .desg {
       margin-left: 0.25rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -139,15 +149,16 @@
     }
 
     .name {
-      font-size: 4rem;
+      font-size: 6rem;
 
       span {
-        font-size: 5.5rem;
+        font-size: 6rem;
       }
     }
 
     .desg {
       margin-left: 0.25rem;
+      font-size: 2rem;
     }
   }
 
@@ -159,6 +170,7 @@
   margin: 1em auto;
   position: relative;
   margin-bottom: 3rem;
+  border: 12px solid black;
 
   .image {
     filter: grayscale(100%) blur(5px);
@@ -179,12 +191,12 @@
 
   .shadow {
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
+    top: 2rem;
+    left: 2rem;
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: rgb(8, 8, 8);
+    background: #111;
     transition: top 0.3s,
       left 0.3s;
     overflow: hidden;
@@ -192,8 +204,8 @@
     &::before {
       content: "";
       position: absolute;
-      width: 150%;
-      height: 150%;
+      width: 300%;
+      height: 300%;
       top: -25%;
       left: -25%;
       z-index: -2;
@@ -250,6 +262,9 @@
 
 // What do I do? section
 .wdid {
+  background: #f4d738;
+  padding: 2rem;
+
   p {
     margin-bottom: 1rem;
   }
@@ -282,6 +297,8 @@
 // What do I do? section media queries
 @media screen and (min-width: 768px) {
   .wdid {
+    padding: 4rem;
+
     .artGroupContainer {
       margin-top: -4rem;
       padding-left: 2rem;
@@ -296,20 +313,87 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .wdid {
+    padding: 7rem;
+
+    .artGroupContainer {
+      svg {
+        width: 25rem;
+        height: 25rem;
+      }
+    }
+  }
+}
+
+// Stack
+.stack {
+  background: #ffb2ef;
+  color: black;
+  padding: 2rem;
+
+  .stackelements p {
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0.5em;
+    background: #f4d738;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black
+  }
+}
+
+// Stack section media queries
+@media screen and (min-width: 768px) {
+  .stack {
+    padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .stack {
+    padding: 7rem;
+  }
+}
+
+
+.projects {
+  background: #90ee90;
+  color: black;
+  padding: 2rem;
+}
+
+// Projects section media queries
+@media screen and (min-width: 768px) {
+  .projects {
+    padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .projects {
+    padding: 7rem;
+  }
+}
+
 // Project cards
 .projectCard {
   width: 100%;
   position: relative;
-  // height: 8rem;
+  min-height: 8rem;
   transition: transform 0.1s linear;
   margin-bottom: 1rem;
 
-  .card {
-    padding: 1rem;
-    // height: 8rem;
-    background: #fff;
-    border: 1px solid #2e2e2e;
-    margin-bottom: 1rem;
+  padding: 1rem;
+  min-height: 8rem;
+  background: #fff;
+  border: 3px solid #000;
+  margin-bottom: 1rem;
+  box-shadow: 5px 5px 0px 0px #000;
+
+  &:hover {
+    transform: translate(-5px, -5px);
   }
 
   h4 {
@@ -319,39 +403,6 @@
 
   p {
     margin: 0;
-  }
-
-  .shadow {
-    position: absolute;
-    top: 0.25rem;
-    left: 0.25rem;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: rgb(8, 8, 8);
-    transition: top 0.3s,
-      left 0.3s;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 1500%;
-      top: -100%;
-      left: -50%;
-      z-index: -2;
-      transform: rotate(30deg);
-    }
-  }
-
-  &:hover {
-    transform: translate(-5px, -5px);
-
-    .shadow::before {
-      background-image: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00, #33cc33, #0099cc, #9933cc, #ff00ff);
-      animation: rotateBackground 5s linear infinite;
-    }
   }
 }
 
@@ -366,22 +417,34 @@
   }
 }
 
-.stack {
-  .stackelements p {
-    display: inline-flex;
-    flex-wrap: wrap;
-    padding: 0.25em 0.5em;
-    margin: 0.25em 0.5em;
-    background: #efefef;
-    font-weight: bold;
-    // border-radius: 1rem;
+// Testimonials
+.testimonials {
+  background: #69d2e7;
+  color: black;
+  padding: 2rem;
+
+  ul {
+    list-style-image: url('/img/li.png');
+    list-style-position: outside;
+  }
+
+  li {
+    font-weight: light;
+    margin-bottom: 1rem;
   }
 }
 
-.testimonials {
-  p {
-    font-style: italic;
-    margin-bottom: 1rem;
+
+// Testimonials section media queries
+@media screen and (min-width: 768px) {
+  .testimonials {
+    padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .testimonials {
+    padding: 7rem;
   }
 }
 
@@ -394,6 +457,33 @@
   margin-left: 0.5em;
 }
 
+// Footer
+.footer {
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  padding: 2rem;
+  background: #000;
+  color: white;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+// Footer section media queries
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    padding: 7rem;
+  }
+}
 
 
 @keyframes bounce {
