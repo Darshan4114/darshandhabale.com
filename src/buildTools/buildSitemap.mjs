@@ -21,7 +21,7 @@ const readDirRecursive = async (filePath) => {
     const EXCLUDE_LIST = ["_document", "_app"]
 
     //Processing /pages dir
-    const pagesDir = await readDirRecursive("./pages")
+    const pagesDir = await readDirRecursive("pages")
     console.log('pagesDir', pagesDir);
     pagesDir.flat(Number.POSITIVE_INFINITY)
     const pagesDirUrls = pagesDir
