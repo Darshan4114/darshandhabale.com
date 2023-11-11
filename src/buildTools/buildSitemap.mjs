@@ -16,44 +16,42 @@ const readDirRecursive = async (filePath) => {
   return files.flat()
 }
 
-;(async () => {
-  const site = "https://darshandev.tech/"
-  const EXCLUDE_LIST = ["_document", "_app"]
+  ; (async () => {
+    const site = "https://darshandhabale.com/"
+    const EXCLUDE_LIST = ["_document", "_app"]
 
-  //Processing /pages dir
-  const pagesDir = await readDirRecursive("./pages")
-  pagesDir.flat(Number.POSITIVE_INFINITY)
-  const pagesDirUrls = pagesDir
-    .map((filePath) => {
-      if (
-        filePath.slice(0, 6) === "pages/" &&
-        filePath.slice(filePath.length - 3, filePath.length) === ".js"
-      ) {
-        const url = filePath.slice(6, filePath.length - 3)
-        if (url.includes("index")) return url.replace("index", "")
-        return url
-      }
-    })
-    .filter((url) => !EXCLUDE_LIST.includes(url) && !url?.includes("["))
+    //Processing /pages dir
+    const pagesDir = await readDirRecursive("./pages")
+    console.log('pagesDir', pagesDir);
+    pagesDir.flat(Number.POSITIVE_INFINITY)
+    const pagesDirUrls = pagesDir
+      .filter((filePath) => filePath.slice(0, 6) === "pages\\" && filePath.slice(filePath.length - 3, filePath.length) === ".js")
+      .map((filePath) => {
+        let url = filePath.slice(6, filePath.length - 3)
+        console.log('url', url)
+        url = url.replace("index", "").replace(/\\/g, '/');
+        return url;
+      })
+      .filter((url) => !EXCLUDE_LIST.includes(url) && !url?.includes("["))
 
-  //Processing /posts dir
-  const data = fs.readdirSync("./src/mdx/posts")
-  const postsDirectory = join(process.cwd(), "src/mdx/posts")
+    //Processing /posts dir
+    const data = fs.readdirSync("./src/mdx/posts")
+    const postsDirectory = join(process.cwd(), "src/mdx/posts")
 
-  const siteMapData = data
-    .filter((slug) => {
-      const skipList = [".DS_Store"]
-      return !skipList.includes(slug)
-    })
-    .map((slug) => {
-      const realSlug = slug.replace(/\.mdx$/, "")
-      const fullPath = join(postsDirectory, `${realSlug}.mdx`)
-      const fileContents = fs.readFileSync(fullPath, "utf8")
-      const { data } = matter(fileContents)
-      return { url: site + realSlug, date: data.date }
-    })
-
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    const siteMapData = data
+      .filter((slug) => {
+        const skipList = [".DS_Store"]
+        return !skipList.includes(slug)
+      })
+      .map((slug) => {
+        const realSlug = slug.replace(/\.mdx$/, "")
+        const fullPath = join(postsDirectory, `${realSlug}.mdx`)
+        const fileContents = fs.readFileSync(fullPath, "utf8")
+        const { data } = matter(fileContents)
+        return { url: site + 'blog/' + realSlug, date: data.date }
+      })
+    console.log('pagesDirUrls', pagesDirUrls)
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${pagesDirUrls
         .map((page) => {
@@ -82,5 +80,5 @@ const readDirRecursive = async (filePath) => {
         
       </urlset>
         `
-  fs.writeFileSync("./public/sitemap.xml", sitemap)
-})()
+    fs.writeFileSync("./public/sitemap.xml", sitemap)
+  })()
