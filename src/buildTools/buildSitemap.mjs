@@ -25,7 +25,7 @@ const readDirRecursive = async (filePath) => {
     console.log('pagesDir', pagesDir);
     pagesDir.flat(Number.POSITIVE_INFINITY)
     const pagesDirUrls = pagesDir
-      .filter((filePath) => filePath.slice(0, 6) === "pages\\" && filePath.slice(filePath.length - 3, filePath.length) === ".js")
+      .filter((filePath) => filePath.slice(0, 6) === "pages/" && filePath.slice(filePath.length - 3, filePath.length) === ".js")
       .map((filePath) => {
         let url = filePath.slice(6, filePath.length - 3)
         console.log('url', url)
