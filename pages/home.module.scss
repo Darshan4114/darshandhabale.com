@@ -120,13 +120,20 @@
 
   .quicknav {
     margin-bottom: 1rem;
+    position: relative;
 
-    p {
+    a {
+      font-size: 1rem;
       border: 2px solid black;
       background: #ff0;
       padding: 0.25rem;
       margin: 0.5rem;
-      display: inline;
+      display: inline-block;
+      transition: transform 0.1s linear;
+
+      &:hover {
+        transform: translate(-5px, -5px);
+      }
     }
   }
 
@@ -141,7 +148,7 @@
   }
 
   .heroSocial {
-    font-size: 1rem;
+    font-size: 0.8rem;
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -156,6 +163,7 @@
 
     .text {
       font-size: 1.5rem;
+      margin-top: 3em;
       margin-left: 1em;
       text-align: left;
     }
@@ -173,8 +181,12 @@
       font-size: 1.5rem;
     }
 
+    .quicknav {
+      margin-bottom: 3rem;
+    }
+
     .heroSocials {
-      gap: 2rem;
+      gap: 1rem;
     }
   }
 }
@@ -437,11 +449,12 @@
 .projectCard {
   width: 100%;
   position: relative;
+  display: flex;
   min-height: 8rem;
   transition: transform 0.1s linear;
   margin-bottom: 1rem;
 
-  padding: 1rem;
+  // padding: 1rem;
   min-height: 8rem;
   background: #fff;
   border: 3px solid #000;
@@ -459,6 +472,18 @@
 
   p {
     margin: 0;
+  }
+
+  .projectImage {
+    position: relative;
+    flex-grow: 1;
+    width: 50%;
+    height: 20rem;
+  }
+
+  .projectText {
+    padding: 1rem;
+    flex-grow: 1;
   }
 }
 

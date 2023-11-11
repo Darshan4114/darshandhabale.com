@@ -9,6 +9,7 @@ import { ThemeContext } from "comp/ThemeContext"
 import { Aldrich, Inter } from 'next/font/google'
 import { MdContentCopy } from 'react-icons/md'
 import Link from "next/link"
+import Logo from "comp/Logo"
 
 const inter = Inter({ subsets: ['latin'] })
 const heroFont = Aldrich({ weight: '400', subsets: ['latin'] })
@@ -36,7 +37,8 @@ const Home = () => {
           experience in MERN stack. Tech stack - React.js, Node.js, Next.js, Django, Python and Firebase. Darshan Dhabale - https://linkedin.com/in/dhabale | Email: dev@darshandhabale.com"
         />
       </Head>
-      <Header theme={theme} />
+      {/* <Header theme={theme} /> */}
+      {/* <Logo /> */}
 
       <div className={`${styl.container} ${theme === 'dark' ? styl.darkmode : ''}`}>
         <section className={styl.hero}>
@@ -61,31 +63,43 @@ const Home = () => {
 
             <div className={styl.quicknav}>
               <Link href='/portfolio'>
-                <p>Portfolio</p>
+                Portfolio
               </Link>
               <Link href='/blog'>
-                <p>Blog</p>
+                Blog
               </Link>
               <Link href='#testimonials'>
-                <p>Testimonials</p>
+                Testimonials
               </Link>
             </div>
 
             <div className={styl.heroSocials}>
+              <a target="_blank" href="https://www.github.com/darshan4114/" className={styl.heroSocial}>
+                <Image
+                  src="/img/github.png"
+                  height="50"
+                  width="50"
+                />
+              </a>
               <a target="_blank" href="https://www.linkedin.com/in/dhabale/" className={styl.heroSocial}>
-                /in/dhabale
                 <Image
                   src="/img/linkedin.png"
-                  height="30"
-                  width="30"
+                  height="45"
+                  width="45"
                 />
               </a>
               <a target="_blank" href="https://www.instagram.com/code_darshan/" className={styl.heroSocial}>
-                @code_darshan
                 <Image
                   src="/img/instagram_color.png"
-                  height="35"
-                  width="35"
+                  height="50"
+                  width="50"
+                />
+              </a>
+              <a target="_blank" href="mailto:dev@darshandhabale.com" className={styl.heroSocial}>
+                <Image
+                  src="/img/email.png"
+                  height="50"
+                  width="50"
                 />
               </a>
             </div>
@@ -197,7 +211,21 @@ const Home = () => {
         </section>
         <section className={styl.projects}>
           <h2>Projects</h2>
-          <a href="#">
+          <a href="https://chatarea.vercel.app/" target="_blank">
+            <div className={styl.projectCard}>
+              <div className={styl.projectImage}>
+                <Image src='/img/portfolio/meetloom/meetloom.png' fill />
+              </div>
+              <div className={styl.projectText}>
+                <h4>MeetLoom</h4>
+                <p>
+                  MeetLoom is a responsive and progressive web application that harnesses the power of WebSockets and WebRTC to enable real-time chat and video conferencing.
+                  This innovative platform aims to redefine online communication, making it more immersive and engaging.
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="https://kabbie.vercel.app/" target="_blank">
             <div className={styl.projectCard}>
               <h4>Kabbie: The concierge CRM</h4>
               <p>

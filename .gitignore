@@ -12,6 +12,7 @@
 /dist
 /archive
 /.next
+public/sitemap.xml
 
 # misc
 .DS_Store

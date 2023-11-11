@@ -7,9 +7,9 @@ export default function Portfolio () {
   const projects = [
     {
       id: 1,
-      title: 'Messenger: Chat and Video Conferencing Application',
-      slug: '/portfolio/messenger',
-      image: '/img/portfolio/messenger/messenger.png'
+      title: 'MeetLoom: Chat and Video Conferencing Application',
+      slug: '/portfolio/meetloom',
+      image: '/img/portfolio/meetloom/meetloom.png'
     },
     {
       id: 2,
