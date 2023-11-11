@@ -23,6 +23,12 @@
 
   section {
     position: relative;
+
+    >h2 {
+
+      margin-bottom: 1rem;
+    }
+
     // max-width: calc(100vw - 2em);
   }
 }
@@ -106,6 +112,10 @@
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
     }
+  }
+
+  .desg {
+    margin-bottom: 1rem;
   }
 }
 
@@ -262,7 +272,7 @@
 
 // What do I do? section
 .wdid {
-  background: #f4d738;
+  background: #ff0;
   padding: 2rem;
 
   p {
@@ -337,7 +347,7 @@
     flex-wrap: wrap;
     padding: 0.25em 0.5em;
     margin: 0.25em 0.5em;
-    background: #f4d738;
+    background: #ff0;
     color: black;
     font-weight: bold;
     border: 2px solid black
@@ -422,6 +432,7 @@
   background: #69d2e7;
   color: black;
   padding: 2rem;
+  padding-left: 3rem;
 
   ul {
     list-style-image: url('/img/li.png');

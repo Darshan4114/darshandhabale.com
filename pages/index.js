@@ -26,7 +26,7 @@ const Home = () => {
     <>
       <Head>
         <title>
-          React developer | React/JavaScript developer with 3 years of
+          React developer | React/JavaScript developer with 3.5 years of
           experience | MERN stack | React.js, Node.js, Next.js, Django, Python
         </title>
         <meta

@@ -1,6 +1,6 @@
 import styl from "styl/Ripple.module.scss";
-export default function Ripple(props) {
-  function createRipple(event) {
+export default function Ripple (props) {
+  function createRipple (event) {
     const button = event.currentTarget;
     const buttonRect = button.getBoundingClientRect();
     const circle = document.createElement("span");
@@ -23,16 +23,15 @@ export default function Ripple(props) {
   }
 
   return (
-    <div
-      className={`${styl.rippleContainer} ${props.button ? styl.button : ""} ${
-        props.shape === "circle" ? styl.circle : ""
-      }`}
+    <span
+      className={`${styl.rippleContainer} ${props.button ? styl.button : ""} ${props.shape === "circle" ? styl.circle : ""
+        }`}
       onClick={(e) => {
         createRipple(e);
         props.handleRippleConClick && props.handleRippleConClick(e);
       }}
     >
       {props.children}
-    </div>
+    </span>
   );
 }
