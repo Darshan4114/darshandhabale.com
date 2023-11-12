@@ -1,43 +1,12 @@
-import React, { useState, useEffect, useContext } from "react"
 import Head from "next/head"
-import Nav from "../src/ui/Nav"
-import styl from "styl/app.module.scss"
-import { ToastContainer, Slide } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import { useRouter } from "next/router"
 import "../styles/globals.css"
-import { ThemeContext } from "comp/ThemeContext"
 
 function MyApp ({ Component, pageProps }) {
-  const router = useRouter()
-  const [tabValue, setTabValue] = useState(router.asPath || "/")
-  const [theme, setTheme] = useState('dark');
-
-  function toggleTheme () {
-    console.log('toggler called', theme)
-    if (theme === 'dark') {
-      console.log('c1', theme);
-      setTheme('light')
-    }
-    else {
-      console.log('c2', theme);
-      setTheme('dark')
-    }
-  }
-
-  function redirectAndSetTabValue (href) {
-    setTabValue(href)
-    router.push(href)
-  }
-
-  useEffect(() => {
-    setTabValue(router.asPath)
-  }, [router.asPath])
 
   return (
     <>
       <Head>
-
         <meta
           name="viewport"
           content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
@@ -78,24 +47,7 @@ function MyApp ({ Component, pageProps }) {
         `}
         </script>
       </Head>
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <div className={`${styl.navAndComponentContainer} `}>
-          <Nav tabValue={tabValue} setTabValue={redirectAndSetTabValue} />
-          <Component {...pageProps} tabValue={tabValue} />
-          <ToastContainer
-            position="bottom-center"
-            autoClose={1000}
-            hideProgressBar
-            transition={Slide}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-        </div>
-      </ThemeContext.Provider>
+      <Component {...pageProps} />
     </>
   )
 }
