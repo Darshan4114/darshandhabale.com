@@ -24,19 +24,21 @@
   section {
     position: relative;
 
-    >h2 {
-
+    >div>h2 {
       margin-bottom: 1rem;
     }
 
-    // max-width: calc(100vw - 2em);
+    >div {
+      max-width: 80rem;
+      margin: 0 auto;
+    }
   }
 }
 
 // Main Container queries
 @media screen and (min-width: 768px) {
   .container {
-    section {
+    section>div {
       .cols {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -51,7 +53,7 @@
 
 @media screen and (min-width: 1024px) {
   .container {
-    section {
+    section>div {
       h2 {
         margin-bottom: 2rem;
       }
@@ -72,7 +74,7 @@
 @media screen and (min-width: 768px) {
   .container {
     section {
-      >h2 {
+      >div>h2 {
         font-size: 2rem;
         // margin-bottom: 1.5rem;
       }
@@ -83,7 +85,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     section {
-      >h2 {
+      >div>h2 {
         font-size: 3rem;
         // margin-bottom: 2rem;
       }
@@ -98,6 +100,11 @@
 
   .text {
     text-align: center;
+  }
+
+  .nameContainer {
+    display: flex;
+    gap: 1rem;
   }
 
   .name {
@@ -124,6 +131,7 @@
 
     a {
       font-size: 1rem;
+      font-weight: bold;
       border: 2px solid black;
       background: #ff0;
       padding: 0.25rem;
@@ -153,11 +161,75 @@
     align-items: center;
     gap: 0.25rem;
   }
+
+  .asteroidButton {
+    border: none;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 2px solid #000000;
+    // overflow: hidden;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  .asteroidButton::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 110%;
+    height: 115%;
+  }
+
+  .asteroidButton:hover::before {
+    background: linear-gradient(45deg, #000 25%, #ffcc00 25%, #ffcc00 50%, #000 50%, #000 75%, #ffcc00 75%, #ffcc00 100%);
+    background-size: 20px 20px;
+    animation: tapeRoll 2s linear infinite;
+  }
+
+  @keyframes tapeRoll {
+    0% {
+      background-position: 0 0;
+    }
+
+    100% {
+      background-position: 200px 20px;
+    }
+  }
+
+  .asteroid {
+    position: absolute;
+    height: 170px;
+    width: 245px;
+    top: -13rem;
+    right: -13rem;
+    z-index: 10;
+
+    &.moveAsteroid {
+      animation: 2.5s ease-in 0s 1 moveAsteroid;
+    }
+  }
+
+  @keyframes moveAsteroid {
+    0% {
+      top: -13rem;
+      right: -13rem;
+    }
+
+    100% {
+      top: 55vh;
+      right: 110%;
+    }
+  }
+
 }
 
 // Hero media queries
 @media screen and (min-width: 768px) {
-  .hero {
+  .hero>div {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -181,10 +253,6 @@
       font-size: 1.5rem;
     }
 
-    .quicknav {
-      margin-bottom: 3rem;
-    }
-
     .heroSocials {
       gap: 1rem;
     }
@@ -192,7 +260,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .hero {
+  .hero>div {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -332,6 +400,8 @@
 .wdid {
   background: #ff0;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 
   p {
     margin-bottom: 1rem;
@@ -430,6 +500,10 @@
   background: #90ee90;
   color: black;
   padding: 2rem;
+
+  .projectPageLink {
+    text-decoration: underline;
+  }
 }
 
 // Projects section media queries
@@ -450,20 +524,41 @@
   width: 100%;
   position: relative;
   display: flex;
-  min-height: 8rem;
+  flex-direction: column;
+  min-height: 18rem;
   transition: transform 0.1s linear;
   margin-bottom: 1rem;
-
-  // padding: 1rem;
-  min-height: 8rem;
   background: #fff;
   border: 3px solid #000;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   box-shadow: 5px 5px 0px 0px #000;
 
-  &:hover {
-    transform: translate(-5px, -5px);
+  .projectLinks {
+    display: flex;
+    gap: 0.5em;
+    margin: 0.5em;
+
+    >:last-child {
+      margin-left: 0;
+    }
+
+    a {
+      text-align: center;
+      flex-grow: 1;
+      font-size: 1rem;
+      font-weight: bold;
+      border: 2px solid black;
+      background: #ff0;
+      padding: 0.25rem;
+      display: inline-block;
+      transition: transform 0.1s linear;
+
+      &:hover {
+        transform: translate(-5px, -5px);
+      }
+    }
   }
+
 
   h4 {
     margin-bottom: 0.5rem;
@@ -476,17 +571,37 @@
 
   .projectImage {
     position: relative;
-    flex-grow: 1;
-    width: 50%;
-    height: 20rem;
+    height: 10rem;
+    width: 100%;
+    overflow: hidden;
   }
 
-  .projectText {
-    padding: 1rem;
+  .projectAbout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .projectText {
+      padding: 1rem;
+    }
+
     flex-grow: 1;
   }
 }
 
+
+// Projects section media queries
+@media screen and (min-width: 768px) {
+  .projectCard {
+    flex-direction: row;
+
+    .projectImage {
+      border-right: 3px solid black;
+      height: 18rem;
+      width: 35rem;
+    }
+  }
+}
 
 @keyframes rotateBackground {
   0% {

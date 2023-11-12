@@ -14,6 +14,7 @@
   height: 100%;
   display: flex;
   flex-direction: column-reverse;
+
   ul {
     padding: 0%;
     width: 100%;
@@ -26,20 +27,25 @@
     padding: 0.5em 1em;
     background: #fff;
     transition: background 0.1s ease-out;
+
     &:hover {
       background: #efefef;
     }
+
     &.selected {
       background: #efefef;
     }
   }
+
   &.close {
     animation: closeAnimation 0.35s ease-out;
     animation-fill-mode: forwards;
   }
+
   &.open {
     animation: openAnimation 0.35s ease-in;
     animation-fill-mode: forwards;
+
     ul {
       opacity: 1;
     }
@@ -50,16 +56,19 @@
       /* clip-path: ellipse(11% 11% at 100% 100%); */
       right: -20rem;
     }
+
     100% {
       /* clip-path: ellipse(42% 58% at 91% 69%); */
       right: 0;
     }
   }
+
   @keyframes closeAnimation {
     100% {
       /* clip-path: ellipse(0% 0% at 100% 100%); */
       right: -20rem;
     }
+
     0% {
       /* clip-path: ellipse(42% 58% at 91% 69%); */
       right: 0;
@@ -68,26 +77,31 @@
 
   ul {
     list-style: none;
+
     li {
       display: flex;
       align-items: center;
       cursor: pointer;
+
       p {
         margin: 0;
         margin-left: 0.5em;
       }
     }
   }
+
   .children {
     display: flex;
     width: 12rem;
     justify-content: flex-start;
     height: 1.5rem;
     margin-bottom: 3.5rem;
+
     a {
       margin-right: 0.25em;
     }
   }
+
   // @media screen and (min-width: 750px) {
   //   /* clip-path: inset(0px -15px 0px 0px); */
   //   box-shadow: unset;
@@ -109,7 +123,8 @@
   left: 0;
   bottom: 0;
   background: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0) 0px 3px 8px;
+
   .openNavBtn {
     border: none;
     background: none;
@@ -120,6 +135,7 @@
     place-items: center;
   }
 }
+
 .ham {
   position: fixed;
   right: 1em;
@@ -127,18 +143,21 @@
   z-index: 30;
   background: #fff;
   padding: 0.5em;
-  border-radius: 0.25em;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  // border-radius: 0.25em;
+  box-shadow: rgba(0, 0, 0) 0px 1px 4px, rgb(0, 0, 0) 0px 0px 0px 3px;
   border: none;
   cursor: pointer;
   transform: rotate(135deg);
+
   @media screen and (min-width: 750px) {
     display: none;
   }
 }
+
 .tabGrp {
   margin: 1em auto;
-  > p {
+
+  >p {
     color: #777;
     font-weight: normal;
     font-size: 0.85rem;
