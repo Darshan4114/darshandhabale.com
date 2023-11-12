@@ -83,10 +83,10 @@ const Home = () => {
           <div>
             <div className={styl.pfp}>
               <div className={styl.image}>
-                <Image src='/img/darshan6.png' layout='fill' />
+                <Image src='/img/darshan6.png' priority layout='fill' />
               </div>
               <div className={styl.smiley}>
-                <Image src='/img/smiley.png' layout='fill' />
+                <Image src='/img/smiley.png' priority layout='fill' />
               </div>
               <div className={styl.shadow}></div>
               <p className={styl.instruction}>Hover / Touch</p>
@@ -124,6 +124,7 @@ const Home = () => {
                     src="/img/github.png"
                     height="48"
                     width="48"
+                    priority
                   />
                 </a>
                 <a target="_blank" href="https://www.linkedin.com/in/dhabale/" className={styl.heroSocial}>
@@ -131,6 +132,7 @@ const Home = () => {
                     src="/img/linkedin.png"
                     height="48"
                     width="48"
+                    priority
                   />
                 </a>
                 <a target="_blank" href="https://www.instagram.com/code_darshan/" className={styl.heroSocial}>
@@ -138,6 +140,7 @@ const Home = () => {
                     src="/img/instagram_color.png"
                     height="48"
                     width="48"
+                    priority
                   />
                 </a>
                 <a target="_blank" href="mailto:dev@darshandhabale.com" className={styl.heroSocial}>
@@ -145,6 +148,7 @@ const Home = () => {
                     src="/img/email.png"
                     height="48"
                     width="48"
+                    priority
                   />
                 </a>
               </div>
