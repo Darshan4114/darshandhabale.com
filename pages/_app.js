@@ -8,8 +8,6 @@ import { useRouter } from "next/router"
 import "../styles/globals.css"
 import { ThemeContext } from "comp/ThemeContext"
 
-// import nProgress from "nprogress"
-
 function MyApp ({ Component, pageProps }) {
   const router = useRouter()
   const [tabValue, setTabValue] = useState(router.asPath || "/")
@@ -36,57 +34,28 @@ function MyApp ({ Component, pageProps }) {
     setTabValue(router.asPath)
   }, [router.asPath])
 
-  // useEffect(async () => {
-  //   router.events.on("routeChangeStart", () => nProgress.start())
-  //   router.events.on("routeChangeComplete", () => nProgress.done())
-  //   router.events.on("routeChangeError", () => nProgress.done())
-  // }, [])
-
   return (
     <>
       <Head>
-        {/* <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
-          integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
-          crossOrigin="anonymous"
-          referrerpolicy="no-referrer" 
-        /> */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@300;700&family=Ovo&family=PT+Serif&family=Press+Start+2P&display=swap"
-          rel="stylesheet"
-        />
+
         <meta
           name="viewport"
           content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
         />
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YRSWJK38X4"
-        ></script>
-        <script>
-          {`window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-YRSWJK38X4');`}
-        </script>
-        {/* <!-- Global site tag (gtag.js) - Google Ads: 348077670 --> */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-348077670"
-        ></script>
-        <script>
-          {`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRSWJK38X4"></script>
+        <script >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-  gtag('config', 'AW-348077670');`}
+            gtag('config', 'G-YRSWJK38X4');
+            `}
         </script>
 
         {/* <!-- Begin Mailchimp Signup Form --> */}
         <link
+          defer
           href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css"
           rel="stylesheet"
           type="text/css"
@@ -96,7 +65,7 @@ function MyApp ({ Component, pageProps }) {
           or in this style block. We recommend moving this block and the
           preceding CSS link to the HEAD of your HTML file. */
         </style>
-        <script id="mcjs">
+        <script id="mcjs" defer>
           {`!function(c,h,i,m,p)
           {
             ((m = c.createElement(h)),
