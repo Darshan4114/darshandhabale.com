@@ -92,13 +92,18 @@ const Home = () => {
               <p className={styl.instruction}>Hover / Touch</p>
             </div>
 
-            <div className={`${styl.text} ${heroFont.className}`}>
-              <h1 className={styl.name}>
+            <div className={styl.text}>
+              <h1 className={`${styl.name} ${heroFont.className}`}>
                 <span>D</span>arshan Dhabale
               </h1>
               <div className={styl.desgGrp}>
                 <p className={styl.desg}>Developer</p>
               </div>
+              <ul>
+                <li>Building cool s#it</li>
+                <li>Full stack JavaScript</li>
+                <li>Since 2018</li>
+              </ul>
 
               <div className={styl.quicknav}>
                 <Link href='/portfolio'>
