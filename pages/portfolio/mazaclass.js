@@ -5,10 +5,10 @@ import Footer from "comp/Footer"
 import styl from "styl/air3x3.module.scss"
 import { useState, useEffect } from "react"
 
-export default function Air3x3 () {
+export default function Air3x3() {
   const [isDesktop, setIsDesktop] = useState(false)
   useEffect(() => {
-    function checkIfDesktop () {
+    function checkIfDesktop() {
       if (window.innerWidth < 750) {
         setIsDesktop(false)
       } else {
@@ -24,13 +24,13 @@ export default function Air3x3 () {
     <>
       <div className={styl.container}>
         <Head>
-          <title>DarshanDev Project: Messenger Chat and Video Conferencing Application</title>
+          <title>DarshanDev Project: Air3x3</title>
         </Head>
         <Header paddingClass="pr15" />
         <div className={styl.landing}>
           <h1>
-            Messenger
-            <span>Chat and Video Conferencing Application</span>
+            Air 3x3
+            <span>The basketball tournament application</span>
           </h1>
           {/* <div className={styl.hero}>
             <Image
@@ -182,8 +182,9 @@ export default function Air3x3 () {
             <h3>Custom booking system</h3>
             <div className={styl.img}>
               <Image
-                src={`/img/portfolio/air3x3/tour_book${isDesktop ? "_desktop" : ""
-                  }.svg`}
+                src={`/img/portfolio/air3x3/tour_book${
+                  isDesktop ? "_desktop" : ""
+                }.svg`}
                 layout="fill"
                 objectFit="contain"
               />
