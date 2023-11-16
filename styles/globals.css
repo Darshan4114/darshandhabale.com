@@ -15,6 +15,7 @@ body {
   cursor:
     url(/img/cursor.png) 5 2,
     auto;
+  overflow-x: hidden;
 }
 
 a {
