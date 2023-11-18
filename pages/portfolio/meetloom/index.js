@@ -70,11 +70,11 @@ const images = [
   }
 ];
 
-export default function MeetLoom () {
+export default function MeetLoom() {
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
-    function checkIfDesktop () {
+    function checkIfDesktop() {
       if (window.innerWidth < 750) {
         setIsDesktop(false)
       } else {
@@ -131,28 +131,29 @@ export default function MeetLoom () {
             ))}
           </Carousel>
         </section>
-        <section className={styl.about}>
+        <section className={styl.features}>
           <div className="">
-            <h2>About this project</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vitae possimus ullam amet illum iure, saepe dolores veritatis nam. Quis rem odio quasi asperiores ex quaerat iure. Consequuntur delectus, enim fugiat a exercitationem assumenda ea commodi sequi. Placeat, aspernatur ipsum. Consequatur unde cupiditate deleniti, aperiam nisi consequuntur quibusdam, animi esse assumenda quasi beatae. Minus, molestias dignissimos! Repellat, eum aliquid consectetur aperiam nulla natus veniam ad incidunt perspiciatis possimus odio ea amet saepe quaerat! Soluta iusto accusantium quod tempore culpa eaque, perferendis fugit, nihil blanditiis omnis beatae deleniti animi porro mollitia impedit neque, explicabo reiciendis recusandae expedita nam veniam praesentium inventore magnam. Nulla ipsam placeat totam nobis molestiae illo nostrum voluptatum?</p>
+            <h2>Key Features</h2>
+            <ul>
+              <li>1 to 1 chatting</li>
+              <li>Media sharing and Document sharing</li>
+              <li>Audio and video calling</li>
+              <li>Responsive Design</li>
+              <li>Progressive Web Application</li>
+            </ul>
           </div>
         </section>
         <section className={styl.techStack}>
           <div className="">
             <h2>Tech Stack</h2>
-            <p>MeetLoom is built on a robust and versatile tech stack designed to deliver a seamless and reliable user experience:</p>
             <ol>
-              <li>A dashboard for admin to organize and track tournaments</li>
-              <li>
-                Booking form for players to book tournaments as individual/team.
-              </li>
-              <li>Auth system for admin and players + social auth</li>
-              <li>Payment gateway to accept payments from players</li>
-              <li>Player dashboard to track tournaments and teams</li>
-              <li>
-                Email service to inform players of booking confirmation and invite
-                other players to join team.
-              </li>
+              <li>Next.js</li>
+              <li>Tailwind.css</li>
+              <li>Node.js</li>
+              <li>AWS</li>
+              <li>MongoDB</li>
+              <li>Mediasoup</li>
+              <li>React Query &#40; TanStack Query &#41;</li>
             </ol>
           </div>
         </section>
