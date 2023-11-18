@@ -82,7 +82,9 @@
 .hero {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   .text {
     text-align: center;
@@ -120,6 +122,8 @@
 // Hero section media queries
 @media screen and (min-width: 768px) {
   .hero {
+    flex-direction: row;
+
     h1 {
       bottom: 3em;
       font-size: 3.5rem;

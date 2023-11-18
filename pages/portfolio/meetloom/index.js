@@ -95,21 +95,17 @@ export default function MeetLoom() {
         </Head>
         <Header />
         <section className={styl.hero}>
-          <div>
-            <div className={styl.cols}>
-              <div className={styl.text}>
-                <h1>
-                  MeetLoom
-                </h1>
-                <p>Chat and Video Conferencing Application</p>
-              </div>
-              <div className={styl.heroImage}>
-                <Image
-                  src="/img/portfolio/meetloom/hero.svg"
-                  fill
-                />
-              </div>
-            </div>
+          <div className={styl.text}>
+            <h1>
+              MeetLoom
+            </h1>
+            <p>Chat and Video Conferencing Application</p>
+          </div>
+          <div className={styl.heroImage}>
+            <Image
+              src="/img/portfolio/meetloom/hero.svg"
+              fill
+            />
           </div>
         </section>
         <section className={styl.summary}>
