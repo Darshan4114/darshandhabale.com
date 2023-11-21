@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Header from "comp/Header";
 import Footer from "comp/Footer";
-import styl from "./mazaclass.module.scss";
+import styl from "./kabbie.module.scss";
 import { useState, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -10,32 +10,27 @@ import { Carousel } from 'react-responsive-carousel';
 const images = [
   {
     id: 1,
-    src: '/img/portfolio/mazaclass/mazaclass-1.png',
+    src: '/img/portfolio/kabbie/kabbie-1.png',
     alt: 'Chat Page',
   },
   {
     id: 2,
-    src: '/img/portfolio/mazaclass/mazaclass-2.png',
+    src: '/img/portfolio/kabbie/kabbie-2.png',
     alt: 'Chat Page',
   },
   {
     id: 3,
-    src: '/img/portfolio/mazaclass/mazaclass-3.png',
+    src: '/img/portfolio/kabbie/kabbie-3.png',
     alt: 'Chat Page',
   },
   {
     id: 4,
-    src: '/img/portfolio/mazaclass/mazaclass-4.png',
-    alt: 'Chat Page',
-  },
-  {
-    id: 5,
-    src: '/img/portfolio/mazaclass/mazaclass-5.png',
+    src: '/img/portfolio/kabbie/kabbie-4.png',
     alt: 'Chat Page',
   }
 ];
 
-export default function mazaclass() {
+export default function kabbie() {
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
@@ -56,19 +51,19 @@ export default function mazaclass() {
     <>
       <div className={styl.container}>
         <Head>
-          <title>DarshanDev Project: MazaClass - Coaching class management system</title>
+          <title>DarshanDev Project: Kabbie Chat and Video Conferencing Application</title>
         </Head>
         <Header />
         <section className={styl.hero}>
           <div className={styl.text}>
             <h1>
-              MazaClass
+              Kabbie
             </h1>
-            <p>Coaching class management system</p>
+            <p>Cab management system</p>
           </div>
           <div className={styl.heroImage}>
             <Image
-              src="/img/portfolio/mazaclass/hero.svg"
+              src="/img/portfolio/kabbie/hero.svg"
               fill
             />
           </div>
@@ -77,7 +72,7 @@ export default function mazaclass() {
           <div className="">
             <h2>Summary</h2>
             <p>
-              MazaClass is a responsive and progressive web application that allows coaching class owners to manage their classes, students, and automate their fee collection with a whatsapp integration.
+              Kabbie is an application that allows a cab company to manage its drivers, customers, trips. Collect fees and also set custom rates based on location and vehicle type.
             </p>
           </div>
         </section>
@@ -96,12 +91,11 @@ export default function mazaclass() {
           <div className="">
             <h2>Key Features</h2>
             <ul>
-              <li>Student Information Management</li>
-              <li>Course Management</li>
-              <li>Fees Management and Automated collection</li>
-              <li>Whatsapp Integration</li>
-              <li>Responsive Design</li>
-              <li>Progressive Web Application</li>
+              <li>Vehicle Management</li>
+              <li>Driver and Customer Management</li>
+              <li>Booking and admin approval process</li>
+              <li>Payment integration</li>
+              <li>Custom location dependent pricing engine with Google Maps API and Google Maps Drawing API</li>
             </ul>
           </div>
         </section>
@@ -110,9 +104,10 @@ export default function mazaclass() {
             <h2>Tech Stack</h2>
             <ol>
               <li>Next.js</li>
-              <li>Tailwind.css</li>
-              <li>AWS</li>
-              <li>PostgreSQL</li>
+              <li>SCSS</li>
+              <li>Firebase - Firestore</li>
+              <li>Firebase - Auth</li>
+              <li>Firebase - Storage</li>
             </ol>
           </div>
         </section>
