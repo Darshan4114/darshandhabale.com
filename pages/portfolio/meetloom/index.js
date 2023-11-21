@@ -70,11 +70,11 @@ const images = [
   }
 ];
 
-export default function MeetLoom() {
+export default function MeetLoom () {
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
-    function checkIfDesktop() {
+    function checkIfDesktop () {
       if (window.innerWidth < 750) {
         setIsDesktop(false)
       } else {
@@ -95,17 +95,19 @@ export default function MeetLoom() {
         </Head>
         <Header />
         <section className={styl.hero}>
-          <div className={styl.text}>
-            <h1>
-              MeetLoom
-            </h1>
-            <p>Chat and Video Conferencing Application</p>
-          </div>
-          <div className={styl.heroImage}>
-            <Image
-              src="/img/portfolio/meetloom/hero.svg"
-              fill
-            />
+          <div className="">
+            <div className={styl.text}>
+              <h1>
+                MeetLoom
+              </h1>
+              <p>Chat and Video Conferencing Application</p>
+            </div>
+            <div className={styl.heroImage}>
+              <Image
+                src="/img/portfolio/meetloom/hero.svg"
+                fill
+              />
+            </div>
           </div>
         </section>
         <section className={styl.summary}>

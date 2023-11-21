@@ -100,8 +100,8 @@
     border-radius: 2em;
     overflow: hidden;
     margin-top: 2rem;
-    width: 20rem;
-    height: 20rem;
+    width: 18rem;
+    height: 18rem;
   }
 
   h1 {
@@ -123,7 +123,11 @@
 // Hero section media queries
 @media screen and (min-width: 768px) {
   .hero {
-    flex-direction: row;
+    >div {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
 
     h1 {
       bottom: 3em;

@@ -1,13 +1,18 @@
-import Head from "next/head"
-import { useContext, useState } from "react"
-import Image from "next/image"
-import ButtonIcon from "comp/ButtonIcon"
-import styl from "./home.module.scss"
-import { toast } from "react-toastify"
-import { ThemeContext } from "comp/ThemeContext"
-import { Aldrich, Inter } from 'next/font/google'
-import { MdContentCopy } from 'react-icons/md'
-import Link from "next/link"
+import { useContext, useState } from "react";
+
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import { Aldrich } from 'next/font/google';
+
+import styl from "./home.module.scss";
+import ButtonIcon from "comp/ButtonIcon";
+import ProjectCard from "comp/ProjectCard";
+import { ThemeContext } from "comp/ThemeContext";
+
+import { toast } from "react-toastify";
+import { MdContentCopy } from 'react-icons/md';
+import { projects } from "staticdata/projects";
 
 const heroFont = Aldrich({ weight: '400', subsets: ['latin'] })
 
@@ -22,39 +27,12 @@ const Home = () => {
     })
   };
 
-  const launchAsteroid = () => {
-    const asteroidSound = new Audio("/audio/just-fun/asteroid.wav")
-    asteroidSound.play()
-    setAsteroidClass(`${styl.asteroid} ${styl.moveAsteroid}`)
-    setTimeout(() => setAsteroidClass(styl.asteroid), 2500)
-  };
-
-  const projects = [
-    {
-      id: 1,
-      title: 'MeetLoom: Chat and Video Conferencing Application',
-      description: 'MeetLoom: Chat and Video Conferencing Application',
-      link: '/portfolio/meetloom',
-      image: '/img/portfolio/meetloom/meetloom.gif',
-      website: 'https://meetloom.vercel.app/'
-    },
-    {
-      id: 2,
-      title: 'Mazaclass: Coaching Class Management System',
-      description: 'Mazaclass: Coaching Class Management System',
-      link: '/portfolio/mazaclass',
-      image: '/img/portfolio/mazaclass/mazaclass.gif',
-      website: 'https://mazaclass.com/'
-    },
-    {
-      id: 3,
-      title: 'Kabbie: The Concierge Management Application',
-      description: 'Kabbie: The Concierge Management Application',
-      link: '/portfolio/kabbie',
-      image: '/img/portfolio/kabbie/kabbie.gif',
-      website: 'https://kabbie.darshandhabale.com/'
-    }
-  ];
+  // const launchAsteroid = () => {
+  //   const asteroidSound = new Audio("/audio/just-fun/asteroid.wav")
+  //   asteroidSound.play()
+  //   setAsteroidClass(`${styl.asteroid} ${styl.moveAsteroid}`)
+  //   setTimeout(() => setAsteroidClass(styl.asteroid), 2500)
+  // };
 
   return (
     <>
@@ -272,29 +250,17 @@ const Home = () => {
           <div>
             <h2>Projects</h2>
             <p style={{ margin: '0 0.5rem 0.5rem' }}>Listing top 3, <Link href='/portfolio' className={styl.projectPageLink}>see all projects</Link>. </p>
-            <p style={{ margin: '0 0.5rem 0.5rem' }}>&#40; Prefer case studies, sites linked here are not production sites, but still require you to create accounts for full experience. &#41;</p>
-            {projects.length > 0 && projects.map((project) => (
-              <div className={styl.projectCard}>
-                <div className={styl.projectImage}>
-                  <Image src={project.image} fill style={{ objectFit: 'cover' }} />
-                </div>
-                <div className={styl.projectAbout}>
-                  <div className={styl.projectText}>
-                    <h4>{project.title}</h4>
-                    <p>
-                      {project.description}
-                    </p>
-                  </div>
-                  <div className={styl.projectLinks}>
-                    {/* <Link href={project.link}>
-                      Case study
-                    </Link> */}
-                    <a href={project.website} target="_blank" key={project.id}>
-                      Visit site
-                    </a>
-                  </div>
-                </div>
-              </div>
+            <p style={{ margin: '0 0.5rem 0.5rem', fontSize: '0.9rem' }}>&#40; Prefer case studies, sites linked here are not production sites, but still require you to create accounts for full experience. &#41;</p>
+            {projects.length > 0 && projects.slice(0, 3).map((project) => (
+              <ProjectCard
+                id={project.id}
+                title={project.title}
+                image={project.image}
+                description={project.description}
+                points={project.points}
+                link={project.link}
+                website={project.website}
+              />
             ))}
           </div>
         </section>
@@ -310,15 +276,15 @@ const Home = () => {
                 walk me through the possibilities. I am very happy with Darshan's
                 work and plan on using him in future projects. He covered all the
                 requirements within the timeline he proposed. You will be impressed
-                as well!” - Jesus
+                as well!”  <br />-&nbsp;<span>Jesus Mejia</span>
               </li>
               <li>
                 “Darshan was very enthusiastic and gave some useful solution for the
                 project. The communication was smooth and work were delivered as
-                required.” - LooYee
+                required.”  <br />-&nbsp;<span>LooYee NG</span>
               </li>
               <li>
-                “He is very talented and cooperative!” - Vibhanshu
+                “He is very talented and cooperative!” <br />-&nbsp;<span>Vibhanshu Rathod</span>
               </li>
             </ul>
           </div>

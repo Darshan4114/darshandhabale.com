@@ -6,10 +6,10 @@ import ScrollIcon from "comp/ScrollIcon"
 import styl from "styl/babydojo.module.scss"
 import { useState, useEffect } from "react"
 
-export default function Babydojo() {
+export default function Babydojo () {
   const [isDesktop, setIsDesktop] = useState(false)
   useEffect(() => {
-    function checkIfDesktop() {
+    function checkIfDesktop () {
       if (window.innerWidth < 750) {
         setIsDesktop(false)
       } else {
@@ -211,7 +211,7 @@ export default function Babydojo() {
             <div className={styl.screenshot}>
               <Image
                 src="/img/portfolio/babydojo/result1.png"
-                width="320.2"
+                width="320"
                 height="660"
               />
             </div>
@@ -222,7 +222,7 @@ export default function Babydojo() {
             <div className={styl.screenshot}>
               <Image
                 src="/img/portfolio/babydojo/child_profile.png"
-                width="320.2"
+                width="320"
                 height="660"
               />
             </div>
@@ -232,7 +232,7 @@ export default function Babydojo() {
             <div className={styl.screenshot}>
               <Image
                 src="/img/portfolio/babydojo/nav.png"
-                width="320.2"
+                width="320"
                 height="660"
               />
             </div>
@@ -242,7 +242,7 @@ export default function Babydojo() {
             <div className={styl.screenshot}>
               <Image
                 src="/img/portfolio/babydojo/social.png"
-                width="320.2"
+                width="320"
                 height="660"
               />
             </div>

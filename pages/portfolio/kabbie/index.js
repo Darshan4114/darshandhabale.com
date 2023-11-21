@@ -30,11 +30,11 @@ const images = [
   }
 ];
 
-export default function kabbie() {
+export default function kabbie () {
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
-    function checkIfDesktop() {
+    function checkIfDesktop () {
       if (window.innerWidth < 750) {
         setIsDesktop(false)
       } else {
@@ -55,17 +55,19 @@ export default function kabbie() {
         </Head>
         <Header />
         <section className={styl.hero}>
-          <div className={styl.text}>
-            <h1>
-              Kabbie
-            </h1>
-            <p>Cab management system</p>
-          </div>
-          <div className={styl.heroImage}>
-            <Image
-              src="/img/portfolio/kabbie/hero.svg"
-              fill
-            />
+          <div className="">
+            <div className={styl.text}>
+              <h1>
+                Kabbie
+              </h1>
+              <p>Cab management system</p>
+            </div>
+            <div className={styl.heroImage}>
+              <Image
+                src="/img/portfolio/kabbie/hero.svg"
+                fill
+              />
+            </div>
           </div>
         </section>
         <section className={styl.summary}>

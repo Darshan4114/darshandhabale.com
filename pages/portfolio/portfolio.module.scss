@@ -21,90 +21,25 @@
   position: relative;
   padding: 0 0 3em;
   min-height: 100vh;
-  background: #ffb2ef;
+  background: #90ee90;
 }
-
 
 .projects {
-  font-family: "Helvetica Neue", sans-serif;
-  display: grid;
-  gap: 2em;
-  max-width: calc(100vw - 2rem);
+  background: #90ee90;
+  color: black;
+  padding: 2rem;
+  max-width: 60rem;
   margin: 0 auto;
-  padding: 0 0 2em;
 
-  @media screen and (min-width: 700px) {
-    grid-template-columns: repeat(2, 17rem);
-    width: 35rem;
-  }
-
-  @media screen and (min-width: 1100px) {
-    grid-template-columns: repeat(3, 17rem);
-    width: 55rem;
+  .projectPageLink {
+    text-decoration: underline;
   }
 }
 
-.postContainer {
-  width: 100%;
-  position: relative;
-  height: 18rem;
-  transition: transform 0.1s linear;
-
-  .card {
-    height: 18rem;
-    background: #fff;
-    border: 1px solid #2e2e2e;
-  }
-
-  // margin: 1em auto;
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  .text {
-    padding: 0.7em;
-  }
-
-  .excerpt {
-    height: 5rem;
-    white-space: nowrap;
-    width: 15rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .shadow {
-    position: absolute;
-    top: 0.25rem;
-    left: 0.25rem;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: rgb(8, 8, 8);
-    transition: top 0.3s,
-      left 0.3s;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      z-index: -2;
-      transform: rotate(30deg);
-    }
-  }
-
-  &:hover {
-    transform: translate(-5px, -5px);
-
-    .shadow::before {
-      background-image: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00, #33cc33, #0099cc, #9933cc, #ff00ff);
-      animation: rotateBackground 2s linear infinite;
-    }
+// Projects section media queries
+@media screen and (min-width: 768px) {
+  .projects {
+    padding: 4rem;
   }
 }
 

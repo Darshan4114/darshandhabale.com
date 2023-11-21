@@ -472,8 +472,9 @@
     flex-wrap: wrap;
     padding: 0.25em 0.5em;
     margin: 0.25em 0.5em;
-    background: #ff0;
+    background: #90ee90;
     color: black;
+    font-size: 0.8rem;
     font-weight: bold;
     border: 2px solid black
   }
@@ -516,94 +517,6 @@
   }
 }
 
-// Project cards
-.projectCard {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 18rem;
-  transition: transform 0.1s linear;
-  margin-bottom: 1rem;
-  background: #fff;
-  border: 3px solid #000;
-  margin-bottom: 2rem;
-  box-shadow: 5px 5px 0px 0px #000;
-
-  .projectLinks {
-    display: flex;
-    gap: 0.5em;
-    margin: 0.5em;
-
-    >:last-child {
-      margin-left: 0;
-    }
-
-    a {
-      text-align: center;
-      flex-grow: 1;
-      font-size: 1rem;
-      font-weight: bold;
-      border: 2px solid black;
-      background: #ff0;
-      padding: 0.25rem;
-      display: inline-block;
-      transition: transform 0.1s linear;
-
-      &:hover {
-        transform: translate(-5px, -5px);
-      }
-    }
-  }
-
-
-  h4 {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .projectImage {
-    position: relative;
-    height: 10rem;
-    width: 100%;
-    overflow: hidden;
-    flex-grow: 0;
-  }
-
-  .projectAbout {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .projectText {
-      padding: 1rem;
-    }
-  }
-}
-
-
-// Projects section media queries
-@media screen and (min-width: 768px) {
-  .projectCard {
-    flex-direction: row;
-
-    .projectImage {
-      border-right: 3px solid black;
-      height: 18rem;
-      width: 35rem;
-    }
-
-    .projectAbout {
-      width: 10rem;
-    }
-  }
-}
-
 @keyframes rotateBackground {
   0% {
     transform: rotate(0deg);
@@ -627,8 +540,13 @@
   }
 
   li {
+    font-family: sans-serif;
     font-weight: light;
     margin-bottom: 1rem;
+  }
+
+  span {
+    font-weight: bold;
   }
 }
 
