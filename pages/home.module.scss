@@ -534,6 +534,10 @@
   padding: 2rem;
   padding-left: 3rem;
 
+  .testimonialText {
+    margin-bottom: 0.5em;
+  }
+
   ul {
     list-style-image: url('/img/li.png');
     list-style-position: outside;
@@ -542,11 +546,16 @@
   li {
     font-family: sans-serif;
     font-weight: light;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
-  span {
-    font-weight: bold;
+  .client {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 0.4rem;
   }
 }
 

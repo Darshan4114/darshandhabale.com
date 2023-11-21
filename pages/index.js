@@ -270,21 +270,45 @@ const Home = () => {
             <a name='testimonials'></a>
             <h2>Testimonials</h2>
             <ul>
-              <li>
-                “Darshan is a very skilled and professional full stack developer. I
-                am very impressed with his ability to listen to my requirements and
-                walk me through the possibilities. I am very happy with Darshan's
-                work and plan on using him in future projects. He covered all the
-                requirements within the timeline he proposed. You will be impressed
-                as well!”  <br />-&nbsp;<span>Jesus Mejia</span>
+              <li className={styl.testimonial}>
+                <p className={styl.testimonialText}>
+                  “Darshan is a very skilled and professional full stack developer. I
+                  am very impressed with his ability to listen to my requirements and
+                  walk me through the possibilities. I am very happy with Darshan's
+                  work and plan on using him in future projects. He covered all the
+                  requirements within the timeline he proposed. You will be impressed
+                  as well!”
+                </p>
+                <a href='https://www.linkedin.com/in/jesus-m-b06739103/' target="_blank" >
+                  <div className={styl.client}>
+                    <Image src='/testimonials/jesus.jpeg' width={36} height={36} alt='Jesus Mejia' />
+                    <p> - Jesus Mejia</p>
+                  </div>
+                </a>
               </li>
               <li>
-                “Darshan was very enthusiastic and gave some useful solution for the
-                project. The communication was smooth and work were delivered as
-                required.”  <br />-&nbsp;<span>LooYee NG</span>
+                <p className={styl.testimonialText}>
+                  “Darshan was very enthusiastic and gave some useful solution for the
+                  project. The communication was smooth and work were delivered as
+                  required.”
+                </p>
+                <a href='https://www.linkedin.com/in/looyee-ng/' target="_blank" >
+                  <div className={styl.client}>
+                    <Image src='/testimonials/looyee.jpeg' width={36} height={36} alt='LooYee NG' />
+                    <p> - LooYee NG</p>
+                  </div>
+                </a>
               </li>
               <li>
-                “He is very talented and cooperative!” <br />-&nbsp;<span>Vibhanshu Rathod</span>
+                <p className={styl.testimonialText}>
+                  “He is very talented and cooperative!”
+                </p>
+                <a href='https://www.linkedin.com/in/vibhanshurathod/' target="_blank" >
+                  <div className={styl.client}>
+                    <Image src='/testimonials/vibhanshu.jpeg' width={36} height={36} alt='Vibhanshu Rathod' />
+                    <p> - Vibhanshu Rathod</p>
+                  </div>
+                </a>
               </li>
             </ul>
           </div>
@@ -315,7 +339,7 @@ const Home = () => {
             </p>
             <br />
             <p>
-              Just want a developer friend? I’m very open to that offer. Here is
+              Just want a developer friend? I&apos;m very open to that offer. Here is
               my &nbsp;
               <a target="_blank" href="https://www.instagram.com/code_darshan/">
                 instagram
