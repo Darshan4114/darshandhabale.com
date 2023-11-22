@@ -13,7 +13,7 @@
     "deploy": "git push origin main && vercel --prod"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.4",
+    "@emotion/react": "^11.11.1",
     "@fullpage/react-fullpage": "^0.1.26",
     "@mdx-js/loader": "^2.0.0",
     "@mdx-js/runtime": "^1.6.22",
