@@ -1,8 +1,8 @@
-import { Button as Btn } from "theme-ui"
+// import { Button as Btn } from "theme-ui"
 
 const Button = (props) => (
-  <Btn
-    sx={{
+  <button
+    style={{
       fontSize: 3,
       px: 3,
       py: 2,

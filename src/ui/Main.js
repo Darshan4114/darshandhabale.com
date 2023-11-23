@@ -1,10 +1,9 @@
-import { Box } from "theme-ui"
+// import { Box } from "theme-ui"
 
 const Main = (props) => {
   return (
-    <Box
-      as="main"
-      sx={{
+    <main
+      style={{
         display: "flex",
         flex: 1,
         // px: [3, 4],

@@ -1,5 +1,5 @@
 import MDX from "@mdx-js/runtime"
-import { Flex, Box, Heading, Text } from "theme-ui"
+// import { Flex, Box, Heading, Text } from "theme-ui"
 import Image from "next/image"
 import DraftBadge from "../ui/DraftBadge"
 import Link from "next/link"
@@ -48,22 +48,22 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
             .map((post) => <Post post={post} />)}
       </div>
 
-      <Flex sx={{ fontStyle: "italic" }}>
-        <Box sx={{ width: "50%", py: 3, textAlign: "left" }}>
+      <div style={{ fontStyle: "italic" }}>
+        <div style={{ width: "50%", py: 3, textAlign: "left" }}>
           {prevPosts !== null && (
             <Link href={"/blog/" + prevPosts}>
               « see newer posts
             </Link>
           )}
-        </Box>
-        <Box sx={{ width: "50%", py: 3, pr: 3, textAlign: "right" }}>
+        </div>
+        <div style={{ width: "50%", py: 3, pr: 3, textAlign: "right" }}>
           {nextPosts !== null && (
             <Link href={"/blog/" + nextPosts} passHref>
               see older posts »
             </Link>
           )}
-        </Box>
-      </Flex>
+        </div>
+      </div>
     </div>
   )
 }

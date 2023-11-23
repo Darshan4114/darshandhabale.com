@@ -1,10 +1,8 @@
-import {useEffect} from "react"
+import { useEffect } from "react"
 import theme from "./Theme"
-import {Box} from "theme-ui"
 import PropTypes from "prop-types"
 import Head from "./Head"
 import Style from "./Style"
-import ThemeToggle from "../ui/ThemeToggle"
 import Header from "comp/Header"
 import AuthorSummary from "comp/AuthorSummary"
 import MailchimpForm from "comp/MailchimpForm"
@@ -48,17 +46,16 @@ const Layout = (props) => {
     <>
       <Head {...props} />
       {codeToRunOnClient && (
-        <script dangerouslySetInnerHTML={{__html: codeToRunOnClient}} />
+        <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />
       )}
-      <Box
-        sx={{
+      <div
+        style={{
           display: "flex",
           minHeight: "100vh",
           flexDirection: "column",
           overflowX: "hidden",
         }}
       >
-        {/* {typeof theme.colors.modes === "object" && <ThemeToggle />} */}
         <Header />
         <div className={styl.container}>
           {/* <AuthorSummary /> */}
@@ -68,9 +65,9 @@ const Layout = (props) => {
         {/* <MailchimpForm /> */}
         <Nav />
         {/* <Footer /> */}
-      </Box>
+      </div>
 
-      <Style />
+      {/* <Style /> */}
     </>
   )
 }

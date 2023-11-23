@@ -1,4 +1,4 @@
-import { Box, Text } from "theme-ui"
+// import { Box, Text } from "theme-ui"
 
 const Footer = (props) => (
   <div className="">

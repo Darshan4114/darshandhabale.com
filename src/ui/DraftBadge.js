@@ -1,10 +1,9 @@
-import { fontFamily } from "@mui/system"
-import { Text } from "theme-ui"
+// import { fontFamily } from "@mui/system"
+// import { Text } from "theme-ui"
 
 const DraftBadge = (props) => (
-  <Text
-    as="span"
-    sx={{
+  <span
+    style={{
       bg: "#b33f40",
       color: "white",
       fontWeight: 400,
@@ -20,7 +19,7 @@ const DraftBadge = (props) => (
     }}
   >
     Draft
-  </Text>
+  </span>
 )
 
 export default DraftBadge

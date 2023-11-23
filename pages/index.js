@@ -10,7 +10,6 @@ import ButtonIcon from "comp/ButtonIcon";
 import ProjectCard from "comp/ProjectCard";
 import { ThemeContext } from "comp/ThemeContext";
 
-import { toast } from "react-toastify";
 import { MdContentCopy } from 'react-icons/md';
 import { projects } from "staticdata/projects";
 
@@ -23,7 +22,6 @@ const Home = () => {
   const copyEmail = () => {
     const copy = async (text) => await navigator.clipboard.writeText(text)
     copy("dev@darshandhabale.com").then(() => {
-      toast.success("Email copied!")
     })
   };
 

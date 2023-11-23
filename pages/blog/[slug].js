@@ -1,8 +1,8 @@
-import Wrapper from "../../src/layout/Wrapper"
 import BlogPost from "../../src/views/BlogPost"
 import config from "../../blog.config.js"
 import { getPostBySlug, getAllPosts } from "../../src/api"
 import { useEffect } from "react"
+import Layout from "src/layout/Layout"
 
 const PostPage = ({ post }) => {
   useEffect(() => {
@@ -16,11 +16,11 @@ const PostPage = ({ post }) => {
 
       // configure your variables here
     }
-    function __semio__onload() {
+    function __semio__onload () {
       __semio__gc_graphlogin(__semio__params)
     }
 
-    ;(function () {
+    ; (function () {
       var gc = document.createElement("script")
       gc.type = "text/javascript"
       gc.async = true
@@ -28,14 +28,14 @@ const PostPage = ({ post }) => {
       gc.defer = true
       gc.src =
         "https://integration.graphcomment.com/gc_graphlogin.js?" + Date.now()
-      ;(
-        document.getElementsByTagName("head")[0] ||
-        document.getElementsByTagName("body")[0]
-      ).appendChild(gc)
+        ; (
+          document.getElementsByTagName("head")[0] ||
+          document.getElementsByTagName("body")[0]
+        ).appendChild(gc)
     })()
   }, [])
   return (
-    <Wrapper
+    <Layout
       url={config.url + post.slug}
       title={post.title}
       description={post.excerpt}
@@ -43,11 +43,11 @@ const PostPage = ({ post }) => {
       imageAlt={post.coverImageAlt}
     >
       <BlogPost post={post} />
-    </Wrapper>
+    </Layout>
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps ({ params }) {
   const post = getPostBySlug(params.slug, [
     "title",
     "excerpt",
@@ -67,7 +67,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths () {
   const posts = getAllPosts(["slug"])
 
   return {

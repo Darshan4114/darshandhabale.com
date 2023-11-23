@@ -1,5 +1,5 @@
 import MDX from "@mdx-js/runtime"
-import { Flex, Box, Heading, Text } from "theme-ui"
+// import { Flex, Box, Heading, Text } from "theme-ui"
 import Image from "next/image"
 import DraftBadge from "../ui/DraftBadge"
 import Link from "next/link"
@@ -19,7 +19,7 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
             <Link href={"/react-blog/" + post.slug} className={styl.postTitle}>
               <div
                 className={styl.postContainer}
-                sx={{ pb: 5 }}
+                style={{ pb: 5 }}
                 key={post.slug}
               >
                 {post.coverImage && (
@@ -48,22 +48,22 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
               </div>
             </Link>
           ))}
-      <Flex sx={{ fontStyle: "italic" }}>
-        <Box sx={{ width: "50%", py: 3, textAlign: "left" }}>
+      <div style={{ fontStyle: "italic" }}>
+        <div style={{ width: "50%", py: 3, textAlign: "left" }}>
           {prevPosts !== null && (
             <Link href={"/blog/" + prevPosts} passHref>
               « see newer posts
             </Link>
           )}
-        </Box>
-        <Box sx={{ width: "50%", py: 3, pr: 3, textAlign: "right" }}>
+        </div>
+        <div style={{ width: "50%", py: 3, pr: 3, textAlign: "right" }}>
           {nextPosts !== null && (
             <Link href={"/blog/" + nextPosts} passHref>
               see older posts »
             </Link>
           )}
-        </Box>
-      </Flex>
+        </div>
+      </div>
     </div>
   )
 }
