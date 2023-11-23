@@ -1,6 +1,5 @@
 import fs from "fs"
 import path, { join } from "path"
-import matter from "gray-matter"
 
 // Recursive file list
 const readDirRecursive = async (filePath) => {
@@ -25,7 +24,7 @@ const readDirRecursive = async (filePath) => {
     console.log('pagesDir', pagesDir);
     pagesDir.flat(Number.POSITIVE_INFINITY)
     const pagesDirUrls = pagesDir
-      .filter((filePath) => filePath.slice(0, 6) === "pages/" && filePath.slice(filePath.length - 3, filePath.length) === ".js")
+      .filter((filePath) => filePath.slice(0, 5) === "pages" && filePath.slice(filePath.length - 3, filePath.length) === ".js")
       .map((filePath) => {
         let url = filePath.slice(6, filePath.length - 3)
         console.log('url', url)
@@ -33,24 +32,33 @@ const readDirRecursive = async (filePath) => {
         return url;
       })
       .filter((url) => !EXCLUDE_LIST.includes(url) && !url?.includes("["))
+    console.log('pagesDirUrls', pagesDirUrls);
 
     //Processing /posts dir
-    const data = fs.readdirSync("./src/mdx/posts")
-    const postsDirectory = join(process.cwd(), "src/mdx/posts")
+    const blogPages = fs.readdirSync("./pages/blog");
+    const reactBlogPages = fs.readdirSync("./pages/react-blog");
 
-    const siteMapData = data
-      .filter((slug) => {
-        const skipList = [".DS_Store"]
-        return !skipList.includes(slug)
+    const blogData = blogPages
+      .filter((filePath) => {
+        return filePath.slice(filePath.length - 4, filePath.length) === ".mdx"
       })
       .map((slug) => {
         const realSlug = slug.replace(/\.mdx$/, "")
-        const fullPath = join(postsDirectory, `${realSlug}.mdx`)
-        const fileContents = fs.readFileSync(fullPath, "utf8")
-        const { data } = matter(fileContents)
-        return { url: site + 'blog/' + realSlug, date: data.date }
+        return { url: site + 'blog/' + realSlug, date: new Date() }
       })
-    console.log('pagesDirUrls', pagesDirUrls)
+
+    const reactBlogData = reactBlogPages
+      .filter((filePath) => {
+        return filePath.slice(filePath.length - 4, filePath.length) === ".mdx"
+      })
+      .map((slug) => {
+        const realSlug = slug.replace(/\.mdx$/, "")
+        return { url: site + 'react-blog/' + realSlug, date: new Date() }
+      })
+
+    const siteMapData = [...blogData, ...reactBlogData];
+
+    console.log('siteMapData', siteMapData)
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${pagesDirUrls

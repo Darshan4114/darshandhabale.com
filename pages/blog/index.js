@@ -1,27 +1,14 @@
-import config from "../../blog.config"
-import { useEffect, useRef } from "react"
 import Head from "next/head"
 import Header from "comp/Header"
 import Footer from "comp/Footer"
-import Featured from "comp/Featured"
 import styl from "./blog.module.scss"
 import Posts from "../../components/Posts"
-import { getAllPosts } from "../../src/api"
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => {
-  const player = useRef(null)
-  useEffect(() => {
-    // useAnimationFrame(()=>{
-    //         player.current.style.top += 1;
-    // })
-  }, [])
 
   return (
     <>
       <div className={styl.container}>
-        {/* <div className={styl.player} ref={player}></div>
-        <div className={styl.ground}></div> */}
-
         <Head>
           <title>
             Best React blog for beginners | Learn React, Javascript, Node.js,
@@ -40,30 +27,6 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
       </div>
     </>
   )
-}
-
-export async function getStaticProps () {
-  const posts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "coverImageAlt",
-    "coverImageHeight",
-    "coverImageWidth",
-    "excerpt",
-    "draft",
-    "tags",
-  ])
-  const startIndex = 0
-  const endIndex = config.postsPerPage
-  const prevPosts = null
-  const nextPosts = endIndex >= posts.length ? null : 2
-
-  return {
-    props: { posts: posts.slice(startIndex, endIndex), prevPosts, nextPosts },
-  }
 }
 
 export default PostsPage
