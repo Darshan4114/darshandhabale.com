@@ -1,19 +1,10 @@
-/**
- * PSEUDO
- * 1. set grid
- * 2. set fruit
- * 3. set snake
- * 
- *    REPEAT
- *    1. MOVE SNAKE
- *    2. check fruit
- *    3. check cut
- *    4. update score
- * 
- * VARS
- * 1. grid (2D list of cells, with (col, row) (x, y))
- * 2. head (cell with ({x,y}))
- * 3. snakeArr list of (cell with ({x,y}))
- * 4. score (mutable number)
- * 
- */
+# This is my web developer portfolio. Hosted on https://darshandhabale.com
+
+Today's date - 23 Nov 2023
+
+I have updated my web developer portfolio with a neo-brutalistic hand drawn theme.
+Added 12 beautiful projects with case studies and live examples.
+
+You can copy it if you like it :)
+
+#webdeveloperportfolio #neobrutalism #handdrawn
