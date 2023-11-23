@@ -1,0 +1,77 @@
+---
+title: 'Make sitemap.xml markdown blog | A script to create sitemap.xml'
+excerpt: "A sitemap is important for good SEO. I'm going to give you a script to create a sitemap if you have a markdown (.md /.mdx ) based blog. A sitemap maps all the urls that you want to index on search engines and makes it easier for the bots to crawl all of them. You can submit your sitemap to the Google search console and request google to index it."
+date: '2021-01-05T12:45:28.154Z'
+coverImage: '/img/blog/make-sitemap-xml-for-markdown-blog-SEO/coverImage.jpg'
+coverImageHeight: 200
+coverImageWidth: 672
+coverImageAlt: 'Cover Image'
+tags: ["SEO", "MDX", "sitemap.xml", "Blog", "Build Tool"]
+---
+
+## Script buildTools/buildSitemap.mjs
+
+Read the comments and place your data where required.
+**Dependencies** - `fs, path, gray-matter`
+
+```jsx
+import fs from "fs"
+import { join } from "path"
+import matter from "gray-matter"
+;(() => {
+// NOTE: Replace with your site's url
+  const site = "https://darshandev.tech/"
+
+// NOTE: The directory where you store your posts, w.r.t. project root
+	const data = fs.readdirSync("./src/mdx/posts") 
+
+// NOTE: The posts directory, but without ./ in the beginning
+  const postsDirectory = join(process.cwd(), "src/mdx/posts")
+
+  console.log(data)
+  const siteMapData = data.map((slug) => {
+//NOTE: Use the extension that you use in your blogs, md or mdx
+    const realSlug = slug.replace(/\.mdx$/, "")
+    const fullPath = join(postsDirectory, `${realSlug}.mdx`)
+    const fileContents = fs.readFileSync(fullPath, "utf8")
+    const { data } = matter(fileContents)
+    return { url: site + realSlug, date: data.date }
+  })
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      ${siteMapData
+        .map((blog) => {
+          return `
+            <url>
+              <loc>${blog.url}</loc>
+              <lastmod>${new Date(blog.date).toISOString()}</lastmod>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          `
+        })
+        .join("")}
+      </urlset>
+        `
+// NOTE: The output location
+  fs.writeFileSync("./public/sitemap.xml", sitemap)
+})()
+```
+
+## Adding script to package.json
+
+Add this script to package.json scripts object,
+
+`"prebuild":"node ./src/buildTools/buildSitemap.mjs",`
+
+This will run your script before running build.
+
+## Bonus: SEO Tip
+
+You can submit your sitemap to the Google search console and request google to index it.
+[Google Search Console](https://search.google.com/search-console/about)
+
+## References
+
+NPM Scripts docs - [https://docs.npmjs.com/cli/v8/using-npm/scripts](https://docs.npmjs.com/cli/v8/using-npm/scripts)

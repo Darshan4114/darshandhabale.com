@@ -4,7 +4,6 @@ import { MDXProvider } from "@mdx-js/react"
 import Logo from "comp/Logo"
 import styl from "./Header.module.scss"
 import { useState, useEffect, useContext } from "react"
-import ThemeToggler from 'comp/ThemeToggler'
 import { ThemeContext } from "comp/ThemeContext"
 
 const Header = (props) => {
@@ -60,7 +59,6 @@ const Header = (props) => {
                 youtube
               </Link>
             </li>
-            {/* <ThemeToggler /> */}
           </ul>
         )}
       </div>

@@ -1,19 +1,12 @@
-import MDX from "@mdx-js/runtime"
-import config from "../../blog.config"
-import { DiscussionEmbed } from "disqus-react"
-import { Box, Text, Heading } from "theme-ui"
-import Link from "next/link"
+import config from "../blog.config"
 import Image from "next/image"
-import Container from "../ui/Container"
-import CodeBlock from "../ui/CodeBlock"
-import DraftBadge from "../ui/DraftBadge"
 import styl from "styl/Post.module.scss"
 
 const BlogPost = ({ post }) => {
   const isLocal = process.env.NODE_ENV === "development"
 
   const components = {
-    Box: (props) => <Box {...props} />,
+    div: (props) => <div {...props} />,
     pre: (props) => <div {...props} />,
     code: CodeBlock,
     script: (props) => <script {...props}>{props.children}</script>,
@@ -21,45 +14,38 @@ const BlogPost = ({ post }) => {
   }
 
   return (
-    <Container className={styl.container}>
+    <div className={styl.container}>
       {!isLocal && post.draft ? (
-        <Text sx={{ fontSize: 2, color: "#666" }}>
+        <p sx={{ fontSize: 2, color: "#666" }}>
           This post has not yet been published. Please try again later.
-        </Text>
+        </p>
       ) : (
         <>
-          <Box sx={{ pb: [3, 4] }} className={styl.postTitle}>
-            <Heading
-              as="h1"
-              sx={{ fontSize: [5, 7], position: "relative" }}
+          <div sx={{ pb: [3, 4] }} className={styl.postTitle}>
+            <h1
               className={styl.heading}
             >
-              {post.draft && (
-                <Box sx={{ top: "10px", right: 1, position: "relative" }}>
-                  <DraftBadge />
-                </Box>
-              )}
               {post.title}
-            </Heading>
+            </h1>
             {config.showDate && (
               <>
-                <Text
+                <p
                   sx={{ fontStyle: "italic", fontSize: [2], color: "#777" }}
                 >
                   {new Date(post.date).toDateString()}
-                </Text>
+                </p>
                 <p>
-                  <Text
+                  <p
                     sx={{ fontStyle: "italic", fontSize: [1], color: "#777" }}
                   >
                     - D. K. Dhabale
-                  </Text>
+                  </p>
                 </p>
               </>
             )}
-          </Box>
+          </div>
           {post.coverImage && (
-            <Box
+            <div
               sx={{
                 mb: 3,
                 // border: "1px solid",
@@ -88,13 +74,13 @@ const BlogPost = ({ post }) => {
                 alt={post.coverImageAlt || ""}
               />
               {/* </div> */}
-            </Box>
+            </div>
           )}
           <MDX components={components}>{post.content}</MDX>
           <div id="graphcomment"></div>
         </>
       )}
-    </Container>
+    </div>
   )
 }
 

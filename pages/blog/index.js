@@ -5,7 +5,7 @@ import Header from "comp/Header"
 import Footer from "comp/Footer"
 import Featured from "comp/Featured"
 import styl from "./blog.module.scss"
-import Posts from "../../src/views/Posts"
+import Posts from "../../components/Posts"
 import { getAllPosts } from "../../src/api"
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => {

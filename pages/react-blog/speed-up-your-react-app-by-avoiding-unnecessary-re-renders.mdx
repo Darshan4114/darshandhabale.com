@@ -1,0 +1,77 @@
+---
+title: 'Speed up your react app by avoiding unnecessary re-renders'
+excerpt: "Let's speed up our react app. Today we are going to learn about a couple of hooks that allow us to speed up our app by skipping the unnecessary re-renders. We will learn why these are better for your app's performance than useState in certain conditions"
+date: '2021-01-03T20:50:28.154Z'
+coverImage: '/img/blog/speed-up-your-react-app-by-avoiding-unnecessary-re-renders/coverImage.jpg'
+coverImageHeight: 200
+coverImageWidth: 672
+coverImageAlt: 'Cover Image'
+tags: ["React.js", "Optimization", "Speed up", "React hooks", "useImperativeHandle", "useRef"]
+---
+
+## The Problem
+
+Let’s have a look at the problem. Here is a Product list, this list has another component called a product form, which opens up in a modal when you click the edit button.
+Now whether to hide or show the form is stored in a boolean in the list component’s state, but that is a problem! Why?!
+
+Because when you click the edit button the state of the list changes to show the product form and that causes the whole list to re-render! doesn’t sound good does it.
+In a sufficiently complex app, this will cause a significant performance compromise.
+
+If you open the console of the sandbox below, you can see the console.logs of the re-renders.
+
+### The unoptimised sandbox
+   <iframe src="https://codesandbox.io/embed/unoptimised-react-component-ue1yz?fontsize=14&hidenavigation=1&theme=dark"
+     style={{width:"100%", height:"500px", border:"0", borderRadius: "4px", overflow:"hidden",}}
+     title="Unoptimised react component"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+The product data is from - <a href="https://fakestoreapi.com/" target="_blank">fakestoreapi.com</a>
+
+## How do you solve it?
+
+Let’s see how we can solve this issue.
+A React component updates whenever its state or props change. Sometimes we may want to update some data in a component but not cause it to re-render, thats where we use the `useRef` Hook.
+
+## What is useRef?
+
+Its a react hook that allows you to keep a reference throughout the lifecycle of a component, i.e. even if the component re-renders the value inside your useRef persists.
+
+The value can be anything, even a DOM node.
+We use it to avoid re-renders, as updating the value stored in it won’t trigger a re-render like updating state does.
+
+## How does the edit work?
+
+In the unoptimised version, when we have a list of cards and want to edit one of them, we give an edit button to each of the cards and pass a handler function to them to call on edit.
+When this button is clicked we pass the data of the clicked card to the form to make the edits.
+
+In the new version we make use of the `useImperativeHandle` hook. We define 2 methods in the object we return from the hook.
+
+> **open and setData**
+> 
+
+These methods can now be called from the parent component (i.e. the list component).
+So when edit is clicked, we call `productForm.current.open()` which will open the form, and `productForm.current.setData(data)` which will set the given data on the form.
+
+## The solution sandbox
+   <iframe src="https://codesandbox.io/embed/optimised-react-component-4fe3e?fontsize=14&hidenavigation=1&theme=dark"
+     style={{width:"100%", height:"500px", border:"0", borderRadius: "4px", overflow:"hidden",}}
+     title="Optimised react component"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+Now if you have a look at the console of the solution sandbox, opening and closing the form doesn’t cause the whole list to re-render. Mission Accomplished!
+
+## Conclusion
+
+You can use useRef and useImperativeHandle hooks to avoid unnecessary re-renders and potentially speed up your app.
+You can also use class based components as children and assign them a ref and call their methods without using useImperativeHandle, let’s cover that in another blog.
+Meanwhile you can check out some of the resources that helped me learn these hooks.
+**Note***: React advises you refrain from using imperative code, i.e. calling a child component’s methods is considered bad practice, so use these hooks carefully.*
+
+## References
+
+[Call child method from parent React.js component - *fabiofranchino.com*](https://www.fabiofranchino.com/blog/call-child-method-from-parent-rect-component/)
+
+[The Complete Guide to useRef() and Refs in React - *dmitripavlutin.com*](https://dmitripavlutin.com/react-useref-guide/)

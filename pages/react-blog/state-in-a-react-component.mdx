@@ -1,0 +1,93 @@
+---
+title: 'What is “State” in a React component?'
+excerpt: "What is state in a React component? We will see what is 'state' how state is implemented in a Class based React component and a Function based React component. You will also learn about the useState React hook."
+date: '2022-06-18T05:30:28.123Z'
+coverImage: '/img/blog/react/state-in-a-react-component/hero.png'
+coverImageHeight: 200
+coverImageWidth: 672
+coverImageAlt: 'Cover Image'
+tags: ["react", "React.js", "React hooks", "useState", "Class based component", "Function based component"]
+navTitle: '"State" in React'
+---
+
+Let’s take the example of a Car.
+This might be a state for the object Car - 
+
+```js
+{
+“passengers”: [”Amy”, “Sheldon”, “Penny”],
+“isOn”: false,
+“fuel”: ”80%”,
+“make”: “VW”,
+}
+```
+
+## State in class-based components
+
+```jsx
+import React, { Component } from "react";
+
+export default class Car extends Component{
+	state = {
+			“passengers”: [”Amy”, “Sheldon”, “Penny”],
+			“isOn”: false,
+			“fuel”: 80,
+			“make”: “VW”,
+	}
+
+//To update the state
+this.setState({isOn:true});
+
+//To update the state based on the previous state, you can pass a function to
+//this.setState(). The function has access to the previous state.
+this.setState((prev)=>{fuel:prev.fuel-10});
+
+//We use the render method to render HTML in a class component
+render(
+		<>
+			<p>Is Engine On? - {isOn}</p>
+			<p>Fuel - {fuel}</p>
+
+			{/* You can use the map method to render an array. */}
+			{passengers.map((psg)=><p>{psg}</p>)}
+		</>
+)
+
+}
+```
+
+## State in function-based components
+
+```jsx
+import React, { useState } from "react";
+
+export default function Car(){
+	const [passengers, setPassengers] = useState([”Amy”, “Sheldon”, “Penny”]);
+	const [isOn, setIsOn] = useState(false);
+	const [fuel, setFuel] = useState(80);
+	const [make, setMake] = useState("VW");
+	
+	// This is the useState hook. It returns an array of which the first variable
+	// is the state while the second one is the setter of the state
+
+	//Now if you want to change the state of "isOn"
+	setIsOn(true);
+	//As simple as that!
+	
+	//In a function based component you can simply return the HTML to be rendered
+	return(
+		<>
+			<p>Is Engine On? - {isOn}</p>
+			<p>Fuel - {fuel}</p>
+
+			{/* You can use the map method to render an array. */}
+			{passengers.map((psg)=><p>{psg}</p>)}
+		</>
+	)
+
+}
+```
+
+📌 React has this cool feature called 🔥hot reloading, so if you modify the state of a React component. The component changes its content without reloading the page!
+
+That’s all you need to understand the React state.
