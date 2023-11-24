@@ -71,7 +71,6 @@
     section {
       >div>h2 {
         font-size: 2rem;
-        // margin-bottom: 1.5rem;
       }
     }
   }
@@ -82,7 +81,6 @@
     section {
       >div>h2 {
         font-size: 3rem;
-        // margin-bottom: 2rem;
       }
     }
   }
@@ -199,10 +197,8 @@
   .hero>div {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 4em 0;
 
     .text {
-      // margin-top: 5em;
       margin-left: 5em;
       text-align: left;
     }
@@ -387,8 +383,6 @@
 
 @media screen and (min-width: 1024px) {
   .wdid {
-    padding: 7rem;
-
     .artGroupContainer {
       svg {
         width: 25rem;
@@ -424,13 +418,6 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .stack {
-    padding: 7rem;
-  }
-}
-
-
 .projects {
   background: #90ee90;
   color: black;
@@ -445,12 +432,6 @@
 @media screen and (min-width: 768px) {
   .projects {
     padding: 4rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .projects {
-    padding: 7rem;
   }
 }
 
@@ -504,12 +485,6 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .testimonials {
-    padding: 7rem;
-  }
-}
-
 .emailLine {
   display: inline-flex;
   align-items: center;
@@ -529,10 +504,6 @@
   padding: 2rem;
   background: #000;
   color: white;
-
-  // p {
-  //   margin-bottom: 1rem;
-  // }
 }
 
 // Footer section media queries
@@ -541,13 +512,6 @@
     padding: 4rem;
   }
 }
-
-@media screen and (min-width: 1024px) {
-  .footer {
-    padding: 7rem;
-  }
-}
-
 
 @keyframes bounce {
   0% {
