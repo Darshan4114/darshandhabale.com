@@ -229,6 +229,7 @@ const Home = () => {
                 id={project.id}
                 title={project.title}
                 image={project.image}
+                video={project.video}
                 description={project.description}
                 points={project.points}
                 link={project.link}

@@ -2,17 +2,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styl from './ProjectCard.module.scss';
 
-function ProjectCard ({ id, title, image, description, points, link, website }) {
+function ProjectCard ({ id, title, image, video, description, points, link, website }) {
   return (
     <div className={styl.projectCard}>
       <div className={styl.projectImage}>
-        <Image
-          src={image}
-          fill
-          style={{ objectFit: 'cover' }}
-          alt={title}
-          sizes="(max-width: 768px) 70vw, 20vw"
-        />
+        {image && (
+          <Image
+            src={image}
+            fill
+            style={{ objectFit: 'cover' }}
+            alt={title}
+            sizes="(max-width: 768px) 70vw, 20vw"
+          />
+        )}
+        {video && (
+          <video
+            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+            muted
+            autoPlay
+            loop
+          >
+            <source src={video} type="video/webm" />
+          </video>
+        )}
       </div>
       <div className={styl.projectAbout}>
         <div className={styl.projectText}>

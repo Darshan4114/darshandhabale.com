@@ -9,7 +9,7 @@ export const projects = [
       'Dark mode'
     ],
     link: '/portfolio/meetloom',
-    image: '/img/portfolio/meetloom/meetloom.gif',
+    video: '/img/portfolio/meetloom/meetloom.webm',
     website: 'https://meetloom.vercel.app/'
   },
   {
@@ -22,7 +22,7 @@ export const projects = [
       'Whatsapp integration',
     ],
     link: '/portfolio/mazaclass',
-    image: '/img/portfolio/mazaclass/mazaclass.gif',
+    video: '/img/portfolio/mazaclass/mazaclass.webm',
     website: 'https://mazaclass.com/'
   },
   {
@@ -35,7 +35,7 @@ export const projects = [
       'Admin approval flows'
     ],
     link: '/portfolio/kabbie',
-    image: '/img/portfolio/kabbie/kabbie.gif',
+    video: '/img/portfolio/kabbie/kabbie.webm',
     website: 'https://kabbie.darshandhabale.com/'
   },
   {

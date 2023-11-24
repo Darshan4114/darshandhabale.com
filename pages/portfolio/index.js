@@ -15,6 +15,7 @@ export default function Portfolio () {
             id={project.id}
             title={project.title}
             image={project.image}
+            video={project.video}
             description={project.description}
             points={project.points}
             link={project.link}
