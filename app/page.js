@@ -50,7 +50,7 @@ const Home = () => {
                   src='/img/smiley.png'
                   priority
                   layout='fill'
-                  sizes="10vw"
+                  sizes="(max-width: 768px) 30vw, 20vw"
                   alt='Smile'
                 />
               </div>
