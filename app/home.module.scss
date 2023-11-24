@@ -12,10 +12,6 @@
     width: 100%;
   }
 
-  ul {
-    margin-bottom: 1em;
-  }
-
   li {
     margin-bottom: 0.25em;
   }
@@ -98,18 +94,22 @@
   align-items: center;
 
   .text {
-    text-align: center;
-  }
-
-  .nameContainer {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1em;
+
+    ul {
+      text-align: left;
+    }
   }
 
   .name {
     font-weight: 800;
     margin: 0;
-    margin-top: -0.7em;
     font-size: 2rem;
 
     span {
@@ -120,13 +120,10 @@
     }
   }
 
-  .desgGrp {
-    margin-bottom: 2rem;
-  }
-
   .quicknav {
-    margin-bottom: 1rem;
     position: relative;
+    display: flex;
+    gap: 0.5em;
 
     a {
       font-size: 1rem;
@@ -134,7 +131,6 @@
       border: 2px solid black;
       background: #ff0;
       padding: 0.25rem;
-      margin: 0.5rem;
       display: inline-block;
       transition: transform 0.1s linear;
 
@@ -150,8 +146,6 @@
     flex-wrap: wrap;
     gap: 0.25rem;
     justify-items: end;
-    margin: 0 auto 1rem;
-    padding: 0 1rem;
   }
 
   .heroSocial {
@@ -160,69 +154,6 @@
     align-items: center;
     gap: 0.25rem;
   }
-
-  .asteroidButton {
-    border: none;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    border: 2px solid #000000;
-    margin-bottom: 1rem;
-    margin-left: 0.5rem;
-  }
-
-  .asteroidButton::before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 110%;
-    height: 115%;
-  }
-
-  .asteroidButton:hover::before {
-    background: linear-gradient(45deg, #000 25%, #ffcc00 25%, #ffcc00 50%, #000 50%, #000 75%, #ffcc00 75%, #ffcc00 100%);
-    background-size: 20px 20px;
-    animation: tapeRoll 2s linear infinite;
-  }
-
-  @keyframes tapeRoll {
-    0% {
-      background-position: 0 0;
-    }
-
-    100% {
-      background-position: 200px 20px;
-    }
-  }
-
-  .asteroid {
-    position: absolute;
-    height: 170px;
-    width: 245px;
-    top: -13rem;
-    right: -13rem;
-    z-index: 10;
-
-    &.moveAsteroid {
-      animation: 2.5s ease-in 0s 1 moveAsteroid;
-    }
-  }
-
-  @keyframes moveAsteroid {
-    0% {
-      top: -13rem;
-      right: -13rem;
-    }
-
-    100% {
-      top: 55vh;
-      right: 110%;
-    }
-  }
-
 }
 
 // Hero media queries
@@ -230,15 +161,20 @@
   .hero>div {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 2em 0;
 
     .text {
-      margin-top: 3em;
+      margin-top: 1em;
+      gap: 1.5em;
+      padding: 1em;
       margin-left: 1em;
+      align-items: start;
       text-align: left;
     }
 
     .name {
       font-size: 3rem;
+      line-height: 3rem;
 
       span {
         font-size: 4.5rem;
@@ -250,8 +186,12 @@
       font-size: 1.5rem;
     }
 
+    .quicknav {
+      gap: 0.75em;
+    }
+
     .heroSocials {
-      gap: 1rem;
+      gap: 0.5rem;
     }
   }
 }
@@ -260,15 +200,17 @@
   .hero>div {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 4em 0;
 
     .text {
-      margin-top: 5em;
+      // margin-top: 5em;
       margin-left: 5em;
       text-align: left;
     }
 
     .name {
-      font-size: 6rem;
+      font-size: 5rem;
+      line-height: 5rem;
 
       span {
         font-size: 6rem;
@@ -280,16 +222,14 @@
       font-size: 2rem;
     }
   }
-
 }
 
 .pfp {
   width: 15rem;
   height: 15rem;
-  margin: 1em auto;
+  margin: 1em auto 1.5em;
   position: relative;
-  margin-bottom: 3rem;
-  border: 12px solid black;
+  border: 6px solid black;
 
   .image {
     filter: grayscale(100%) blur(5px);
@@ -320,8 +260,8 @@
 
   .shadow {
     position: absolute;
-    top: 2rem;
-    left: 2rem;
+    top: 1rem;
+    left: 1rem;
     z-index: -1;
     width: 100%;
     height: 100%;
@@ -365,15 +305,14 @@
 // PFP media queries
 @media screen and (min-width: 768px) {
   .pfp {
-    width: 20rem;
-    height: 20rem;
+    width: 25rem;
+    height: 25rem;
 
     .smiley {
-      top: 4rem;
-      left: 6rem;
-      width: 8rem;
-      height: 8rem;
-      transition: opacity 0.4s ease;
+      top: 5rem;
+      left: 7rem;
+      width: 10rem;
+      height: 10rem;
     }
   }
 }
@@ -388,7 +327,6 @@
       left: 9rem;
       width: 12rem;
       height: 12rem;
-      transition: opacity 0.4s ease;
     }
   }
 }
@@ -576,6 +514,7 @@
 .emailLine {
   display: inline-flex;
   align-items: center;
+  margin: 1em 0 1.5em;
 }
 
 .copyBtn {
@@ -592,9 +531,9 @@
   background: #000;
   color: white;
 
-  p {
-    margin-bottom: 1rem;
-  }
+  // p {
+  //   margin-bottom: 1rem;
+  // }
 }
 
 // Footer section media queries

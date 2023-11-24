@@ -4,7 +4,7 @@ import styl from './ProjectCard.module.scss';
 
 function ProjectCard ({ id, title, image, video, description, points, link, website }) {
   return (
-    <div className={styl.projectCard}>
+    <div className={styl.projectCard} key={id}>
       <div className={styl.projectImage}>
         {image && (
           <Image

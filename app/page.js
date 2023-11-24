@@ -6,17 +6,12 @@ import { Aldrich } from 'next/font/google';
 import styl from "./home.module.scss";
 import ProjectCard from "comp/ProjectCard";
 
-import { MdContentCopy } from 'react-icons/md';
+import { MdEmail } from 'react-icons/md';
 import { projects } from "staticdata/projects";
 
 const heroFont = Aldrich({ weight: '400', subsets: ['latin'] })
 
 const Home = () => {
-  const copyEmail = () => {
-    const copy = async (text) => await navigator.clipboard.writeText(text)
-    copy("dev@darshandhabale.com").then(() => {
-    })
-  };
 
   return (
     <>
@@ -47,11 +42,13 @@ const Home = () => {
             </div>
 
             <div className={styl.text}>
-              <h1 className={`${styl.name} ${heroFont.className}`}>
-                <span>D</span>arshan Dhabale
-              </h1>
-              <div className={styl.desgGrp}>
-                <p className={styl.desg}>Developer</p>
+              <div className="">
+                <h1 className={`${styl.name} ${heroFont.className}`}>
+                  <span>D</span>arshan Dhabale
+                </h1>
+                <div className={styl.desgGrp}>
+                  <p className={styl.desg}>Developer</p>
+                </div>
               </div>
               <ul>
                 <li>Building cool s#it</li>
@@ -299,16 +296,14 @@ const Home = () => {
               Think you have an exciting project for me? drop me an email at -
             </p>
             <p className={styl.emailLine}>
+              <span className={styl.copyBtn}>
+                <MdEmail color='white' size={24} style={{ marginRight: '0.5em' }} />
+              </span>
               <span>
                 &nbsp;
                 <a href="mailto:dev@darshandhabale.com">
                   dev@darshandhabale.com
                 </a>
-              </span>
-              <span className={styl.copyBtn}>
-                {/* <ButtonIcon onClick={copyEmail}> */}
-                <MdContentCopy color='white' size={24} />
-                {/* </ButtonIcon> */}
               </span>
             </p>
             <br />
@@ -319,19 +314,19 @@ const Home = () => {
                 instagram
               </a>
             </p>
-            <p className={styl.emailLine}>
+            <a target="_blank" href="https://www.instagram.com/code_darshan/" className={styl.emailLine}>
+              <Image
+                style={{ marginLeft: "0.25em" }}
+                src="/img/instagram.png"
+                height="32"
+                width="32"
+                alt='Instagram'
+              />
               &nbsp;
-              @code_darshan
-              <a target="_blank" href="https://www.instagram.com/code_darshan/">
-                <Image
-                  style={{ marginLeft: "1em" }}
-                  src="/img/instagram.png"
-                  height="32"
-                  width="32"
-                  alt='Instagram'
-                />
-              </a>
-            </p>
+              <p>
+                @code_darshan
+              </p>
+            </a>
           </div>
         </section>
       </div >
