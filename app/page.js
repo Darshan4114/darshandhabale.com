@@ -1,5 +1,4 @@
 
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { Aldrich } from 'next/font/google';
@@ -21,17 +20,6 @@ const Home = () => {
 
   return (
     <>
-      <Head>
-        <title>
-          React developer for hire | React/JavaScript developer with 4 years of
-          experience | MERN stack | React.js, Node.js, Next.js, Django, Python
-        </title>
-        <meta
-          name="description"
-          content="React developer with 4 years of
-          experience in MERN stack. Tech stack - React.js, Node.js, Next.js, Django, Python and Firebase. Darshan Dhabale - https://linkedin.com/in/dhabale | Email: dev@darshandhabale.com"
-        />
-      </Head>
       <div className={styl.container}>
         <section className={styl.hero}>
           <div>
