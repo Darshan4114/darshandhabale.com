@@ -1,4 +1,3 @@
-import { useContext, useState } from "react";
 
 import Head from "next/head";
 import Link from "next/link";
@@ -8,7 +7,6 @@ import { Aldrich } from 'next/font/google';
 import styl from "./home.module.scss";
 import ButtonIcon from "comp/ButtonIcon";
 import ProjectCard from "comp/ProjectCard";
-import { ThemeContext } from "comp/ThemeContext";
 
 import { MdContentCopy } from 'react-icons/md';
 import { projects } from "staticdata/projects";
@@ -16,21 +14,11 @@ import { projects } from "staticdata/projects";
 const heroFont = Aldrich({ weight: '400', subsets: ['latin'] })
 
 const Home = () => {
-  const { theme } = useContext(ThemeContext);
-  const [asteroidClass, setAsteroidClass] = useState(styl.asteroid)
-
   const copyEmail = () => {
     const copy = async (text) => await navigator.clipboard.writeText(text)
     copy("dev@darshandhabale.com").then(() => {
     })
   };
-
-  // const launchAsteroid = () => {
-  //   const asteroidSound = new Audio("/audio/just-fun/asteroid.wav")
-  //   asteroidSound.play()
-  //   setAsteroidClass(`${styl.asteroid} ${styl.moveAsteroid}`)
-  //   setTimeout(() => setAsteroidClass(styl.asteroid), 2500)
-  // };
 
   return (
     <>
@@ -45,24 +33,25 @@ const Home = () => {
           experience in MERN stack. Tech stack - React.js, Node.js, Next.js, Django, Python and Firebase. Darshan Dhabale - https://linkedin.com/in/dhabale | Email: dev@darshandhabale.com"
         />
       </Head>
-      {/* <Header theme={theme} /> */}
-      {/* <Logo /> */}
-      <div className={`${styl.container} ${theme === 'dark' ? styl.darkmode : ''}`}>
+      <div className={styl.container}>
         <section className={styl.hero}>
-          <div className={asteroidClass}>
-            <Image
-              src="/img/just-fun/asteroid.png"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
           <div>
             <div className={styl.pfp}>
               <div className={styl.image}>
-                <Image src='/img/darshan6.png' priority layout='fill' />
+                <Image
+                  src='/img/darshan6.png'
+                  priority
+                  layout='fill'
+                  sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 33vw"
+                />
               </div>
               <div className={styl.smiley}>
-                <Image src='/img/smiley.png' priority layout='fill' />
+                <Image
+                  src='/img/smiley.png'
+                  priority
+                  layout='fill'
+                  sizes="20vw"
+                />
               </div>
               <div className={styl.shadow}></div>
               <p className={styl.instruction}>Hover / Touch</p>
@@ -92,13 +81,6 @@ const Home = () => {
                   Testimonials
                 </Link>
               </div>
-              {/* <button onClick={launchAsteroid} className={styl.asteroidButton}>
-                <Image
-                  src="/img/just-fun/asteroid.png"
-                  width={140}
-                  height={100}
-                />
-              </button> */}
               <div className={styl.heroSocials}>
                 <a target="_blank" href="https://www.github.com/darshan4114/" className={styl.heroSocial}>
                   <Image
@@ -135,7 +117,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section >
+        </section>
 
         <section className={styl.wdid}>
           <div>
@@ -330,9 +312,9 @@ const Home = () => {
                 </a>
               </span>
               <span className={styl.copyBtn}>
-                <ButtonIcon onClick={copyEmail}>
-                  <MdContentCopy color='white' size={24} />
-                </ButtonIcon>
+                {/* <ButtonIcon onClick={copyEmail}> */}
+                <MdContentCopy color='white' size={24} />
+                {/* </ButtonIcon> */}
               </span>
             </p>
             <br />
