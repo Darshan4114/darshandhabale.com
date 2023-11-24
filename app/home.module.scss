@@ -92,6 +92,7 @@
 .hero {
   position: relative;
   align-items: center;
+  padding: 2em 0;
 
   .text {
     display: flex;
@@ -100,7 +101,6 @@
     text-align: center;
     justify-content: center;
     gap: 1em;
-    margin-bottom: 1em;
 
     ul {
       text-align: left;
@@ -141,7 +141,6 @@
   }
 
   .heroSocials {
-    bottom: 2rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem;
@@ -227,7 +226,7 @@
 .pfp {
   width: 15rem;
   height: 15rem;
-  margin: 1em auto 1.5em;
+  margin: 0 auto 1.5em;
   position: relative;
   border: 6px solid black;
 
