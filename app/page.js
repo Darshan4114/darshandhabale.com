@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Aldrich } from 'next/font/google';
 
 import styl from "./home.module.scss";
-import ButtonIcon from "comp/ButtonIcon";
 import ProjectCard from "comp/ProjectCard";
 
 import { MdContentCopy } from 'react-icons/md';
@@ -43,6 +42,7 @@ const Home = () => {
                   priority
                   layout='fill'
                   sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 33vw"
+                  alt='Darshan Dhabale Photo'
                 />
               </div>
               <div className={styl.smiley}>
@@ -50,7 +50,8 @@ const Home = () => {
                   src='/img/smiley.png'
                   priority
                   layout='fill'
-                  sizes="20vw"
+                  sizes="10vw"
+                  alt='Smile'
                 />
               </div>
               <div className={styl.shadow}></div>
@@ -88,6 +89,7 @@ const Home = () => {
                     height="48"
                     width="48"
                     priority
+                    alt='Github'
                   />
                 </a>
                 <a target="_blank" href="https://www.linkedin.com/in/dhabale/" className={styl.heroSocial}>
@@ -96,6 +98,7 @@ const Home = () => {
                     height="48"
                     width="48"
                     priority
+                    alt='Linkedin'
                   />
                 </a>
                 <a target="_blank" href="https://www.instagram.com/code_darshan/" className={styl.heroSocial}>
@@ -104,6 +107,7 @@ const Home = () => {
                     height="48"
                     width="48"
                     priority
+                    alt='Instagram'
                   />
                 </a>
                 <a target="_blank" href="mailto:dev@darshandhabale.com" className={styl.heroSocial}>
@@ -112,6 +116,7 @@ const Home = () => {
                     height="48"
                     width="48"
                     priority
+                    alt='Email'
                   />
                 </a>
               </div>
@@ -334,6 +339,7 @@ const Home = () => {
                   src="/img/instagram.png"
                   height="32"
                   width="32"
+                  alt='Instagram'
                 />
               </a>
             </p>

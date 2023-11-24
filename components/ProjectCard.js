@@ -6,11 +6,17 @@ function ProjectCard ({ id, title, image, description, points, link, website }) 
   return (
     <div className={styl.projectCard}>
       <div className={styl.projectImage}>
-        <Image src={image} fill style={{ objectFit: 'cover' }} />
+        <Image
+          src={image}
+          fill
+          style={{ objectFit: 'cover' }}
+          alt={title}
+          sizes="(max-width: 768px) 70vw, 20vw"
+        />
       </div>
       <div className={styl.projectAbout}>
         <div className={styl.projectText}>
-          <h4>{title}</h4>
+          <h3>{title}</h3>
           {description && (
             <p>
               {description}
