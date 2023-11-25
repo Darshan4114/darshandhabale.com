@@ -319,10 +319,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.0.2.tgz#c1fb535983bca768e7eccd7b9cf4636127fc6d25"
   integrity sha512-HAW1sljizEaduEOes/m84oUqeIDAUYBR1CDwu2tobNlNDFP3cSm9d6QsOsGeNlIppU1p/p1+bWbYCbvwjFiceA==
 
-"@next/mdx@^11.1.0":
-  version "11.1.3"
-  resolved "https://registry.npmjs.org/@next/mdx/-/mdx-11.1.3.tgz"
-  integrity sha512-srOApuwxzzOi0CPxns4jrOd324/Wqk35y6MnQPFHZu5Uc4KqzGQfBL0wpJh9yj5bjS6bXPs7enezmWxOpFFDDQ==
+"@next/mdx@^11.1.4":
+  version "11.1.4"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-11.1.4.tgz#8c979db5c97f1e8475d5b300319821e08aa30f43"
+  integrity sha512-L6F4LRpGi3Y923KD3Sfpw9QdBycqynbVLQu//wIGQB8N41TLgBOHD3sTgEUChmiatW1e53OoEZbC/HNNWi8xJg==
 
 "@next/swc-darwin-arm64@14.0.2":
   version "14.0.2"
