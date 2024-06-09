@@ -107,10 +107,10 @@ const Home = () => {
               </div>
             </div>
             <div className={styl.gearOne}>
-              <Image src="/img/gear.png" height={350} width={350} />
+              <Image src="/img/gear.png" fill objectFit="cover" />
             </div>
             <div className={styl.gearTwo}>
-              <Image src="/img/gear2.png" height={250} width={250} />
+              <Image src="/img/gear2.png" fill objectFit="cover" />
             </div>
           </div>
         </section>

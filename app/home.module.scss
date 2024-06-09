@@ -159,15 +159,19 @@
     transform: rotate(35deg);
     z-index: 150;
     animation: rotateAnimation 40s linear infinite;
+    width: 10rem;
+    height: 10rem;
   }
 
   .gearTwo {
     position: absolute;
-    top: -5rem;
-    left: -5rem;
+    top: -0rem;
+    left: -0rem;
     transform: rotate(35deg);
     z-index: 150;
     animation: rotateAnimation 40s linear infinite reverse;
+    width: 7rem;
+    height: 7rem;
   }
 }
 
@@ -207,6 +211,20 @@
 
     .heroSocials {
       gap: 0.5rem;
+    }
+
+    .gearOne {
+      top: -5rem;
+      left: -5rem;
+      width: 20rem;
+      height: 20rem;
+    }
+
+    .gearTwo {
+      top: -5rem;
+      left: -5rem;
+      width: 15rem;
+      height: 15rem;
     }
   }
 }
