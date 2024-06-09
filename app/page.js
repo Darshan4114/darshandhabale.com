@@ -51,7 +51,7 @@ const Home = () => {
                 </div>
               </div>
               <ul>
-                <li>Building cool s#it</li>
+                <li>Building cool software</li>
                 <li>Full stack JavaScript</li>
                 <li>Since 2018</li>
               </ul>
@@ -105,6 +105,12 @@ const Home = () => {
                   />
                 </a>
               </div>
+            </div>
+            <div className={styl.gearOne}>
+              <Image src="/img/gear.png" height={350} width={350} />
+            </div>
+            <div className={styl.gearTwo}>
+              <Image src="/img/gear2.png" height={250} width={250} />
             </div>
           </div>
         </section>
@@ -188,6 +194,7 @@ const Home = () => {
               <p>TailwindCSS</p>
               <p>JavaScript</p>
               <p>TypeScript</p>
+              <p>Go</p>
               <p>Jest</p>
               <p>Node.js</p>
               <p>Nest.js</p>
@@ -241,6 +248,30 @@ const Home = () => {
             <a name='testimonials'></a>
             <h2>Testimonials</h2>
             <ul>
+              <li className={styl.testimonial}>
+                <p className={styl.testimonialText}>
+                  “Darshan is quite dependable on his development work specially in frontend. working with him has been fluent.
+                  Darshan has showcased a remarkable proficiency in developing marketing websites, fintech products, and performance marketing landing pages using Next.js. He has consistently delivered high-quality work that not only meets but often exceeds project requirements. His expertise of Next.js, coupled with a strong foundation in web development, has been instrumental in the success of our projects.
+                  He is just a message away when working with him on various projects.”
+                </p>
+                <a href='https://www.linkedin.com/in/pankaj-dhamane-027ba2147/' target="_blank" >
+                  <div className={styl.client}>
+                    <Image src='/testimonials/pankaj.jpeg' width={36} height={36} alt='Jesus Mejia' />
+                    <p> - Pankaj Dhamane</p>
+                  </div>
+                </a>
+              </li>
+              <li className={styl.testimonial}>
+                <p className={styl.testimonialText}>
+                  “I highly recommend Darshan for Frontend Developer. Darshan is wonderful to work with and he poses great skillset when it comes to frontend development. He always strives to go above and beyond while achieving team's goals and this has helped him to scale up quickly into any new project that he is assigned with. Darshan has a long way ahead in his career and I am sure, he will excel wherever he goes.”
+                </p>
+                <a href='https://www.linkedin.com/in/kaivalya-mendki/' target="_blank" >
+                  <div className={styl.client}>
+                    <Image src='/testimonials/kaivalya.jpeg' width={36} height={36} alt='Jesus Mejia' />
+                    <p> - Kaivalya Mendki</p>
+                  </div>
+                </a>
+              </li>
               <li className={styl.testimonial}>
                 <p className={styl.testimonialText}>
                   “Darshan is a very skilled and professional full stack developer. I
