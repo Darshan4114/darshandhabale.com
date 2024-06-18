@@ -57,15 +57,21 @@ const Home = () => {
               </ul>
 
               <div className={styl.quicknav}>
-                <Link href='/portfolio'>
-                  Portfolio
-                </Link>
-                <Link href='/blog'>
-                  Blog
-                </Link>
-                <Link href='#testimonials'>
-                  Testimonials
-                </Link>
+                <button>
+                  <Link href='/portfolio'>
+                    Portfolio
+                  </Link>
+                </button>
+                <button>
+                  <Link href='/blog'>
+                    Blog
+                  </Link>
+                </button>
+                <button>
+                  <Link href='#testimonials'>
+                    Testimonials
+                  </Link>
+                </button>
               </div>
               <div className={styl.heroSocials}>
                 <a target="_blank" href="https://www.github.com/darshan4114/" className={styl.heroSocial}>
@@ -114,6 +120,8 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        <div className={styl.crimeTape} />
 
         <section className={styl.wdid}>
           <div>
@@ -184,6 +192,8 @@ const Home = () => {
           </div>
         </section>
 
+        <div className={styl.crimeTape} />
+
         <section className={styl.stack}>
           <div>
             <h2>Tech stack</h2>
@@ -223,6 +233,8 @@ const Home = () => {
           </div>
         </section>
 
+        <div className={styl.crimeTape} />
+
         <section className={styl.projects}>
           <div>
             <h2>Projects</h2>
@@ -242,6 +254,8 @@ const Home = () => {
             ))}
           </div>
         </section>
+
+        <div className={styl.crimeTape} />
 
         <section className={styl.testimonials}>
           <div>
@@ -315,6 +329,8 @@ const Home = () => {
             </ul>
           </div>
         </section>
+
+        <div className={styl.crimeTape} />
 
         {/* </div> */}
 

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styl from './ProjectCard.module.scss';
 
-function ProjectCard ({ id, title, image, video, description, points, link, website }) {
+function ProjectCard({ id, title, image, video, description, points, link, website }) {
   return (
     <div className={styl.projectCard} key={id}>
       <div className={styl.projectImage}>
@@ -43,17 +43,21 @@ function ProjectCard ({ id, title, image, video, description, points, link, webs
         <div className={styl.projectLinks}>
           {link
             ? (
-              <Link href={link}>
-                Case study
-              </Link>
+              <button>
+                <Link href={link}>
+                  Case study
+                </Link>
+              </button>
             ) : (
               <button disabled> Case study in progress</button>
             )}
           {website
             ? (
-              <a href={website} target="_blank" key={id}>
-                Visit site
-              </a>
+              <button>
+                <a href={website} target="_blank" key={id}>
+                  Visit site
+                </a>
+              </button>
             ) : (
               <button disabled> Live site not avaiable</button>
             )}

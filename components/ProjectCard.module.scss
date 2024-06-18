@@ -21,10 +21,15 @@
       margin-left: 0;
     }
 
-    a,
     button {
-      text-align: center;
+      background: #000;
+      border: none;
       flex-grow: 1;
+    }
+
+    a {
+      flex-grow: 1;
+      text-align: center;
       font-size: 1rem;
       font-weight: bold;
       border: 2px solid black;
@@ -32,10 +37,14 @@
       padding: 0.25rem;
       display: inline-block;
       transition: transform 0.1s linear;
+      transform: translate(-2px, -2px);
+      width: 100%;
 
       &:hover:not(:disabled) {
-        transform: translate(-3px, -3px);
+        transform: translate(-4px, -4px);
       }
+
+
 
       &:disabled {
         background: #eee;
@@ -82,7 +91,7 @@
 
 
 // Projects section media queries
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .projectCard {
     flex-direction: row;
 
