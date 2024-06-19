@@ -1,6 +1,8 @@
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { Aldrich } from 'next/font/google';
 
 import styl from "./home.module.scss";
@@ -8,10 +10,15 @@ import ProjectCard from "comp/ProjectCard";
 
 import { MdEmail } from 'react-icons/md';
 import { projects } from "staticdata/projects";
+import Rating from "comp/Rating";
+import technologies from "./technologies";
+import testimonials from "./testimonials";
 
 const heroFont = Aldrich({ weight: '400', subsets: ['latin'] })
 
 const Home = () => {
+  const [techStack] = useState(technologies);
+  const [tech, setTech] = useState(technologies[0]);
 
   return (
     <>
@@ -131,13 +138,13 @@ const Home = () => {
             <div className={`${styl.cols}`}>
               <div className={styl.intro}>
                 <p>
-                  I help business owners develop{" "}
+                  I develop{" "}
                   <span className={styl.highlight}>
-                    custom web based solutions or mobile applications.
+                    custom web and mobile applications.
                   </span>
                 </p>
                 <p>
-                  Business I have worked with -{" "}
+                  I have worked with -{" "}
                   <span className={styl.highlight}>
                     hotels, colleges, cab companies and ecommerce startups.
                   </span>
@@ -197,38 +204,30 @@ const Home = () => {
         <section className={styl.stack}>
           <div>
             <h2>Tech stack</h2>
-            <p style={{ margin: '0 0.5rem 0.5rem' }}>Including but not limited to</p>
-            <div className={styl.stackelements}>
-              <p>React.js</p>
-              <p>Next.js</p>
-              <p>TailwindCSS</p>
-              <p>JavaScript</p>
-              <p>TypeScript</p>
-              <p>Go</p>
-              <p>Jest</p>
-              <p>Node.js</p>
-              <p>Nest.js</p>
-              <p>Python</p>
-              <p>Django</p>
-              <p>WebRTC</p>
-              <p>Docker</p>
-              <p>WebSockets</p>
-              <p>PostgreSQL</p>
-              <p>MySQL</p>
-              <p>MongoDB</p>
-              <p>Firestore</p>
-              <p>IaC</p>
-              <p>Pipelines</p>
-              <p>Firebase</p>
-              <p>AWS</p>
-              <p>EC2</p>
-              <p>ECS</p>
-              <p>ECR</p>
-              <p>Route53</p>
-              <p>CloudFormation</p>
-              <p>Code Pipelines</p>
-              <p>Copilot CLI</p>
-              <p>Salesforce</p>
+            <div className={styl.stackDisplay}>
+              <div className={styl.elementLogo}>
+                <Image
+                  style={{ marginLeft: "0.25em" }}
+                  src={tech.image}
+                  height="180"
+                  width="180"
+                  alt={tech.name}
+                />
+              </div>
+              <div className={styl.stackelements}>
+                {techStack.map((_tech, idx) => (
+                  <button
+                    id={idx}
+                    className={`${_tech.name === tech.name && styl.selectedStackElement} ${styl.stackelement}`}
+                    onClick={() => { setTech(_tech); }}
+                  >
+                    <p>
+                      {_tech.name}
+                    </p>
+                  </button>
+                ))}
+                <p className={styl.techDescription}>{tech.description}</p>
+              </div>
             </div>
           </div>
         </section>
@@ -262,70 +261,22 @@ const Home = () => {
             <a name='testimonials'></a>
             <h2>Testimonials</h2>
             <ul>
-              <li className={styl.testimonial}>
-                <p className={styl.testimonialText}>
-                  “Darshan is quite dependable on his development work specially in frontend. working with him has been fluent.
-                  Darshan has showcased a remarkable proficiency in developing marketing websites, fintech products, and performance marketing landing pages using Next.js. He has consistently delivered high-quality work that not only meets but often exceeds project requirements. His expertise of Next.js, coupled with a strong foundation in web development, has been instrumental in the success of our projects.
-                  He is just a message away when working with him on various projects.”
-                </p>
-                <a href='https://www.linkedin.com/in/pankaj-dhamane-027ba2147/' target="_blank" >
-                  <div className={styl.client}>
-                    <Image src='/testimonials/pankaj.jpeg' width={36} height={36} alt='Jesus Mejia' />
-                    <p> - Pankaj Dhamane</p>
-                  </div>
-                </a>
-              </li>
-              <li className={styl.testimonial}>
-                <p className={styl.testimonialText}>
-                  “I highly recommend Darshan for Frontend Developer. Darshan is wonderful to work with and he poses great skillset when it comes to frontend development. He always strives to go above and beyond while achieving team's goals and this has helped him to scale up quickly into any new project that he is assigned with. Darshan has a long way ahead in his career and I am sure, he will excel wherever he goes.”
-                </p>
-                <a href='https://www.linkedin.com/in/kaivalya-mendki/' target="_blank" >
-                  <div className={styl.client}>
-                    <Image src='/testimonials/kaivalya.jpeg' width={36} height={36} alt='Jesus Mejia' />
-                    <p> - Kaivalya Mendki</p>
-                  </div>
-                </a>
-              </li>
-              <li className={styl.testimonial}>
-                <p className={styl.testimonialText}>
-                  “Darshan is a very skilled and professional full stack developer. I
-                  am very impressed with his ability to listen to my requirements and
-                  walk me through the possibilities. I am very happy with Darshan's
-                  work and plan on using him in future projects. He covered all the
-                  requirements within the timeline he proposed. You will be impressed
-                  as well!”
-                </p>
-                <a href='https://www.linkedin.com/in/jesus-m-b06739103/' target="_blank" >
-                  <div className={styl.client}>
-                    <Image src='/testimonials/jesus.jpeg' width={36} height={36} alt='Jesus Mejia' />
-                    <p> - Jesus Mejia</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <p className={styl.testimonialText}>
-                  “Darshan was very enthusiastic and gave some useful solution for the
-                  project. The communication was smooth and work were delivered as
-                  required.”
-                </p>
-                <a href='https://www.linkedin.com/in/looyee-ng/' target="_blank" >
-                  <div className={styl.client}>
-                    <Image src='/testimonials/looyee.jpeg' width={36} height={36} alt='LooYee NG' />
-                    <p> - LooYee NG</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <p className={styl.testimonialText}>
-                  “He is very talented and cooperative!”
-                </p>
-                <a href='https://www.linkedin.com/in/vibhanshurathod/' target="_blank" >
-                  <div className={styl.client}>
-                    <Image src='/testimonials/vibhanshu.jpeg' width={36} height={36} alt='Vibhanshu Rathod' />
-                    <p> - Vibhanshu Rathod</p>
-                  </div>
-                </a>
-              </li>
+              {testimonials.map((testimonial, idx) => (
+                <li className={styl.testimonial} id={idx}>
+                  <p className={styl.testimonialText}>
+                    “{testimonial.testimonial}”
+                  </p>
+                  <a href={testimonial.linkedin} target="_blank" >
+                    <div className={styl.client}>
+                      <div className={styl.imageContainer}>
+                        <Image src={testimonial.image} width={36} height={36} alt={testimonial.name} />
+                        <p> - {testimonial.name}</p>
+                      </div>
+                      <Rating />
+                    </div>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </section>
