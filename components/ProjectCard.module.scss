@@ -10,12 +10,15 @@
   background: #fff;
   border: 3px solid #000;
   margin-bottom: 2rem;
-  box-shadow: 5px 5px 0px 0px #000;
+  border-radius: 2rem;
+  overflow: hidden;
+  // box-shadow: 5px 5px 0px 0px #000;
 
   .projectLinks {
     display: flex;
     gap: 0.5em;
     margin: 0.5em;
+    padding: 1rem;
 
     >:last-child {
       margin-left: 0;
@@ -37,11 +40,10 @@
       padding: 0.25rem;
       display: inline-block;
       transition: transform 0.1s linear;
-      transform: translate(-2px, -2px);
       width: 100%;
 
       &:hover:not(:disabled) {
-        transform: translate(-4px, -4px);
+        transform: translate(-2px, -2px);
       }
 
 
