@@ -1,5 +1,11 @@
 const testimonials = [
     {
+        "name": "Vibhanshu Rathod",
+        "testimonial": "I’ve known Darshan for 3 years and highly recommend him as a Fullstack Developer. He is skilled, reliable, and consistently delivers top-notch work. His expertise would be a great asset to any team.",
+        "linkedin": "https://www.linkedin.com/in/vibhanshurathod/",
+        "image": "/testimonials/vibhanshu.jpeg"
+    },
+    {
         "name": "Pankaj Dhamane",
         "testimonial": "Darshan is quite dependable on his development work specially in frontend. working with him has been fluent. Darshan has showcased a remarkable proficiency in developing marketing websites, fintech products, and performance marketing landing pages using Next.js. He has consistently delivered high-quality work that not only meets but often exceeds project requirements. His expertise of Next.js, coupled with a strong foundation in web development, has been instrumental in the success of our projects. He is just a message away when working with him on various projects.",
         "linkedin": "https://www.linkedin.com/in/pankaj-dhamane-027ba2147/",
@@ -22,12 +28,6 @@ const testimonials = [
         "testimonial": "Darshan was very enthusiastic and gave some useful solution for the project. The communication was smooth and work were delivered as required.",
         "linkedin": "https://www.linkedin.com/in/looyee-ng/",
         "image": "/testimonials/looyee.jpeg"
-    },
-    {
-        "name": "Vibhanshu Rathod",
-        "testimonial": "He is very talented and cooperative!",
-        "linkedin": "https://www.linkedin.com/in/vibhanshurathod/",
-        "image": "/testimonials/vibhanshu.jpeg"
     }
 ]
 
