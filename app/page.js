@@ -35,17 +35,8 @@ const Home = () => {
                   alt='Darshan Dhabale Photo'
                 />
               </div>
-              <div className={styl.smiley}>
-                <Image
-                  src='/img/smiley.png'
-                  priority
-                  layout='fill'
-                  sizes="(max-width: 768px) 30vw, 20vw"
-                  alt='Smile'
-                />
-              </div>
               <div className={styl.shadow}></div>
-              <p className={styl.instruction}>Hover / Touch</p>
+              {/* <p className={styl.instruction}>Hover / Touch</p> */}
             </div>
 
             <div className={styl.text}>
@@ -173,7 +164,7 @@ const Home = () => {
                   <path
                     d="M96 145.5V427.5M96 145.5L344 97M96 145.5L7 63M96 427.5L7 492.5M96 427.5L287 525.5M96 427.5L344 392.5M540.5 481.5V205.5M540.5 481.5L660 570M540.5 481.5L344 392.5M540.5 481.5L287 525.5M540.5 205.5L344 97M540.5 205.5L660 145.5M344 97V8M344 97V392.5M660 145.5V570M660 145.5L344 8M660 570L287 644M287 644L7 492.5M287 644V525.5M7 492.5V63M7 63L344 8"
                     stroke="black"
-                    stroke-width="14"
+                    strokeWidth="14"
                   />
 
                   <image id={styl.artGroup1Ball}
@@ -189,8 +180,8 @@ const Home = () => {
                       y2="620.5"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#D196FF" />
-                      <stop offset="1" stop-color="#FFA0FB" />
+                      <stop stopColor="#D196FF" />
+                      <stop offset="1" stopColor="#FFA0FB" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -266,15 +257,23 @@ const Home = () => {
                   <p className={styl.testimonialText}>
                     “{testimonial.testimonial}”
                   </p>
-                  <a href={testimonial.linkedin} target="_blank" >
-                    <div className={styl.client}>
-                      <div className={styl.imageContainer}>
-                        <Image src={testimonial.image} width={36} height={36} alt={testimonial.name} />
-                        <p> - {testimonial.name}</p>
-                      </div>
-                      <Rating />
+                  <div className={styl.client}>
+                    <div className={styl.imageContainer}>
+                      <Image src={testimonial.image} width={36} height={36} alt={testimonial.name} />
+                      <a href={testimonial.linkedin} target="_blank" >
+                        <Image
+                          src="/img/linkedin.png"
+                          height="24"
+                          width="24"
+                          priority
+                          alt='Linkedin'
+                        />
+                      </a>
+                      <p>
+                        {testimonial.name}</p>
                     </div>
-                  </a>
+                    <Rating />
+                  </div>
                 </li>
               ))}
             </ul>
@@ -287,9 +286,7 @@ const Home = () => {
 
         <section className={styl.footer}>
           <div>
-
             <h2>Contact details</h2>
-
             <p>
               Think you have an exciting project for me? drop me an email at -
             </p>

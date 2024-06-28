@@ -264,12 +264,13 @@
 .pfp {
   width: 15rem;
   height: 15rem;
+  border-radius: 50%;
   margin: 0 auto 1.5em;
   position: relative;
   border: 6px solid black;
+  overflow: hidden;
 
   .image {
-    filter: grayscale(100%) blur(5px);
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -284,15 +285,6 @@
     position: absolute;
     bottom: 0;
     left: 1rem;
-  }
-
-  .smiley {
-    position: absolute;
-    top: 2.5rem;
-    left: 4rem;
-    width: 7rem;
-    height: 7rem;
-    transition: opacity 0.4s ease;
   }
 
   .shadow {
@@ -595,7 +587,7 @@
   .client {
     align-items: center;
     gap: 1rem;
-    text-decoration: underline;
+    // text-decoration: underline;
     font-style: italic;
     font-size: 0.4rem;
 
@@ -641,7 +633,8 @@
   }
 
   padding: 2rem;
-  background: #000;
+  background: url("/img/bg-pattern.svg") center/cover no-repeat;
+  background-color: white;
   color: white;
 }
 
