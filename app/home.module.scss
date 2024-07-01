@@ -92,6 +92,12 @@
   align-items: center;
   padding: 2em 0;
 
+  iframe {
+    border-radius: 2rem;
+    border: 2px solid black;
+    margin-top: 2rem;
+  }
+
   .text {
     display: flex;
     flex-direction: column;
