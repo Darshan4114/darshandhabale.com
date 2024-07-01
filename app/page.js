@@ -25,7 +25,7 @@ const Home = () => {
       <div className={styl.container}>
         <section className={styl.hero}>
           <div>
-            <div className={styl.pfp}>
+            {/* <div className={styl.pfp}>
               <div className={styl.image}>
                 <Image
                   src='/img/darshan6.png'
@@ -36,8 +36,9 @@ const Home = () => {
                 />
               </div>
               <div className={styl.shadow}></div>
-              {/* <p className={styl.instruction}>Hover / Touch</p> */}
-            </div>
+              <p className={styl.instruction}>Hover / Touch</p>
+            </div> */}
+            <iframe style={{ padding: "2rem", }} width="100%" height="347" src="https://www.youtube.com/embed/e0yfmoZ9SEE?si=COr-vv8JI8L0NMPN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
             <div className={styl.text}>
               <div className="">
