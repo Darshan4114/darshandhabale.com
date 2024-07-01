@@ -95,7 +95,8 @@
   iframe {
     border-radius: 2rem;
     border: 2px solid black;
-    margin-top: 2rem;
+    margin: 2rem;
+    width: calc(100% - 4rem);
   }
 
   .text {
