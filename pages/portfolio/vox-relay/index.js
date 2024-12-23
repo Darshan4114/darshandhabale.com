@@ -70,11 +70,11 @@ const images = [
   }
 ];
 
-export default function MeetLoom () {
+export default function MeetLoom() {
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
-    function checkIfDesktop () {
+    function checkIfDesktop() {
       if (window.innerWidth < 750) {
         setIsDesktop(false)
       } else {
@@ -91,14 +91,14 @@ export default function MeetLoom () {
     <>
       <div className={styl.container}>
         <Head>
-          <title>DarshanDev Project: MeetLoom Chat and Video Conferencing Application</title>
+          <title>DarshanDev Project: VoxRelay Chat and Video Conferencing Application</title>
         </Head>
         <Header />
         <section className={styl.hero}>
           <div className="">
             <div className={styl.text}>
               <h1>
-                MeetLoom
+                VoxRelay
               </h1>
               <p>Chat and Video Conferencing Application</p>
             </div>
@@ -114,7 +114,7 @@ export default function MeetLoom () {
           <div className="">
             <h2>Summary</h2>
             <p>
-              MeetLoom is a responsive and progressive web application that harnesses the power of WebSockets and WebRTC to enable real-time chat and video conferencing. This innovative platform aims to redefine online communication, making it more immersive and engaging.
+              VoxRelay is a responsive and progressive web application that harnesses the power of WebSockets and WebRTC to enable real-time chat and video conferencing. This innovative platform aims to redefine online communication, making it more immersive and engaging.
             </p>
           </div>
         </section>

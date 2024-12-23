@@ -1,16 +1,16 @@
 export const projects = [
   {
     id: 1,
-    title: 'MeetLoom: Chat and Video Conferencing Application',
+    title: 'VoxRelay: Chat and Video Conferencing Application',
     points: [
       'Live chat',
       'Video/audio calling',
       'Multilingual',
       'Dark mode'
     ],
-    link: '/portfolio/meetloom',
+    link: '/portfolio/vox-relay',
     video: '/img/portfolio/meetloom/meetloom.webm',
-    website: 'https://meetloom.vercel.app/'
+    website: 'https://vox-relay.vercel.app/'
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const projects = [
     ],
     link: '/portfolio/mazaclass',
     video: '/img/portfolio/mazaclass/mazaclass.webm',
-    website: 'https://mazaclass.com/'
+    website: 'https://app.mazaclass.com/'
   },
   {
     id: 3,
