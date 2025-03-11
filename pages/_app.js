@@ -1,10 +1,11 @@
 import Head from "next/head"
 import Script from "next/script"
 // import "react-toastify/dist/ReactToastify.min.css"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import "../styles/globals.css"
 
-function MyApp ({ Component, pageProps }) {
-
+function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -12,8 +13,11 @@ function MyApp ({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
         />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-YRSWJK38X4"></Script>
-        <Script >
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YRSWJK38X4"
+        ></Script>
+        <Script>
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

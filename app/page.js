@@ -1,24 +1,25 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import { Aldrich } from 'next/font/google';
+import Link from "next/link"
+import Image from "next/image"
+import { useState } from "react"
+import { Aldrich } from "next/font/google"
 
-import styl from "./home.module.scss";
-import ProjectCard from "comp/ProjectCard";
+import styl from "./home.module.scss"
+import ProjectCard from "comp/ProjectCard"
 
-import { MdEmail } from 'react-icons/md';
-import { projects } from "staticdata/projects";
-import Rating from "comp/Rating";
-import technologies from "./technologies";
-import testimonials from "./testimonials";
+import { MdEmail } from "react-icons/md"
+import { projects } from "staticdata/projects"
+import Rating from "comp/Rating"
+import technologies from "./technologies"
+import testimonials from "./testimonials"
+import TestimonialsDesktop from "comp/Testimonials"
 
-const heroFont = Aldrich({ weight: '400', subsets: ['latin'] })
+const heroFont = Aldrich({ weight: "400", subsets: ["latin"] })
 
 const Home = () => {
-  const [techStack] = useState(technologies);
-  const [tech, setTech] = useState(technologies[0]);
+  const [techStack] = useState(technologies)
+  const [tech, setTech] = useState(technologies[0])
 
   return (
     <>
@@ -38,7 +39,16 @@ const Home = () => {
               <div className={styl.shadow}></div>
               <p className={styl.instruction}>Hover / Touch</p>
             </div> */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/e0yfmoZ9SEE?si=yc2FnGJGZAT-iXQe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/e0yfmoZ9SEE?si=yc2FnGJGZAT-iXQe"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
             <div className={styl.text}>
               <div className="">
                 <h1 className={`${styl.name} ${heroFont.className}`}>
@@ -49,63 +59,68 @@ const Home = () => {
                 </div>
               </div>
               <ul>
-                <li>Building cool software</li>
-                <li>Full stack JavaScript</li>
-                <li>Since 2018</li>
+                <li>Building cool software Since 2018</li>
               </ul>
 
               <div className={styl.quicknav}>
                 <button>
-                  <Link href='/portfolio'>
-                    Portfolio
-                  </Link>
+                  <Link href="/portfolio">Portfolio</Link>
                 </button>
                 <button>
-                  <Link href='/blog'>
-                    Blog
-                  </Link>
-                </button>
-                <button>
-                  <Link href='#testimonials'>
-                    Testimonials
-                  </Link>
+                  <Link href="/blog">Blog</Link>
                 </button>
               </div>
               <div className={styl.heroSocials}>
-                <a target="_blank" href="https://www.github.com/darshan4114/" className={styl.heroSocial}>
+                <a
+                  target="_blank"
+                  href="https://www.github.com/darshan4114/"
+                  className={styl.heroSocial}
+                >
                   <Image
                     src="/img/github.png"
                     height="48"
                     width="48"
                     priority
-                    alt='Github'
+                    alt="Github"
                   />
                 </a>
-                <a target="_blank" href="https://www.linkedin.com/in/dhabale/" className={styl.heroSocial}>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/dhabale/"
+                  className={styl.heroSocial}
+                >
                   <Image
                     src="/img/linkedin.png"
                     height="48"
                     width="48"
                     priority
-                    alt='Linkedin'
+                    alt="Linkedin"
                   />
                 </a>
-                <a target="_blank" href="https://www.instagram.com/code_darshan/" className={styl.heroSocial}>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/code_darshan/"
+                  className={styl.heroSocial}
+                >
                   <Image
                     src="/img/instagram_color.png"
                     height="48"
                     width="48"
                     priority
-                    alt='Instagram'
+                    alt="Instagram"
                   />
                 </a>
-                <a target="_blank" href="mailto:dev@darshandhabale.com" className={styl.heroSocial}>
+                <a
+                  target="_blank"
+                  href="mailto:dev@darshandhabale.com"
+                  className={styl.heroSocial}
+                >
                   <Image
                     src="/img/email.png"
                     height="48"
                     width="48"
                     priority
-                    alt='Email'
+                    alt="Email"
                   />
                 </a>
               </div>
@@ -119,13 +134,51 @@ const Home = () => {
           </div>
         </section>
 
+        {/* <div className={styl.crimeTape} /> */}
+
+        <section className={styl.testimonials}>
+          <div className={styl.testimonialsMobile}>
+            <a name="testimonials"></a>
+            <h2 className={styl.sectionHeading}>Testimonials</h2>
+            <ul>
+              {testimonials.map((testimonial, idx) => (
+                <li className={styl.testimonial} id={idx}>
+                  <p className={styl.testimonialText}>
+                    “{testimonial.testimonial}”
+                  </p>
+                  <div className={styl.client}>
+                    <div className={styl.imageContainer}>
+                      <Image
+                        src={testimonial.image}
+                        fill
+                        objectFit="cover"
+                        alt={testimonial.name}
+                      />
+                    </div>
+                    <a href={testimonial.linkedin} target="_blank">
+                      <Image
+                        src="/img/linkedin.png"
+                        height="24"
+                        width="24"
+                        priority
+                        alt="Linkedin"
+                      />
+                    </a>
+                    <p>{testimonial.name}</p>
+                    <Rating />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+        <TestimonialsDesktop />
+
         <div className={styl.crimeTape} />
 
         <section className={styl.wdid}>
           <div>
-            <h2 className={styl.sectionHeading}>
-              What do I do?
-            </h2>
+            <h2 className={styl.sectionHeading}>What do I do?</h2>
             <div className={`${styl.cols}`}>
               <div className={styl.intro}>
                 <p>
@@ -141,12 +194,13 @@ const Home = () => {
                   </span>
                 </p>
                 <p>
-                  Whether it's streamlining hotel operations or optimizing transportation logistics,
-                  I'm dedicated to building software that adds tangible value to businesses.
+                  Whether it's streamlining hotel operations or optimizing
+                  transportation logistics, I'm dedicated to building software
+                  that adds tangible value to businesses.
                 </p>
                 <p>
-                  Building valuable software that saves my clients time and money
-                  gets me going.
+                  Building valuable software that saves my clients time and
+                  money gets me going.
                 </p>
               </div>
               <div className={styl.artGroupContainer}>
@@ -167,10 +221,15 @@ const Home = () => {
                     strokeWidth="14"
                   />
 
-                  <image id={styl.artGroup1Ball}
+                  <image
+                    id={styl.artGroup1Ball}
                     x="230"
                     y="300"
-                    width={200} height={200} href="/img/ball.png" clip-path="url(#myCircle)" />
+                    width={200}
+                    height={200}
+                    href="/img/ball.png"
+                    clip-path="url(#myCircle)"
+                  />
                   <defs>
                     <linearGradient
                       id="paint0_linear_1312_9"
@@ -209,12 +268,14 @@ const Home = () => {
                 {techStack.map((_tech, idx) => (
                   <button
                     id={idx}
-                    className={`${_tech.name === tech.name && styl.selectedStackElement} ${styl.stackelement}`}
-                    onClick={() => { setTech(_tech); }}
+                    className={`${
+                      _tech.name === tech.name && styl.selectedStackElement
+                    } ${styl.stackelement}`}
+                    onClick={() => {
+                      setTech(_tech)
+                    }}
                   >
-                    <p>
-                      {_tech.name}
-                    </p>
+                    <p>{_tech.name}</p>
                   </button>
                 ))}
                 <p className={styl.techDescription}>{tech.description}</p>
@@ -228,55 +289,33 @@ const Home = () => {
         <section className={styl.projects}>
           <div>
             <h2>Projects</h2>
-            <p style={{ margin: '0 0.5rem 0.5rem' }}>Listing top 3, <Link href='/portfolio' className={styl.projectPageLink}>see all projects</Link>. </p>
-            <p style={{ margin: '0 0.5rem 0.5rem', fontSize: '0.9rem' }}>&#40; Prefer case studies, sites linked here are not production sites, but still require you to create accounts for full experience. &#41;</p>
-            {projects.length > 0 && projects.slice(0, 3).map((project) => (
-              <ProjectCard
-                id={project.id}
-                title={project.title}
-                image={project.image}
-                video={project.video}
-                description={project.description}
-                points={project.points}
-                link={project.link}
-                website={project.website}
-              />
-            ))}
-          </div>
-        </section>
-
-        <div className={styl.crimeTape} />
-
-        <section className={styl.testimonials}>
-          <div>
-            <a name='testimonials'></a>
-            <h2>Testimonials</h2>
-            <ul>
-              {testimonials.map((testimonial, idx) => (
-                <li className={styl.testimonial} id={idx}>
-                  <p className={styl.testimonialText}>
-                    “{testimonial.testimonial}”
-                  </p>
-                  <div className={styl.client}>
-                    <div className={styl.imageContainer}>
-                      <Image src={testimonial.image} width={36} height={36} alt={testimonial.name} />
-                      <a href={testimonial.linkedin} target="_blank" >
-                        <Image
-                          src="/img/linkedin.png"
-                          height="24"
-                          width="24"
-                          priority
-                          alt='Linkedin'
-                        />
-                      </a>
-                      <p>
-                        {testimonial.name}</p>
-                    </div>
-                    <Rating />
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <p style={{ margin: "0 0.5rem 0.5rem" }}>
+              Listing top 3,{" "}
+              <Link href="/portfolio" className={styl.projectPageLink}>
+                see all projects
+              </Link>
+              .{" "}
+            </p>
+            <p style={{ margin: "0 0.5rem 0.5rem", fontSize: "0.9rem" }}>
+              &#40; Prefer case studies, sites linked here are not production
+              sites, but still require you to create accounts for full
+              experience. &#41;
+            </p>
+            {projects.length > 0 &&
+              projects
+                .slice(0, 3)
+                .map((project) => (
+                  <ProjectCard
+                    id={project.id}
+                    title={project.title}
+                    image={project.image}
+                    video={project.video}
+                    description={project.description}
+                    points={project.points}
+                    link={project.link}
+                    website={project.website}
+                  />
+                ))}
           </div>
         </section>
 
@@ -292,7 +331,11 @@ const Home = () => {
             </p>
             <p className={styl.emailLine}>
               <span className={styl.copyBtn}>
-                <MdEmail color='white' size={24} style={{ marginRight: '0.5em' }} />
+                <MdEmail
+                  color="white"
+                  size={24}
+                  style={{ marginRight: "0.5em" }}
+                />
               </span>
               <span>
                 &nbsp;
@@ -303,30 +346,32 @@ const Home = () => {
             </p>
             <br />
             <p>
-              Just want a developer friend? I&apos;m very open to that offer. Here is
-              my &nbsp;
+              Just want a developer friend? I&apos;m very open to that offer.
+              Here is my &nbsp;
               <a target="_blank" href="https://www.instagram.com/code_darshan/">
                 instagram
               </a>
             </p>
-            <a target="_blank" href="https://www.instagram.com/code_darshan/" className={styl.emailLine}>
+            <a
+              target="_blank"
+              href="https://www.instagram.com/code_darshan/"
+              className={styl.emailLine}
+            >
               <Image
                 style={{ marginLeft: "0.25em" }}
                 src="/img/instagram.png"
                 height="32"
                 width="32"
-                alt='Instagram'
+                alt="Instagram"
               />
               &nbsp;
-              <p>
-                @code_darshan
-              </p>
+              <p>@code_darshan</p>
             </a>
           </div>
         </section>
-      </div >
+      </div>
     </>
   )
 }
 
-export default Home;
+export default Home

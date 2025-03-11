@@ -193,7 +193,7 @@
   .hero>div {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 2em 0;
+    padding: 1em 0 0;
 
     .text {
       margin-top: 1em;
@@ -563,7 +563,7 @@
 
 // Testimonials
 .testimonials {
-  background: #69d2e7;
+  // background: #69d2e7;
   color: black;
   padding: 2rem;
   padding-left: 3rem;
@@ -578,6 +578,11 @@
 
   .testimonialText {
     margin-bottom: 1em;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   ul {
@@ -599,16 +604,67 @@
     font-size: 0.4rem;
 
     .imageContainer {
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      overflow: hidden;
       margin-bottom: 1rem;
+      border-radius: 2rem;
     }
+  }
+}
+
+.testimonialsDesktop {
+  display: none;
+}
+
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-100%);
   }
 }
 
 
 // Testimonials section media queries
 @media screen and (min-width: 768px) {
+  .testimonialDesktopSlider {
+    display: flex;
+    gap: 2rem;
+  }
+
+
+  .testimonialsDesktop {
+    display: block;
+    padding: 2rem;
+  }
+
   .testimonials {
-    padding: 4rem;
+    padding: 0;
+
+    .testimonialsMobile {
+      display: none;
+    }
+
+    // >div {
+    //   position: relative;
+    //   width: 500rem;
+    //   overflow: hidden;
+    //   min-height: 30rem;
+    // }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      height: 15rem;
+      margin-right: 2rem;
+    }
 
     .client {
       display: flex;
@@ -618,6 +674,8 @@
         display: flex;
         align-items: flex-end;
         gap: 1rem;
+        height: 3rem;
+        width: 3rem;
       }
     }
   }
