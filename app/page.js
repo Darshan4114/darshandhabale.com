@@ -39,6 +39,23 @@ const Home = () => {
               <div className={styl.shadow}></div>
               <p className={styl.instruction}>Hover / Touch</p>
             </div> */}
+            <svg width="100%" height="100%" viewBox="0 0 800 600" preserveAspectRatio="none" className={styl.svgArt}>
+              <defs>
+                <linearGradient id="stripeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff4500">
+                    <animate attributeName="stop-color" values="#ff4500;#ffa500;#ffff00;#ff4500" dur="10s" repeatCount="indefinite" />
+                  </stop>
+                  <stop offset="50%" stop-color="#ffa500">
+                    <animate attributeName="stop-color" values="#ffa500;#ffff00;#ff4500;#ffa500" dur="10s" repeatCount="indefinite" />
+                  </stop>
+                  <stop offset="100%" stop-color="#ffff00">
+                    <animate attributeName="stop-color" values="#ffff00;#ff4500;#ffa500;#ffff00" dur="10s" repeatCount="indefinite" />
+                  </stop>
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#stripeGradient)" />
+            </svg>
+
             <iframe
               width="560"
               height="315"
@@ -125,12 +142,12 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <div className={styl.gearOne}>
+            {/* <div className={styl.gearOne}>
               <Image src="/img/gear.png" fill objectFit="cover" />
             </div>
             <div className={styl.gearTwo}>
               <Image src="/img/gear2.png" fill objectFit="cover" />
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -268,9 +285,8 @@ const Home = () => {
                 {techStack.map((_tech, idx) => (
                   <button
                     id={idx}
-                    className={`${
-                      _tech.name === tech.name && styl.selectedStackElement
-                    } ${styl.stackelement}`}
+                    className={`${_tech.name === tech.name && styl.selectedStackElement
+                      } ${styl.stackelement}`}
                     onClick={() => {
                       setTech(_tech)
                     }}
