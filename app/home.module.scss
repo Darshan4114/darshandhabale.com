@@ -590,7 +590,7 @@
 
 @media screen and (min-width: 768px) {
   .ctaForm2>div {
-    padding: 8rem 0;
+    padding: 8rem 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 1em 0 0;
@@ -600,7 +600,8 @@
 
 
 @media screen and (min-width: 1024px) {
-  .hero>div {
+  .ctaForm2>div {
+    padding: 8rem 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
