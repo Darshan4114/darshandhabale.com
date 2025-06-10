@@ -14,6 +14,7 @@ import Rating from "comp/Rating"
 import technologies from "./technologies"
 import testimonials from "./testimonials"
 import TestimonialsDesktop from "comp/Testimonials"
+import HeroProjectCard from "comp/HeroProjectCard"
 
 const heroFont = Aldrich({ weight: "400", subsets: ["latin"] })
 
@@ -26,19 +27,6 @@ const Home = () => {
       <div className={styl.container}>
         <section className={styl.hero}>
           <div>
-            {/* <div className={styl.pfp}>
-              <div className={styl.image}>
-                <Image
-                  src='/img/darshan6.png'
-                  priority
-                  layout='fill'
-                  sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 33vw"
-                  alt='Darshan Dhabale Photo'
-                />
-              </div>
-              <div className={styl.shadow}></div>
-              <p className={styl.instruction}>Hover / Touch</p>
-            </div> */}
             <svg width="100%" height="100%" viewBox="0 0 800 600" preserveAspectRatio="none" className={styl.svgArt}>
               <defs>
                 <linearGradient id="stripeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -56,92 +44,125 @@ const Home = () => {
               <rect width="100%" height="100%" fill="url(#stripeGradient)" />
             </svg>
 
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/e0yfmoZ9SEE?si=yc2FnGJGZAT-iXQe"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-            <div className={styl.text}>
-              <div className="">
-                <h1 className={`${styl.name} ${heroFont.className}`}>
-                  <span>D</span>arshan Dhabale
-                </h1>
-                <div className={styl.desgGrp}>
-                  <p className={styl.desg}>Developer</p>
-                </div>
+            <div className={styl.heroLeft}>
+              <iframe src="https://player.vimeo.com/video/1087661626?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Darshan Dhabale - Full Stack Developer"></iframe>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+              <div className={styl.heroProject}>
+                <HeroProjectCard
+                  id={projects[1].id}
+                  title={projects[1].title}
+                  image={projects[1].image}
+                  video={projects[1].video}
+                  description={projects[1].description}
+                  points={projects[1].points}
+                  link={projects[1].link}
+                  website={projects[1].website}
+                />
               </div>
-              <ul>
-                <li>Building cool software Since 2018</li>
-              </ul>
-
-              <div className={styl.quicknav}>
+              <form className={styl.ctaForm}>
+                <label htmlFor='email'>Email</label>
+                <input placeholder='spiderman@gmail.com' id='email' />
+                <label htmlFor='message'>Message</label>
+                <textarea rows={3} placeholder='Hey! I really like your projects!' />
                 <button>
-                  <Link href="/portfolio">Portfolio</Link>
+                  <input type='submit' value='🕊️ Send' />
                 </button>
-                <button>
-                  <Link href="/blog">Blog</Link>
-                </button>
-              </div>
-              <div className={styl.heroSocials}>
-                <a
-                  target="_blank"
-                  href="https://www.github.com/darshan4114/"
-                  className={styl.heroSocial}
-                >
-                  <Image
-                    src="/img/github.png"
-                    height="48"
-                    width="48"
-                    priority
-                    alt="Github"
-                  />
-                </a>
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/dhabale/"
-                  className={styl.heroSocial}
-                >
-                  <Image
-                    src="/img/linkedin.png"
-                    height="48"
-                    width="48"
-                    priority
-                    alt="Linkedin"
-                  />
-                </a>
-                <a
-                  target="_blank"
-                  href="https://www.instagram.com/code_darshan/"
-                  className={styl.heroSocial}
-                >
-                  <Image
-                    src="/img/instagram_color.png"
-                    height="48"
-                    width="48"
-                    priority
-                    alt="Instagram"
-                  />
-                </a>
-                <a
-                  target="_blank"
-                  href="mailto:dev@darshandhabale.com"
-                  className={styl.heroSocial}
-                >
-                  <Image
-                    src="/img/email.png"
-                    height="48"
-                    width="48"
-                    priority
-                    alt="Email"
-                  />
-                </a>
-              </div>
+              </form>
             </div>
+
+            <div className={styl.heroSocials}>
+              <a
+                target="_blank"
+                href="https://www.github.com/darshan4114/"
+                className={styl.heroSocial}
+              >
+                <Image
+                  src="/img/github.png"
+                  height="48"
+                  width="48"
+                  priority
+                  alt="Github"
+                />
+              </a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/dhabale/"
+                className={styl.heroSocial}
+              >
+                <Image
+                  src="/img/linkedin.png"
+                  height="48"
+                  width="48"
+                  priority
+                  alt="Linkedin"
+                />
+              </a>
+              <a
+                target="_blank"
+                href="https://www.instagram.com/code_darshan/"
+                className={styl.heroSocial}
+              >
+                <Image
+                  src="/img/instagram_color.png"
+                  height="48"
+                  width="48"
+                  priority
+                  alt="Instagram"
+                />
+              </a>
+              <a
+                target="_blank"
+                href="mailto:dev@darshandhabale.com"
+                className={styl.heroSocial}
+              >
+                <Image
+                  src="/img/email.png"
+                  height="48"
+                  width="48"
+                  priority
+                  alt="Email"
+                />
+              </a>
+            </div>
+            <section className={styl.testimonials}>
+              <div className={styl.testimonialsMobile}>
+                <a name="testimonials"></a>
+                {/* <h2 className={styl.sectionHeading}>Testimonials</h2> */}
+                <ul>
+                  {testimonials.slice(0, 3).map((testimonial, idx) => (
+                    <li className={styl.testimonial} id={idx}>
+                      <Rating />
+                      <p className={styl.testimonialText}>
+                        “{testimonial.testimonial}”
+                      </p>
+                      <a href={testimonial.linkedin} target="_blank">
+                        <div className={styl.client}>
+                          <div className={styl.imageContainer}>
+                            <Image
+                              src={testimonial.image}
+                              fill
+                              objectFit="cover"
+                              alt={testimonial.name}
+                            />
+                            <div className={styl.linkedinImageContainer}>
+                              <Image
+                                src="/img/linkedin.png"
+                                height="24"
+                                width="24"
+                                priority
+                                alt="Linkedin"
+                              />
+                            </div>
+                          </div>
+                          <p>{testimonial.name}</p>
+                        </div>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
             {/* <div className={styl.gearOne}>
               <Image src="/img/gear.png" fill objectFit="cover" />
             </div>
@@ -149,9 +170,60 @@ const Home = () => {
               <Image src="/img/gear2.png" fill objectFit="cover" />
             </div> */}
           </div>
+        </section >
+        <div className={styl.crimeTape} />
+
+        <section className={styl.projects}>
+          <div>
+            <h2>Projects</h2>
+            <p style={{ margin: "0 0.5rem 0.5rem" }}>
+              Listing top 3,{" "}
+              <Link href="/portfolio" className={styl.projectPageLink}>
+                see all projects
+              </Link>
+              .{" "}
+            </p>
+            <p style={{ margin: "0 0.5rem 0.5rem", fontSize: "0.9rem" }}>
+              &#40; Prefer case studies, sites linked here are not production
+              sites, but still require you to create accounts for full
+              experience. &#41;
+            </p>
+            {projects.length > 0 &&
+              projects
+                .slice(0, 3)
+                .map((project) => (
+                  <ProjectCard
+                    id={project.id}
+                    title={project.title}
+                    image={project.image}
+                    video={project.video}
+                    description={project.description}
+                    points={project.points}
+                    link={project.link}
+                    website={project.website}
+                  />
+                ))}
+          </div>
         </section>
 
-        {/* <div className={styl.crimeTape} /> */}
+        <div className={styl.crimeTape} />
+
+        <section className={styl.ctaForm2}>
+          <div>
+            <h2>Want to message me about something?</h2>
+            <form className={styl.ctaForm}>
+              <label htmlFor='email'>Email</label>
+              <input placeholder='spiderman@gmail.com' id='email' />
+              <label htmlFor='message'>Message</label>
+              <textarea rows={3} placeholder='Hey! I really like your projects!' />
+              <button>
+                <input type='submit' value='🕊️ Send' />
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <div className={styl.crimeTape} />
 
         <section className={styl.testimonials}>
           <div className={styl.testimonialsMobile}>
@@ -160,6 +232,7 @@ const Home = () => {
             <ul>
               {testimonials.map((testimonial, idx) => (
                 <li className={styl.testimonial} id={idx}>
+                  <Rating />
                   <p className={styl.testimonialText}>
                     “{testimonial.testimonial}”
                   </p>
@@ -171,25 +244,23 @@ const Home = () => {
                         objectFit="cover"
                         alt={testimonial.name}
                       />
+                      <div className={styl.linkedinImageContainer}>
+                        <Image
+                          src="/img/linkedin.png"
+                          height="24"
+                          width="24"
+                          priority
+                          alt="Linkedin"
+                        />
+                      </div>
                     </div>
-                    <a href={testimonial.linkedin} target="_blank">
-                      <Image
-                        src="/img/linkedin.png"
-                        height="24"
-                        width="24"
-                        priority
-                        alt="Linkedin"
-                      />
-                    </a>
                     <p>{testimonial.name}</p>
-                    <Rating />
                   </div>
                 </li>
               ))}
             </ul>
           </div>
         </section>
-        <TestimonialsDesktop />
 
         <div className={styl.crimeTape} />
 
@@ -300,40 +371,7 @@ const Home = () => {
           </div>
         </section>
 
-        <div className={styl.crimeTape} />
 
-        <section className={styl.projects}>
-          <div>
-            <h2>Projects</h2>
-            <p style={{ margin: "0 0.5rem 0.5rem" }}>
-              Listing top 3,{" "}
-              <Link href="/portfolio" className={styl.projectPageLink}>
-                see all projects
-              </Link>
-              .{" "}
-            </p>
-            <p style={{ margin: "0 0.5rem 0.5rem", fontSize: "0.9rem" }}>
-              &#40; Prefer case studies, sites linked here are not production
-              sites, but still require you to create accounts for full
-              experience. &#41;
-            </p>
-            {projects.length > 0 &&
-              projects
-                .slice(0, 3)
-                .map((project) => (
-                  <ProjectCard
-                    id={project.id}
-                    title={project.title}
-                    image={project.image}
-                    video={project.video}
-                    description={project.description}
-                    points={project.points}
-                    link={project.link}
-                    website={project.website}
-                  />
-                ))}
-          </div>
-        </section>
 
         <div className={styl.crimeTape} />
 
@@ -342,50 +380,65 @@ const Home = () => {
         <section className={styl.footer}>
           <div>
             <h2>Contact details</h2>
-            <p>
-              Think you have an exciting project for me? drop me an email at -
-            </p>
-            <p className={styl.emailLine}>
-              <span className={styl.copyBtn}>
-                <MdEmail
-                  color="white"
-                  size={24}
-                  style={{ marginRight: "0.5em" }}
-                />
-              </span>
-              <span>
-                &nbsp;
-                <a href="mailto:dev@darshandhabale.com">
-                  dev@darshandhabale.com
+            <div className={styl.footerColumns}>
+              <div className={styl.footerLeft}>
+                <p>
+                  Think you have an exciting project for me? drop me an email at -
+                </p>
+                <p className={styl.emailLine}>
+                  <span className={styl.copyBtn}>
+                    <MdEmail
+                      color="white"
+                      size={24}
+                      style={{ marginRight: "0.5em" }}
+                    />
+                  </span>
+                  <span>
+                    &nbsp;
+                    <a href="mailto:dev@darshandhabale.com">
+                      dev@darshandhabale.com
+                    </a>
+                  </span>
+                </p>
+                <br />
+                <p>
+                  Just want a developer friend?
+                  Here is my &nbsp;
+                  <a target="_blank" href="https://www.instagram.com/code_darshan/">
+                    instagram
+                  </a>
+                </p>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/code_darshan/"
+                  className={styl.emailLine}
+                >
+                  <Image
+                    style={{ marginLeft: "0.25em" }}
+                    src="/img/instagram.png"
+                    height="32"
+                    width="32"
+                    alt="Instagram"
+                  />
+                  &nbsp;
+                  <p>@code_darshan</p>
                 </a>
-              </span>
-            </p>
-            <br />
-            <p>
-              Just want a developer friend? I&apos;m very open to that offer.
-              Here is my &nbsp;
-              <a target="_blank" href="https://www.instagram.com/code_darshan/">
-                instagram
-              </a>
-            </p>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/code_darshan/"
-              className={styl.emailLine}
-            >
-              <Image
-                style={{ marginLeft: "0.25em" }}
-                src="/img/instagram.png"
-                height="32"
-                width="32"
-                alt="Instagram"
-              />
-              &nbsp;
-              <p>@code_darshan</p>
-            </a>
+              </div>
+              <div className={styl.footerRight}>
+                <form className={styl.ctaForm}>
+                  <label htmlFor='email'>Email</label>
+                  <input placeholder='spiderman@gmail.com' id='email' />
+                  <label htmlFor='message'>Message</label>
+                  <textarea rows={3} placeholder='Hey! I really like your projects!' />
+                  <button>
+                    <input type='submit' value='🕊️ Send' />
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
-      </div>
+      </div >
     </>
   )
 }

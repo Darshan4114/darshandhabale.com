@@ -4,21 +4,19 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 18rem;
+  min-height: 15rem;
   transition: transform 0.1s linear;
-  margin-bottom: 1rem;
   background: #fff;
-  border: 3px solid #000;
-  margin-bottom: 2rem;
+  border: 2px solid black;
   border-radius: 0.5rem;
   overflow: hidden;
-  // box-shadow: 5px 5px 0px 0px #000;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
   .projectLinks {
     display: flex;
     gap: 0.5em;
     margin: 0.5em;
-    padding: 1rem;
+    // padding: 1rem;
 
     >:last-child {
       margin-left: 0;
@@ -98,9 +96,9 @@
     flex-direction: row;
 
     .projectImage {
-      border-right: 3px solid black;
-      height: 18rem;
-      width: 35rem;
+      border-right: 1px solid #ddd;
+      height: 15rem;
+      width: 20rem;
     }
 
     .projectAbout {

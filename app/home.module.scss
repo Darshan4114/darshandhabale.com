@@ -96,17 +96,174 @@
   }
 }
 
+.ctaForm {
+  max-width: min(35rem, calc(100vw - 2rem));
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  // font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2rem;
+
+  input,
+  textarea {
+    font-size: 1.1rem;
+    border: 1px solid #777;
+    border-radius: 0.25em;
+    padding: 0.25em;
+  }
+
+  textarea {
+    margin-bottom: 0.25rem;
+    resize: none;
+  }
+
+  label {
+    visibility: hidden;
+    height: 1px;
+  }
+
+  button {
+    background: #000;
+    border: none;
+    // flex-grow: 1;
+  }
+
+  input[type="submit"] {
+    border-radius: 0;
+    color: white;
+    font-size: 1.25rem;
+    padding: 0.25em;
+    border: none;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid black;
+    background: #10b981;
+    padding: 0.25rem;
+    display: inline-block;
+    transition: transform 0.1s linear;
+    width: 100%;
+
+    &:hover:not(:disabled) {
+      transform: translate(-2px, -2px);
+    }
+
+
+
+    &:disabled {
+      background: #eee;
+      color: #aaa;
+      border: 2px solid #aaa;
+    }
+  }
+}
+
 // Hero
 .hero {
   position: relative;
   align-items: center;
   padding: 2em 0;
+  overflow: hidden;
+
+  >div {
+    gap: 1rem;
+  }
+
+  .heroProject {
+    display: none;
+  }
+
+  .testimonials {
+    background: #fff;
+    color: black;
+    padding: 0;
+    // padding-left: 3rem;
+    border-radius: 0.5rem;
+    max-width: calc(100vw - 2rem);
+    margin: 0 auto;
+
+    >div {
+      display: flex;
+      justify-content: center;
+    }
+
+
+    .testimonial {
+      max-width: calc(100vw - 2rem);
+      background: #fff;
+      border-radius: 0.5rem;
+      border: 2px solid #000;
+      padding: 1rem;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+    .testimonialText {
+      margin-bottom: 1em;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    ul {
+      list-style-image: url('/img/li.png');
+      list-style-position: outside;
+      list-style: none;
+    }
+
+    li {
+      font-family: sans-serif;
+      font-weight: light;
+      margin-bottom: 1rem;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      // text-decoration: underline;
+      font-style: italic;
+      font-size: 0.4rem;
+
+      .imageContainer {
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+
+        >img {
+          overflow: hidden;
+          border-radius: 5rem;
+        }
+
+        margin-bottom: 1rem;
+        border-radius: 5rem;
+      }
+
+      .linkedinImageContainer {
+        position: absolute;
+        bottom: -0.5rem;
+        right: -0.5rem;
+      }
+    }
+  }
+
+  .heroLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 1rem;
+    // height: 20rem;
+  }
 
   iframe {
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     border: 2px solid black;
-    margin: 2rem;
-    width: calc(100% - 4rem);
+    margin: 0;
+    // width: 35rem;
+    max-width: calc(100vw - 2rem);
+    // height: 19.8rem;
   }
 
   .text {
@@ -142,7 +299,12 @@
   .quicknav {
     position: relative;
     display: flex;
+    flex-direction: column;
     gap: 0.5em;
+    position: fixed;
+    z-index: 10;
+    right: 1rem;
+    top: 1rem;
 
     a {
       font-size: 1rem;
@@ -168,8 +330,9 @@
   .heroSocials {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
-    justify-items: end;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 
   .heroSocial {
@@ -208,6 +371,28 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 1em 0 0;
+    gap: 1rem;
+
+    .heroSocials {
+      flex-direction: column;
+      position: fixed;
+      z-index: 10;
+      right: 1rem;
+      bottom: 1rem;
+    }
+
+    iframe {
+      width: 35rem;
+      height: 19.8rem;
+    }
+
+    .heroLeft {
+      height: unset;
+    }
+
+    .heroProject {
+      display: block;
+    }
 
     .text {
       margin-top: 1em;
@@ -381,6 +566,46 @@
   }
 }
 
+//CTA form 2 section
+.ctaForm2 {
+  >div {
+    display: grid;
+    place-items: center;
+    justify-content: space-between;
+  }
+
+  width: 100%;
+  padding: 2rem;
+
+  .ctaForm {
+    width: 25rem;
+    max-width: calc(100vw - 4rem);
+
+    // label {
+    //   height: unset;
+    //   visibility: visible;
+    // }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ctaForm2>div {
+    padding: 8rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em 0 0;
+    gap: 1rem;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .hero>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 // What do I do? section
 .wdid {
   background: #90ee90;
@@ -395,7 +620,7 @@
   .intro {
     margin-bottom: 5rem;
     background: #fff;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     border: 3px solid #000;
     padding: 2rem;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -526,7 +751,7 @@
   .techDescription {
     margin-top: 1rem;
     background: #fff;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     border: 3px solid #000;
     padding: 2rem;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -539,7 +764,7 @@
     padding: 4rem;
 
     .stackDisplay {
-      grid-template-columns: 240px 1fr;
+      grid-template-columns: 310px 1fr;
     }
 
     .elementLogo {
@@ -577,16 +802,16 @@
 
 // Testimonials
 .testimonials {
-  // background: #69d2e7;
+  background: #69d2e7;
   color: black;
-  padding: 2rem;
+  padding: 1rem;
   padding-left: 3rem;
 
   .testimonial {
     background: #fff;
-    border-radius: 2rem;
-    border: 3px solid #000;
-    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid #000;
+    padding: 1rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 
@@ -607,10 +832,11 @@
   li {
     font-family: sans-serif;
     font-weight: light;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .client {
+    display: flex;
     align-items: center;
     gap: 1rem;
     // text-decoration: underline;
@@ -621,10 +847,31 @@
       position: relative;
       width: 4rem;
       height: 4rem;
-      overflow: hidden;
+
+      >img {
+        overflow: hidden;
+        border-radius: 5rem;
+      }
+
       margin-bottom: 1rem;
-      border-radius: 2rem;
+      border-radius: 5rem;
     }
+
+    .linkedinImageContainer {
+      position: absolute;
+      bottom: -0.5rem;
+      right: -0.5rem;
+    }
+  }
+}
+
+.heroTestimonials {
+  background-color: white;
+  padding: 0;
+  border-radius: .5rem;
+
+  li {
+    list-style: none;
   }
 }
 
@@ -654,15 +901,16 @@
 
   .testimonialsDesktop {
     display: block;
-    padding: 2rem;
+    // padding: 2rem;
   }
 
   .testimonials {
-    padding: 0;
-
-    .testimonialsMobile {
-      display: none;
-    }
+    // padding: 0;
+    // height: 20rem;
+    // overflow-y: scroll;
+    // .testimonialsMobile {
+    //   display: none;
+    // }
 
     // >div {
     //   position: relative;
@@ -673,11 +921,6 @@
 
     ul {
       list-style: none;
-    }
-
-    li {
-      height: 15rem;
-      margin-right: 2rem;
     }
 
     .client {
@@ -715,12 +958,22 @@
   background: url("/img/bg-pattern.svg") center/cover no-repeat;
   background-color: white;
   color: white;
+
+  .ctaForm {
+    width: 25rem;
+    max-width: calc(100vw - 4rem);
+  }
 }
 
 // Footer section media queries
 @media screen and (min-width: 768px) {
   .footer {
     padding: 4rem;
+
+    .footerColumns {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 
