@@ -13,8 +13,8 @@ import { projects } from "staticdata/projects"
 import Rating from "comp/Rating"
 import technologies from "./technologies"
 import testimonials from "./testimonials"
-import TestimonialsDesktop from "comp/Testimonials"
 import HeroProjectCard from "comp/HeroProjectCard"
+import ContactForm from "comp/ContactForm"
 
 const heroFont = Aldrich({ weight: "400", subsets: ["latin"] })
 
@@ -59,15 +59,7 @@ const Home = () => {
                   website={projects[1].website}
                 />
               </div>
-              <form className={styl.ctaForm}>
-                <label htmlFor='email'>Email</label>
-                <input placeholder='spiderman@gmail.com' id='email' />
-                <label htmlFor='message'>Message</label>
-                <textarea rows={3} placeholder='Hey! I really like your projects!' />
-                <button>
-                  <input type='submit' value='🕊️ Send' />
-                </button>
-              </form>
+              <ContactForm />
             </div>
 
             <div className={styl.heroSocials}>
@@ -211,15 +203,7 @@ const Home = () => {
         <section className={styl.ctaForm2}>
           <div>
             <h2>Want to message me about something?</h2>
-            <form className={styl.ctaForm}>
-              <label htmlFor='email'>Email</label>
-              <input placeholder='spiderman@gmail.com' id='email' />
-              <label htmlFor='message'>Message</label>
-              <textarea rows={3} placeholder='Hey! I really like your projects!' />
-              <button>
-                <input type='submit' value='🕊️ Send' />
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </section>
 
@@ -425,15 +409,7 @@ const Home = () => {
                 </a>
               </div>
               <div className={styl.footerRight}>
-                <form className={styl.ctaForm}>
-                  <label htmlFor='email'>Email</label>
-                  <input placeholder='spiderman@gmail.com' id='email' />
-                  <label htmlFor='message'>Message</label>
-                  <textarea rows={3} placeholder='Hey! I really like your projects!' />
-                  <button>
-                    <input type='submit' value='🕊️ Send' />
-                  </button>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>
