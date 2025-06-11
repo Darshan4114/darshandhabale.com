@@ -263,7 +263,13 @@
     margin: 0;
     // width: 35rem;
     max-width: calc(100vw - 2rem);
-    // height: 19.8rem;
+
+    // width: 100vw;
+    // height: auto;
+
+    video {
+      overflow: hidden;
+    }
   }
 
   .text {
