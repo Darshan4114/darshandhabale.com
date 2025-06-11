@@ -229,8 +229,8 @@
 
       .imageContainer {
         position: relative;
-        width: 3rem;
-        height: 3rem;
+        width: 2rem;
+        height: 2rem;
 
         >img {
           overflow: hidden;
@@ -259,7 +259,7 @@
 
   iframe {
     border-radius: 0.5rem;
-    border: 2px solid black;
+    // border: 2px solid black;
     margin: 0;
     // width: 35rem;
     max-width: calc(100vw - 2rem);
@@ -390,6 +390,7 @@
     iframe {
       width: 35rem;
       height: 19.8rem;
+      border: 2px solid black;
     }
 
     .heroLeft {
