@@ -24,20 +24,57 @@ const Home = () => {
 
   return (
     <>
+      <p
+        style={{
+          visibility: "hidden",
+          height: 0,
+          margin: 0,
+          padding: 0,
+        }}
+      >
+        Impact-Site-Verification: 162dd117-5eac-41c1-96e4-35799a5ca888
+      </p>
       <div className={styl.container}>
         <section className={styl.hero}>
           <div>
-            <svg width="100%" height="100%" viewBox="0 0 800 600" preserveAspectRatio="none" className={styl.svgArt}>
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 800 600"
+              preserveAspectRatio="none"
+              className={styl.svgArt}
+            >
               <defs>
-                <linearGradient id="stripeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient
+                  id="stripeGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
                   <stop offset="0%" stop-color="#ff4500">
-                    <animate attributeName="stop-color" values="#ff4500;#ffa500;#ffff00;#ff4500" dur="10s" repeatCount="indefinite" />
+                    <animate
+                      attributeName="stop-color"
+                      values="#ff4500;#ffa500;#ffff00;#ff4500"
+                      dur="10s"
+                      repeatCount="indefinite"
+                    />
                   </stop>
                   <stop offset="50%" stop-color="#ffa500">
-                    <animate attributeName="stop-color" values="#ffa500;#ffff00;#ff4500;#ffa500" dur="10s" repeatCount="indefinite" />
+                    <animate
+                      attributeName="stop-color"
+                      values="#ffa500;#ffff00;#ff4500;#ffa500"
+                      dur="10s"
+                      repeatCount="indefinite"
+                    />
                   </stop>
                   <stop offset="100%" stop-color="#ffff00">
-                    <animate attributeName="stop-color" values="#ffff00;#ff4500;#ffa500;#ffff00" dur="10s" repeatCount="indefinite" />
+                    <animate
+                      attributeName="stop-color"
+                      values="#ffff00;#ff4500;#ffa500;#ffff00"
+                      dur="10s"
+                      repeatCount="indefinite"
+                    />
                   </stop>
                 </linearGradient>
               </defs>
@@ -45,13 +82,26 @@ const Home = () => {
             </svg>
 
             <div className={styl.heroLeft}>
-              <div style={{ padding: "56.25% 0 0 0", position: "relative", borderRadius: "0.5rem" }}>
+              <div
+                style={{
+                  padding: "56.25% 0 0 0",
+                  position: "relative",
+                  borderRadius: "0.5rem",
+                }}
+              >
                 <iframe
                   src="https://player.vimeo.com/video/1092349736?h=057448aa14&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                   frameborder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                  title="Darshan - Full Stack Developer - Building MVPs - Zero To One"></iframe>
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  title="Darshan - Full Stack Developer - Building MVPs - Zero To One"
+                ></iframe>
               </div>
               <script src="https://player.vimeo.com/api/player.js"></script>
               <div className={styl.heroProject}>
@@ -169,7 +219,7 @@ const Home = () => {
               <Image src="/img/gear2.png" fill objectFit="cover" />
             </div> */}
           </div>
-        </section >
+        </section>
         <div className={styl.crimeTape} />
 
         <section className={styl.projects}>
@@ -347,8 +397,9 @@ const Home = () => {
                 {techStack.map((_tech, idx) => (
                   <button
                     id={idx}
-                    className={`${_tech.name === tech.name && styl.selectedStackElement
-                      } ${styl.stackelement}`}
+                    className={`${
+                      _tech.name === tech.name && styl.selectedStackElement
+                    } ${styl.stackelement}`}
                     onClick={() => {
                       setTech(_tech)
                     }}
@@ -362,8 +413,6 @@ const Home = () => {
           </div>
         </section>
 
-
-
         <div className={styl.crimeTape} />
 
         {/* </div> */}
@@ -374,7 +423,8 @@ const Home = () => {
             <div className={styl.footerColumns}>
               <div className={styl.footerLeft}>
                 <p>
-                  Think you have an exciting project for me? drop me an email at -
+                  Think you have an exciting project for me? drop me an email at
+                  -
                 </p>
                 <p className={styl.emailLine}>
                   <span className={styl.copyBtn}>
@@ -393,9 +443,11 @@ const Home = () => {
                 </p>
                 <br />
                 <p>
-                  Just want a developer friend?
-                  Here is my &nbsp;
-                  <a target="_blank" href="https://www.instagram.com/code_darshan/">
+                  Just want a developer friend? Here is my &nbsp;
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/code_darshan/"
+                  >
                     instagram
                   </a>
                 </p>
@@ -421,7 +473,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-      </div >
+      </div>
     </>
   )
 }
