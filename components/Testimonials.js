@@ -1,8 +1,8 @@
 import testimonials from "app/testimonials"
-import Image from "next/image"
 import React from "react"
 import Slider from "react-slick"
 import Rating from "./Rating"
+import TestimonialClient from "./TestimonialClient"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import styl from "../app/home.module.scss"
@@ -60,27 +60,8 @@ export default function TestimonialsDesktop() {
                 <p className={styl.testimonialText}>
                   “{testimonial.testimonial}”
                 </p>
-                <div className={styl.client}>
-                  <div className={styl.imageContainer}>
-                    <Image
-                      src={testimonial.image}
-                      fill
-                      objectFit="cover"
-                      alt={testimonial.name}
-                    />
-                  </div>
-                  <a href={testimonial.linkedin} target="_blank">
-                    <Image
-                      src="/img/linkedin.png"
-                      height="24"
-                      width="24"
-                      priority
-                      alt="Linkedin"
-                    />
-                  </a>
-                  <p>{testimonial.name}</p>
-                  <Rating />
-                </div>
+                <TestimonialClient testimonial={testimonial} />
+                <Rating />
               </li>
             </div>
           ))}

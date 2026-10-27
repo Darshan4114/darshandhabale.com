@@ -15,6 +15,7 @@ import technologies from "./technologies"
 import testimonials from "./testimonials"
 import HeroProjectCard from "comp/HeroProjectCard"
 import ContactForm from "comp/ContactForm"
+import TestimonialClient from "comp/TestimonialClient"
 
 const heroFont = Aldrich({ weight: "400", subsets: ["latin"] })
 
@@ -184,28 +185,7 @@ const Home = () => {
                       <p className={styl.testimonialText}>
                         “{testimonial.testimonial}”
                       </p>
-                      <a href={testimonial.linkedin} target="_blank">
-                        <div className={styl.client}>
-                          <div className={styl.imageContainer}>
-                            <Image
-                              src={testimonial.image}
-                              fill
-                              objectFit="cover"
-                              alt={testimonial.name}
-                            />
-                            <div className={styl.linkedinImageContainer}>
-                              <Image
-                                src="/img/linkedin.png"
-                                height="24"
-                                width="24"
-                                priority
-                                alt="Linkedin"
-                              />
-                            </div>
-                          </div>
-                          <p>{testimonial.name}</p>
-                        </div>
-                      </a>
+                      <TestimonialClient testimonial={testimonial} />
                     </li>
                   ))}
                 </ul>
@@ -277,26 +257,7 @@ const Home = () => {
                   <p className={styl.testimonialText}>
                     “{testimonial.testimonial}”
                   </p>
-                  <div className={styl.client}>
-                    <div className={styl.imageContainer}>
-                      <Image
-                        src={testimonial.image}
-                        fill
-                        objectFit="cover"
-                        alt={testimonial.name}
-                      />
-                      <div className={styl.linkedinImageContainer}>
-                        <Image
-                          src="/img/linkedin.png"
-                          height="24"
-                          width="24"
-                          priority
-                          alt="Linkedin"
-                        />
-                      </div>
-                    </div>
-                    <p>{testimonial.name}</p>
-                  </div>
+                  <TestimonialClient testimonial={testimonial} />
                 </li>
               ))}
             </ul>
