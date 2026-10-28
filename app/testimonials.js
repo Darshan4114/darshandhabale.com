@@ -72,7 +72,7 @@ const testimonials = [
         "testimonial": "Darshan is a very skilled and professional full stack developer. I am very impressed with his ability to listen to my requirements and walk me through the possibilities. I am very happy with Darshan's work and plan on using him in future projects. He covered all the requirements within the timeline he proposed. You will be impressed as well!",
         "linkedin": "https://www.linkedin.com/in/jesus-m-b06739103/",
         "image": "/testimonials/jesus.jpeg",
-        "projects": []
+        "projects": ["air3x3"]
     },
     {
         "name": "Harshkumar Pasi",
@@ -88,7 +88,7 @@ const testimonials = [
         "testimonial": "Darshan was very enthusiastic and gave some useful solution for the project. The communication was smooth and work were delivered as required.",
         "linkedin": "https://www.linkedin.com/in/looyee-ng/",
         "image": "/testimonials/looyee.jpeg",
-        "projects": []
+        "projects": ["babydojo"]
     }
 ]
 

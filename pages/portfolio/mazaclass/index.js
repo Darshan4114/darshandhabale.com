@@ -81,7 +81,7 @@ export default function mazaclass({ article }) {
           <div className="">
             <h2>Summary</h2>
             <p>
-              MazaClass is a responsive and progressive web application that allows coaching class owners to manage their classes, students, and automate their fee collection with a whatsapp integration.
+              MazaClass is payment and admin software for coaching centres. Students pay through WhatsApp payment links in about 30 seconds, payment reminders go out automatically, and one dashboard replaces the spreadsheets for fees, attendance and student records. I built it after talking to 50+ educators. One centre went from 3 hours a week chasing payments to about 10 minutes.
             </p>
           </div>
         </section>
@@ -100,11 +100,11 @@ export default function mazaclass({ article }) {
           <div className="">
             <h2>Key Features</h2>
             <ul>
-              <li>Student Information Management</li>
-              <li>Course Management</li>
-              <li>Fees Management and Automated collection</li>
-              <li>Whatsapp Integration</li>
-              <li>Responsive Design</li>
+              <li>WhatsApp payment links</li>
+              <li>Automated payment reminders</li>
+              <li>Attendance tracking</li>
+              <li>Student records and fee tracking in one dashboard</li>
+              <li>Cloud backup</li>
               <li>Progressive Web Application</li>
             </ul>
           </div>

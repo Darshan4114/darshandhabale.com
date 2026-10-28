@@ -31,12 +31,12 @@ export const projects = [
     period: 'Jul 2025 – Present',
     role: 'Founder & Full Stack Developer',
     summary:
-      'A CRM and revenue engine for coaching centres: lead pipelines, attendance, automated fee collection and WhatsApp payments, saving admins 10+ hours a week.',
+      'Payment and admin software for coaching centres. Students pay through WhatsApp payment links in about 30 seconds, reminders go out automatically, and one dashboard replaces the spreadsheets. I built it after talking to 50+ educators.',
     points: [
-      'Student management',
-      'Automated fee collection',
-      'Class management',
-      'Whatsapp integration',
+      'WhatsApp payment links',
+      'Automated payment reminders',
+      'Attendance and student records',
+      'One dashboard instead of spreadsheets',
     ],
     video: '/img/portfolio/mazaclass/mazaclass.webm',
     website: 'https://app.mazaclass.com/'
@@ -67,7 +67,7 @@ export const projects = [
     period: 'Dec 2023 – Jul 2025',
     role: 'Cloud & Backend Developer',
     summary:
-      'Built the core backend of VentureMind.ai, a multi-modal AI platform with a model orchestration layer and unified token billing, plus an AI site generator that shipped 100+ production websites.',
+      'VentureMind.ai brings AI tools, blockchain integration and robotics to individuals and businesses. At Crazico I built its core backend: a multi-modal model orchestration layer with unified token billing, real-time voice agents, and an AI site generator that shipped 100+ production websites.',
     points: [
       'Multi-modal AI orchestration',
       'Unified token billing',
@@ -85,7 +85,7 @@ export const projects = [
     period: 'Sep 2022 – Mar 2023',
     role: 'Frontend Developer',
     summary:
-      'A fintech LC discounting platform with three dashboards (business, bank and admin) and role-specific flows that give businesses same-day working capital.',
+      'Tredzy gets Indian businesses same-day working capital by discounting domestic Letters of Credit through 40+ partner banks. I built the platform behind it: three role-based dashboards where businesses submit LCs, admins vet the documents and banks discount them.',
     points: [
       'Multitenancy',
       'KYC approval process',
@@ -100,6 +100,7 @@ export const projects = [
     id: 6,
     slug: 'air3x3',
     title: 'Air3x3: The Basketball Tournament Application',
+    client: 'Upwork client',
     points: [
       'Custom Booking Engine',
       'Stripe integration',
@@ -117,7 +118,7 @@ export const projects = [
     period: 'Dec 2020 – Jun 2022',
     role: 'Salesforce Developer',
     summary:
-      'A configurable workflow rule engine in Apex for RocketLoans, a US loan origination platform on Salesforce, with a reusable LWC component library for its UI. The engine was reused across several client projects.',
+      'Rocket Loans is the lending arm of Rocket Companies in the US. At Koncero I built a configurable Apex workflow rule engine for its loan origination on Salesforce, plus a reusable LWC component library for the UI. The engine was later reused across other client projects.',
     points: [
       'Configurable Apex workflow rule engine',
       'Reusable LWC component library',
@@ -164,9 +165,9 @@ export const projects = [
     client: 'MirSolutions',
     role: 'Developer',
     summary:
-      'Reviewed the Smart Tutor product end to end, then expanded my scope to help build the MirSolutions.in website, spotting pitfalls before it went operational.',
+      'MIR Solutions makes SmartTutor, a Windows AI tutor that answers from the student’s own textbook, in 11 Indian languages, with their data kept on their own machine. I reviewed the product end to end, then expanded my scope to help build the MirSolutions.in website, catching pitfalls before it went live.',
     points: [
-      'Product review of Smart Tutor',
+      'End-to-end review of SmartTutor, an on-device AI tutor',
       'MirSolutions.in website',
       'Pre-launch pitfalls caught'
     ],
@@ -222,6 +223,8 @@ export const projects = [
     slug: 'uncodez',
     title: 'Uncodez.io website: Web Development Agency Website',
     client: 'Uncodez',
+    summary:
+      'The website for Uncodez, the web development agency I worked with alongside Harshkumar Pasi.',
     points: [
       'Full page scroll design',
       'Beautiful Animations',
@@ -248,6 +251,7 @@ export const projects = [
     id: 16,
     slug: 'babydojo',
     title: 'Babydojo: The Baby Care Application',
+    client: 'Upwork client',
     points: [
       'Beautiful animations',
       'Social Auth',
