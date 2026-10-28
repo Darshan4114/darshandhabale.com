@@ -2,6 +2,9 @@
   "name": "nextjs-mdx-blog-starter",
   "description": "A blog to learn JavaScript, React.js, Node.js, Next.js and much more. By- Darshan Dhabale",
   "version": "0.2.4",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next",
     "dev-https": "local-ssl-proxy --source 3001 --target 3000 next",
