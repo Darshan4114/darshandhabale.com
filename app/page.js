@@ -92,8 +92,10 @@ const Home = () => {
               <h1 className={`${styl.heroTitle} ${heroFont.className}`}>
                 Darshan Dhabale
               </h1>
-              <p className={styl.heroTagline}>
-                Full stack developer · building MVPs, zero to one
+              <p className={styl.heroTagline}>Full-stack engineer · Tech lead</p>
+              <p className={styl.heroPitch}>
+                5 years shipping and running production software: AI
+                platforms, fintech, and my own SaaS.
               </p>
             </div>
 

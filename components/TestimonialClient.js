@@ -37,7 +37,9 @@ export default function TestimonialClient({ testimonial }) {
       <div>
         <p>{testimonial.name}</p>
         {testimonial.title && (
-          <p className={styl.clientTitle}>{testimonial.title}</p>
+          <p className={styl.clientTitle} title={testimonial.title}>
+            {testimonial.title}
+          </p>
         )}
       </div>
     </div>

@@ -160,7 +160,7 @@ export const projects = [
   {
     id: 10,
     slug: 'smart-tutor',
-    title: 'Smart Tutor and MirSolutions.in',
+    title: 'Smart Tutor: Product Review and the MirSolutions.in Website',
     client: 'MirSolutions',
     role: 'Developer',
     summary:

@@ -1,6 +1,6 @@
 export const metadata = {
-  title: ' React developer for hire | React/JavaScript developer with 4 years of experience | MERN stack | React.js, Node.js, Next.js, Django, Python',
-  description: 'React developer with 4 years of experience in MERN stack. Tech stack - React.js, Node.js, Next.js, Django, Python and Firebase. Darshan Dhabale - https://linkedin.com/in/dhabale | Email: dev@darshandhabale.com',
+  title: 'Darshan Dhabale | Full-stack engineer & tech lead | AI platforms, fintech, SaaS',
+  description: 'Full-stack engineer and tech lead with 5 years shipping production software: the backend of VentureMind.ai, fintech at Tredzy, Salesforce lending workflows, and MazaClass, my own SaaS. Node.js, React, Go, AWS. Email: dev@darshandhabale.com',
 }
 
 import "../styles/globals.css";
