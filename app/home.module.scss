@@ -228,6 +228,8 @@
       font-size: 0.4rem;
 
       .imageContainer {
+
+        flex-shrink: 0;
         position: relative;
         width: 2rem;
         height: 2rem;
@@ -852,6 +854,8 @@
     font-size: 0.4rem;
 
     .imageContainer {
+
+      flex-shrink: 0;
       position: relative;
       width: 4rem;
       height: 4rem;
@@ -959,6 +963,8 @@
       align-items: center;
 
       .imageContainer {
+
+        flex-shrink: 0;
         display: flex;
         align-items: flex-end;
         gap: 1rem;
@@ -1015,5 +1021,15 @@
 
   100% {
     transform: translateY(0rem);
+  }
+}
+.testimonialProjects {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+
+  a {
+    text-decoration: underline;
+    font-weight: bold;
   }
 }

@@ -2,10 +2,12 @@ import Head from "next/head"
 import Image from "next/image"
 import Header from "comp/Header"
 import Footer from "comp/Footer"
+import CaseStudyExtras from "comp/CaseStudyExtras"
+import { getCaseStudyArticle } from "src/caseStudies"
 import styl from "./air3x3.module.scss"
 import { useState, useEffect } from "react"
 
-export default function Air3x3() {
+export default function Air3x3({ article }) {
   const [isDesktop, setIsDesktop] = useState(false)
   useEffect(() => {
     function checkIfDesktop() {
@@ -239,8 +241,13 @@ export default function Air3x3() {
             </div>
           </section>
         </div>
+        <CaseStudyExtras slug="air3x3" article={article} />
         <Footer />
       </div>
     </>
   )
+}
+
+export async function getStaticProps() {
+  return { props: { article: getCaseStudyArticle("air3x3") } }
 }

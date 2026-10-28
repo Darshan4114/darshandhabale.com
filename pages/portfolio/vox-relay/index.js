@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Header from "comp/Header";
 import Footer from "comp/Footer";
+import CaseStudyExtras from "comp/CaseStudyExtras"
+import { getCaseStudyArticle } from "src/caseStudies"
 import styl from "./meetloom.module.scss";
 import { useState, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -70,7 +72,7 @@ const images = [
   }
 ];
 
-export default function MeetLoom() {
+export default function MeetLoom({ article }) {
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
@@ -155,8 +157,13 @@ export default function MeetLoom() {
             </ol>
           </div>
         </section>
+        <CaseStudyExtras slug="vox-relay" article={article} />
         <Footer />
       </div >
     </>
   )
+}
+
+export async function getStaticProps() {
+  return { props: { article: getCaseStudyArticle("vox-relay") } }
 }

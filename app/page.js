@@ -16,6 +16,12 @@ import testimonials from "./testimonials"
 import HeroProjectCard from "comp/HeroProjectCard"
 import ContactForm from "comp/ContactForm"
 import TestimonialClient from "comp/TestimonialClient"
+import TestimonialProjects from "comp/TestimonialProjects"
+
+const vouchersFor = (slug) =>
+  testimonials
+    .filter((testimonial) => testimonial.projects?.includes(slug))
+    .map((testimonial) => testimonial.name)
 
 const heroFont = Aldrich({ weight: "400", subsets: ["latin"] })
 
@@ -83,28 +89,14 @@ const Home = () => {
             </svg>
 
             <div className={styl.heroLeft}>
-              <div
-                style={{
-                  padding: "56.25% 0 0 0",
-                  position: "relative",
-                  borderRadius: "0.5rem",
-                }}
-              >
-                <iframe
-                  src="https://player.vimeo.com/video/1092349736?h=057448aa14&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                  }}
-                  title="Darshan - Full Stack Developer - Building MVPs - Zero To One"
-                ></iframe>
+              <div className={styl.text}>
+                <h1 className={`${styl.name} ${heroFont.className}`}>
+                  <span>D</span>arshan Dhabale
+                </h1>
+                <p className={styl.desg}>
+                  Full stack developer · building MVPs, zero to one
+                </p>
               </div>
-              <script src="https://player.vimeo.com/api/player.js"></script>
               <div className={styl.heroProject}>
                 <HeroProjectCard
                   id={projects[1].id}
@@ -186,6 +178,7 @@ const Home = () => {
                         “{testimonial.testimonial}”
                       </p>
                       <TestimonialClient testimonial={testimonial} />
+                      <TestimonialProjects testimonial={testimonial} />
                     </li>
                   ))}
                 </ul>
@@ -222,7 +215,9 @@ const Home = () => {
                 .slice(0, 3)
                 .map((project) => (
                   <ProjectCard
+                    key={project.id}
                     id={project.id}
+                    vouchedBy={vouchersFor(project.slug)}
                     title={project.title}
                     image={project.image}
                     video={project.video}
@@ -258,6 +253,7 @@ const Home = () => {
                     “{testimonial.testimonial}”
                   </p>
                   <TestimonialClient testimonial={testimonial} />
+                  <TestimonialProjects testimonial={testimonial} />
                 </li>
               ))}
             </ul>

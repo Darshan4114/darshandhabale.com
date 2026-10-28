@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styl from './ProjectCard.module.scss';
 
-function ProjectCard({ id, title, image, video, description, points, link, website }) {
+function ProjectCard({ id, title, image, video, description, points, link, website, vouchedBy = [] }) {
   return (
     <div className={styl.projectCard} key={id}>
       <div className={styl.projectImage}>
@@ -14,6 +14,11 @@ function ProjectCard({ id, title, image, video, description, points, link, websi
             alt={title}
             sizes="(max-width: 768px) 70vw, 20vw"
           />
+        )}
+        {!image && !video && (
+          <div className={styl.placeholder}>
+            <span>{title.split(':')[0]}</span>
+          </div>
         )}
         {video && (
           <video
@@ -38,6 +43,11 @@ function ProjectCard({ id, title, image, video, description, points, link, websi
             <ul className={styl.projectPoints}>
               {points.map((point, idx) => (<li key={`point-${idx}`}>{point}</li>))}
             </ul>
+          )}
+          {vouchedBy.length > 0 && (
+            <p className={styl.vouchedBy}>
+              ★ Vouched for by {vouchedBy.join(', ')}
+            </p>
           )}
         </div>
         <div className={styl.projectLinks}>

@@ -2,11 +2,13 @@ import Head from "next/head"
 import Image from "next/image"
 import Header from "comp/Header"
 import Footer from "comp/Footer"
+import CaseStudyExtras from "comp/CaseStudyExtras"
+import { getCaseStudyArticle } from "src/caseStudies"
 import ScrollIcon from "comp/ScrollIcon"
 import styl from "styl/babydojo.module.scss"
 import { useState, useEffect } from "react"
 
-export default function Babydojo () {
+export default function Babydojo({ article }) {
   const [isDesktop, setIsDesktop] = useState(false)
   useEffect(() => {
     function checkIfDesktop () {
@@ -248,8 +250,13 @@ export default function Babydojo () {
             </div>
           </section>
         </section>
+        <CaseStudyExtras slug="babydojo" article={article} />
         <Footer />
       </div>
     </>
   )
+}
+
+export async function getStaticProps() {
+  return { props: { article: getCaseStudyArticle("babydojo") } }
 }
