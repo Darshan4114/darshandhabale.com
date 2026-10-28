@@ -4,8 +4,9 @@ import Header from "comp/Header";
 import Footer from "comp/Footer";
 import CaseStudyExtras from "comp/CaseStudyExtras"
 import { getCaseStudyArticle } from "src/caseStudies"
+import { getProject } from "staticdata/projects"
 import styl from "./kabbie.module.scss";
-import { useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -13,26 +14,28 @@ const images = [
   {
     id: 1,
     src: '/img/portfolio/kabbie/kabbie-1.png',
-    alt: 'Chat Page',
+    alt: 'Kabbie screenshot 1',
   },
   {
     id: 2,
     src: '/img/portfolio/kabbie/kabbie-2.png',
-    alt: 'Chat Page',
+    alt: 'Kabbie screenshot 2',
   },
   {
     id: 3,
     src: '/img/portfolio/kabbie/kabbie-3.png',
-    alt: 'Chat Page',
+    alt: 'Kabbie screenshot 3',
   },
   {
     id: 4,
     src: '/img/portfolio/kabbie/kabbie-4.png',
-    alt: 'Chat Page',
+    alt: 'Kabbie screenshot 4',
   }
 ];
 
 export default function kabbie({ article }) {
+  const project = getProject("kabbie")
+  const meta = [project.client, project.role, project.period].filter(Boolean)
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
@@ -53,7 +56,7 @@ export default function kabbie({ article }) {
     <>
       <div className={styl.container}>
         <Head>
-          <title>DarshanDev Project: Kabbie Chat and Video Conferencing Application</title>
+          <title>DarshanDev Project: Kabbie - Cab management system</title>
         </Head>
         <Header />
         <section className={styl.hero}>
@@ -63,11 +66,22 @@ export default function kabbie({ article }) {
                 Kabbie
               </h1>
               <p>Cab management system</p>
+              {meta.length > 0 && (
+                <p className={styl.meta}>
+                  {meta.map((item, idx) => (
+                    <Fragment key={item}>
+                      {idx > 0 && " · "}
+                      <span>{item}</span>
+                    </Fragment>
+                  ))}
+                </p>
+              )}
             </div>
             <div className={styl.heroImage}>
               <Image
                 src="/img/portfolio/kabbie/hero.svg"
                 fill
+                alt="Kabbie illustration"
               />
             </div>
           </div>
@@ -82,14 +96,16 @@ export default function kabbie({ article }) {
         </section>
 
         <section className={styl.carousel}>
-          <Carousel>
-            {images.length > 0 && images.map((image) => (
-              <div key={image.id}>
-                <img src={image.src} />
-                <p className="legend">{image.alt}</p>
-              </div>
-            ))}
-          </Carousel>
+          <div>
+            <h2>Screenshots</h2>
+            <Carousel showThumbs={false} showStatus={false}>
+              {images.map((image) => (
+                <div key={image.id}>
+                  <img src={image.src} alt={image.alt} />
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </section>
         <section className={styl.features}>
           <div className="">
@@ -116,6 +132,15 @@ export default function kabbie({ article }) {
           </div>
         </section>
         <CaseStudyExtras slug="kabbie" article={article} />
+        {project.website && (
+          <section className={styl.links}>
+            <div>
+              <a href={project.website} target="_blank" rel="noreferrer">
+                Visit site →
+              </a>
+            </div>
+          </section>
+        )}
         <Footer />
       </div >
     </>

@@ -160,7 +160,7 @@
 }
 
 .summary {
-  margin: 1rem;
+  padding: 1rem;
 }
 
 .imgContainer {
@@ -177,7 +177,6 @@
 
 .techStack {
   padding: 1rem;
-  margin-left: 1em;
 
   .imgContainer {
     min-width: 10rem;
@@ -199,9 +198,7 @@
 }
 
 .features {
-  margin: 0 auto;
-  margin-left: 1em;
-  padding: 1em;
+  padding: 1rem;
 
   .feature {
     margin-bottom: 1em;
@@ -263,5 +260,86 @@
     .text {
       order: unset;
     }
+  }
+}
+
+// Hero box matches the illustration's 1.6:1 shape, centred on phone.
+.hero .heroImage {
+  width: 18rem;
+  max-width: 100%;
+  height: 11.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .hero .heroImage {
+    width: 25rem;
+    height: 15.62rem;
+    margin: 0;
+  }
+
+  .hero>div {
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero .heroImage {
+    width: 30rem;
+    height: 18.75rem;
+  }
+}
+
+.hero .meta {
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+
+  span {
+    white-space: nowrap;
+  }
+}
+
+.features ul {
+  padding-left: 1.5rem;
+}
+
+// Tech stack as chips, matching the template pages.
+.container .techStack ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  li {
+    margin: 0;
+    padding: 0.35rem 0.75rem;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    background: #fff;
+    font-family: "Fira Code", monospace;
+    font-size: 0.9rem;
+  }
+}
+
+.techStack>div {
+  border-bottom: none;
+}
+
+.carousel {
+  padding: 1rem;
+}
+
+.links {
+  padding: 1rem 1rem 3rem;
+
+  a {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    background: yellow;
+    font-weight: bold;
   }
 }

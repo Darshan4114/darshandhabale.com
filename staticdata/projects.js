@@ -1,6 +1,7 @@
 // Single source of truth for the portfolio.
 // Every project gets a case study at /portfolio/<slug>.
 //  - `talkingHead`: Vimeo/YouTube embed URL for the case study video (optional).
+//  - `clientWebsite`: optional link for the client name on the case study.
 //  - `imageDir`: folder in /public/img/portfolio holding `<imageDir>-N.png` screenshots.
 //  - The written article lives in src/mdx/case-studies/<slug>.mdx (optional).
 //  - Testimonials link here through their `projects` field in app/testimonials.js.
@@ -30,6 +31,7 @@ export const projects = [
     client: 'My own SaaS',
     period: 'Jul 2025 – Present',
     role: 'Founder & Full Stack Developer',
+    stack: ['Go', 'React'],
     summary:
       'Payment and admin software for coaching centres. Students pay through WhatsApp payment links in about 30 seconds, reminders go out automatically, and one dashboard replaces the spreadsheets. I built it after talking to 50+ educators.',
     points: [
@@ -62,19 +64,20 @@ export const projects = [
   {
     id: 4,
     slug: 'crazico',
-    title: 'Crazico: VentureMind.ai and an AI Site Generator',
-    client: 'Crazico',
+    title: 'Crazi Co: VentureMind.ai and an AI Site Generator',
+    client: 'Crazi Co',
+    clientWebsite: 'https://crazi.co/',
     period: 'Dec 2023 – Jul 2025',
     role: 'Cloud & Backend Developer',
     summary:
-      'VentureMind.ai brings AI tools, blockchain integration and robotics to individuals and businesses. At Crazico I built its core backend: a multi-modal model orchestration layer with unified token billing, real-time voice agents, and an AI site generator that shipped 100+ production websites.',
+      'Crazi Co is a tech agency in Sharjah, UAE that designs and builds digital products for startups and scale-ups. There I built the core backend of VentureMind.ai, a platform bringing AI tools, blockchain integration and robotics to individuals and businesses: a multi-modal model orchestration layer with unified token billing and real-time voice agents. I also built an AI site generator that shipped 100+ production websites.',
     points: [
       'Multi-modal AI orchestration',
       'Unified token billing',
       'Real-time voice agents (ElevenLabs, OpenAI)',
       'AI site generator: 100+ sites, 80% less dev time'
     ],
-    stack: ['Node.js', 'OpenAI API', 'ElevenLabs', 'AWS', 'Redis'],
+    stack: ['Node.js', 'Express.js microservices', 'MongoDB', 'OpenAI API', 'ElevenLabs'],
     website: 'https://www.venturemind.ai/'
   },
   {
@@ -162,7 +165,8 @@ export const projects = [
     id: 10,
     slug: 'smart-tutor',
     title: 'Smart Tutor: Product Review and the MirSolutions.in Website',
-    client: 'MirSolutions',
+    client: 'MIR Solutions',
+    clientWebsite: 'https://mirsolutions.in/',
     role: 'Developer',
     summary:
       'MIR Solutions makes SmartTutor, a Windows AI tutor that answers from the student’s own textbook, in 11 Indian languages, with their data kept on their own machine. I reviewed the product end to end, then expanded my scope to help build the MirSolutions.in website, catching pitfalls before it went live.',
@@ -180,6 +184,8 @@ export const projects = [
     client: 'Hexanovate',
     period: '2022 – 2023',
     role: 'Frontend Developer',
+    summary:
+      'A marketing landing page for Clear Claim, a tax manager, built at Hexanovate: a modern, sleek layout with pricing cards and an animated step flow that walks visitors through how it works.',
     points: [
       'Modern sleek landing page',
       'Pricing cards',
@@ -196,6 +202,8 @@ export const projects = [
     client: 'Hexanovate',
     period: '2022 – 2023',
     role: 'Frontend Developer',
+    summary:
+      'A lead-generation landing page for the School of Fashion Design and Innovation, built at Hexanovate, with micro-animations and an enquiry form that sends leads straight into a Google Sheet.',
     points: [
       'Microanimations',
       'Lead form linked with google sheet',
@@ -209,6 +217,8 @@ export const projects = [
     id: 13,
     slug: 'tap-academy',
     title: 'Tap Academy: Code Education Platform Website',
+    summary:
+      'The website for Tap Academy, a coding education platform, with custom animations and its courses, blog and events served from Strapi CMS.',
     points: [
       'Beautiful custom animations',
       'Responsive design',
@@ -221,8 +231,9 @@ export const projects = [
   {
     id: 14,
     slug: 'uncodez',
-    title: 'Uncodez.io website: Web Development Agency Website',
+    title: 'Uncodez.io: Web Development Agency Website',
     client: 'Uncodez',
+    role: 'Web Developer',
     summary:
       'The website for Uncodez, the web development agency I worked with alongside Harshkumar Pasi.',
     points: [
@@ -236,7 +247,9 @@ export const projects = [
   {
     id: 15,
     slug: 'dypatil',
-    title: 'D.Y. Patil University Exam Management System',
+    title: 'D.Y. Patil University: Exam Management System',
+    summary:
+      'An exam management system for D.Y. Patil University that handles students, courses and exams, and generates the university ledger and student marksheets as PDFs.',
     points: [
       'Students, Courses and Exams',
       'University Ledger Generation',

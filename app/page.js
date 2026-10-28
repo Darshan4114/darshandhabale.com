@@ -59,7 +59,7 @@ const Home = () => {
                   x2="100%"
                   y2="100%"
                 >
-                  <stop offset="0%" stop-color="#ff4500">
+                  <stop offset="0%" stopColor="#ff4500">
                     <animate
                       attributeName="stop-color"
                       values="#ff4500;#ffa500;#ffff00;#ff4500"
@@ -67,7 +67,7 @@ const Home = () => {
                       repeatCount="indefinite"
                     />
                   </stop>
-                  <stop offset="50%" stop-color="#ffa500">
+                  <stop offset="50%" stopColor="#ffa500">
                     <animate
                       attributeName="stop-color"
                       values="#ffa500;#ffff00;#ff4500;#ffa500"
@@ -75,7 +75,7 @@ const Home = () => {
                       repeatCount="indefinite"
                     />
                   </stop>
-                  <stop offset="100%" stop-color="#ffff00">
+                  <stop offset="100%" stopColor="#ffff00">
                     <animate
                       attributeName="stop-color"
                       values="#ffff00;#ff4500;#ffa500;#ffff00"
@@ -249,8 +249,8 @@ const Home = () => {
             <a name="testimonials"></a>
             <h2 className={styl.sectionHeading}>Testimonials</h2>
             <ul>
-              {testimonials.map((testimonial, idx) => (
-                <li className={styl.testimonial} id={idx}>
+              {testimonials.map((testimonial) => (
+                <li className={styl.testimonial} key={testimonial.name}>
                   <Rating />
                   <p className={styl.testimonialText}>
                     “{testimonial.testimonial}”
@@ -317,7 +317,7 @@ const Home = () => {
                     width={200}
                     height={200}
                     href="/img/ball.png"
-                    clip-path="url(#myCircle)"
+                    clipPath="url(#myCircle)"
                   />
                   <defs>
                     <linearGradient
@@ -356,6 +356,7 @@ const Home = () => {
               <div className={styl.stackelements}>
                 {techStack.map((_tech, idx) => (
                   <button
+                    key={_tech.name}
                     id={idx}
                     className={`${
                       _tech.name === tech.name && styl.selectedStackElement

@@ -3,28 +3,13 @@ import { useRouter } from "next/router"
 import { MDXProvider } from "@mdx-js/react"
 import Logo from "comp/Logo"
 import styl from "./Header.module.scss"
-import { useState, useEffect, useContext } from "react"
+import { useContext } from "react"
 import ThemeToggler from 'comp/ThemeToggler'
 import { ThemeContext } from "comp/ThemeContext"
 
 const Header = (props) => {
-  const [showNavUl, setShowNavUl] = useState(false)
   const { theme, toggleTheme } = useContext(ThemeContext);
   const router = useRouter()
-  useEffect(() => {
-    function resetNavUl () {
-      if (window.innerWidth < 750) {
-        setShowNavUl(false)
-      } else {
-        setShowNavUl(true)
-      }
-    }
-    // if (props.theme !== theme) { toggleTheme() };
-    resetNavUl()
-    window.addEventListener("resize", () => {
-      resetNavUl()
-    })
-  }, [])
   return (
     <MDXProvider>
       <div
@@ -32,37 +17,35 @@ const Header = (props) => {
           } ${theme === 'dark' && styl.darkmode}`}
       >
         <Logo darkmode={theme === 'dark'} />
-        {showNavUl && (
-          <ul className={styl.navUl}>
-            {router.pathname !== "/" && (
-              <li>
-                <Link href="/">
-                  about
-                </Link>
-              </li>
-            )}
-            {router.pathname !== "/portfolio" && (
-              <li>
-                <Link href="/portfolio">
-                  portfolio
-                </Link>
-              </li>
-            )}
-            {router.pathname !== "/blog" && (
-              <li>
-                <Link href="/blog">
-                  blog
-                </Link>
-              </li>
-            )}
+        <ul className={styl.navUl}>
+          {router.pathname !== "/" && (
             <li>
-              <Link target="_blank" href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
-                youtube
+              <Link href="/">
+                about
               </Link>
             </li>
-            {/* <ThemeToggler /> */}
-          </ul>
-        )}
+          )}
+          {router.pathname !== "/portfolio" && (
+            <li>
+              <Link href="/portfolio">
+                portfolio
+              </Link>
+            </li>
+          )}
+          {router.pathname !== "/blog" && (
+            <li>
+              <Link href="/blog">
+                blog
+              </Link>
+            </li>
+          )}
+          <li>
+            <Link target="_blank" href="https://www.youtube.com/channel/UC77DrmHbTucUG_IPuAujnHw">
+              youtube
+            </Link>
+          </li>
+          {/* <ThemeToggler /> */}
+        </ul>
       </div>
     </MDXProvider>
   )

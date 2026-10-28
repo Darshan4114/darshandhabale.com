@@ -3,16 +3,21 @@ export default function Footer() {
     <footer
       style={{
         background: "#222433",
-        fontSize: "0.7rem",
         color: "white",
-        textAlign: "center",
-        padding: "1em",
+        height: "3rem",
+        boxSizing: "border-box",
+        padding: "0 1rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         position: "absolute",
         bottom: "0",
         width: "100%",
       }}
     >
-      <p>DarshanDev &copy; {new Date().getFullYear()}</p>
+      <p style={{ fontSize: "0.9rem", fontFamily: "sans-serif", margin: 0 }}>
+        DarshanDev &copy; {new Date().getFullYear()}
+      </p>
     </footer>
   )
 }

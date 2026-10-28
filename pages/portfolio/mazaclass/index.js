@@ -4,8 +4,9 @@ import Header from "comp/Header";
 import Footer from "comp/Footer";
 import CaseStudyExtras from "comp/CaseStudyExtras"
 import { getCaseStudyArticle } from "src/caseStudies"
+import { getProject } from "staticdata/projects"
 import styl from "./mazaclass.module.scss";
-import { useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -13,31 +14,33 @@ const images = [
   {
     id: 1,
     src: '/img/portfolio/mazaclass/mazaclass-1.png',
-    alt: 'Chat Page',
+    alt: 'MazaClass screenshot 1',
   },
   {
     id: 2,
     src: '/img/portfolio/mazaclass/mazaclass-2.png',
-    alt: 'Chat Page',
+    alt: 'MazaClass screenshot 2',
   },
   {
     id: 3,
     src: '/img/portfolio/mazaclass/mazaclass-3.png',
-    alt: 'Chat Page',
+    alt: 'MazaClass screenshot 3',
   },
   {
     id: 4,
     src: '/img/portfolio/mazaclass/mazaclass-4.png',
-    alt: 'Chat Page',
+    alt: 'MazaClass screenshot 4',
   },
   {
     id: 5,
     src: '/img/portfolio/mazaclass/mazaclass-5.png',
-    alt: 'Chat Page',
+    alt: 'MazaClass screenshot 5',
   }
 ];
 
 export default function mazaclass({ article }) {
+  const project = getProject("mazaclass")
+  const meta = [project.client, project.role, project.period].filter(Boolean)
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
@@ -68,11 +71,22 @@ export default function mazaclass({ article }) {
                 MazaClass
               </h1>
               <p>Coaching class management system</p>
+              {meta.length > 0 && (
+                <p className={styl.meta}>
+                  {meta.map((item, idx) => (
+                    <Fragment key={item}>
+                      {idx > 0 && " · "}
+                      <span>{item}</span>
+                    </Fragment>
+                  ))}
+                </p>
+              )}
             </div>
             <div className={styl.heroImage}>
               <Image
                 src="/img/portfolio/mazaclass/hero.svg"
                 fill
+                alt="MazaClass illustration"
               />
             </div>
           </div>
@@ -87,14 +101,16 @@ export default function mazaclass({ article }) {
         </section>
 
         <section className={styl.carousel}>
-          <Carousel>
-            {images.length > 0 && images.map((image) => (
-              <div key={image.id}>
-                <img src={image.src} />
-                <p className="legend">{image.alt}</p>
-              </div>
-            ))}
-          </Carousel>
+          <div>
+            <h2>Screenshots</h2>
+            <Carousel showThumbs={false} showStatus={false}>
+              {images.map((image) => (
+                <div key={image.id}>
+                  <img src={image.src} alt={image.alt} />
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </section>
         <section className={styl.features}>
           <div className="">
@@ -113,14 +129,21 @@ export default function mazaclass({ article }) {
           <div className="">
             <h2>Tech Stack</h2>
             <ol>
-              <li>Next.js</li>
-              <li>Tailwind.css</li>
-              <li>AWS</li>
-              <li>PostgreSQL</li>
+              <li>Go</li>
+              <li>React</li>
             </ol>
           </div>
         </section>
         <CaseStudyExtras slug="mazaclass" article={article} />
+        {project.website && (
+          <section className={styl.links}>
+            <div>
+              <a href={project.website} target="_blank" rel="noreferrer">
+                Visit site →
+              </a>
+            </div>
+          </section>
+        )}
         <Footer />
       </div >
     </>

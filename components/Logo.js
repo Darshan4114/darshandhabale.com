@@ -28,13 +28,13 @@ export default function Logo (props) {
         }}
       >
         {logoSize === "small" ? (
-          <Image src="/img/logo.svg" height="30" width="30" />
+          <Image src="/img/logo.svg" height="30" width="30" alt="DarshanDev" />
         ) : (
           <>
             {/* {props.darkmode ? (
-              <Image src="/img/logo_dark.svg" height="42" width="100" />
+              <Image src="/img/logo_dark.svg" height="42" width="100" alt="DarshanDev" />
             ) : ( */}
-            <Image src="/img/full_logo.svg" height="42" width="100" />
+            <Image src="/img/full_logo.svg" height="42" width="100" alt="DarshanDev" />
             {/* )} */}
           </>
         )}

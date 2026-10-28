@@ -45,3 +45,89 @@ blockquote {
 .fp-watermark {
   display: none;
 }
+/* Screenshot carousels (react-responsive-carousel) on every case study:
+   bold frame, fixed 2:1 slides, site-styled dots and arrows. */
+.carousel-root .carousel.carousel-slider {
+  padding-bottom: 2.25rem;
+}
+
+.carousel-root .slider-wrapper {
+  border: 3px solid #000;
+  border-radius: 0.75rem;
+  background: #f2f2f2;
+}
+
+.carousel-root .carousel .slide {
+  background: transparent;
+}
+
+.carousel-root .carousel .slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+}
+
+.carousel-root .carousel .carousel-status,
+.carousel-root .carousel .slide .legend {
+  display: none;
+}
+
+.carousel-root .carousel .control-dots {
+  margin: 0;
+  bottom: 0.25rem;
+}
+
+.carousel-root .carousel .control-dots .dot {
+  background: #fff;
+  border: 2px solid #000;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  opacity: 1;
+  box-shadow: none;
+}
+
+.carousel-root .carousel .control-dots .dot.selected,
+.carousel-root .carousel .control-dots .dot:hover {
+  background: yellow;
+}
+
+.carousel-root .carousel.carousel-slider .control-arrow {
+  top: calc(50% - 2.375rem);
+  bottom: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 0.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: yellow;
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+  opacity: 1;
+}
+
+.carousel-root .carousel.carousel-slider .control-arrow:hover {
+  background: #ffe600;
+}
+
+.carousel-root .carousel .control-prev.control-arrow:before {
+  margin: 0;
+  border-right-color: #000;
+}
+
+.carousel-root .carousel .control-next.control-arrow:before {
+  margin: 0;
+  border-left-color: #000;
+}
+
+@media screen and (max-width: 767px) {
+  .carousel-root .carousel.carousel-slider .control-arrow {
+    top: calc(50% - 2rem);
+    width: 2rem;
+    height: 2rem;
+    margin: 0 0.25rem;
+  }
+}

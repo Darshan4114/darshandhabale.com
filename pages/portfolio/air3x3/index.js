@@ -28,7 +28,7 @@ export default function Air3x3({ article }) {
         <Head>
           <title>DarshanDev Project: Air3x3</title>
         </Head>
-        <Header paddingClass="pr15" />
+        <Header />
         <section className={styl.landing}>
           <div>
             <h1>
@@ -37,6 +37,7 @@ export default function Air3x3({ article }) {
             </h1>
             <div className={styl.heroImage}>
               <Image
+                alt="hero"
                 src="/img/portfolio/air3x3/hero.jpg"
                 layout="fill"
                 objectFit="cover"
@@ -54,6 +55,7 @@ export default function Air3x3({ article }) {
             </p>
           </div>
         </section>
+        <CaseStudyExtras slug="air3x3" article={article} />
         <section className={styl.objectives}>
           <div>
             <h2>Dividing the problem into objectives</h2>
@@ -78,6 +80,7 @@ export default function Air3x3({ article }) {
             <div className={styl.tech}>
               <div className={styl.imgContainer}>
                 <Image
+                alt="nextjs"
                   src="/img/portfolio/air3x3/nextjs.svg"
                   layout="fill"
                   objectFit="contain"
@@ -121,15 +124,18 @@ export default function Air3x3({ article }) {
                   </li>
                 </ol>
                 <h4>Service descriptions</h4>
-                <li>
-                  Authentication: Auth with Google, Facebook, email-password
-                </li>
-                <li>Authorisation: Let’s us give users a profile</li>
-                <li>Storage: Profile photos and other media files</li>
-                <li>Database: (Firestore) A no-sql database</li>
+                <ul>
+                  <li>
+                    Authentication: Auth with Google, Facebook, email-password
+                  </li>
+                  <li>Authorisation: Let’s us give users a profile</li>
+                  <li>Storage: Profile photos and other media files</li>
+                  <li>Database: (Firestore) A no-sql database</li>
+                </ul>
               </div>
               <div className={`${styl.imgContainer} ${styl.firebaseVsAws}`}>
                 <Image
+                alt="firebaseVsAws"
                   src="/img/portfolio/air3x3/firebaseVsAws.svg"
                   layout="fill"
                   objectFit="contain"
@@ -139,6 +145,7 @@ export default function Air3x3({ article }) {
             <div className={styl.tech}>
               <div className={styl.imgContainer}>
                 <Image
+                alt="aws"
                   src="/img/portfolio/air3x3/aws.svg"
                   layout="fill"
                   objectFit="contain"
@@ -162,6 +169,7 @@ export default function Air3x3({ article }) {
               </div>
               <div className={styl.imgContainer}>
                 <Image
+                alt="vercel"
                   src="/img/portfolio/air3x3/vercel.svg"
                   layout="fill"
                   objectFit="contain"
@@ -171,6 +179,7 @@ export default function Air3x3({ article }) {
             <div className={styl.tech}>
               <div className={styl.imgContainer}>
                 <Image
+                alt="stripe"
                   src="/img/portfolio/air3x3/stripe.svg"
                   layout="fill"
                   objectFit="contain"
@@ -192,6 +201,7 @@ export default function Air3x3({ article }) {
             <h3>Custom booking system</h3>
             <div className={styl.img}>
               <Image
+                alt="Air3x3 tour booking illustration"
                 src={`/img/portfolio/air3x3/tour_book${isDesktop ? "_desktop" : ""
                   }.svg`}
                 layout="fill"
@@ -204,6 +214,7 @@ export default function Air3x3({ article }) {
             <h3>Admin Navigation</h3>
             <div className={styl.img}>
               <Image
+                alt="admin nav"
                 src="/img/portfolio/air3x3/admin_nav.jpg"
                 layout="fill"
                 objectFit="contain"
@@ -214,6 +225,7 @@ export default function Air3x3({ article }) {
             <h3>Stripe Integration</h3>
             <div className={styl.img}>
               <Image
+                alt="stripe integration"
                 src="/img/portfolio/air3x3/stripe_integration.jpg"
                 layout="fill"
                 objectFit="contain"
@@ -224,6 +236,7 @@ export default function Air3x3({ article }) {
             <h3>Customizable Email Integration</h3>
             <div className={styl.img}>
               <Image
+                alt="custom email templates"
                 src="/img/portfolio/air3x3/custom_email_templates.jpg"
                 layout="fill"
                 objectFit="contain"
@@ -234,6 +247,7 @@ export default function Air3x3({ article }) {
             <h3>Invite and team management</h3>
             <div className={styl.img}>
               <Image
+                alt="invite and team mgmt"
                 src="/img/portfolio/air3x3/invite_and_team_mgmt.jpg"
                 layout="fill"
                 objectFit="contain"
@@ -241,7 +255,6 @@ export default function Air3x3({ article }) {
             </div>
           </section>
         </div>
-        <CaseStudyExtras slug="air3x3" article={article} />
         <Footer />
       </div>
     </>

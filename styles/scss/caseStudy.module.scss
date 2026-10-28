@@ -1,7 +1,7 @@
 // Mirrors the hand-built case study pages (see pages/portfolio/mazaclass).
 .container {
   color: #222;
-  width: 100vw;
+  width: 100%;
   padding: 0 0 3em;
   position: relative;
   overflow-x: hidden;
@@ -9,6 +9,7 @@
   p {
     font-family: sans-serif;
     font-size: 1.1rem;
+    line-height: 1.5;
   }
 
   >section>div {
@@ -18,33 +19,42 @@
 
   h2 {
     font-size: 1.5rem;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75rem;
   }
 
   li {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-family: sans-serif;
+    line-height: 1.4;
+  }
+
+  >section:last-of-type {
+    padding-bottom: 3rem;
   }
 }
 
+// Same column and alignment whether or not the project has a hero image.
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 1em;
+  padding: 2rem 1rem;
 
-  .text {
-    text-align: center;
+  >div {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 2rem;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
     gap: 0.5rem;
+    text-align: center;
   }
 
   h1 {
     color: #03bff0;
     font-size: 2.5rem;
+    line-height: 1.1;
   }
 
   p {
@@ -55,31 +65,44 @@
   .meta {
     color: #555;
     font-size: 0.95rem;
+
+    // Keep "Dec 2023 – Jul 2025" and each part together when the line wraps.
+    span {
+      white-space: nowrap;
+    }
+
+    a {
+      text-decoration: underline;
+    }
   }
 
+  // Hero GIFs are ~2:1 screen recordings: show them whole, framed like the site.
   .heroImage {
     position: relative;
-    border-radius: 2em;
+    width: 100%;
+    max-width: 30rem;
+    aspect-ratio: 2 / 1;
+    margin: 0 auto;
+    border: 3px solid #000;
+    border-radius: 1rem;
     overflow: hidden;
-    margin-top: 2rem;
-    width: 18rem;
-    height: 18rem;
+    background: #f2f2f2;
 
     video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 }
 
 @media screen and (min-width: 768px) {
   .hero {
+    padding: 3rem 1rem 2rem;
+
     >div {
-      display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 2rem;
     }
 
     h1 {
@@ -92,32 +115,60 @@
     }
 
     .heroImage {
-      width: 25rem;
-      height: 25rem;
-      margin-top: 0;
+      flex: 0 0 24rem;
+      width: 24rem;
+      margin: 0;
     }
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .hero .heroImage {
+    flex-basis: 30rem;
+    width: 30rem;
+  }
+}
+
 .summary {
-  padding: 1rem;
+  padding: 1rem 1rem 2rem;
 }
 
 .carousel {
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem 0;
 }
 
 .features {
-  padding: 1rem;
+  padding: 2rem 1rem 0;
 
-  ul,
-  ol {
+  ul {
     padding-left: 1.5rem;
   }
 }
 
+.features+.features {
+  padding-top: 1rem;
+}
+
+// Tech stack as chips: an unordered set, not a ranked list.
+.stack {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .container & li {
+    margin: 0;
+    padding: 0.35rem 0.75rem;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    background: #fff;
+    font-family: "Fira Code", monospace;
+    font-size: 0.9rem;
+  }
+}
+
 .links {
-  padding: 1rem;
+  padding: 2rem 1rem 0;
 
   a {
     display: inline-block;

@@ -27,13 +27,14 @@ export default function Babydojo({ article }) {
     <>
       <div className={styl.container}>
         <Head>
-          <title>DarshanDev Project: Air3x3</title>
+          <title>DarshanDev Project: Babydojo - The parenting application</title>
         </Head>
         <Header />
         <div className={`${styl.col2} ${styl.firstSection}`}>
           <div className={styl.firstCol}>
             <div className={styl.heroContainer}>
               <Image
+                alt="babylarge"
                 src="/img/portfolio/babydojo/babylarge.png"
                 layout="fill"
                 objectFit="cover"
@@ -60,6 +61,7 @@ export default function Babydojo({ article }) {
           </div>
           {/* <div className={styl.hero}>
             <Image
+                alt="hero"
               src="/img/portfolio/air3x3/hero.jpg"
               layout="fill"
               objectFit="cover"
@@ -89,6 +91,7 @@ export default function Babydojo({ article }) {
             <li>Social media features with Image and text capabilities</li>
           </ol>
         </section>
+        <CaseStudyExtras slug="babydojo" article={article} />
         <section className={styl.techStack}>
           <a name="brainstorming"></a>
           <h2>Describing the situation</h2>
@@ -135,6 +138,7 @@ export default function Babydojo({ article }) {
           <div className={`${styl.tech} ${styl.col2}`}>
             <div className={styl.imgContainer}>
               <Image
+                alt="nextjs"
                 src="/img/portfolio/air3x3/nextjs.svg"
                 layout="fill"
                 objectFit="contain"
@@ -168,18 +172,21 @@ export default function Babydojo({ article }) {
               <h4>What is Firebase?</h4>
               <p>A BaaS (Backend as a service) based on GCP.</p>
               <h4>Service descriptions</h4>
-              <li>
-                Authentication: Auth with Google, Facebook, email-password
-              </li>
-              <li>Authorisation: Let’s us give users a profile</li>
-              <li>Storage: Profile photos and other media files</li>
-              <li>Database: (Firestore) A no-sql database</li>
+              <ul>
+                <li>
+                  Authentication: Auth with Google, Facebook, email-password
+                </li>
+                <li>Authorisation: Let’s us give users a profile</li>
+                <li>Storage: Profile photos and other media files</li>
+                <li>Database: (Firestore) A no-sql database</li>
+              </ul>
             </div>
             <div
               className={`${styl.imgContainer} ${styl.firebaseVsAws}`}
               style={{ marginBottom: "1em" }}
             >
               <Image
+                alt="firebase"
                 src="/img/portfolio/babydojo/firebase.png"
                 layout="fill"
                 objectFit="contain"
@@ -189,6 +196,7 @@ export default function Babydojo({ article }) {
           <div className={`${styl.tech} ${styl.col2}`}>
             <div className={styl.imgContainer}>
               <Image
+                alt="vercel"
                 src="/img/portfolio/air3x3/vercel.svg"
                 layout="fill"
                 objectFit="contain"
@@ -212,6 +220,7 @@ export default function Babydojo({ article }) {
             <h3>Dashboard</h3>
             <div className={styl.screenshot}>
               <Image
+                alt="result1"
                 src="/img/portfolio/babydojo/result1.png"
                 width="320"
                 height="660"
@@ -223,6 +232,7 @@ export default function Babydojo({ article }) {
             <h3>Child profile</h3>
             <div className={styl.screenshot}>
               <Image
+                alt="child profile"
                 src="/img/portfolio/babydojo/child_profile.png"
                 width="320"
                 height="660"
@@ -233,6 +243,7 @@ export default function Babydojo({ article }) {
             <h3>Navigation</h3>
             <div className={styl.screenshot}>
               <Image
+                alt="nav"
                 src="/img/portfolio/babydojo/nav.png"
                 width="320"
                 height="660"
@@ -243,6 +254,7 @@ export default function Babydojo({ article }) {
             <h3>Social module</h3>
             <div className={styl.screenshot}>
               <Image
+                alt="social"
                 src="/img/portfolio/babydojo/social.png"
                 width="320"
                 height="660"
@@ -250,7 +262,6 @@ export default function Babydojo({ article }) {
             </div>
           </section>
         </section>
-        <CaseStudyExtras slug="babydojo" article={article} />
         <Footer />
       </div>
     </>

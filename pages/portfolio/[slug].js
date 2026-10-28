@@ -1,3 +1,4 @@
+import { Fragment } from "react"
 import Head from "next/head"
 import Image from "next/image"
 import Header from "comp/Header"
@@ -12,7 +13,15 @@ import { getCaseStudyArticle, getScreenshots } from "src/caseStudies"
 export default function CaseStudy({ slug, article, screenshots }) {
   const project = getProject(slug)
   const [name, subtitle] = project.title.split(/:\s*/)
-  const meta = [project.client, project.role, project.period].filter(Boolean)
+  const client =
+    project.client && project.clientWebsite ? (
+      <a href={project.clientWebsite} target="_blank" rel="noreferrer">
+        {project.client}
+      </a>
+    ) : (
+      project.client
+    )
+  const meta = [client, project.role, project.period].filter(Boolean)
 
   return (
     <div className={styl.container}>
@@ -30,7 +39,14 @@ export default function CaseStudy({ slug, article, screenshots }) {
             <h1>{name}</h1>
             {subtitle && <p>{subtitle}</p>}
             {meta.length > 0 && (
-              <p className={styl.meta}>{meta.join(" · ")}</p>
+              <p className={styl.meta}>
+                {meta.map((item, idx) => (
+                  <Fragment key={idx}>
+                    {idx > 0 && " · "}
+                    <span>{item}</span>
+                  </Fragment>
+                ))}
+              </p>
             )}
           </div>
           {(project.image || project.video) && (
@@ -43,7 +59,7 @@ export default function CaseStudy({ slug, article, screenshots }) {
                 <Image
                   src={project.image}
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "contain" }}
                   alt={project.title}
                   unoptimized={project.image.endsWith(".gif")}
                 />
@@ -67,7 +83,8 @@ export default function CaseStudy({ slug, article, screenshots }) {
       {screenshots.length > 0 && (
         <section className={styl.carousel}>
           <div>
-            <Carousel showThumbs={false}>
+            <h2>Screenshots</h2>
+            <Carousel showThumbs={false} showStatus={false}>
               {screenshots.map((src, idx) => (
                 <div key={src}>
                   <img src={src} alt={`${name} screenshot ${idx + 1}`} />
@@ -93,11 +110,11 @@ export default function CaseStudy({ slug, article, screenshots }) {
         <section className={styl.features}>
           <div>
             <h2>Tech Stack</h2>
-            <ol>
+            <ul className={styl.stack}>
               {project.stack.map((tech) => (
                 <li key={tech}>{tech}</li>
               ))}
-            </ol>
+            </ul>
           </div>
         </section>
       )}
