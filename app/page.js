@@ -88,15 +88,16 @@ const Home = () => {
               <rect width="100%" height="100%" fill="url(#stripeGradient)" />
             </svg>
 
-            <div className={styl.heroLeft}>
-              <div className={styl.text}>
-                <h1 className={`${styl.name} ${heroFont.className}`}>
-                  <span>D</span>arshan Dhabale
-                </h1>
-                <p className={styl.desg}>
-                  Full stack developer · building MVPs, zero to one
-                </p>
-              </div>
+            <div className={styl.heroIntro}>
+              <h1 className={`${styl.heroTitle} ${heroFont.className}`}>
+                Darshan Dhabale
+              </h1>
+              <p className={styl.heroTagline}>
+                Full stack developer · building MVPs, zero to one
+              </p>
+            </div>
+
+            <div className={styl.heroAside}>
               <div className={styl.heroProject}>
                 <HeroProjectCard
                   id={projects[1].id}
@@ -166,13 +167,12 @@ const Home = () => {
                 />
               </a>
             </div>
-            <section className={styl.testimonials}>
+            <section className={`${styl.testimonials} ${styl.heroQuotes}`}>
               <div className={styl.testimonialsMobile}>
                 <a name="testimonials"></a>
-                {/* <h2 className={styl.sectionHeading}>Testimonials</h2> */}
                 <ul>
                   {testimonials.slice(0, 3).map((testimonial, idx) => (
-                    <li className={styl.testimonial} id={idx}>
+                    <li className={styl.testimonial} key={testimonial.name}>
                       <Rating />
                       <p className={styl.testimonialText}>
                         “{testimonial.testimonial}”
