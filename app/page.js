@@ -92,10 +92,11 @@ const Home = () => {
               <h1 className={`${styl.heroTitle} ${heroFont.className}`}>
                 Darshan Dhabale
               </h1>
-              <p className={styl.heroTagline}>Full-stack engineer · Tech lead</p>
+              <p className={styl.heroTagline}>Full-stack engineer</p>
               <p className={styl.heroPitch}>
                 5 years shipping and running production software: AI
-                platforms, fintech, and my own SaaS.
+                platforms, fintech, and my own SaaS. I own features end to
+                end.
               </p>
             </div>
 
@@ -179,8 +180,8 @@ const Home = () => {
                       <p className={styl.testimonialText}>
                         “{testimonial.testimonial}”
                       </p>
-                      <TestimonialClient testimonial={testimonial} />
                       <TestimonialProjects testimonial={testimonial} />
+                      <TestimonialClient testimonial={testimonial} />
                     </li>
                   ))}
                 </ul>
@@ -254,8 +255,8 @@ const Home = () => {
                   <p className={styl.testimonialText}>
                     “{testimonial.testimonial}”
                   </p>
-                  <TestimonialClient testimonial={testimonial} />
                   <TestimonialProjects testimonial={testimonial} />
+                  <TestimonialClient testimonial={testimonial} />
                 </li>
               ))}
             </ul>
